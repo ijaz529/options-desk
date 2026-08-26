@@ -57,3 +57,9 @@ def test_single_lot_banks_whole():
 
 def test_holds_in_between():
     assert exit_action(entry=2.00, current=2.50, qty=2) is None
+
+
+def test_malformed_entries_rejected_not_crashed():
+    valid, rejected = validate(["AMD calls look good", 42, raw()])
+    assert len(valid) == 1 and len(rejected) == 2
+    assert "malformed" in rejected[0]

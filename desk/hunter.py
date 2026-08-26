@@ -121,7 +121,11 @@ def validate(raw_trades: list[dict]) -> tuple[list[Thesis], list[str]]:
     """Strict shape-checking — a proposal that bends any rule is discarded whole."""
     valid: list[Thesis] = []
     rejected: list[str] = []
-    for t in raw_trades[:MAX_TRADES_PER_SESSION]:
+    for t in raw_trades:
+        if len(valid) >= MAX_TRADES_PER_SESSION:
+            break                      # the cap counts SURVIVORS — garbage doesn't use up slots
+        if not isinstance(t, dict):
+            rejected.append(f"malformed proposal (not an object): {str(t)[:60]}"); continue
         sym = str(t.get("symbol", "")).upper()
         if sym not in CANDIDATES:
             rejected.append(f"{sym or '?'}: not in the candidate universe."); continue
