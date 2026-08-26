@@ -14,7 +14,7 @@ import re
 import sys
 from datetime import date, datetime, timedelta, timezone
 
-from desk import broker, gates, log, steward
+from desk import broker, gates, hunter, log, steward
 
 # Liquid, boring, penny-wide — the Steward's whole world.
 UNIVERSE = ["SPY", "QQQ", "AAPL", "MSFT", "AMZN", "GOOGL", "NVDA", "META", "JPM", "XOM"]
@@ -91,11 +91,54 @@ def steward_session() -> None:
         state, acct = desk_state()
 
 
+def hunter_session() -> None:
+    """Twice a session: Claude reads the tape, the desk trades what survives."""
+    rows = hunter.tape()
+    theses, rejected = hunter.propose(rows)
+    for why in rejected:
+        log.record("hunter", "veto", f"Proposal discarded before the gates: {why}")
+    if not theses:
+        log.record("hunter", "hold", "Claude read the tape and proposed nothing — "
+                   "premium spent on a weak thesis is the only way this sleeve dies.")
+        return
+    state, _ = desk_state()
+    for t in theses:
+        picked = hunter.contract_for(t, next_contest_friday())
+        if picked is None:
+            log.record("hunter", "hold",
+                       f"{t.symbol} thesis approved but no {t.direction} in the delta band "
+                       "with a believable market — the idea dies at the chain, not at the desk.")
+            continue
+        q, qty = picked
+        premium = qty * q.mid * 100
+        verdict = gates.review(gates.Proposal(agent="hunter", symbol=t.symbol,
+                                              kind="long_option", notional=premium), state)
+        if not verdict.approved:
+            log.record("risk", "veto", verdict.because, gate=verdict.gate, symbol=t.symbol)
+            continue
+        order_id = broker.buy_option(q.symbol, qty, q.mid)
+        log.record("hunter", f"buy_{t.direction}",
+                   f"{t.thesis} — {qty}× {q.symbol} at ~{q.mid:.2f} (${premium:,.0f} premium, "
+                   f"the whole downside). Invalidation: {t.invalidation}",
+                   symbol=q.symbol, qty=qty, premium=premium, order_id=order_id)
+        state, _ = desk_state()
+
+
 def sweep() -> None:
-    """Mechanical exits on every open short put; always allowed by the gates."""
+    """Mechanical exits, both sleeves; closing risk is always allowed."""
     for p in broker.positions():
         occ = parse_occ(p["symbol"])
-        if not occ or p["qty"] >= 0:
+        if not occ:
+            continue
+        if p["qty"] > 0:      # hunter long options
+            qty = int(p["qty"])
+            entry = abs(p["cost_basis"]) / (100 * qty)
+            current = abs(p["market_value"]) / (100 * qty)
+            fire = hunter.exit_action(entry=entry, current=current, qty=qty)
+            if fire:
+                kind, close_qty, because = fire
+                order_id = broker.sell_option(p["symbol"], close_qty, round(current * 0.98, 2))
+                log.record("hunter", kind, because, symbol=p["symbol"], qty=close_qty, order_id=order_id)
             continue
         u, _, cp, strike = occ
         if cp != "P":
@@ -121,4 +164,4 @@ def status() -> None:
 
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "status"
-    {"steward": steward_session, "sweep": sweep, "status": status}[cmd]()
+    {"steward": steward_session, "hunter": hunter_session, "sweep": sweep, "status": status}[cmd]()

@@ -60,13 +60,15 @@ def spot_price(underlying: str) -> float:
     return float(t[underlying].price)
 
 
-def weekly_puts(underlying: str, expiry: date) -> list[PutQuote]:
-    """The put chain for one expiry, joined with live snapshots (greeks included)."""
+def option_chain(underlying: str, expiry: date, kind: str,
+                 lo_frac: float, hi_frac: float) -> list[PutQuote]:
+    """One expiry's chain (kind: "put"|"call") joined with live snapshots (greeks
+    included), strikes bounded to [lo_frac, hi_frac] × spot."""
     spot = spot_price(underlying)
     contracts = trading().get_option_contracts(GetOptionContractsRequest(
         underlying_symbols=[underlying], status=AssetStatus.ACTIVE,
-        expiration_date=expiry, type=ContractType.PUT,
-        strike_price_gte=str(round(spot * 0.85, 2)), strike_price_lte=str(round(spot, 2)),
+        expiration_date=expiry, type=ContractType.PUT if kind == "put" else ContractType.CALL,
+        strike_price_gte=str(round(spot * lo_frac, 2)), strike_price_lte=str(round(spot * hi_frac, 2)),
         limit=250,
     )).option_contracts or []
     if not contracts:
@@ -91,6 +93,11 @@ def weekly_puts(underlying: str, expiry: date) -> list[PutQuote]:
     return out
 
 
+def weekly_puts(underlying: str, expiry: date) -> list[PutQuote]:
+    """The Steward's slice: puts from 85% of spot up to the money."""
+    return option_chain(underlying, expiry, "put", 0.85, 1.0)
+
+
 def sell_put(occ_symbol: str, limit_price: float) -> str:
     """Cash-secured put: sell 1 contract at a limit. Returns the order id."""
     o = trading().submit_order(LimitOrderRequest(
@@ -110,6 +117,14 @@ def buy_option(occ_symbol: str, qty: int, limit_price: float) -> str:
     """The Hunter's long options — always defined-risk (premium is the max loss)."""
     o = trading().submit_order(LimitOrderRequest(
         symbol=occ_symbol, qty=qty, side=OrderSide.BUY,
+        time_in_force=TimeInForce.DAY, limit_price=limit_price))
+    return str(o.id)
+
+
+def sell_option(occ_symbol: str, qty: int, limit_price: float) -> str:
+    """Close (part of) a long option position at a limit."""
+    o = trading().submit_order(LimitOrderRequest(
+        symbol=occ_symbol, qty=qty, side=OrderSide.SELL,
         time_in_force=TimeInForce.DAY, limit_price=limit_price))
     return str(o.id)
 
