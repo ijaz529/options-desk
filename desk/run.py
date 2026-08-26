@@ -15,7 +15,7 @@ import re
 import sys
 from datetime import date, datetime, timedelta, timezone
 
-from desk import broker, cli, gates, hunter, log, steward
+from desk import broker, cli, gates, hunter, log, steward, weekend
 
 # Liquid, boring, penny-wide — the Steward's whole world.
 UNIVERSE = ["SPY", "QQQ", "AAPL", "MSFT", "AMZN", "GOOGL", "NVDA", "META", "JPM", "XOM"]
@@ -147,9 +147,64 @@ def hunter_session() -> None:
         state, _ = desk_state()
 
 
+def weekend_session() -> None:
+    """Saturday: the crypto sleeve decides. Long the mover or stay in cash."""
+    held = {p["symbol"] for p in read_positions() if p["asset_class"] == "crypto"}
+    if held:
+        log.record("hunter", "hold", f"Weekend sleeve already deployed ({', '.join(sorted(held))}) "
+                   "— one decision per weekend; the exits do the rest.")
+        return
+    state, _ = desk_state()
+    for pair, notional, because in weekend.entries(weekend.momentum_24h()):
+        if not pair:
+            log.record("hunter", "hold", because)
+            continue
+        verdict = gates.review(gates.Proposal(agent="hunter", symbol=pair,
+                                              kind="crypto_spot", notional=notional), state)
+        if not verdict.approved:
+            log.record("risk", "veto", verdict.because, gate=verdict.gate, symbol=pair)
+            continue
+        order_id = broker.crypto_notional(pair, "buy", notional)
+        log.record("hunter", "buy_crypto", because, symbol=pair, notional=notional, order_id=order_id)
+
+
+def derisk() -> None:
+    """The final session is for de-risking: everything to flat, P&L marked.
+    Refuses to run early — outside the last 26 hours it only says why."""
+    state, _ = desk_state()
+    if state.minutes_to_contest_end > 26 * 60:
+        log.record("desk", "hold", "De-risk requested outside the final day — refused. "
+                   f"{state.minutes_to_contest_end / 1440:.1f} days still to run.")
+        return
+    for p in read_positions():
+        occ = parse_occ(p["symbol"])
+        if occ:
+            qty = int(abs(p["qty"]))
+            per = abs(p["market_value"]) / (100 * max(qty, 1))
+            if p["qty"] < 0:
+                order_id = broker.buy_to_close(p["symbol"], round(per * 1.03, 2))
+                log.record("steward", "close", "Contest end: buying back the short leg — flat is the trade.",
+                           symbol=p["symbol"], order_id=order_id)
+            else:
+                order_id = broker.sell_option(p["symbol"], qty, round(per * 0.97, 2))
+                log.record("hunter", "close", "Contest end: selling the long leg — flat is the trade.",
+                           symbol=p["symbol"], order_id=order_id)
+        elif p["asset_class"] == "crypto" and p["qty"] > 0:
+            order_id = broker.crypto_notional(p["symbol"], "sell", abs(p["market_value"]))
+            log.record("hunter", "close", "Contest end: weekend sleeve to cash.",
+                       symbol=p["symbol"], order_id=order_id)
+
+
 def sweep() -> None:
     """Mechanical exits, both sleeves; closing risk is always allowed."""
     for p in read_positions():
+        if p["asset_class"] == "crypto" and p["qty"] > 0:
+            fire = weekend.exit_action(entry_cost=abs(p["cost_basis"]), market_value=abs(p["market_value"]))
+            if fire:
+                kind, because = fire
+                order_id = broker.crypto_notional(p["symbol"], "sell", abs(p["market_value"]))
+                log.record("hunter", kind, because, symbol=p["symbol"], order_id=order_id)
+            continue
         occ = parse_occ(p["symbol"])
         if not occ:
             continue
@@ -187,4 +242,4 @@ def status() -> None:
 
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "status"
-    {"steward": steward_session, "hunter": hunter_session, "sweep": sweep, "status": status}[cmd]()
+    {"steward": steward_session, "hunter": hunter_session, "sweep": sweep, "weekend": weekend_session, "derisk": derisk, "status": status}[cmd]()

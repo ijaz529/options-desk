@@ -13,6 +13,8 @@ on:
     - cron: '30 18 * * 1-5'
     - cron: '*/30 14-19 * * 1-5'
     - cron: '0 * * * 0,6'
+    - cron: '0 10 * * 6'
+    - cron: '0 13 4 9 *'
   workflow_dispatch:
     inputs:
       session:
@@ -51,6 +53,8 @@ jobs:
             case "${{ github.event.schedule }}" in
               '45 13 * * 1-5') echo "cmd=steward" >> "$GITHUB_OUTPUT" ;;
               '15 14 * * 1-5'|'30 18 * * 1-5') echo "cmd=hunter" >> "$GITHUB_OUTPUT" ;;
+              '0 10 * * 6') echo "cmd=weekend" >> "$GITHUB_OUTPUT" ;;
+              '0 13 4 9 *') echo "cmd=derisk" >> "$GITHUB_OUTPUT" ;;
               *) echo "cmd=sweep" >> "$GITHUB_OUTPUT" ;;
             esac
           fi
@@ -60,8 +64,9 @@ jobs:
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       # the decision log is the product — persist it on every run
+      - run: python -m desk.writeup   # the one-pager regenerates with every session
       - name: commit the decision log
         run: |
           git config user.name "the-desk" && git config user.email "desk@users.noreply.github.com"
-          git add logs/ && git diff --cached --quiet || git commit -m "log: ${{ steps.pick.outputs.cmd }} session"
+          git add logs/ docs/WRITEUP.md && git diff --cached --quiet || git commit -m "log: ${{ steps.pick.outputs.cmd }} session"
           git pull --rebase && git push
