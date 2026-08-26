@@ -25,8 +25,8 @@ below the 20-day range" is auditable, debuggable, and honest about its losers.
 ## Alpaca stack
 
 - **Trading API** (paper) — all order flow, positions, account state.
-- **MCP server** — Claude drives the Hunter's reasoning through Alpaca's MCP tools.
-- **CLI** — the cron heartbeat: position checks and risk sweeps between sessions.
+- **MCP server** — the Hunter's research desk: Claude calls Alpaca's read-only MCP tools itself (positions, bars, option chains) before concluding; the trading tools on that server are never exposed to it.
+- **CLI** — the heartbeat's read door: positions and account state come through the official `alpaca` CLI (structured JSON, env auth), SDK as fallback.
 - **Market Data API** — equities, options chains, and crypto quotes.
 
 Everything runs against the paper environment. No real money is involved anywhere.

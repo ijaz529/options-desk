@@ -34,6 +34,14 @@ jobs:
           python-version: '3.13'
           cache: pip
       - run: pip install -r requirements.txt
+      # the official Alpaca CLI — the heartbeat's read door (structured JSON,
+      # env auth, paper by default; hackathon requirement made real)
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+      - run: go install github.com/alpacahq/cli/cmd/alpaca@latest && echo "$HOME/go/bin" >> "$GITHUB_PATH"
+      # uv provides uvx, which runs Alpaca's official MCP server for the Hunter
+      - uses: astral-sh/setup-uv@v5
       - name: pick the session for this slot
         id: pick
         run: |

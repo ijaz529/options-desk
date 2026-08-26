@@ -10,17 +10,30 @@ to drift from the truth.
 """
 from __future__ import annotations
 
+import os
 import re
 import sys
 from datetime import date, datetime, timedelta, timezone
 
-from desk import broker, gates, hunter, log, steward
+from desk import broker, cli, gates, hunter, log, steward
 
 # Liquid, boring, penny-wide — the Steward's whole world.
 UNIVERSE = ["SPY", "QQQ", "AAPL", "MSFT", "AMZN", "GOOGL", "NVDA", "META", "JPM", "XOM"]
 CONTEST_END = datetime(2026, 9, 4, 15, 0, tzinfo=timezone.utc)  # 17:00 CEST Fri
 
 OCC = re.compile(r"^([A-Z]+)(\d{6})([CP])(\d{8})$")
+
+
+def read_positions() -> list[dict]:
+    """Positions via the official Alpaca CLI when present (structured JSON,
+    env auth — built for agent loops), the SDK as fallback. Same shape either
+    way, so every consumer is door-agnostic."""
+    if cli.available():
+        try:
+            return cli.positions()
+        except Exception as e:
+            log.record("desk", "note", f"CLI read failed ({str(e)[:80]}) — using the SDK door.")
+    return broker.positions()
 
 
 def parse_occ(symbol: str) -> tuple[str, date, str, float] | None:
@@ -34,7 +47,7 @@ def parse_occ(symbol: str) -> tuple[str, date, str, float] | None:
 def desk_state() -> tuple[gates.AccountState, dict]:
     """AccountState for the Risk Officer, derived live from the broker."""
     acct = broker.account_state()
-    pos = broker.positions()
+    pos = read_positions()
     sleeve = {"steward": 0.0, "hunter": 0.0}
     under: dict[str, float] = {}
     for p in pos:
@@ -65,7 +78,7 @@ def next_contest_friday() -> date:
 
 def steward_session() -> None:
     state, acct = desk_state()
-    held_unders = {parse_occ(p["symbol"])[0] for p in broker.positions() if parse_occ(p["symbol"])}
+    held_unders = {parse_occ(p["symbol"])[0] for p in read_positions() if parse_occ(p["symbol"])}
     expiry = next_contest_friday()
     for u in UNIVERSE:
         if u in held_unders:
@@ -92,9 +105,19 @@ def steward_session() -> None:
 
 
 def hunter_session() -> None:
-    """Twice a session: Claude reads the tape, the desk trades what survives."""
+    """Twice a session: Claude reads the tape (and researches it through Alpaca's
+    MCP server when available), the desk trades what survives."""
     rows = hunter.tape()
-    theses, rejected = hunter.propose(rows)
+    import shutil
+    if shutil.which("uvx") and os.environ.get("ANTHROPIC_API_KEY"):
+        from desk import mcp_bridge
+        theses, rejected, trail = mcp_bridge.propose_via_mcp(rows)
+        if trail:
+            log.record("hunter", "research",
+                       f"Worked the tape through Alpaca's MCP server: {len(trail)} read-only "
+                       f"tool calls before concluding. Trail: {'; '.join(trail[:6])}")
+    else:
+        theses, rejected = hunter.propose(rows)
     for why in rejected:
         log.record("hunter", "veto", f"Proposal discarded before the gates: {why}")
     if not theses:
@@ -126,7 +149,7 @@ def hunter_session() -> None:
 
 def sweep() -> None:
     """Mechanical exits, both sleeves; closing risk is always allowed."""
-    for p in broker.positions():
+    for p in read_positions():
         occ = parse_occ(p["symbol"])
         if not occ:
             continue
@@ -157,7 +180,7 @@ def status() -> None:
     print(f"equity ${state.equity:,.2f} · steward ${state.sleeve_used['steward']:,.0f} deployed "
           f"· hunter ${state.sleeve_used['hunter']:,.0f} · "
           f"{state.minutes_to_contest_end / 1440:.1f} days to contest end")
-    for p in broker.positions():
+    for p in read_positions():
         print(f"  {p['symbol']:>22} qty {p['qty']:>10} mv ${p['market_value']:>10,.2f} "
               f"pl ${p['unrealized_pl']:>8,.2f}")
 
