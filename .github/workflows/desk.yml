@@ -1,0 +1,59 @@
+# The desk's heartbeat, on GitHub's clock.
+#
+# Sessions (all times UTC; US market 13:30–20:00):
+#   steward  13:45 Mon–Fri  — the income round, once the open has settled
+#   hunter   14:15, 18:30   — Claude reads the tape twice a session
+#   sweep    every 30 min in-session — mechanical exits, both sleeves
+#   sweep    hourly at weekends — the crypto sleeve never sleeps
+name: desk
+on:
+  schedule:
+    - cron: '45 13 * * 1-5'
+    - cron: '15 14 * * 1-5'
+    - cron: '30 18 * * 1-5'
+    - cron: '*/30 14-19 * * 1-5'
+    - cron: '0 * * * 0,6'
+  workflow_dispatch:
+    inputs:
+      session:
+        description: 'steward | hunter | sweep | status'
+        default: status
+
+concurrency:
+  group: desk
+  cancel-in-progress: false
+
+jobs:
+  session:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: pick the session for this slot
+        id: pick
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "cmd=${{ inputs.session }}" >> "$GITHUB_OUTPUT"
+          else
+            case "${{ github.event.schedule }}" in
+              '45 13 * * 1-5') echo "cmd=steward" >> "$GITHUB_OUTPUT" ;;
+              '15 14 * * 1-5'|'30 18 * * 1-5') echo "cmd=hunter" >> "$GITHUB_OUTPUT" ;;
+              *) echo "cmd=sweep" >> "$GITHUB_OUTPUT" ;;
+            esac
+          fi
+      - run: python -m desk.run ${{ steps.pick.outputs.cmd }}
+        env:
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # the decision log is the product — persist it on every run
+      - name: commit the decision log
+        run: |
+          git config user.name "the-desk" && git config user.email "desk@users.noreply.github.com"
+          git add logs/ && git diff --cached --quiet || git commit -m "log: ${{ steps.pick.outputs.cmd }} session"
+          git pull --rebase && git push
