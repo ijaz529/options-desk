@@ -138,6 +138,17 @@ def crypto_notional(pair: str, side: str, notional: float) -> str:
     return str(o.id)
 
 
+def order_status(order_id: str) -> dict:
+    o = trading().get_order_by_id(order_id)
+    return {"id": str(o.id), "status": str(o.status), "symbol": o.symbol,
+            "filled_qty": float(o.filled_qty or 0),
+            "filled_avg_price": float(o.filled_avg_price) if o.filled_avg_price else None}
+
+
+def cancel_order(order_id: str) -> None:
+    trading().cancel_order_by_id(order_id)
+
+
 def account_state() -> dict:
     a = trading().get_account()
     return {"equity": float(a.equity), "cash": float(a.cash),

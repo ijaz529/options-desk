@@ -34,3 +34,23 @@ Everything runs against the paper environment. No real money is involved anywher
 ## Licence
 
 MIT.
+
+## Runbook
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+cp .env.example .env          # then fill in the three keys
+.venv/bin/python -m pytest    # 36 tests, no network needed
+
+.venv/bin/python -m desk.run status     # account, sleeves, positions (read-only)
+.venv/bin/python -m desk.run steward    # the income round: pick, gate, place, log
+.venv/bin/python -m desk.run hunter     # Claude researches via MCP, desk trades survivors
+.venv/bin/python -m desk.run sweep      # mechanical exits, both sleeves
+.venv/bin/python -m desk.run weekend    # Saturday's crypto decision
+.venv/bin/python -m desk.run derisk     # contest end: everything to flat (refuses to run early)
+.venv/bin/python -m desk.writeup        # regenerate docs/WRITEUP.md from the live system
+```
+
+In contest week nobody runs these by hand: `.github/workflows/desk.yml` runs the
+sessions on schedule and commits the decision log back to this repo after each one.
+The audit trail you are reading was written by the desk itself.
