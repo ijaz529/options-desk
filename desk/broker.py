@@ -74,8 +74,13 @@ def option_chain(underlying: str, expiry: date, kind: str,
     if not contracts:
         return []
     data = OptionHistoricalDataClient(_KEY, _SECRET)
-    snaps = data.get_option_snapshot(OptionSnapshotRequest(
-        symbol_or_symbols=[c.symbol for c in contracts]))
+    # the snapshot endpoint caps at 100 symbols per call — QQQ's dollar-strike
+    # chain runs past that (111 on 28 Aug, the desk's first live session)
+    symbols = [c.symbol for c in contracts]
+    snaps: dict = {}
+    for i in range(0, len(symbols), 100):
+        snaps.update(data.get_option_snapshot(OptionSnapshotRequest(
+            symbol_or_symbols=symbols[i:i + 100])))
     out: list[PutQuote] = []
     for c in contracts:
         s = snaps.get(c.symbol)
