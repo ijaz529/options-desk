@@ -143,6 +143,15 @@ def crypto_notional(pair: str, side: str, notional: float) -> str:
     return str(o.id)
 
 
+def open_orders() -> list[dict]:
+    """Working orders — obligations the account has promised but not yet booked."""
+    from alpaca.trading.requests import GetOrdersRequest
+    from alpaca.trading.enums import QueryOrderStatus
+    out = trading().get_orders(GetOrdersRequest(status=QueryOrderStatus.OPEN, limit=100))
+    return [{"id": str(o.id), "symbol": o.symbol, "side": str(o.side), "qty": float(o.qty or 0)}
+            for o in out]
+
+
 def order_status(order_id: str) -> dict:
     o = trading().get_order_by_id(order_id)
     return {"id": str(o.id), "status": str(o.status), "symbol": o.symbol,

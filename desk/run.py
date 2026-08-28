@@ -17,8 +17,11 @@ from datetime import date, datetime, timedelta, timezone
 
 from desk import broker, cli, gates, hunter, log, steward, weekend
 
-# Liquid, boring, penny-wide — the Steward's whole world.
-UNIVERSE = ["SPY", "QQQ", "AAPL", "MSFT", "AMZN", "GOOGL", "NVDA", "META", "JPM", "XOM"]
+# Liquid, boring — and PRICED so one contract fits the gates. The first live
+# session vetoed 9 of 10 mega-caps: one 20-delta CSP on SPY is a $76,500
+# obligation, one MSFT contract $50k — untradeable under a $20k-per-name cap.
+# The sleeve trades names where a contract obliges roughly $8-19k.
+UNIVERSE = ["XOM", "CVX", "KO", "WMT", "BAC", "DIS", "UBER", "PFE", "CSCO", "INTC", "T", "GM"]
 CONTEST_END = datetime(2026, 9, 4, 15, 0, tzinfo=timezone.utc)  # 17:00 CEST Fri
 
 OCC = re.compile(r"^([A-Z]+)(\d{6})([CP])(\d{8})$")
@@ -45,9 +48,25 @@ def parse_occ(symbol: str) -> tuple[str, date, str, float] | None:
 
 
 def desk_state() -> tuple[gates.AccountState, dict]:
-    """AccountState for the Risk Officer, derived live from the broker."""
+    """AccountState for the Risk Officer, derived live from the broker.
+
+    OPEN ORDERS count exactly like positions: a working short put is an
+    obligation the account has already promised. Counting only booked positions
+    let three XOM puts stack up in the first live hour — each run saw $0
+    deployed because nothing had filled yet (bug #4, 28 Aug)."""
     acct = broker.account_state()
     pos = read_positions()
+    for o in broker.open_orders():
+        occ = parse_occ(o["symbol"])
+        if not occ:
+            continue
+        _, _, cp, strike = occ
+        if "sell" in o["side"] and cp == "P":
+            pos.append({"symbol": o["symbol"], "qty": -o["qty"], "market_value": 0.0,
+                        "cost_basis": 0.0, "unrealized_pl": 0.0, "asset_class": "us_option"})
+        elif "buy" in o["side"]:
+            pos.append({"symbol": o["symbol"], "qty": o["qty"], "market_value": 0.0,
+                        "cost_basis": 0.0, "unrealized_pl": 0.0, "asset_class": "us_option"})
     sleeve = {"steward": 0.0, "hunter": 0.0}
     under: dict[str, float] = {}
     for p in pos:
@@ -79,6 +98,9 @@ def next_contest_friday() -> date:
 def steward_session() -> None:
     state, acct = desk_state()
     held_unders = {parse_occ(p["symbol"])[0] for p in read_positions() if parse_occ(p["symbol"])}
+    # a WORKING order claims its name too — "one position per name" must count
+    # promises, not just fills (three stacked XOM puts taught us that)
+    held_unders |= {parse_occ(o["symbol"])[0] for o in broker.open_orders() if parse_occ(o["symbol"])}
     expiry = next_contest_friday()
     for u in UNIVERSE:
         if u in held_unders:

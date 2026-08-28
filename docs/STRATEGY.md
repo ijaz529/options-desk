@@ -13,8 +13,12 @@ page is amended first, then the code. (A habit imported from Alfred.)
 
 ## The Steward — options income
 
-**Universe:** liquid, boring, high-quality large caps and index ETFs (SPY, QQQ
-plus ~10 mega-caps with penny-wide option markets). Weekly expiries only.
+**Universe (amended 28 Aug, after the first live session):** liquid, boring
+large caps priced so ONE contract fits the risk gates — roughly \$80–190/share,
+so a cash-secured put obliges \$8–19k against the \$20k-per-name cap. The
+original mega-cap list (SPY, QQQ, AAPL…) was 90% untradeable at one-contract
+size: the Risk Officer vetoed nine of ten names on sizing, which is the gates
+working and the universe wrong. Weekly expiries only.
 
 **Entry rule (deterministic):**
 1. Rank universe by 30-day IV rank; take names with IV rank ≥ 40.
@@ -22,8 +26,9 @@ plus ~10 mega-caps with penny-wide option markets). Weekly expiries only.
    of contest end (4 Sep) — the whole position is a bet the week is ordinary.
 3. Premium collected must be ≥ 0.15% of strike notional or skip (commission-free,
    but a $6 credit is not worth a $20,000 obligation).
-4. Max 1 position per underlying; max $14,000 of strike notional per name
-   (5 names ≈ full sleeve).
+4. Max 1 position per underlying — where "position" counts WORKING ORDERS too,
+   not just fills. The per-name ceiling is the Risk Officer's 20%-of-account
+   concentration cap (~$20k).
 
 **Exit rules:**
 - Take profit at 65% of max premium (buy back).
