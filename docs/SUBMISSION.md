@@ -69,3 +69,10 @@ the submission form.
 3. Dispatch a `status` run to prove the pipeline; check the log commit appears.
 4. Watch the kickoff stream for submission-template changes; adjust this file.
 5. Post social draft #1.
+
+## Pre-flight (28 Aug, morning) — all green
+
+- Contest account PA3SKVNYTFJK: exactly $100,000.00, zero positions, options level 3, never traded
+- 36 tests green · repo synced · 3 Actions secrets set · schedule disabled until kickoff
+- MCP door: server spawns, 72 tools, 51 read-only exposed · CLI door: reads account clean
+- Enable command: `gh api -X PUT repos/ijaz529/options-desk/actions/workflows/342935881/enable`
