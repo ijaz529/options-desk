@@ -70,6 +70,7 @@ jobs:
       # the decision log is the product — persist it on every run
       - run: python -m desk.writeup   # the one-pager regenerates with every session
       - name: commit the decision log
+        if: always()   # a crashed session's partial diary is still a diary
         run: |
           git config user.name "the-desk" && git config user.email "desk@users.noreply.github.com"
           git add logs/ docs/WRITEUP.md && git diff --cached --quiet || git commit -m "log: ${{ steps.pick.outputs.cmd }} session"

@@ -103,6 +103,7 @@ def steward_session() -> None:
     held_unders |= {parse_occ(o["symbol"])[0] for o in broker.open_orders() if parse_occ(o["symbol"])}
     expiry = next_contest_friday()
     for u in UNIVERSE:
+      try:
         if u in held_unders:
             log.record("steward", "hold", f"Already carrying {u} risk — one position per name.")
             continue
@@ -124,6 +125,11 @@ def steward_session() -> None:
                    symbol=p.symbol, credit=p.mid, order_id=order_id)
         # refresh the sleeve picture so the NEXT name is judged against reality
         state, acct = desk_state()
+      except Exception as e:
+        # one name's API hiccup must not kill the session — a transient 403
+        # mid-run threw away five placements' diary rows on launch day
+        log.record("desk", "note", f"{u}: skipped this round — {str(e)[:110]}")
+        continue
 
 
 def hunter_session() -> None:
