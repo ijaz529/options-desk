@@ -21,6 +21,10 @@ on:
         description: 'steward | hunter | sweep | status'
         default: status
 
+# the desk commits its own decision log — the default token is read-only
+permissions:
+  contents: write
+
 concurrency:
   group: desk
   cancel-in-progress: false
