@@ -10,7 +10,7 @@ the submission form.
 | Autonomous AI trading agent on the Trading API | ✅ three-agent desk, runs on a schedule |
 | Uses Alpaca's MCP server **or** CLI | ✅ both: Claude researches through the MCP server; the CLI is the heartbeat's read door |
 | Strategy incorporates options | ✅ options income core + long-options convexity |
-| Brand-new paper account at exactly $100,000 | ✅ created 26 Aug (never traded pre-contest) |
+| Brand-new paper account at exactly $100,000 | ✅ **PA3G3BG7TIBD**, created 28 Aug minutes before kickoff — zero orders ever placed pre-contest |
 | Public GitHub repo, MIT, original | ⬜ flip to public at kickoff (owner's click) |
 | Account ID in the submission | ⬜ paste at submission time |
 | One-page write-up (AI logic, risk gates, infrastructure) | ✅ docs/WRITEUP.md — regenerates itself every session |
@@ -72,7 +72,8 @@ the submission form.
 
 ## Pre-flight (28 Aug, morning) — all green
 
-- Contest account PA3SKVNYTFJK: exactly $100,000.00, zero positions, options level 3, never traded
+- Contest account **PA3G3BG7TIBD**: exactly $100,000.00, zero orders ever, zero positions, options level 3
+- (PA3SKVNYTFJK retired: it carried one cancelled, never-filled connectivity test from 27 Aug — swapped for a spotless blotter)
 - 36 tests green · repo synced · 3 Actions secrets set · schedule disabled until kickoff
 - MCP door: server spawns, 72 tools, 51 read-only exposed · CLI door: reads account clean
 - Enable command: `gh api -X PUT repos/ijaz529/options-desk/actions/workflows/342935881/enable`
