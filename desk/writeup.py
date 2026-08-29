@@ -30,7 +30,7 @@ every number below is imported from the code it describes.*
 ## AI logic
 
 Three agents share one $100,000 paper account. **The Steward** (~$70k) sells the
-week's ordinariness: cash-secured puts at the ~{abs(steward.TARGET_DELTA):.0%}-delta strike on liquid
+week's ordinariness: cash-secured puts at the ~{abs(steward.TARGET_DELTA) * 100:.0f}-delta strike on liquid
 names, premium ≥ {steward.MIN_PREMIUM_YIELD:.2%} of the obligation or no trade, take-profit at
 {steward.TAKE_PROFIT_FRAC:.0%} of the credit, stop if it doubles. **The Hunter** (~$20k) is Claude
 working through **Alpaca's MCP server**: it computes nothing — it *reads*, with
@@ -38,7 +38,7 @@ read-only tools it calls itself (positions, bars, option chains), then must
 conclude in a strict schema: symbol from a fixed universe, thesis ≤ {hunter.THESIS_MAX_CHARS}
 characters and falsifiable, premium ≤ ${hunter.MAX_PREMIUM_USD:,.0f}, invalidation stated. A
 proposal that bends any rule is discarded whole. The desk — not Claude — turns
-surviving theses into ~{hunter.TARGET_DELTA_ABS:.0%}-delta weekly contracts and sizes them. At
+surviving theses into ~{hunter.TARGET_DELTA_ABS * 100:.0f}-delta weekly contracts and sizes them. At
 weekends a mechanical spot-crypto rule (≥ {weekend.ENTRY_THRESHOLD:.1%} 24h momentum, ${weekend.SLEEVE_TOTAL:,.0f}
 sleeve, ±{weekend.STOP_FRAC:.0%} exits) keeps the book earning while options sleep.
 
@@ -65,9 +65,10 @@ audit trail builds itself in public.
 
 ## The record so far
 
-{len(rows)} logged decisions · {trades} trades/exits · {holds} deliberate holds ·
+{len(rows)} logged decisions · {trades} trade{'' if trades == 1 else 's'}/exits · {holds} deliberate hold{'' if holds == 1 else 's'} ·
 {len(vetoes)} Risk Officer vetoes · by agent: {dict(by_agent)}.
 The full plain-English log: [`logs/decisions.md`](../logs/decisions.md).
+New to options? [`HOW-IT-WORKS.md`](HOW-IT-WORKS.md) explains the whole desk without jargon.
 """
 
 

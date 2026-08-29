@@ -22,6 +22,13 @@ The plain-English decision log is not decoration. An agent that can explain
 "I sold the 30 Sep 240 put for $1.85 because IV rank is 72 and the strike sits
 below the 20-day range" is auditable, debuggable, and honest about its losers.
 
+## Reading order
+
+- **[docs/HOW-IT-WORKS.md](docs/HOW-IT-WORKS.md)** — the whole desk in plain English, no options knowledge assumed
+- **[docs/WRITEUP.md](docs/WRITEUP.md)** — the one-page submission summary, regenerated from the live system
+- **[docs/STRATEGY.md](docs/STRATEGY.md)** — the exact rules the code implements
+- **[logs/decisions.md](logs/decisions.md)** — every decision and every deliberate non-decision, as it happened
+
 ## Alpaca stack
 
 - **Trading API** (paper) — all order flow, positions, account state.
