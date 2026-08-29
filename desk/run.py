@@ -132,9 +132,27 @@ def steward_session() -> None:
         continue
 
 
+HUNTER_COOLDOWN_MIN = 90
+
+
 def hunter_session() -> None:
-    """Twice a session: Claude reads the tape (and researches it through Alpaca's
-    MCP server when available), the desk trades what survives."""
+    """Twice a day: Claude reads the tape (and researches it through Alpaca's
+    MCP server when available), the desk trades what survives.
+
+    The redundant cron triggers exist so a DROPPED slot retries — not so the
+    sleeve doubles. A buy inside the cooldown means this is the retry of a slot
+    that already ran, so the session stands down. The two genuine sessions
+    (14:xx and 18:xx) are hours apart and unaffected."""
+    cutoff = datetime.now(timezone.utc) - timedelta(minutes=HUNTER_COOLDOWN_MIN)
+    recent = [r for r in log.rows()
+              if r["agent"] == "hunter" and r["action"].startswith("buy_")
+              and r["ts"] >= cutoff.isoformat()]
+    if recent:
+        log.record("hunter", "hold",
+                   f"Stood down: this sleeve already traded {len(recent)} time(s) within "
+                   f"{HUNTER_COOLDOWN_MIN} minutes. The duplicate cron slots are a retry "
+                   "for dropped runs, not a licence to double the position.")
+        return
     rows = hunter.tape()
     import shutil
     if shutil.which("uvx") and os.environ.get("ANTHROPIC_API_KEY"):

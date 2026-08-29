@@ -8,13 +8,33 @@
 name: desk
 on:
   schedule:
-    - cron: '45 13 * * 1-5'
-    - cron: '15 14 * * 1-5'
-    - cron: '30 18 * * 1-5'
-    - cron: '*/30 14-19 * * 1-5'
-    - cron: '0 * * * 0,6'
-    - cron: '0 10 * * 6'
-    - cron: '0 13 4 9 *'
+    # ODD MINUTES ON PURPOSE. Measured on this account 28-29 Aug: GitHub delivered
+    # ~11% of scheduled slots landing on :00/:15/:30/:45, delayed 7-38 min when it
+    # did — those are the platform's busiest minutes and `schedule` is best-effort.
+    # Critical sessions therefore get SEVERAL chances; every session is idempotent
+    # (steward and weekend skip names already held or working; hunter skips if it
+    # has already traded today; sweep and derisk close what is open), so a double
+    # fire costs nothing and a dropped slot costs a retry instead of the session.
+    #
+    # steward — the income round, once the open has settled (13:30 UTC)
+    - cron: '47 13 * * 1-5'
+    - cron: '58 13 * * 1-5'
+    - cron: '11 14 * * 1-5'
+    # hunter — twice a session, Claude reading a fresh tape
+    - cron: '19 14 * * 1-5'
+    - cron: '29 14 * * 1-5'
+    - cron: '33 18 * * 1-5'
+    - cron: '43 18 * * 1-5'
+    # sweep — mechanical exits, roughly every 20 minutes in session
+    - cron: '3,23,43 14-19 * * 1-5'
+    # weekend — the crypto sleeve decides Saturday, exits run hourly all weekend
+    - cron: '13 10 * * 6'
+    - cron: '27 10 * * 6'
+    - cron: '7 * * * 0,6'
+    # de-risk — the contest's last session. Three chances: this one cannot be missed.
+    - cron: '3 13 4 9 *'
+    - cron: '17 13 4 9 *'
+    - cron: '33 13 4 9 *'
   workflow_dispatch:
     inputs:
       session:
@@ -55,10 +75,14 @@ jobs:
             echo "cmd=${{ inputs.session }}" >> "$GITHUB_OUTPUT"
           else
             case "${{ github.event.schedule }}" in
-              '45 13 * * 1-5') echo "cmd=steward" >> "$GITHUB_OUTPUT" ;;
-              '15 14 * * 1-5'|'30 18 * * 1-5') echo "cmd=hunter" >> "$GITHUB_OUTPUT" ;;
-              '0 10 * * 6') echo "cmd=weekend" >> "$GITHUB_OUTPUT" ;;
-              '0 13 4 9 *') echo "cmd=derisk" >> "$GITHUB_OUTPUT" ;;
+              '47 13 * * 1-5'|'58 13 * * 1-5'|'11 14 * * 1-5')
+                echo "cmd=steward" >> "$GITHUB_OUTPUT" ;;
+              '19 14 * * 1-5'|'29 14 * * 1-5'|'33 18 * * 1-5'|'43 18 * * 1-5')
+                echo "cmd=hunter" >> "$GITHUB_OUTPUT" ;;
+              '13 10 * * 6'|'27 10 * * 6')
+                echo "cmd=weekend" >> "$GITHUB_OUTPUT" ;;
+              '3 13 4 9 *'|'17 13 4 9 *'|'33 13 4 9 *')
+                echo "cmd=derisk" >> "$GITHUB_OUTPUT" ;;
               *) echo "cmd=sweep" >> "$GITHUB_OUTPUT" ;;
             esac
           fi
