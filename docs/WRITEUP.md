@@ -1,12 +1,12 @@
 # The Options Desk — one page
 
-*Generated 29 Aug 2026 05:41 UTC from the running system;
+*Generated 29 Aug 2026 08:46 UTC from the running system;
 every number below is imported from the code it describes.*
 
 ## AI logic
 
 Three agents share one $100,000 paper account. **The Steward** (~$70k) sells the
-week's ordinariness: cash-secured puts at the ~20%-delta strike on liquid
+week's ordinariness: cash-secured puts at the ~20-delta strike on liquid
 names, premium ≥ 0.15% of the obligation or no trade, take-profit at
 65% of the credit, stop if it doubles. **The Hunter** (~$20k) is Claude
 working through **Alpaca's MCP server**: it computes nothing — it *reads*, with
@@ -14,7 +14,7 @@ read-only tools it calls itself (positions, bars, option chains), then must
 conclude in a strict schema: symbol from a fixed universe, thesis ≤ 280
 characters and falsifiable, premium ≤ $2,000, invalidation stated. A
 proposal that bends any rule is discarded whole. The desk — not Claude — turns
-surviving theses into ~35%-delta weekly contracts and sizes them. At
+surviving theses into ~35-delta weekly contracts and sizes them. At
 weekends a mechanical spot-crypto rule (≥ 1.5% 24h momentum, $2,500
 sleeve, ±4% exits) keeps the book earning while options sleep.
 
@@ -41,6 +41,7 @@ audit trail builds itself in public.
 
 ## The record so far
 
-11 logged decisions · 1 trades/exits · 0 deliberate holds ·
+11 logged decisions · 1 trade/exits · 0 deliberate holds ·
 9 Risk Officer vetoes · by agent: {'risk': 9, 'steward': 1, 'desk': 1}.
 The full plain-English log: [`logs/decisions.md`](../logs/decisions.md).
+New to options? [`HOW-IT-WORKS.md`](HOW-IT-WORKS.md) explains the whole desk without jargon.
