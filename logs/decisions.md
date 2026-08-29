@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-08-29
+
+- **04:31** → `desk` **note** — Bookkeeping: Friday 15:39 UTC's session placed six orders (UBER, PFE, DIS, BAC, WMT, KO puts) whose diary rows were lost to the crash-before-commit bug fixed minutes later — the orders themselves are on the public blotter (UBER and XOM filled, $127 premium; the rest expired unfilled at Friday's close). The Hunter's first scheduled session ran 7h late (GitHub queue) and died on a missing dependency; fixed before any Hunter capital moved.
+
 ## 2026-08-28
 
 - **15:33** 🛑 `risk` **veto** — Vetoed: steward has $0 of $70,000 deployed; $76,500 more would breach the sleeve.
