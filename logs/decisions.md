@@ -3,6 +3,7 @@
 ## 2026-08-29
 
 - **04:31** → `desk` **note** — Bookkeeping: Friday 15:39 UTC's session placed six orders (UBER, PFE, DIS, BAC, WMT, KO puts) whose diary rows were lost to the crash-before-commit bug fixed minutes later — the orders themselves are on the public blotter (UBER and XOM filled, $127 premium; the rest expired unfilled at Friday's close). The Hunter's first scheduled session ran 7h late (GitHub queue) and died on a missing dependency; fixed before any Hunter capital moved.
+- **10:21** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD -0.2%, ETH/USD -0.2%). Cash is a position.
 
 ## 2026-08-28
 
