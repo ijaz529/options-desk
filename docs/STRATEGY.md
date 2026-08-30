@@ -60,8 +60,14 @@ spot only, ≤ $5,000 total, 24/7 monitoring via CLI cron, ±4% stop/target.
    defined-risk. (Also keeps us within paper option level semantics.)
 2. **Sleeve caps are absolute** — an agent at its cap proposes nothing.
 3. **Daily drawdown gate:** account down >2.5% on the day → no new risk that day.
-4. **Weekly kill switch:** account below $96,000 → everything to flat, desk
-   income-only for the remainder.
+4. **Weekly kill switch (clarified 29 Aug, pre-Monday):** account below $96,000
+   → the desk goes **income-only**: the Hunter and the weekend crypto sleeve are
+   shut for the remainder, while the Steward may keep selling cash-secured puts
+   — the defined-outcome income that earns the account back. The first
+   implementation blocked EVERY opening trade, which contradicted this clause
+   and would have frozen the desk entirely on one bad Tuesday; the code now
+   matches the words. Existing risk still sweeps normally (closing is always
+   allowed) and the drawdown/concentration/sleeve gates still bind the Steward.
 5. **Concentration:** ≤ 20% of account notional in any single underlying.
 6. **Time gate:** no new positions in the final 3 hours of the contest; the
    final session is for de-risking into cash + marked P&L.

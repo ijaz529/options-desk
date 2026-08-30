@@ -31,8 +31,11 @@ def test_naked_short_vetoed_before_anything_else():
     assert not v.approved and v.gate == "no-naked-shorts"
 
 
-def test_kill_switch_below_96k():
-    v = review(csp(), state(equity=95_999.0))
+def test_kill_switch_below_96k_blocks_the_hunter():
+    # income-only: the Steward's CSPs pass (covered by the dedicated test below);
+    # anything that is not income is vetoed
+    v = review(Proposal(agent="hunter", symbol="AMD", kind="long_option", notional=1_500),
+               state(equity=95_999.0, day_start_equity=95_999.0))
     assert not v.approved and v.gate == "kill-switch"
 
 
@@ -73,3 +76,16 @@ def test_every_verdict_explains_itself():
     for s in (state(), state(equity=90_000.0), state(minutes_to_contest_end=10.0)):
         v = review(csp(), s)
         assert len(v.because) > 20
+
+
+def test_kill_switch_is_income_only_not_a_freeze():
+    """Below $96k the Hunter shuts but the Steward keeps selling insurance."""
+    poor = AccountState(equity=95_500, day_start_equity=95_500,
+                        sleeve_used={"steward": 0, "hunter": 0},
+                        underlying_notional={}, minutes_to_contest_end=5_000)
+    csp = review(Proposal(agent="steward", symbol="XOM", kind="csp", notional=15_000), poor)
+    assert csp.approved, csp.because
+    ticket = review(Proposal(agent="hunter", symbol="AMD", kind="long_option", notional=1_500), poor)
+    assert not ticket.approved and ticket.gate == "kill-switch"
+    crypto = review(Proposal(agent="hunter", symbol="BTC/USD", kind="crypto_spot", notional=1_000), poor)
+    assert not crypto.approved and crypto.gate == "kill-switch"

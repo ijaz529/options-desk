@@ -51,10 +51,15 @@ def review(p: Proposal, a: AccountState) -> Verdict:
                        f"Vetoed: the {p.symbol} short option is not fully covered. "
                        "Every short put is cash-secured, every spread defined-risk — no exceptions.")
 
-    if a.equity < KILL_SWITCH_EQUITY:
+    if a.equity < KILL_SWITCH_EQUITY and not (p.agent == "steward" and p.kind == "csp"):
+        # income-only means exactly that: the Hunter and the weekend sleeve are
+        # shut, but the Steward may keep selling cash-secured puts — the
+        # defined-outcome income that earns the account back. The first version
+        # blocked EVERYTHING, contradicting its own log message, and one bad
+        # Tuesday would have frozen the desk for the rest of the contest.
         return Verdict(False, "kill-switch",
                        f"Vetoed: account equity ${a.equity:,.0f} is below the ${KILL_SWITCH_EQUITY:,.0f} "
-                       "kill switch. The desk is income-only for the remainder of the week.")
+                       f"kill switch — the desk is income-only, and a {p.agent} {p.kind} is not income.")
 
     dd = 1.0 - a.equity / a.day_start_equity if a.day_start_equity else 0.0
     if dd > DAILY_DRAWDOWN_GATE:
