@@ -23,3 +23,15 @@
 {"ts": "2026-08-31T19:41:55+00:00", "agent": "desk", "action": "note", "because": "INTC: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 8442.01, availab"}
 {"ts": "2026-08-31T19:41:55+00:00", "agent": "steward", "action": "sell_put", "because": "Sold the T 04 Sep 25.5 put at ~0.10 (0.39% of the $2,550 obligation). Delta -0.24 puts the strike 1.9% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.", "symbol": "T260904P00025500", "credit": 0.1, "order_id": "4233d92d-d4c5-4a60-a3de-a68ef0ecdc34"}
 {"ts": "2026-08-31T19:41:56+00:00", "agent": "desk", "action": "note", "because": "GM: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 8362.01, availab"}
+{"ts": "2026-08-31T19:49:41+00:00", "agent": "steward", "action": "hold", "because": "Already carrying XOM risk — one position per name."}
+{"ts": "2026-08-31T19:49:41+00:00", "agent": "steward", "action": "hold", "because": "Already carrying CVX risk — one position per name."}
+{"ts": "2026-08-31T19:49:41+00:00", "agent": "steward", "action": "hold", "because": "No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-08-31T19:49:41+00:00", "agent": "steward", "action": "hold", "because": "Already carrying WMT risk — one position per name."}
+{"ts": "2026-08-31T19:49:41+00:00", "agent": "steward", "action": "hold", "because": "Already carrying BAC risk — one position per name."}
+{"ts": "2026-08-31T19:49:41+00:00", "agent": "steward", "action": "hold", "because": "Already carrying DIS risk — one position per name."}
+{"ts": "2026-08-31T19:49:41+00:00", "agent": "steward", "action": "hold", "because": "Already carrying UBER risk — one position per name."}
+{"ts": "2026-08-31T19:49:41+00:00", "agent": "steward", "action": "hold", "because": "No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-08-31T19:49:41+00:00", "agent": "desk", "action": "note", "because": "CSCO: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 10761.01, availa"}
+{"ts": "2026-08-31T19:49:41+00:00", "agent": "desk", "action": "note", "because": "INTC: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 8440.01, availab"}
+{"ts": "2026-08-31T19:49:41+00:00", "agent": "steward", "action": "hold", "because": "Already carrying T risk — one position per name."}
+{"ts": "2026-08-31T19:49:41+00:00", "agent": "desk", "action": "note", "because": "GM: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 8279.01, availab"}
