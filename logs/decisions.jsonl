@@ -35,3 +35,5 @@
 {"ts": "2026-08-31T19:49:41+00:00", "agent": "desk", "action": "note", "because": "INTC: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 8440.01, availab"}
 {"ts": "2026-08-31T19:49:41+00:00", "agent": "steward", "action": "hold", "because": "Already carrying T risk — one position per name."}
 {"ts": "2026-08-31T19:49:41+00:00", "agent": "desk", "action": "note", "because": "GM: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 8279.01, availab"}
+{"ts": "2026-08-31T19:52:28+00:00", "agent": "steward", "action": "stop", "because": "Buying back at 1.22: the option has doubled against the 0.41 credit. The week is not ordinary — the rule says leave.", "symbol": "UBER260904P00076000", "order_id": "3bb59bb9-f765-463b-9876-7c4823c9bd76"}
+{"ts": "2026-08-31T19:52:29+00:00", "agent": "steward", "action": "take_profit", "because": "Buying back at 0.20: 77% of the 0.86 credit is banked, and the last cents are not worth the tail.", "symbol": "XOM260904P00152500", "order_id": "74b4ffec-2899-4e40-9c37-0cabecc587c5"}

@@ -26,6 +26,8 @@
 - **19:49** → `desk` **note** — INTC: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8440.01, availab
 - **19:49** · `steward` **hold** — Already carrying T risk — one position per name.
 - **19:49** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8279.01, availab
+- **19:52** → `steward` **stop** — Buying back at 1.22: the option has doubled against the 0.41 credit. The week is not ordinary — the rule says leave.
+- **19:52** → `steward` **take_profit** — Buying back at 0.20: 77% of the 0.86 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-08-29
 
