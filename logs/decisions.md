@@ -28,6 +28,18 @@
 - **19:49** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8279.01, availab
 - **19:52** → `steward` **stop** — Buying back at 1.22: the option has doubled against the 0.41 credit. The week is not ordinary — the rule says leave.
 - **19:52** → `steward` **take_profit** — Buying back at 0.20: 77% of the 0.86 credit is banked, and the last cents are not worth the tail.
+- **20:00** → `steward` **sell_put** — Sold the XOM 04 Sep 157.5 put at ~0.78 (0.50% of the $15,750 obligation). Delta -0.24 puts the strike 2.2% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **20:00** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **20:00** · `steward` **hold** — No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **20:00** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **20:00** → `steward` **sell_put** — Sold the BAC 04 Sep 61 put at ~0.29 (0.48% of the $6,100 obligation). Delta -0.27 puts the strike 1.5% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **20:00** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **20:00** → `steward` **sell_put** — Sold the UBER 04 Sep 74 put at ~0.53 (0.72% of the $7,400 obligation). Delta -0.28 puts the strike 2.2% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **20:00** → `steward` **sell_put** — Sold the PFE 04 Sep 28 put at ~0.15 (0.54% of the $2,800 obligation). Delta -0.28 puts the strike 1.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **20:01** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **20:01** → `steward` **sell_put** — Sold the INTC 04 Sep 85 put at ~0.63 (0.74% of the $8,500 obligation). Delta -0.20 puts the strike 5.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **20:01** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **20:01** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-08-29
 
