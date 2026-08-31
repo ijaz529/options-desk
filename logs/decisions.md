@@ -1,5 +1,20 @@
 # The desk's decision log
 
+## 2026-08-31
+
+- **19:41** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **19:41** → `steward` **sell_put** — Sold the CVX 04 Sep 200 put at ~0.57 (0.28% of the $20,000 obligation). Delta -0.17 puts the strike 2.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **19:41** · `steward` **hold** — No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **19:41** → `steward` **sell_put** — Sold the WMT 04 Sep 103 put at ~0.29 (0.28% of the $10,300 obligation). Delta -0.21 puts the strike 1.8% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **19:41** → `steward` **sell_put** — Sold the BAC 04 Sep 61 put at ~0.28 (0.46% of the $6,100 obligation). Delta -0.26 puts the strike 1.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **19:41** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **19:41** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **19:41** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **19:41** → `desk` **note** — CSCO: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 10757.01, availa
+- **19:41** → `desk` **note** — INTC: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8442.01, availab
+- **19:41** → `steward` **sell_put** — Sold the T 04 Sep 25.5 put at ~0.10 (0.39% of the $2,550 obligation). Delta -0.24 puts the strike 1.9% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **19:41** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8362.01, availab
+
 ## 2026-08-29
 
 - **04:31** → `desk` **note** — Bookkeeping: Friday 15:39 UTC's session placed six orders (UBER, PFE, DIS, BAC, WMT, KO puts) whose diary rows were lost to the crash-before-commit bug fixed minutes later — the orders themselves are on the public blotter (UBER and XOM filled, $127 premium; the rest expired unfilled at Friday's close). The Hunter's first scheduled session ran 7h late (GitHub queue) and died on a missing dependency; fixed before any Hunter capital moved.
