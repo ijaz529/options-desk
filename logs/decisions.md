@@ -7,6 +7,18 @@
 - **12:43** → `desk` **cancel** — Cancelled the overnight order on UBER260904P00074000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
 - **12:43** → `desk` **cancel** — Cancelled the overnight order on BAC260904P00061000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
 - **12:43** → `desk` **cancel** — Cancelled the overnight order on XOM260904P00157500: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
+- **14:53** → `steward` **sell_put** — Sold the XOM 04 Sep 160 put at ~0.70 (0.44% of the $16,000 obligation). Delta -0.24 puts the strike 1.9% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:53** 🛑 `risk` **veto** — Vetoed: CVX would be $20,500, past 20% of the account in one name.
+- **14:53** · `steward` **hold** — No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:53** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **14:53** → `steward` **sell_put** — Sold the BAC 04 Sep 61 put at ~0.23 (0.38% of the $6,100 obligation). Delta -0.23 puts the strike 1.9% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:53** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **14:53** → `steward` **sell_put** — Sold the UBER 04 Sep 74 put at ~0.45 (0.61% of the $7,400 obligation). Delta -0.27 puts the strike 2.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:53** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:53** → `steward` **sell_put** — Sold the CSCO 04 Sep 107 put at ~0.49 (0.46% of the $10,700 obligation). Delta -0.25 puts the strike 2.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:53** → `desk` **note** — INTC: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8346.01, availab
+- **14:53** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:53** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-08-31
 
