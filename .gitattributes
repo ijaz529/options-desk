@@ -1,0 +1,2 @@
+# the diary is append-only: concurrent session commits interleave, never conflict
+logs/decisions.jsonl merge=union

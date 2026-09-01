@@ -185,7 +185,17 @@ def hunter_session() -> None:
         if not verdict.approved:
             log.record("risk", "veto", verdict.because, gate=verdict.gate, symbol=t.symbol)
             continue
-        order_id = broker.buy_option(q.symbol, qty, q.mid)
+        try:
+            order_id = broker.buy_option(q.symbol, qty, q.mid)
+        except Exception as e:
+            # A broker refusal is a decision too — log it and stand down on this
+            # ticket. First seen 1 Sep: options buying power read 0 minutes after
+            # the steward reserved cash for four fresh puts; the ticket died at
+            # the broker and took the whole session (and its diary) with it.
+            log.record("hunter", "hold",
+                       f"{t.symbol}: the broker refused the ticket — {str(e)[:160]}. "
+                       "Stood down on this thesis; the later slot retries with fresh buying power.")
+            continue
         log.record("hunter", f"buy_{t.direction}",
                    f"{t.thesis} — {qty}× {q.symbol} at ~{q.mid:.2f} (${premium:,.0f} premium, "
                    f"the whole downside). Invalidation: {t.invalidation}",
