@@ -1,5 +1,13 @@
 # The desk's decision log
 
+## 2026-09-01
+
+- **12:43** → `desk` **cancel** — Cancelled the overnight order on INTC260904P00085000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
+- **12:43** → `desk` **cancel** — Cancelled the overnight order on PFE260904P00028000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
+- **12:43** → `desk` **cancel** — Cancelled the overnight order on UBER260904P00074000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
+- **12:43** → `desk` **cancel** — Cancelled the overnight order on BAC260904P00061000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
+- **12:43** → `desk` **cancel** — Cancelled the overnight order on XOM260904P00157500: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
+
 ## 2026-08-31
 
 - **19:41** · `steward` **hold** — Already carrying XOM risk — one position per name.
