@@ -74,6 +74,7 @@
 - **18:00** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8271.01, availab
 - **18:27** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_stock_bars({"symbols": "AAPL,ORCL,MU", "timeframe": "1Day", "days": 10}); get_all_positions({}); get_stock_snapshot({"symbols": "COIN,SHOP,PLTR,GS,MU"}); get_option_chain({"underlying_symbol": "MU", "type": "put", "expiration_date_lte": "2026-09-11", "strike_price_gte": 870, "strike_price_l)
 - **18:27** → `hunter` **buy_put** — MU spiked to a new high (958) then reversed hard, closing near the day's low (930) on in-line volume, while AMD/QCOM/INTC sold off in tandem — looks like sector rotation out of semis, not idiosyncratic noise. Expect follow-through weakness. — 1× MU260904P00910000 at ~11.14 ($1,114 premium, the whole downside). Invalidation: Exit/invalidated if MU closes back above ~950 (reclaims prior breakout level) or semis broadly turn green with MU outperforming.
+- **18:33** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 
 ## 2026-08-31
 
