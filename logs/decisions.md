@@ -46,6 +46,18 @@
 - **17:34** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **17:34** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **17:34** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8350.01, availab
+- **17:48** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:48** 🛑 `risk` **veto** — Vetoed: steward has $50,300 of $70,000 deployed; $20,500 more would breach the sleeve.
+- **17:48** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **17:48** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **17:48** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **17:48** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **17:48** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **17:48** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:48** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **17:48** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **17:48** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:48** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8271.01, availab
 
 ## 2026-08-31
 
