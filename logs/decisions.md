@@ -19,6 +19,9 @@
 - **14:53** → `desk` **note** — INTC: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8346.01, availab
 - **14:53** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **14:53** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **16:48** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 3 read-only tool calls before concluding. Trail: get_all_positions({}); get_news({"symbols": "ORCL,AAPL,COIN", "limit": 15}); get_stock_bars({"symbols": "AAPL,ORCL", "timeframe": "1Day", "days": 10})
+- **16:48** → `hunter` **buy_call** — AAPL broke out of its 1-wk range (310-322) on the heaviest volume of the week (+11% vs prior day), closing at day high +2.76%. New-CEO news landed positively, not negatively. Momentum breakout, not mean-reversion bounce. — 5× AAPL260904C00330000 at ~1.77 ($885 premium, the whole downside). Invalidation: Invalidate if AAPL closes back below 316 (today's open) or 312 (prior breakout level), signaling failed breakout.
+- **16:48** → `hunter` **buy_put** — ORCL fell 5.4% closing at the low of day and low of the week (146->141), driven by concrete debt/AI-capex catalyst (Burry short, $95B debt headlines). Down 3 of last 4 sessions with weakening closes - trend, not one-off news spike. — 3× ORCL260904P00139000 at ~1.91 ($573 premium, the whole downside). Invalidation: Invalidate if ORCL reclaims 148 (prior support turned resistance) or closes green with volume expansion.
 
 ## 2026-08-31
 
