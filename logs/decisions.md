@@ -34,6 +34,18 @@
 - **17:27** → `steward` **sell_put** — Sold the INTC 04 Sep 85 put at ~0.69 (0.81% of the $8,500 obligation). Delta -0.23 puts the strike 4.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **17:27** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **17:27** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:34** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:34** 🛑 `risk` **veto** — Vetoed: steward has $50,300 of $70,000 deployed; $20,500 more would breach the sleeve.
+- **17:34** → `steward` **sell_put** — Sold the KO 04 Sep 87 put at ~0.24 (0.28% of the $8,700 obligation). Delta -0.25 puts the strike 1.2% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:34** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **17:34** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **17:34** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **17:34** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **17:34** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:34** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **17:34** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **17:34** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:34** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8350.01, availab
 
 ## 2026-08-31
 
