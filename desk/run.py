@@ -243,6 +243,17 @@ def derisk() -> None:
 
 def sweep() -> None:
     """Mechanical exits, both sleeves; closing risk is always allowed."""
+    # No order outlives its session (STRATEGY.md rule 8): a limit that survived
+    # overnight was priced off a dead session and only fills adversely.
+    today = datetime.now(timezone.utc).date()
+    for o in broker.open_orders():
+        if datetime.fromisoformat(o["created_at"]).date() < today:
+            broker.cancel_order(o["id"])
+            log.record("desk", "cancel",
+                       f"Cancelled the overnight order on {o['symbol']}: its limit was priced "
+                       "off yesterday's session, and a stale limit only fills when the market "
+                       "has moved against it. The next session re-prices from a live chain.",
+                       symbol=o["symbol"])
     for p in read_positions():
         if p["asset_class"] == "crypto" and p["qty"] > 0:
             fire = weekend.exit_action(entry_cost=abs(p["cost_basis"]), market_value=abs(p["market_value"]))

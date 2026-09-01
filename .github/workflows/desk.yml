@@ -16,13 +16,21 @@ on:
     # has already traded today; sweep and derisk close what is open), so a double
     # fire costs nothing and a dropped slot costs a retry instead of the session.
     #
-    # steward — the income round, once the open has settled (13:30 UTC)
+    # steward — the income round, once the open has settled (13:30 UTC).
+    # Five slots, not three: on Mon 31 Aug all three morning slots were dropped
+    # and the session first ran at 19:40 — sessions are idempotent, so slots are
+    # retries for a best-effort scheduler, not extra sessions.
     - cron: '47 13 * * 1-5'
     - cron: '58 13 * * 1-5'
     - cron: '11 14 * * 1-5'
-    # hunter — twice a session, Claude reading a fresh tape
+    - cron: '31 14 * * 1-5'
+    - cron: '53 14 * * 1-5'
+    # hunter — twice a session, Claude reading a fresh tape; the 90-minute
+    # cooldown makes extra slots retries, never a doubled position
     - cron: '19 14 * * 1-5'
     - cron: '29 14 * * 1-5'
+    - cron: '7 15 * * 1-5'
+    - cron: '21 15 * * 1-5'
     - cron: '33 18 * * 1-5'
     - cron: '43 18 * * 1-5'
     # sweep — mechanical exits, roughly every 20 minutes in session
@@ -75,9 +83,9 @@ jobs:
             echo "cmd=${{ inputs.session }}" >> "$GITHUB_OUTPUT"
           else
             case "${{ github.event.schedule }}" in
-              '47 13 * * 1-5'|'58 13 * * 1-5'|'11 14 * * 1-5')
+              '47 13 * * 1-5'|'58 13 * * 1-5'|'11 14 * * 1-5'|'31 14 * * 1-5'|'53 14 * * 1-5')
                 echo "cmd=steward" >> "$GITHUB_OUTPUT" ;;
-              '19 14 * * 1-5'|'29 14 * * 1-5'|'33 18 * * 1-5'|'43 18 * * 1-5')
+              '19 14 * * 1-5'|'29 14 * * 1-5'|'7 15 * * 1-5'|'21 15 * * 1-5'|'33 18 * * 1-5'|'43 18 * * 1-5')
                 echo "cmd=hunter" >> "$GITHUB_OUTPUT" ;;
               '13 10 * * 6'|'27 10 * * 6')
                 echo "cmd=weekend" >> "$GITHUB_OUTPUT" ;;

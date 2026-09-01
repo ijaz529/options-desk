@@ -72,6 +72,12 @@ spot only, ≤ $5,000 total, 24/7 monitoring via CLI cron, ±4% stop/target.
 6. **Time gate:** no new positions in the final 3 hours of the contest; the
    final session is for de-risking into cash + marked P&L.
 7. Every rejection is logged: what was proposed, which gate, in plain English.
+8. **No order outlives its session (added 1 Sep).** A working order still open
+   from a previous day was priced off a session that no longer exists; a stale
+   limit only fills when the market has moved against it. The first sweep of
+   each day cancels overnight orders and lets the next session re-price from a
+   live chain. (Observed 31 Aug: a late-delivered steward run placed five puts
+   at 20:00 UTC — the closing bell — which queued overnight at Monday's mids.)
 
 ## The decision log
 

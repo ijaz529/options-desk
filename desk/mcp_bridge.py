@@ -59,7 +59,11 @@ TAPE:
 
 def _mcp_params() -> StdioServerParameters:
     return StdioServerParameters(
-        command="uvx", args=["alpaca-mcp-server"],
+        # fastmcp pinned: 4.0.0 (released 31 Aug) removed fastmcp.tools.tool,
+        # which alpaca-mcp-server still imports — a fresh uvx resolve in CI
+        # crashed the server at import on every Monday hunter slot ("Connection
+        # closed" at initialize). Local caches held 3.4.7, so pre-flight passed.
+        command="uvx", args=["--with", "fastmcp==3.4.7", "alpaca-mcp-server"],
         env={**os.environ,
              "ALPACA_API_KEY": os.environ.get("ALPACA_API_KEY_ID", os.environ.get("ALPACA_API_KEY", "")),
              "ALPACA_SECRET_KEY": os.environ.get("ALPACA_API_SECRET_KEY", os.environ.get("ALPACA_SECRET_KEY", "")),

@@ -148,7 +148,8 @@ def open_orders() -> list[dict]:
     from alpaca.trading.requests import GetOrdersRequest
     from alpaca.trading.enums import QueryOrderStatus
     out = trading().get_orders(GetOrdersRequest(status=QueryOrderStatus.OPEN, limit=100))
-    return [{"id": str(o.id), "symbol": o.symbol, "side": str(o.side), "qty": float(o.qty or 0)}
+    return [{"id": str(o.id), "symbol": o.symbol, "side": str(o.side), "qty": float(o.qty or 0),
+             "created_at": str(o.created_at)}
             for o in out]
 
 
