@@ -61,6 +61,10 @@
 - **18:07** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **18:38** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **18:45** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
+- **20:07** → `hunter` **stop** — Premium 0.85 vs 1.77 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **20:07** → `steward` **take_profit** — Buying back at 0.08: 65% of the 0.23 credit is banked, and the last cents are not worth the tail.
+- **20:07** → `steward` **take_profit** — Buying back at 0.22: 69% of the 0.71 credit is banked, and the last cents are not worth the tail.
+- **20:07** → `hunter` **stop** — Premium 0.46 vs 1.50 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 
 ## 2026-09-01
 
