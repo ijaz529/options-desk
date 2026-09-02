@@ -26,6 +26,12 @@
 - **17:35** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **17:35** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **17:35** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:40** → `steward` **take_profit** — Buying back at 0.07: 79% of the 0.34 credit is banked, and the last cents are not worth the tail.
+- **17:40** → `steward` **take_profit** — Buying back at 0.06: 76% of the 0.25 credit is banked, and the last cents are not worth the tail.
+- **17:40** → `hunter` **stop** — Premium 3.80 vs 11.10 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **17:40** → `hunter` **stop** — Premium 0.50 vs 1.89 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **17:40** → `steward` **take_profit** — Buying back at 0.16: 65% of the 0.46 credit is banked, and the last cents are not worth the tail.
+- **17:40** → `steward` **take_profit** — Buying back at 0.06: 79% of the 0.29 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-09-01
 
