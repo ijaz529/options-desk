@@ -32,6 +32,18 @@
 - **17:40** → `hunter` **stop** — Premium 0.50 vs 1.89 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **17:40** → `steward` **take_profit** — Buying back at 0.16: 65% of the 0.46 credit is banked, and the last cents are not worth the tail.
 - **17:40** → `steward` **take_profit** — Buying back at 0.06: 79% of the 0.29 credit is banked, and the last cents are not worth the tail.
+- **17:53** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:53** · `steward` **hold** — Already carrying CVX risk — one position per name.
+- **17:53** · `steward` **hold** — No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:53** → `steward` **sell_put** — Sold the WMT 04 Sep 105 put at ~0.23 (0.22% of the $10,500 obligation). Delta -0.20 puts the strike 1.5% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:53** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **17:53** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:53** → `steward` **sell_put** — Sold the UBER 04 Sep 75 put at ~0.33 (0.44% of the $7,500 obligation). Delta -0.23 puts the strike 2.3% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:53** → `steward` **sell_put** — Sold the PFE 04 Sep 28.5 put at ~0.08 (0.28% of the $2,850 obligation). Delta -0.23 puts the strike 1.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:53** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:53** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **17:53** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:53** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-01
 
