@@ -1,5 +1,20 @@
 # The desk's decision log
 
+## 2026-09-02
+
+- **17:22** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:22** · `steward` **hold** — Already carrying CVX risk — one position per name.
+- **17:22** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **17:22** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **17:22** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **17:22** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **17:22** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **17:22** 🛑 `risk` **veto** — Vetoed: steward has $67,500 of $70,000 deployed; $2,850 more would breach the sleeve.
+- **17:22** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:22** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **17:22** 🛑 `risk` **veto** — Vetoed: steward has $67,500 of $70,000 deployed; $2,600 more would breach the sleeve.
+- **17:22** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+
 ## 2026-09-01
 
 - **12:43** → `desk` **cancel** — Cancelled the overnight order on INTC260904P00085000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
