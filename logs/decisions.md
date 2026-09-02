@@ -65,6 +65,9 @@
 - **20:07** → `steward` **take_profit** — Buying back at 0.08: 65% of the 0.23 credit is banked, and the last cents are not worth the tail.
 - **20:07** → `steward` **take_profit** — Buying back at 0.22: 69% of the 0.71 credit is banked, and the last cents are not worth the tail.
 - **20:07** → `hunter` **stop** — Premium 0.46 vs 1.50 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **21:15** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_bars({"symbols": "PLTR,NVDA,AVGO,DIS", "timeframe": "1Day", "days": 10}); get_news({"symbols": "PLTR", "limit": 5}); get_option_chain({"underlying_symbol": "PLTR", "type": "put", "expiration_date_gte": "2026-09-11", "expiration_date_lte": "2026-09-19", ")
+- **21:15** 🛑 `hunter` **veto** — Proposal discarded before the gates: PLTR: thesis empty or over 280 chars.
+- **21:15** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
 
 ## 2026-09-01
 
