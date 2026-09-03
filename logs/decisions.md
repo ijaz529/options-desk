@@ -74,6 +74,8 @@
 - **18:36** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 5 read-only tool calls before concluding. Trail: get_news({"symbols": "AVGO,COIN,TSLA,ORCL,PLTR", "limit": 20}); get_stock_bars({"symbols": "AVGO,COIN,TSLA", "timeframe": "1Day", "days": 10}); get_all_positions({}); get_news({"symbols": "AVGO", "limit": 10}); get_option_chain({"underlying_symbol": "AVGO", "type": "call", "expiration_date_gte": "2026-09-04", "expiration_date_lte": "2026-09-12", )
 - **18:36** 🛑 `hunter` **veto** — Proposal discarded before the gates: AVGO: thesis empty or over 280 chars.
 - **18:36** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
+- **18:44** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_all_positions({}); get_news({"symbols": "COIN,TSLA,AVGO", "limit": 15}); get_stock_bars({"symbols": "COIN,TSLA,AVGO", "timeframe": "1Day", "days": 6}); get_stock_snapshot({"symbols": "COIN,TSLA,AVGO"})
+- **18:44** 🛑 `risk` **veto** — Vetoed: account equity $94,942 is below the $96,000 kill switch — the desk is income-only, and a hunter long_option is not income.
 
 ## 2026-09-02
 
