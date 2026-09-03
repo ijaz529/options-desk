@@ -59,6 +59,18 @@
 - **17:58** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **17:58** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **17:58** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:07** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:07** · `steward` **hold** — Already carrying CVX risk — one position per name.
+- **18:07** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **18:07** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **18:07** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **18:07** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:07** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **18:07** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:07** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **18:07** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **18:07** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:07** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-02
 
