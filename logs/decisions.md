@@ -71,6 +71,9 @@
 - **18:07** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **18:07** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **18:07** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:36** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 5 read-only tool calls before concluding. Trail: get_news({"symbols": "AVGO,COIN,TSLA,ORCL,PLTR", "limit": 20}); get_stock_bars({"symbols": "AVGO,COIN,TSLA", "timeframe": "1Day", "days": 10}); get_all_positions({}); get_news({"symbols": "AVGO", "limit": 10}); get_option_chain({"underlying_symbol": "AVGO", "type": "call", "expiration_date_gte": "2026-09-04", "expiration_date_lte": "2026-09-12", )
+- **18:36** 🛑 `hunter` **veto** — Proposal discarded before the gates: AVGO: thesis empty or over 280 chars.
+- **18:36** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
 
 ## 2026-09-02
 
