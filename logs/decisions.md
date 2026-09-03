@@ -78,6 +78,9 @@
 - **18:44** 🛑 `risk` **veto** — Vetoed: account equity $94,942 is below the $96,000 kill switch — the desk is income-only, and a hunter long_option is not income.
 - **20:07** → `hunter` **stop** — Premium 0.56 vs 1.65 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **20:07** → `hunter` **stop** — Premium 1.68 vs 3.45 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **21:19** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 6 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_bars({"symbols": "COIN,PLTR,TSLA,AVGO,ORCL", "timeframe": "1Day", "days": 10}); get_news({"symbols": "COIN,PLTR", "limit": 10}); get_news({"symbols": "AVGO", "limit": 5}); get_option_chain({"underlying_symbol": "AVGO", "type": "put", "strike_price_gte": 345, "strike_price_lte": 365, "expiration_date_lte": "2); get_option_chain({"underlying_symbol": "AVGO", "type": "call", "strike_price_gte": 355, "strike_price_lte": 375, "expiration_date_lte": ")
+- **21:19** 🛑 `hunter` **veto** — Proposal discarded before the gates: AVGO: thesis empty or over 280 chars.
+- **21:19** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
 
 ## 2026-09-02
 
