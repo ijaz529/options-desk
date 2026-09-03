@@ -76,6 +76,8 @@
 - **18:36** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
 - **18:44** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_all_positions({}); get_news({"symbols": "COIN,TSLA,AVGO", "limit": 15}); get_stock_bars({"symbols": "COIN,TSLA,AVGO", "timeframe": "1Day", "days": 6}); get_stock_snapshot({"symbols": "COIN,TSLA,AVGO"})
 - **18:44** 🛑 `risk` **veto** — Vetoed: account equity $94,942 is below the $96,000 kill switch — the desk is income-only, and a hunter long_option is not income.
+- **20:07** → `hunter` **stop** — Premium 0.56 vs 1.65 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **20:07** → `hunter` **stop** — Premium 1.68 vs 3.45 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 
 ## 2026-09-02
 
