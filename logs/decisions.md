@@ -9,6 +9,21 @@
 - **05:07** → `desk` **bookkeeping** — 8 PLTR puts bought 3 Sep at 1.12 — the session traded correctly but its diary commit lost a git race to a concurrent session and was dropped. Stopped same day at 0.07. A diary that hides its own gaps is worthless; these rows are reconstructed from the broker, which is the source of truth, and the commit step now retries through races instead of dropping the log.
 - **05:07** → `desk` **bookkeeping** — 8 COIN calls bought 3 Sep at 1.85 — same lost git race. A diary that hides its own gaps is worthless; these rows are reconstructed from the broker, which is the source of truth, and the commit step now retries through races instead of dropping the log.
 - **05:07** → `desk` **bookkeeping** — 4 TSLA calls bought 3 Sep at 3.45 — same lost git race. Stopped same day at 1.68. A diary that hides its own gaps is worthless; these rows are reconstructed from the broker, which is the source of truth, and the commit step now retries through races instead of dropping the log.
+- **16:45** → `hunter` **close** — Contest end: selling the long leg — flat is the trade.
+- **16:45** → `steward` **close** — Contest end: buying back the short leg — flat is the trade.
+- **16:45** → `hunter` **close** — Contest end: selling the long leg — flat is the trade.
+- **17:06** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:06** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:06** · `steward` **hold** — No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:06** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **17:06** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:06** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:06** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **17:06** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:06** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:06** · `steward` **hold** — No INTC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:06** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:06** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-03
 
