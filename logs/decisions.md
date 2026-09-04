@@ -36,6 +36,10 @@
 - **17:21** · `steward` **hold** — No INTC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **17:21** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **17:21** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:24** → `desk` **cancel** — Cancelled the overnight order on TSLA260904C00390000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
+- **17:24** → `hunter` **stop** — Premium 0.01 vs 3.45 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **17:24** → `steward` **take_profit** — Buying back at 0.03: 91% of the 0.33 credit is banked, and the last cents are not worth the tail.
+- **17:24** → `steward` **stop** — Buying back at 0.71: the option has doubled against the 0.23 credit. The week is not ordinary — the rule says leave.
 
 ## 2026-09-03
 
