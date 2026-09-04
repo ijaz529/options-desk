@@ -105,5 +105,15 @@ jobs:
         if: always()   # a crashed session's partial diary is still a diary
         run: |
           git config user.name "the-desk" && git config user.email "desk@users.noreply.github.com"
+          # decisions.jsonl merges by union (.gitattributes); WRITEUP.md and
+          # decisions.md are DERIVED — on a race, take the other side and
+          # re-render, never fail the push: a lost diary row is the one defect
+          # this project cannot afford (Thu 3 Sep: three hunter buys vanished
+          # in rebase races and their stops referenced entries never logged).
           git add logs/ docs/WRITEUP.md && git diff --cached --quiet || git commit -m "log: ${{ steps.pick.outputs.cmd }} session"
-          git pull --rebase && git push
+          for i in 1 2 3 4 5; do
+            git pull --rebase && git push && break
+            git checkout --theirs docs/WRITEUP.md logs/decisions.md 2>/dev/null || true
+            git add docs/WRITEUP.md logs/decisions.md 2>/dev/null || true
+            GIT_EDITOR=true git rebase --continue || { git rebase --abort; sleep $((i*5)); }
+          done

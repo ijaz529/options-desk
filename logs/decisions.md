@@ -1,5 +1,15 @@
 # The desk's decision log
 
+## 2026-09-04
+
+- **05:07** → `desk` **bookkeeping** — UBER put sold 28 Aug at 0.41 — launch-day fill whose diary row was lost in that session's failed log commit (bug #2, fixed same day). Reconciled from the broker's blotter. A diary that hides its own gaps is worthless; these rows are reconstructed from the broker, which is the source of truth, and the commit step now retries through races instead of dropping the log.
+- **05:07** → `desk` **bookkeeping** — DIS put sold 28 Aug at 0.34 — same launch-day lost log commit. Reconciled from the broker's blotter. A diary that hides its own gaps is worthless; these rows are reconstructed from the broker, which is the source of truth, and the commit step now retries through races instead of dropping the log.
+- **05:07** → `desk` **bookkeeping** — 11 CVX calls bought 2 Sep at 1.65 — placed by the 1 Sep session that crashed on a buying-power error AFTER the order was accepted; the session died before logging. Stacked on a later session's 10-lot: $3,465 on one name, past the $2,000-per-thesis intent. The stop rule managed the merged position; the hunter now needed a one-per-name guard it did not have. A diary that hides its own gaps is worthless; these rows are reconstructed from the broker, which is the source of truth, and the commit step now retries through races instead of dropping the log.
+- **05:07** → `desk` **bookkeeping** — 1 GS put bought 2 Sep at 9.80 — same crashed 1 Sep session, same lost log. Stopped 3 Sep at 0.35 (−$945), the desk's worst single ticket. A diary that hides its own gaps is worthless; these rows are reconstructed from the broker, which is the source of truth, and the commit step now retries through races instead of dropping the log.
+- **05:07** → `desk` **bookkeeping** — 8 PLTR puts bought 3 Sep at 1.12 — the session traded correctly but its diary commit lost a git race to a concurrent session and was dropped. Stopped same day at 0.07. A diary that hides its own gaps is worthless; these rows are reconstructed from the broker, which is the source of truth, and the commit step now retries through races instead of dropping the log.
+- **05:07** → `desk` **bookkeeping** — 8 COIN calls bought 3 Sep at 1.85 — same lost git race. A diary that hides its own gaps is worthless; these rows are reconstructed from the broker, which is the source of truth, and the commit step now retries through races instead of dropping the log.
+- **05:07** → `desk` **bookkeeping** — 4 TSLA calls bought 3 Sep at 3.45 — same lost git race. Stopped same day at 1.68. A diary that hides its own gaps is worthless; these rows are reconstructed from the broker, which is the source of truth, and the commit step now retries through races instead of dropping the log.
+
 ## 2026-09-03
 
 - **17:15** · `steward` **hold** — Already carrying XOM risk — one position per name.
