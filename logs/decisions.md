@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-09-05
+
+- **13:28** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.1%, ETH/USD +0.1%). Cash is a position.
+
 ## 2026-09-04
 
 - **05:07** → `desk` **bookkeeping** — UBER put sold 28 Aug at 0.41 — launch-day fill whose diary row was lost in that session's failed log commit (bug #2, fixed same day). Reconciled from the broker's blotter. A diary that hides its own gaps is worthless; these rows are reconstructed from the broker, which is the source of truth, and the commit step now retries through races instead of dropping the log.
