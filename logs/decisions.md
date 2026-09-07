@@ -38,6 +38,9 @@
 - **18:43** · `steward` **hold** — No INTC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **18:43** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **18:43** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:46** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_bars({"symbols": "NFLX,AMD", "timeframe": "1Day", "days": 10}); get_option_chain({"underlying_symbol": "NFLX", "type": "put", "expiration_date_gte": "2026-09-11", "expiration_date_lte": "2026-09-18", "); get_option_chain({"underlying_symbol": "AMD", "type": "call", "expiration_date_gte": "2026-09-11", "expiration_date_lte": "2026-09-18", ")
+- **18:46** · `hunter` **hold** — NFLX thesis approved but no put in the delta band with a believable market — the idea dies at the chain, not at the desk.
+- **18:46** · `hunter` **hold** — AMD thesis approved but no call in the delta band with a believable market — the idea dies at the chain, not at the desk.
 
 ## 2026-09-05
 
