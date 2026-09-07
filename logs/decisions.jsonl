@@ -361,3 +361,15 @@
 {"ts": "2026-09-04T21:03:38+00:00", "agent": "hunter", "action": "hold", "because": "Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies."}
 {"ts": "2026-09-05T13:28:22+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.1%, ETH/USD +0.1%). Cash is a position."}
 {"ts": "2026-09-05T13:29:29+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.1%, ETH/USD +0.1%). Cash is a position."}
+{"ts": "2026-09-07T18:24:23+00:00", "agent": "steward", "action": "hold", "because": "No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-07T18:24:23+00:00", "agent": "steward", "action": "hold", "because": "No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-07T18:24:23+00:00", "agent": "steward", "action": "hold", "because": "No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-07T18:24:23+00:00", "agent": "steward", "action": "hold", "because": "No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-07T18:24:23+00:00", "agent": "steward", "action": "hold", "because": "No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-07T18:24:23+00:00", "agent": "steward", "action": "hold", "because": "No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-07T18:24:23+00:00", "agent": "steward", "action": "hold", "because": "No UBER put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-07T18:24:23+00:00", "agent": "steward", "action": "hold", "because": "No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-07T18:24:23+00:00", "agent": "steward", "action": "hold", "because": "No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-07T18:24:24+00:00", "agent": "steward", "action": "hold", "because": "No INTC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-07T18:24:24+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-07T18:24:24+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
