@@ -40,6 +40,9 @@
 - **17:55** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **17:58** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 8 read-only tool calls before concluding. Trail: get_news({"symbols": "QCOM,AMD,INTC,NVDA,ORCL", "limit": 20}); get_stock_bars({"symbols": "QCOM,AMD,INTC,NVDA,ORCL", "timeframe": "1Day", "days": 6}); get_all_positions({}); get_news({"symbols": "QCOM", "limit": 10}); get_option_chain({"underlying_symbol": "QCOM", "type": "put", "strike_price_gte": 160, "strike_price_lte": 173, "expiration_date_gte": "2); get_news({"symbols": "AMD", "limit": 10})
 - **17:58** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
+- **18:01** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_snapshot({"symbols": "QCOM,AMD"}); get_option_chain({"underlying_symbol": "QCOM", "type": "put", "strike_price_gte": 165, "strike_price_lte": 175, "expiration_date_gte": "2); get_option_chain({"underlying_symbol": "AMD", "type": "call", "strike_price_gte": 505, "strike_price_lte": 520, "expiration_date_gte": "2)
+- **18:01** · `hunter` **hold** — QCOM thesis approved but no put in the delta band with a believable market — the idea dies at the chain, not at the desk.
+- **18:01** · `hunter` **hold** — AMD thesis approved but no call in the delta band with a believable market — the idea dies at the chain, not at the desk.
 
 ## 2026-09-07
 
