@@ -1,5 +1,20 @@
 # The desk's decision log
 
+## 2026-09-09
+
+- **17:17** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:17** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:17** · `steward` **hold** — No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:17** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:17** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:17** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:17** · `steward` **hold** — No UBER put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:17** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:18** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:18** · `steward` **hold** — No INTC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:18** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:18** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+
 ## 2026-09-08
 
 - **17:31** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
@@ -70,6 +85,9 @@
 - **18:44** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 3 read-only tool calls before concluding. Trail: get_all_positions({}); get_news({"symbols": "ORCL,QCOM", "limit": 10}); get_stock_bars({"symbols": "ORCL,QCOM", "timeframe": "1Day", "days": 6})
 - **18:44** · `hunter` **hold** — QCOM thesis approved but no put in the delta band with a believable market — the idea dies at the chain, not at the desk.
 - **18:44** · `hunter` **hold** — SHOP thesis approved but no put in the delta band with a believable market — the idea dies at the chain, not at the desk.
+- **21:23** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_all_positions({}); get_news({"symbols": "QCOM,INTC,SHOP", "limit": 15}); get_news({"symbols": "QCOM", "limit": 10}); get_stock_bars({"symbols": "QCOM,INTC", "timeframe": "1Day", "days": 6})
+- **21:23** · `hunter` **hold** — INTC thesis approved but no call in the delta band with a believable market — the idea dies at the chain, not at the desk.
+- **21:23** · `hunter` **hold** — QCOM thesis approved but no put in the delta band with a believable market — the idea dies at the chain, not at the desk.
 - **21:26** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 7 read-only tool calls before concluding. Trail: get_stock_bars({"symbols": "QCOM,INTC", "timeframe": "1Day", "days": 10}); get_all_positions({}); get_news({"symbols": "QCOM,INTC", "start": "2025-01-01", "limit": 10}); get_news({"symbols": "QCOM", "start": "2026-09-07", "limit": 10}); get_stock_quotes({"symbols": "QCOM,INTC", "feed": "iex", "minutes": 30}); get_stock_bars({"symbols": "SHOP,UNH", "timeframe": "1Day", "days": 10})
 - **21:26** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
 
