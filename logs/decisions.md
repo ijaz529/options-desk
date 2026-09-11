@@ -68,6 +68,8 @@
 - **17:58** · `steward` **hold** — No INTC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **17:58** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **17:58** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:27** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_news({"symbols": "ORCL,UNH", "limit": 10}); get_stock_bars({"symbols": "ORCL,UNH", "timeframe": "1Day", "days": 10}); get_stock_latest_quote({"symbols": "ORCL"}); get_option_chain({"underlying_symbol": "ORCL", "type": "put", "expiration_date_gte": "2026-09-18", "expiration_date_lte": "2026-09-25", ")
+- **18:27** · `hunter` **hold** — ORCL thesis approved but no put in the delta band with a believable market — the idea dies at the chain, not at the desk.
 
 ## 2026-09-10
 
