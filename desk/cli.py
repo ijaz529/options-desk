@@ -19,10 +19,21 @@ def available() -> bool:
 
 
 def _run(*args: str):
-    env = {**os.environ,
-           # the CLI's env names differ from the SDK convention we store
-           "ALPACA_API_KEY": os.environ.get("ALPACA_API_KEY_ID", os.environ.get("ALPACA_API_KEY", "")),
-           "ALPACA_SECRET_KEY": os.environ.get("ALPACA_API_SECRET_KEY", os.environ.get("ALPACA_SECRET_KEY", ""))}
+    # the CLI's env names differ from the SDK convention we store
+    key = os.environ.get("ALPACA_API_KEY_ID") or os.environ.get("ALPACA_API_KEY") or ""
+    secret = os.environ.get("ALPACA_API_SECRET_KEY") or os.environ.get("ALPACA_SECRET_KEY") or ""
+    # REFUSE to run credential-less. The CLI keeps its own profile in
+    # ~/.config/alpaca and falls back to it when the environment is empty — on
+    # this machine that profile is a DIFFERENT paper account. Passing empty
+    # strings therefore does not fail, it quietly reads someone else's book, and
+    # a sweep would then try to close positions this account does not hold.
+    # read_positions() catches this and uses the SDK door, which is authenticated
+    # from the same .env the desk trades with, so failing here is always safe.
+    if not key or not secret:
+        raise RuntimeError(
+            "no Alpaca credentials in the environment — refusing to let the CLI fall back to "
+            "its stored ~/.config/alpaca profile, which is not necessarily this desk's account")
+    env = {**os.environ, "ALPACA_API_KEY": key, "ALPACA_SECRET_KEY": secret}
     out = subprocess.run(["alpaca", *args], capture_output=True, text=True, timeout=60, env=env)
     if out.returncode != 0:
         raise RuntimeError(f"alpaca {' '.join(args)} -> {out.returncode}: {out.stderr[:200]}")
