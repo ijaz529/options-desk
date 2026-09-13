@@ -40,9 +40,6 @@ on:
     - cron: '27 10 * * 6'
     - cron: '7 * * * 0,6'
     # de-risk — the contest's last session. Three chances: this one cannot be missed.
-    - cron: '3 13 4 9 *'
-    - cron: '17 13 4 9 *'
-    - cron: '33 13 4 9 *'
   workflow_dispatch:
     inputs:
       session:
@@ -89,8 +86,6 @@ jobs:
                 echo "cmd=hunter" >> "$GITHUB_OUTPUT" ;;
               '13 10 * * 6'|'27 10 * * 6')
                 echo "cmd=weekend" >> "$GITHUB_OUTPUT" ;;
-              '3 13 4 9 *'|'17 13 4 9 *'|'33 13 4 9 *')
-                echo "cmd=derisk" >> "$GITHUB_OUTPUT" ;;
               *) echo "cmd=sweep" >> "$GITHUB_OUTPUT" ;;
             esac
           fi

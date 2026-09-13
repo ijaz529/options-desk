@@ -22,7 +22,10 @@ from desk import broker, cli, gates, hunter, log, steward, weekend
 # obligation, one MSFT contract $50k — untradeable under a $20k-per-name cap.
 # The sleeve trades names where a contract obliges roughly $8-19k.
 UNIVERSE = ["XOM", "CVX", "KO", "WMT", "BAC", "DIS", "UBER", "PFE", "CSCO", "INTC", "T", "GM"]
-CONTEST_END = datetime(2026, 9, 4, 15, 0, tzinfo=timezone.utc)  # 17:00 CEST Fri
+# The contest ended 4 Sep 2026; the desk now runs open-ended on the same paper
+# account (STRATEGY.md "Post-contest operation"). Everything that used to count
+# down to a fixed date now counts down to the COMING weekly expiry.
+EXPIRY_CLOSE_UTC = 20, 0        # US close on expiry Friday
 
 OCC = re.compile(r"^([A-Z]+)(\d{6})([CP])(\d{8})$")
 
@@ -82,17 +85,34 @@ def desk_state() -> tuple[gates.AccountState, dict]:
             under[u] = under.get(u, 0.0) + notional
         elif p["asset_class"] == "us_equity":     # assigned stock counts against its name
             under[p["symbol"]] = under.get(p["symbol"], 0.0) + abs(p["market_value"])
-    minutes = (CONTEST_END - datetime.now(timezone.utc)).total_seconds() / 60
+    minutes = minutes_to_expiry()
     return gates.AccountState(
         equity=acct["equity"],
         day_start_equity=acct.get("last_equity", acct["equity"]),
         sleeve_used=sleeve, underlying_notional=under,
-        minutes_to_contest_end=minutes,
+        minutes_to_expiry=minutes,
     ), acct
 
 
-def next_contest_friday() -> date:
-    return date(2026, 9, 4)
+def next_weekly_friday(today: date | None = None) -> date:
+    """The Friday this week's options are written against. Friday itself counts
+    until the close — a Friday-morning session still trades that day's expiry —
+    and the weekend rolls to the next one."""
+    d = today or datetime.now(timezone.utc).date()
+    if d.weekday() == 4:                     # Friday
+        return d
+    return d + timedelta(days=(4 - d.weekday()) % 7)
+
+
+def minutes_to_expiry(now: datetime | None = None) -> float:
+    """Minutes until the coming weekly expiry closes — what the time gate reads."""
+    now = now or datetime.now(timezone.utc)
+    friday = next_weekly_friday(now.date())
+    hh, mm = EXPIRY_CLOSE_UTC
+    close = datetime(friday.year, friday.month, friday.day, hh, mm, tzinfo=timezone.utc)
+    if close <= now:                         # Friday after the bell — next week's
+        close += timedelta(days=7)
+    return (close - now).total_seconds() / 60
 
 
 def steward_session() -> None:
@@ -101,7 +121,7 @@ def steward_session() -> None:
     # a WORKING order claims its name too — "one position per name" must count
     # promises, not just fills (three stacked XOM puts taught us that)
     held_unders |= {parse_occ(o["symbol"])[0] for o in broker.open_orders() if parse_occ(o["symbol"])}
-    expiry = next_contest_friday()
+    expiry = next_weekly_friday()
     for u in UNIVERSE:
       try:
         if u in held_unders:
@@ -172,7 +192,7 @@ def hunter_session() -> None:
         return
     state, _ = desk_state()
     for t in theses:
-        picked = hunter.contract_for(t, next_contest_friday())
+        picked = hunter.contract_for(t, next_weekly_friday())
         if picked is None:
             log.record("hunter", "hold",
                        f"{t.symbol} thesis approved but no {t.direction} in the delta band "
@@ -225,13 +245,10 @@ def weekend_session() -> None:
 
 
 def derisk() -> None:
-    """The final session is for de-risking: everything to flat, P&L marked.
-    Refuses to run early — outside the last 26 hours it only says why."""
+    """Flatten the book: everything to cash, P&L marked. Was the contest's final
+    scheduled session; post-contest it is MANUAL ONLY (workflow_dispatch), because
+    an open-ended desk has no last day and nothing should flatten it on a clock."""
     state, _ = desk_state()
-    if state.minutes_to_contest_end > 26 * 60:
-        log.record("desk", "hold", "De-risk requested outside the final day — refused. "
-                   f"{state.minutes_to_contest_end / 1440:.1f} days still to run.")
-        return
     for p in read_positions():
         occ = parse_occ(p["symbol"])
         if occ:
@@ -239,15 +256,15 @@ def derisk() -> None:
             per = abs(p["market_value"]) / (100 * max(qty, 1))
             if p["qty"] < 0:
                 order_id = broker.buy_to_close(p["symbol"], round(per * 1.03, 2))
-                log.record("steward", "close", "Contest end: buying back the short leg — flat is the trade.",
+                log.record("steward", "close", "De-risk: buying back the short leg — flat is the trade.",
                            symbol=p["symbol"], order_id=order_id)
             else:
                 order_id = broker.sell_option(p["symbol"], qty, round(per * 0.97, 2))
-                log.record("hunter", "close", "Contest end: selling the long leg — flat is the trade.",
+                log.record("hunter", "close", "De-risk: selling the long leg — flat is the trade.",
                            symbol=p["symbol"], order_id=order_id)
         elif p["asset_class"] == "crypto" and p["qty"] > 0:
             order_id = broker.crypto_notional(p["symbol"], "sell", abs(p["market_value"]))
-            log.record("hunter", "close", "Contest end: weekend sleeve to cash.",
+            log.record("hunter", "close", "De-risk: weekend sleeve to cash.",
                        symbol=p["symbol"], order_id=order_id)
 
 
@@ -301,7 +318,8 @@ def status() -> None:
     state, acct = desk_state()
     print(f"equity ${state.equity:,.2f} · steward ${state.sleeve_used['steward']:,.0f} deployed "
           f"· hunter ${state.sleeve_used['hunter']:,.0f} · "
-          f"{state.minutes_to_contest_end / 1440:.1f} days to contest end")
+          f"expiry {next_weekly_friday()} in {state.minutes_to_expiry / 1440:.1f} days "
+          f"· kill switch ${gates.KILL_SWITCH_EQUITY:,.0f}")
     for p in read_positions():
         print(f"  {p['symbol']:>22} qty {p['qty']:>10} mv ${p['market_value']:>10,.2f} "
               f"pl ${p['unrealized_pl']:>8,.2f}")

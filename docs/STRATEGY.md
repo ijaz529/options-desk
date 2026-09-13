@@ -3,6 +3,41 @@
 The contract for the week. Code implements this page; if the two diverge, this
 page is amended first, then the code. (A habit imported from Alfred.)
 
+## Post-contest operation (amended 13 Sep 2026)
+
+The hackathon ended Fri 4 Sep 2026 at 15:00 UTC with the account at **$93,630**
+(−6.4% on the $100,000 start). The desk kept running on its schedule afterwards
+and **traded nothing for nine days**, which was the contest scaffolding doing
+exactly what it was written to do rather than a fault:
+
+- `CONTEST_END` was a fixed date now in the past, so `minutes_to_contest_end`
+  went negative and the **time gate vetoed every new position** as though the
+  desk were permanently inside the last three hours.
+- The steward also targeted the 4 Sep expiry — a date that no longer exists.
+- The **kill switch was a fixed $96,000**, i.e. 4% below the contest's starting
+  equity. At $93,630 it was tripped permanently, so the Hunter and the weekend
+  sleeve were shut for good and only the Steward could ever have traded.
+
+The desk now runs as an **open-ended paper desk** on the same account, under the
+same strategy, so its behaviour can be watched over weeks rather than one week:
+
+1. **No contest clock.** The Steward and Hunter target the **coming weekly
+   Friday expiry**, rolling. The time gate is re-expressed against that expiry:
+   no new position inside the final **3 hours before the expiry it would trade
+   into** — a weekly opened three hours before it expires is a coin toss, which
+   was the gate's real purpose.
+2. **The kill switch is a fraction, not a figure.** It is **96% of a stated
+   baseline**, preserving the original 4% meaning. The baseline is reset to the
+   equity at the start of each monitoring period and is written in the code with
+   its date; on 13 Sep 2026 it is **$93,630**, so the switch sits at ~$89,885.
+   Resetting the baseline is an explicit, dated decision — never silent — because
+   it forgives prior losses and must be visible when reading the record.
+3. **De-risk is manual only.** It was scheduled for the contest's final session;
+   with no final session it runs only on `workflow_dispatch`.
+
+Everything else — sleeve caps, drawdown gate, concentration, no naked shorts,
+the diary — is unchanged.
+
 ## Capital plan — $100,000 paper
 
 | Sleeve | Allocation | Instruments |
@@ -22,8 +57,9 @@ working and the universe wrong. Weekly expiries only.
 
 **Entry rule (deterministic):**
 1. Rank universe by 30-day IV rank; take names with IV rank ≥ 40.
-2. Sell the put at (or nearest below) the 20-delta strike, expiring the Friday
-   of contest end (4 Sep) — the whole position is a bet the week is ordinary.
+2. Sell the put at (or nearest below) the 20-delta strike, expiring the **coming
+   Friday** (amended 13 Sep 2026; was the fixed contest Friday, 4 Sep) — the
+   whole position is a bet that the week ahead is ordinary.
 3. Premium collected must be ≥ 0.15% of strike notional or skip (commission-free,
    but a $6 credit is not worth a $20,000 obligation).
 4. Max 1 position per underlying — where "position" counts WORKING ORDERS too,
@@ -35,7 +71,7 @@ working and the universe wrong. Weekly expiries only.
 - Stop: buy back if the option doubles against entry.
 - Assignment is acceptable — the strikes are prices we'd own at. Assigned stock
   is sold with a covered call the next session (the wheel's second half).
-- Everything is flat or defined-risk by the final Friday's close.
+- Everything is flat or defined-risk by each Friday's close.
 
 ## The Hunter — convexity
 
@@ -60,7 +96,8 @@ spot only, ≤ $5,000 total, 24/7 monitoring via CLI cron, ±4% stop/target.
    defined-risk. (Also keeps us within paper option level semantics.)
 2. **Sleeve caps are absolute** — an agent at its cap proposes nothing.
 3. **Daily drawdown gate:** account down >2.5% on the day → no new risk that day.
-4. **Weekly kill switch (clarified 29 Aug, pre-Monday):** account below $96,000
+4. **Weekly kill switch (clarified 29 Aug; re-based 13 Sep 2026):** account below
+   **96% of the stated baseline** (see "Post-contest operation")
    → the desk goes **income-only**: the Hunter and the weekend crypto sleeve are
    shut for the remainder, while the Steward may keep selling cash-secured puts
    — the defined-outcome income that earns the account back. The first
@@ -69,8 +106,9 @@ spot only, ≤ $5,000 total, 24/7 monitoring via CLI cron, ±4% stop/target.
    matches the words. Existing risk still sweeps normally (closing is always
    allowed) and the drawdown/concentration/sleeve gates still bind the Steward.
 5. **Concentration:** ≤ 20% of account notional in any single underlying.
-6. **Time gate:** no new positions in the final 3 hours of the contest; the
-   final session is for de-risking into cash + marked P&L.
+6. **Time gate (re-expressed 13 Sep 2026):** no new positions in the final 3
+   hours before the expiry they would trade into. De-risking into cash + marked
+   P&L is now a manual session rather than a scheduled final one.
 7. Every rejection is logged: what was proposed, which gate, in plain English.
 8. **No order outlives its session (added 1 Sep).** A working order still open
    from a previous day was priced off a session that no longer exists; a stale
@@ -92,5 +130,6 @@ the judging video are built from.
   spot, hence the Hunter's weekend sleeve is spot BTC/ETH.
 - Paper accounts have options enabled by default; stop orders are single-leg
   only, so spread exits use limit orders managed by the desk itself.
-- Contest account must be brand-new, starting balance exactly $100,000; the
-  account ID ships with the submission and judges read the blotter directly.
+- *(Historical, contest only)* the account had to be brand-new at exactly
+  $100,000, and the account ID shipped with the submission for judges to read
+  the blotter directly. The desk still trades that same paper account.

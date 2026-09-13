@@ -47,9 +47,9 @@ sleeve, ±{weekend.STOP_FRAC:.0%} exits) keeps the book earning while options sl
 1. No naked short options — every put cash-secured, every spread defined-risk.
 2. Sleeve caps absolute: Steward ${gates.SLEEVE_CAP['steward']:,.0f}, Hunter ${gates.SLEEVE_CAP['hunter']:,.0f}.
 3. Daily drawdown gate: > {gates.DAILY_DRAWDOWN_GATE:.1%} down on the day → no new risk today.
-4. Kill switch: equity below ${gates.KILL_SWITCH_EQUITY:,.0f} → flat, income-only thereafter.
+4. Kill switch: equity below ${gates.KILL_SWITCH_EQUITY:,.0f} ({gates.KILL_SWITCH_FRACTION:.0%} of the ${gates.BASELINE_EQUITY:,.0f} baseline) → income-only thereafter.
 5. Concentration: ≤ {gates.CONCENTRATION_CAP:.0%} of the account in any one underlying.
-6. Time gate: no new positions in the final {gates.FINAL_QUIET_MINUTES / 60:.0f} hours; the last session de-risks.
+6. Time gate: no new positions in the final {gates.FINAL_QUIET_MINUTES / 60:.0f} hours before the expiry they trade into.
 7. Closing risk is always allowed. Every verdict — approve or veto — is logged
    with a plain-English reason.
 

@@ -24,12 +24,21 @@ class AccountState:
     day_start_equity: float
     sleeve_used: dict[str, float]         # agent -> notional already deployed
     underlying_notional: dict[str, float] # symbol -> account-wide notional
-    minutes_to_contest_end: float
+    minutes_to_expiry: float               # to the expiry a new position would trade into
 
 
 SLEEVE_CAP = {"steward": 70_000.0, "hunter": 20_000.0}
 DAILY_DRAWDOWN_GATE = 0.025
-KILL_SWITCH_EQUITY = 96_000.0
+
+# The kill switch is a FRACTION of a stated baseline, not a figure (STRATEGY.md
+# "Post-contest operation", 13 Sep 2026). As a fixed $96,000 it was 4% below the
+# contest's $100,000 start; when the contest ended at $93,630 it was tripped
+# permanently, shutting the Hunter and the weekend sleeve for good. Re-basing is
+# an explicit, DATED decision because it forgives prior losses — never change
+# BASELINE_EQUITY without saying so here and in STRATEGY.md.
+BASELINE_EQUITY = 93_630.0        # equity at 13 Sep 2026, start of the open-ended run
+KILL_SWITCH_FRACTION = 0.96
+KILL_SWITCH_EQUITY = BASELINE_EQUITY * KILL_SWITCH_FRACTION
 CONCENTRATION_CAP = 0.20
 FINAL_QUIET_MINUTES = 180.0
 
@@ -80,10 +89,10 @@ def review(p: Proposal, a: AccountState) -> Verdict:
                        f"Vetoed: {p.symbol} would be ${held + p.notional:,.0f}, past "
                        f"{CONCENTRATION_CAP:.0%} of the account in one name.")
 
-    if a.minutes_to_contest_end <= FINAL_QUIET_MINUTES:
+    if a.minutes_to_expiry <= FINAL_QUIET_MINUTES:
         return Verdict(False, "time-gate",
-                       "Vetoed: inside the final three hours of the contest. "
-                       "The last session is for de-risking, not new ideas.")
+                       f"Vetoed: only {a.minutes_to_expiry / 60:.1f} hours to the expiry this would "
+                       "trade into — a weekly opened this late is a coin toss, not a thesis.")
 
     return Verdict(True, None,
                    f"Approved: {p.agent} risks ${p.notional:,.0f} on {p.symbol} ({p.kind}) — "
