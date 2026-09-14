@@ -1,5 +1,20 @@
 # The desk's decision log
 
+## 2026-09-14
+
+- **18:52** → `steward` **sell_put** — Sold the XOM 18 Sep 160 put at ~0.68 (0.43% of the $16,000 obligation). Delta -0.20 puts the strike 3.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:52** 🛑 `risk` **veto** — Vetoed: CVX would be $20,750, past 20% of the account in one name.
+- **18:52** → `steward` **sell_put** — Sold the KO 18 Sep 87.5 put at ~0.33 (0.38% of the $8,750 obligation). Delta -0.23 puts the strike 1.9% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:52** → `steward` **sell_put** — Sold the WMT 18 Sep 107 put at ~0.31 (0.29% of the $10,700 obligation). Delta -0.19 puts the strike 2.4% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:52** → `steward` **sell_put** — Sold the BAC 18 Sep 57 put at ~0.18 (0.32% of the $5,700 obligation). Delta -0.16 puts the strike 3.4% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:53** → `steward` **sell_put** — Sold the DIS 18 Sep 106 put at ~0.30 (0.28% of the $10,600 obligation). Delta -0.18 puts the strike 2.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:53** → `desk` **note** — UBER: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 6961.01, availab
+- **18:53** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:53** → `desk` **note** — CSCO: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 10757.01, availa
+- **18:53** → `desk` **note** — INTC: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 9211.01, availab
+- **18:53** → `desk` **note** — T: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 2543.01, availab
+- **18:53** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8444.01, availab
+
 ## 2026-09-12
 
 - **13:37** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.1%, ETH/USD +0.9%). Cash is a position.
