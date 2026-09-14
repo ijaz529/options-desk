@@ -26,6 +26,18 @@
 - **19:01** → `desk` **note** — INTC: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 9212.01, availab
 - **19:01** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **19:01** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8364.01, availab
+- **19:19** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **19:19** 🛑 `risk` **veto** — Vetoed: CVX would be $20,750, past 20% of the account in one name.
+- **19:19** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **19:19** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **19:19** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **19:19** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **19:19** → `steward` **sell_put** — Sold the UBER 18 Sep 70 put at ~0.40 (0.57% of the $7,000 obligation). Delta -0.22 puts the strike 3.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **19:19** → `steward` **sell_put** — Sold the PFE 18 Sep 27 put at ~0.08 (0.30% of the $2,700 obligation). Delta -0.17 puts the strike 2.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **19:19** → `desk` **note** — CSCO: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 10744.01, availa
+- **19:19** → `desk` **note** — INTC: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 9164.01, availab
+- **19:19** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **19:19** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8364.01, availab
 
 ## 2026-09-12
 
