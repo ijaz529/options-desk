@@ -790,3 +790,4 @@
 {"ts": "2026-09-14T19:38:59+00:00", "agent": "desk", "action": "note", "because": "INTC: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 9116.01, availab"}
 {"ts": "2026-09-14T19:38:59+00:00", "agent": "steward", "action": "hold", "because": "Already carrying T risk — one position per name."}
 {"ts": "2026-09-14T19:39:00+00:00", "agent": "desk", "action": "note", "because": "GM: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 8440.01, availab"}
+{"ts": "2026-09-14T19:50:19+00:00", "agent": "hunter", "action": "hold", "because": "Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position."}

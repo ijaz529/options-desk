@@ -66,6 +66,7 @@
 - **19:38** → `desk` **note** — INTC: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 9116.01, availab
 - **19:38** · `steward` **hold** — Already carrying T risk — one position per name.
 - **19:39** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8440.01, availab
+- **19:50** · `hunter` **hold** — Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 
 ## 2026-09-12
 
