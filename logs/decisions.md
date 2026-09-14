@@ -68,6 +68,8 @@
 - **19:39** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8440.01, availab
 - **19:50** · `hunter` **hold** — Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **19:52** · `hunter` **hold** — Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
+- **22:01** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 6 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_bars({"symbols": "QCOM,AVGO", "timeframe": "1Day", "days": 10}); get_stock_bars({"symbols": "ORCL,GS", "timeframe": "1Day", "days": 10}); get_news({"symbols": "ORCL,GS", "limit": 10}); get_news({"symbols": "MU,AMD,INTC,AVGO", "limit": 10}); get_option_chain({"underlying_symbol": "GS", "type": "put", "expiration_date_gte": "2026-09-25", "expiration_date_lte": "2026-10-10", "st)
+- **22:01** → `hunter` **buy_put** — GS -3.9% today, closing near session lows on 2x volume after BofA's grim IB/trading-fee outlook hit bank stocks; extends a 5-day losing streak (-8% since 9/8, now under $990). Distribution pattern, not a reversal. — 1× GS260918P00975000 at ~10.39 ($1,039 premium, the whole downside). Invalidation: Close back above $1010 (reclaiming prior support) or a high-volume reversal day, or bank-sector guidance turns positive this week.
 
 ## 2026-09-12
 
