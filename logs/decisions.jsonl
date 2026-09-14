@@ -738,3 +738,15 @@
 {"ts": "2026-09-14T18:53:03+00:00", "agent": "desk", "action": "note", "because": "INTC: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 9211.01, availab"}
 {"ts": "2026-09-14T18:53:03+00:00", "agent": "desk", "action": "note", "because": "T: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 2543.01, availab"}
 {"ts": "2026-09-14T18:53:04+00:00", "agent": "desk", "action": "note", "because": "GM: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 8444.01, availab"}
+{"ts": "2026-09-14T19:01:01+00:00", "agent": "steward", "action": "hold", "because": "Already carrying XOM risk — one position per name."}
+{"ts": "2026-09-14T19:01:02+00:00", "agent": "risk", "action": "veto", "because": "Vetoed: CVX would be $20,750, past 20% of the account in one name.", "gate": "concentration", "symbol": "CVX"}
+{"ts": "2026-09-14T19:01:02+00:00", "agent": "steward", "action": "hold", "because": "Already carrying KO risk — one position per name."}
+{"ts": "2026-09-14T19:01:02+00:00", "agent": "steward", "action": "hold", "because": "Already carrying WMT risk — one position per name."}
+{"ts": "2026-09-14T19:01:02+00:00", "agent": "steward", "action": "hold", "because": "Already carrying BAC risk — one position per name."}
+{"ts": "2026-09-14T19:01:02+00:00", "agent": "steward", "action": "hold", "because": "Already carrying DIS risk — one position per name."}
+{"ts": "2026-09-14T19:01:02+00:00", "agent": "desk", "action": "note", "because": "UBER: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 6960.01, availab"}
+{"ts": "2026-09-14T19:01:03+00:00", "agent": "steward", "action": "hold", "because": "No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-14T19:01:03+00:00", "agent": "desk", "action": "note", "because": "CSCO: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 10753.01, availa"}
+{"ts": "2026-09-14T19:01:04+00:00", "agent": "desk", "action": "note", "because": "INTC: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 9212.01, availab"}
+{"ts": "2026-09-14T19:01:04+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-14T19:01:04+00:00", "agent": "desk", "action": "note", "because": "GM: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 8364.01, availab"}

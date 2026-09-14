@@ -14,6 +14,18 @@
 - **18:53** → `desk` **note** — INTC: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 9211.01, availab
 - **18:53** → `desk` **note** — T: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 2543.01, availab
 - **18:53** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8444.01, availab
+- **19:01** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **19:01** 🛑 `risk` **veto** — Vetoed: CVX would be $20,750, past 20% of the account in one name.
+- **19:01** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **19:01** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **19:01** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **19:01** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **19:01** → `desk` **note** — UBER: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 6960.01, availab
+- **19:01** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **19:01** → `desk` **note** — CSCO: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 10753.01, availa
+- **19:01** → `desk` **note** — INTC: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 9212.01, availab
+- **19:01** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **19:01** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8364.01, availab
 
 ## 2026-09-12
 
