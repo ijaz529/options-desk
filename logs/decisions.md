@@ -38,6 +38,9 @@
 - **19:19** → `desk` **note** — INTC: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 9164.01, availab
 - **19:19** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **19:19** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8364.01, availab
+- **19:26** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 2 read-only tool calls before concluding. Trail: get_stock_bars({"symbols": "MU,AVGO,QCOM,COIN,AMD,INTC", "timeframe": "1Day", "days": 6}); get_all_positions({})
+- **19:26** → `hunter` **buy_call** — QCOM gapped down 6.1% intraday but fully reversed to close flat (-0.74%) near session highs (range_pos 0.90) on the gap-down day, signaling capitulation buying/short-covering after a semis-wide selloff. Expect follow-through bounce. — 3× QCOM260918C00185000 at ~2.55 ($765 premium, the whole downside). Invalidation: Invalidate if QCOM trades back below the gap-day low (~170.50) or closes below prior day's close (176.9), showing the reversal failed.
+- **19:26** → `hunter` **buy_put** — AVGO fell with the semis complex but showed no intraday bounce, closing near the day's low (range_pos 0.23) for a 3rd straight down day (364->361->345), the weakest close-relative-to-range in the group, indicating sellers still in control. — 2× AVGO260918P00340000 at ~3.37 ($674 premium, the whole downside). Invalidation: Invalidate if AVGO reclaims the gap-day open/prior-close zone (~350-362) or closes green, signaling the downtrend/no-bounce thesis is wrong.
 
 ## 2026-09-12
 
