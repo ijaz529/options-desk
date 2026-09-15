@@ -190,6 +190,13 @@ def hunter_session() -> None:
         log.record("hunter", "hold", "Claude read the tape and proposed nothing — "
                    "premium spent on a weak thesis is the only way this sleeve dies.")
         return
+    # one position per name — the broker's book, fills and working orders alike,
+    # is the truth the diary-based cooldown is not (GS 975 put, bought twice 14 Sep)
+    held_unders = {parse_occ(p["symbol"])[0] for p in read_positions() if parse_occ(p["symbol"])}
+    held_unders |= {parse_occ(o["symbol"])[0] for o in broker.open_orders() if parse_occ(o["symbol"])}
+    theses, already = hunter.drop_held(theses, held_unders)
+    for t in already:
+        log.record("hunter", "hold", f"Already carrying {t.symbol} risk — one position per name.")
     state, _ = desk_state()
     for t in theses:
         picked = hunter.contract_for(t, next_weekly_friday())

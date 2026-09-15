@@ -147,6 +147,15 @@ def validate(raw_trades: list[dict]) -> tuple[list[Thesis], list[str]]:
     return valid, rejected
 
 
+def drop_held(theses: list[Thesis], held: set[str]) -> tuple[list[Thesis], list[Thesis]]:
+    """One position per name (STRATEGY.md, 15 Sep 2026): theses on an underlying
+    the account already carries — filled OR working — are set aside. Returns
+    (kept, dropped). Pure, so the rule is testable without a broker."""
+    kept = [t for t in theses if t.symbol not in held]
+    dropped = [t for t in theses if t.symbol in held]
+    return kept, dropped
+
+
 def contract_for(t: Thesis, expiry: date) -> tuple[PutQuote, int] | None:
     """Deterministic 'how': the ~35-delta weekly in the thesis direction, sized
     so qty × mid × 100 fits inside the thesis's own premium cap."""

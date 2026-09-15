@@ -1,4 +1,4 @@
-from desk.hunter import Thesis, exit_action, validate
+from desk.hunter import Thesis, drop_held, exit_action, validate
 
 
 def raw(**over):
@@ -63,3 +63,16 @@ def test_malformed_entries_rejected_not_crashed():
     valid, rejected = validate(["AMD calls look good", 42, raw()])
     assert len(valid) == 1 and len(rejected) == 2
     assert "malformed" in rejected[0]
+
+
+def test_one_position_per_name_drops_held_and_working():
+    valid, _ = validate([raw(symbol="GS", direction="put"), raw(symbol="NVDA")])
+    kept, dropped = drop_held(valid, held={"GS"})
+    assert [t.symbol for t in kept] == ["NVDA"]
+    assert [t.symbol for t in dropped] == ["GS"]
+
+
+def test_one_position_per_name_keeps_everything_when_flat():
+    valid, _ = validate([raw(symbol="GS", direction="put"), raw(symbol="NVDA")])
+    kept, dropped = drop_held(valid, held=set())
+    assert len(kept) == 2 and not dropped

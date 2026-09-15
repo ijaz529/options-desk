@@ -86,6 +86,14 @@ machine-checkable shape — the Risk Officer rejects anything else:
  max_premium_usd (≤ $2,000), invalidation (what kills the thesis)}
 ```
 
+**One position per name (added 15 Sep 2026).** The Hunter does not re-enter an
+underlying it already carries, and a *working* order claims its name as much as
+a fill does — the same rule the Steward has always run. The 90-minute cooldown
+guards against a retried cron slot; it reads the diary, and on 14 Sep two
+delayed sessions ran back to back before the first had committed its rows, so
+the second bought the GS 975 put again. The broker's own book is the truth the
+diary is not: a thesis on a name already held or working is a hold, logged.
+
 **Exit rules:** −50% premium stop; +100% take-half, run the rest with a
 trailing stop; hard exit at expiry minus one session. Weekend crypto sleeve:
 spot only, ≤ $5,000 total, 24/7 monitoring via CLI cron, ±4% stop/target.
