@@ -74,6 +74,7 @@
 - **18:31** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8222.01, availab
 - **18:56** · `hunter` **hold** — Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **19:02** · `hunter` **hold** — Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
+- **20:57** → `hunter` **take_half** — Premium doubled (2.55 → 5.45): banking 1 of 2, the rest rides for free.
 
 ## 2026-09-14
 
