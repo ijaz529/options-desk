@@ -26,6 +26,12 @@
 - **17:55** 🛑 `risk` **veto** — Vetoed: steward has $66,300 of $70,000 deployed; $9,250 more would breach the sleeve.
 - **17:55** · `steward` **hold** — Already carrying T risk — one position per name.
 - **17:55** 🛑 `risk` **veto** — Vetoed: steward has $66,300 of $70,000 deployed; $8,250 more would breach the sleeve.
+- **17:59** → `desk` **cancel** — Cancelled the overnight order on GS260918P00975000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
+- **17:59** → `desk` **cancel** — Cancelled the overnight order on GS260918P00975000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
+- **17:59** → `steward` **stop** — Buying back at 0.65: the option has doubled against the 0.31 credit. The week is not ordinary — the rule says leave.
+- **17:59** → `hunter` **stop** — Premium 0.89 vs 2.13 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **17:59** → `hunter` **take_half** — Premium doubled (2.55 → 6.85): banking 1 of 3, the rest rides for free.
+- **17:59** → `steward` **take_profit** — Buying back at 0.18: 74% of the 0.68 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-09-14
 
