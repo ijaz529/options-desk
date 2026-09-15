@@ -75,6 +75,9 @@
 - **18:56** · `hunter` **hold** — Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **19:02** · `hunter` **hold** — Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **20:57** → `hunter` **take_half** — Premium doubled (2.55 → 5.45): banking 1 of 2, the rest rides for free.
+- **21:43** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_news({"symbols": "COIN,QCOM", "limit": 10}); get_all_positions({}); get_stock_bars({"symbols": "COIN,QCOM", "timeframe": "1Day", "days": 10}); get_stock_latest_quote({"symbols": "COIN,CVX"})
+- **21:43** → `hunter` **buy_put** — COIN fell 10% on twin catalysts: CLARITY Act odds crashed to 15% ahead of Senate vote (regulatory setback) plus 10Y yield >5% and oil >$105 driving broad risk-off. Weak close (range pos 0.25) shows no dip-buyers. Bet on continuation into Senate vote. — 3× COIN260918P00167500 at ~2.78 ($834 premium, the whole downside). Invalidation: Senate advances/passes CLARITY favorably, or COIN reclaims prior-day range high ~184 on a closing basis.
+- **21:43** → `hunter` **buy_call** — Saudi pipeline outage pushed oil past $105; CVX closed at day's high (range pos 0.99) on above-average volume (1.32x), showing genuine breakout strength distinct from existing book's tech/semis exposure. — 4× CVX260918C00220000 at ~1.64 ($656 premium, the whole downside). Invalidation: WTI crude falls back below $100 or CVX closes red/below prior-day close, signaling the supply-shock premium is fading.
 
 ## 2026-09-14
 
