@@ -1,5 +1,20 @@
 # The desk's decision log
 
+## 2026-09-15
+
+- **17:46** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:46** 🛑 `risk` **veto** — Vetoed: CVX would be $21,250, past 20% of the account in one name.
+- **17:46** → `steward` **sell_put** — Sold the KO 18 Sep 87 put at ~0.21 (0.24% of the $8,700 obligation). Delta -0.20 puts the strike 1.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:46** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **17:46** → `steward` **sell_put** — Sold the BAC 18 Sep 58 put at ~0.20 (0.34% of the $5,800 obligation). Delta -0.19 puts the strike 2.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:46** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **17:46** → `steward` **sell_put** — Sold the UBER 18 Sep 70 put at ~0.32 (0.46% of the $7,000 obligation). Delta -0.21 puts the strike 2.8% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:46** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:46** → `steward` **sell_put** — Sold the CSCO 18 Sep 107 put at ~0.39 (0.36% of the $10,700 obligation). Delta -0.19 puts the strike 2.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:46** 🛑 `risk` **veto** — Vetoed: steward has $66,300 of $70,000 deployed; $9,250 more would breach the sleeve.
+- **17:46** · `steward` **hold** — Already carrying T risk — one position per name.
+- **17:46** 🛑 `risk` **veto** — Vetoed: steward has $66,300 of $70,000 deployed; $8,200 more would breach the sleeve.
+
 ## 2026-09-14
 
 - **18:52** → `steward` **sell_put** — Sold the XOM 18 Sep 160 put at ~0.68 (0.43% of the $16,000 obligation). Delta -0.20 puts the strike 3.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
