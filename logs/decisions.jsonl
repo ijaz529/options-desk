@@ -855,3 +855,15 @@
 {"ts": "2026-09-15T18:24:16+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
 {"ts": "2026-09-15T18:24:16+00:00", "agent": "steward", "action": "hold", "because": "Already carrying T risk — one position per name."}
 {"ts": "2026-09-15T18:24:16+00:00", "agent": "desk", "action": "note", "because": "GM: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 8342.01, availab"}
+{"ts": "2026-09-15T18:31:17+00:00", "agent": "steward", "action": "hold", "because": "Already carrying XOM risk — one position per name."}
+{"ts": "2026-09-15T18:31:17+00:00", "agent": "risk", "action": "veto", "because": "Vetoed: steward has $56,200 of $70,000 deployed; $21,250 more would breach the sleeve.", "gate": "sleeve-cap", "symbol": "CVX"}
+{"ts": "2026-09-15T18:31:17+00:00", "agent": "steward", "action": "hold", "because": "Already carrying KO risk — one position per name."}
+{"ts": "2026-09-15T18:31:17+00:00", "agent": "steward", "action": "hold", "because": "Already carrying WMT risk — one position per name."}
+{"ts": "2026-09-15T18:31:17+00:00", "agent": "steward", "action": "hold", "because": "Already carrying BAC risk — one position per name."}
+{"ts": "2026-09-15T18:31:18+00:00", "agent": "steward", "action": "sell_put", "because": "Sold the DIS 18 Sep 105 put at ~0.52 (0.50% of the $10,500 obligation). Delta -0.28 puts the strike 1.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.", "symbol": "DIS260918P00105000", "credit": 0.52, "order_id": "1a06ddcd-5822-45ab-ba9c-48d0b4b9472a"}
+{"ts": "2026-09-15T18:31:18+00:00", "agent": "steward", "action": "hold", "because": "Already carrying UBER risk — one position per name."}
+{"ts": "2026-09-15T18:31:18+00:00", "agent": "steward", "action": "hold", "because": "Already carrying PFE risk — one position per name."}
+{"ts": "2026-09-15T18:31:18+00:00", "agent": "steward", "action": "hold", "because": "Already carrying CSCO risk — one position per name."}
+{"ts": "2026-09-15T18:31:18+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
+{"ts": "2026-09-15T18:31:18+00:00", "agent": "steward", "action": "hold", "because": "Already carrying T risk — one position per name."}
+{"ts": "2026-09-15T18:31:19+00:00", "agent": "desk", "action": "note", "because": "GM: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 8222.01, availab"}
