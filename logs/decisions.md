@@ -44,6 +44,9 @@
 - **18:10** → `desk` **note** — INTC: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 9177.01, availab
 - **18:10** · `steward` **hold** — Already carrying T risk — one position per name.
 - **18:10** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:15** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_stock_bars({"symbols": "COIN,INTC,MU,QCOM", "days": 10, "timeframe": "1Day"}); get_news({"symbols": "COIN,INTC", "start": "2025-01-01", "limit": 10}); get_option_chain({"underlying_symbol": "MU", "type": "put", "expiration_date_gte": "2026-09-18", "expiration_date_lte": "2026-09-25", "st); get_option_chain({"underlying_symbol": "INTC", "type": "put", "expiration_date_gte": "2026-09-18", "expiration_date_lte": "2026-09-25", ")
+- **18:15** → `hunter` **buy_put** — MU down ~11% since 9/9 in clean downtrend. Today gapped to 945 intraday but reversed to close near session low (922, range_pos 0.07) - failed bounce. Risk-off macro (10Y>5%, oil>$105) adds pressure. Targets further slide toward 880-900. — 1× MU260918P00905000 at ~10.81 ($1,081 premium, the whole downside). Invalidation: Invalidated if MU closes back above today's high (~945) or reclaims 950 with volume, signaling bounce not breakdown.
+- **18:15** → `hunter` **buy_put** — INTC in multi-day downtrend (104->97). Today opened 98.8, rallied to 100.5, then sold off to close 97.3 near session low (range_pos 0.01) - classic failed breakout/rejection, confirming distribution ahead of risk-off tape. — 8× INTC260918P00095000 at ~1.50 ($1,200 premium, the whole downside). Invalidation: Invalidated if INTC closes back above today's high (~100.5), signaling the reversal failed and buyers regained control.
 
 ## 2026-09-14
 
