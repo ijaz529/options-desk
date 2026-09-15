@@ -827,3 +827,15 @@
 {"ts": "2026-09-15T17:59:07+00:00", "agent": "hunter", "action": "stop", "because": "Premium 0.89 vs 2.13 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.", "symbol": "GOOGL260918C00355000", "qty": 6, "order_id": "d400a549-9156-4f14-99bc-6b152f79c229"}
 {"ts": "2026-09-15T17:59:07+00:00", "agent": "hunter", "action": "take_half", "because": "Premium doubled (2.55 → 6.85): banking 1 of 3, the rest rides for free.", "symbol": "QCOM260918C00185000", "qty": 1, "order_id": "38ede0d9-6b9c-4103-bce8-33d9cfdec6ff"}
 {"ts": "2026-09-15T17:59:07+00:00", "agent": "steward", "action": "take_profit", "because": "Buying back at 0.18: 74% of the 0.68 credit is banked, and the last cents are not worth the tail.", "symbol": "XOM260918P00160000", "order_id": "42087680-ab4d-4899-8a72-f2daea1a2996"}
+{"ts": "2026-09-15T18:10:18+00:00", "agent": "steward", "action": "sell_put", "because": "Sold the XOM 18 Sep 165 put at ~0.76 (0.46% of the $16,500 obligation). Delta -0.22 puts the strike 2.5% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.", "symbol": "XOM260918P00165000", "credit": 0.76, "order_id": "48f5c5ab-dd12-4699-9a5a-49b4b6a510b6"}
+{"ts": "2026-09-15T18:10:20+00:00", "agent": "risk", "action": "veto", "because": "Vetoed: CVX would be $21,250, past 20% of the account in one name.", "gate": "concentration", "symbol": "CVX"}
+{"ts": "2026-09-15T18:10:20+00:00", "agent": "steward", "action": "hold", "because": "Already carrying KO risk — one position per name."}
+{"ts": "2026-09-15T18:10:20+00:00", "agent": "steward", "action": "hold", "because": "Already carrying WMT risk — one position per name."}
+{"ts": "2026-09-15T18:10:20+00:00", "agent": "steward", "action": "hold", "because": "Already carrying BAC risk — one position per name."}
+{"ts": "2026-09-15T18:10:20+00:00", "agent": "steward", "action": "hold", "because": "No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-15T18:10:20+00:00", "agent": "steward", "action": "hold", "because": "Already carrying UBER risk — one position per name."}
+{"ts": "2026-09-15T18:10:20+00:00", "agent": "steward", "action": "hold", "because": "Already carrying PFE risk — one position per name."}
+{"ts": "2026-09-15T18:10:20+00:00", "agent": "steward", "action": "hold", "because": "Already carrying CSCO risk — one position per name."}
+{"ts": "2026-09-15T18:10:21+00:00", "agent": "desk", "action": "note", "because": "INTC: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 9177.01, availab"}
+{"ts": "2026-09-15T18:10:21+00:00", "agent": "steward", "action": "hold", "because": "Already carrying T risk — one position per name."}
+{"ts": "2026-09-15T18:10:22+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}

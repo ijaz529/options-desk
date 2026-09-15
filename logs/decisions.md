@@ -32,6 +32,18 @@
 - **17:59** → `hunter` **stop** — Premium 0.89 vs 2.13 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **17:59** → `hunter` **take_half** — Premium doubled (2.55 → 6.85): banking 1 of 3, the rest rides for free.
 - **17:59** → `steward` **take_profit** — Buying back at 0.18: 74% of the 0.68 credit is banked, and the last cents are not worth the tail.
+- **18:10** → `steward` **sell_put** — Sold the XOM 18 Sep 165 put at ~0.76 (0.46% of the $16,500 obligation). Delta -0.22 puts the strike 2.5% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:10** 🛑 `risk` **veto** — Vetoed: CVX would be $21,250, past 20% of the account in one name.
+- **18:10** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **18:10** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **18:10** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **18:10** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:10** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **18:10** · `steward` **hold** — Already carrying PFE risk — one position per name.
+- **18:10** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **18:10** → `desk` **note** — INTC: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 9177.01, availab
+- **18:10** · `steward` **hold** — Already carrying T risk — one position per name.
+- **18:10** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-14
 
