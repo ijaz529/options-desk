@@ -14,6 +14,18 @@
 - **17:46** 🛑 `risk` **veto** — Vetoed: steward has $66,300 of $70,000 deployed; $9,250 more would breach the sleeve.
 - **17:46** · `steward` **hold** — Already carrying T risk — one position per name.
 - **17:46** 🛑 `risk` **veto** — Vetoed: steward has $66,300 of $70,000 deployed; $8,200 more would breach the sleeve.
+- **17:55** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:55** 🛑 `risk` **veto** — Vetoed: steward has $66,300 of $70,000 deployed; $21,250 more would breach the sleeve.
+- **17:55** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **17:55** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **17:55** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **17:55** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **17:55** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **17:55** → `steward` **sell_put** — Sold the PFE 18 Sep 27 put at ~0.11 (0.41% of the $2,700 obligation). Delta -0.24 puts the strike 1.9% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:55** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **17:55** 🛑 `risk` **veto** — Vetoed: steward has $66,300 of $70,000 deployed; $9,250 more would breach the sleeve.
+- **17:55** · `steward` **hold** — Already carrying T risk — one position per name.
+- **17:55** 🛑 `risk` **veto** — Vetoed: steward has $66,300 of $70,000 deployed; $8,250 more would breach the sleeve.
 
 ## 2026-09-14
 
