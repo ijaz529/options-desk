@@ -1,5 +1,20 @@
 # The desk's decision log
 
+## 2026-09-16
+
+- **17:45** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:45** · `steward` **hold** — Already carrying CVX risk — one position per name.
+- **17:45** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **17:45** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **17:45** 🛑 `risk` **veto** — Vetoed: steward has $66,700 of $70,000 deployed; $5,700 more would breach the sleeve.
+- **17:45** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **17:45** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **17:45** → `steward` **sell_put** — Sold the PFE 18 Sep 27 put at ~0.10 (0.37% of the $2,700 obligation). Delta -0.23 puts the strike 1.9% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:45** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **17:45** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **17:45** · `steward` **hold** — Already carrying T risk — one position per name.
+- **17:45** 🛑 `risk` **veto** — Vetoed: steward has $66,700 of $70,000 deployed; $8,250 more would breach the sleeve.
+
 ## 2026-09-15
 
 - **17:46** · `steward` **hold** — Already carrying XOM risk — one position per name.
