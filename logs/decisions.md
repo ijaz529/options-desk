@@ -29,6 +29,18 @@
 - **18:00** → `hunter` **stop** — Premium 0.24 vs 0.92 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **18:00** → `hunter` **stop** — Premium 0.29 vs 1.49 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **18:00** → `steward` **stop** — Buying back at 2.46: the option has doubled against the 0.77 credit. The week is not ordinary — the rule says leave.
+- **18:11** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:11** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:11** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **18:11** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **18:11** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:11** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **18:11** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **18:11** · `steward` **hold** — Already carrying PFE risk — one position per name.
+- **18:11** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **18:11** → `steward` **sell_put** — Sold the INTC 18 Sep 97.5 put at ~0.70 (0.72% of the $9,750 obligation). Delta -0.20 puts the strike 4.5% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:11** · `steward` **hold** — Already carrying T risk — one position per name.
+- **18:11** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-15
 

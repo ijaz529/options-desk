@@ -901,3 +901,15 @@
 {"ts": "2026-09-16T18:00:35+00:00", "agent": "hunter", "action": "stop", "because": "Premium 0.24 vs 0.92 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.", "symbol": "CVX260918C00220000", "qty": 4, "order_id": "7d6179e3-ee0d-463d-a36c-f5a286618c81"}
 {"ts": "2026-09-16T18:00:35+00:00", "agent": "hunter", "action": "stop", "because": "Premium 0.29 vs 1.49 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.", "symbol": "INTC260918P00095000", "qty": 8, "order_id": "9630a1cb-0878-4432-8d41-ae3bac034ccc"}
 {"ts": "2026-09-16T18:00:35+00:00", "agent": "steward", "action": "stop", "because": "Buying back at 2.46: the option has doubled against the 0.77 credit. The week is not ordinary — the rule says leave.", "symbol": "XOM260918P00165000", "order_id": "52c2a3ad-4dca-4fc0-aa77-e6df2e752dbe"}
+{"ts": "2026-09-16T18:11:10+00:00", "agent": "steward", "action": "hold", "because": "No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-16T18:11:10+00:00", "agent": "steward", "action": "hold", "because": "No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-16T18:11:10+00:00", "agent": "steward", "action": "hold", "because": "Already carrying KO risk — one position per name."}
+{"ts": "2026-09-16T18:11:10+00:00", "agent": "steward", "action": "hold", "because": "Already carrying WMT risk — one position per name."}
+{"ts": "2026-09-16T18:11:11+00:00", "agent": "steward", "action": "hold", "because": "No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-16T18:11:11+00:00", "agent": "steward", "action": "hold", "because": "Already carrying DIS risk — one position per name."}
+{"ts": "2026-09-16T18:11:11+00:00", "agent": "steward", "action": "hold", "because": "Already carrying UBER risk — one position per name."}
+{"ts": "2026-09-16T18:11:11+00:00", "agent": "steward", "action": "hold", "because": "Already carrying PFE risk — one position per name."}
+{"ts": "2026-09-16T18:11:11+00:00", "agent": "steward", "action": "hold", "because": "Already carrying CSCO risk — one position per name."}
+{"ts": "2026-09-16T18:11:12+00:00", "agent": "steward", "action": "sell_put", "because": "Sold the INTC 18 Sep 97.5 put at ~0.70 (0.72% of the $9,750 obligation). Delta -0.20 puts the strike 4.5% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.", "symbol": "INTC260918P00097500", "credit": 0.7, "order_id": "c2a47a0f-7a3a-4930-ac37-c37786b1ab89"}
+{"ts": "2026-09-16T18:11:12+00:00", "agent": "steward", "action": "hold", "because": "Already carrying T risk — one position per name."}
+{"ts": "2026-09-16T18:11:12+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
