@@ -26,6 +26,9 @@
 - **17:56** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **17:56** · `steward` **hold** — Already carrying T risk — one position per name.
 - **17:56** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:00** → `hunter` **stop** — Premium 0.24 vs 0.92 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **18:00** → `hunter` **stop** — Premium 0.29 vs 1.49 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **18:00** → `steward` **stop** — Buying back at 2.46: the option has doubled against the 0.77 credit. The week is not ordinary — the rule says leave.
 
 ## 2026-09-15
 
