@@ -43,6 +43,7 @@
 - **18:11** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **18:15** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 3 read-only tool calls before concluding. Trail: get_stock_bars({"symbols": "INTC,ORCL,AMD,XOM", "timeframe": "1Day", "days": 10}); get_news({"symbols": "INTC,ORCL", "limit": 10}); get_all_positions({})
 - **18:15** → `hunter` **buy_call** — ORCL fell ~14% over the week (162->140) but today gapped down then reversed to close +2.95% near session highs (range_pos 0.73) - oversold capitulation/reversal candle. Expect short-term bounce continuation. — 5× ORCL260918C00147000 at ~1.62 ($810 premium, the whole downside). Invalidation: Exit if ORCL closes below today's low (~139) or fails to hold above 142 on the next session, negating the reversal signal.
+- **18:19** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 
 ## 2026-09-15
 
