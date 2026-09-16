@@ -14,6 +14,18 @@
 - **17:45** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **17:45** · `steward` **hold** — Already carrying T risk — one position per name.
 - **17:45** 🛑 `risk` **veto** — Vetoed: steward has $66,700 of $70,000 deployed; $8,250 more would breach the sleeve.
+- **17:56** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:56** · `steward` **hold** — Already carrying CVX risk — one position per name.
+- **17:56** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **17:56** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **17:56** 🛑 `risk` **veto** — Vetoed: steward has $66,700 of $70,000 deployed; $5,700 more would breach the sleeve.
+- **17:56** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **17:56** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **17:56** · `steward` **hold** — Already carrying PFE risk — one position per name.
+- **17:56** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **17:56** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **17:56** · `steward` **hold** — Already carrying T risk — one position per name.
+- **17:56** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-15
 
