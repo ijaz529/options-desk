@@ -70,6 +70,9 @@
 - **18:28** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **18:52** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **18:55** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
+- **21:07** → `hunter` **take_half** — Premium doubled (2.57 → 5.20): banking 1 of 3, the rest rides for free.
+- **21:07** → `steward` **stop** — Buying back at 0.80: the option has doubled against the 0.39 credit. The week is not ordinary — the rule says leave.
+- **21:07** → `steward` **stop** — Buying back at 0.31: the option has doubled against the 0.10 credit. The week is not ordinary — the rule says leave.
 
 ## 2026-09-15
 
