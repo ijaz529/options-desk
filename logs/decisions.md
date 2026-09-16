@@ -73,6 +73,8 @@
 - **21:07** → `hunter` **take_half** — Premium doubled (2.57 → 5.20): banking 1 of 3, the rest rides for free.
 - **21:07** → `steward` **stop** — Buying back at 0.80: the option has doubled against the 0.39 credit. The week is not ordinary — the rule says leave.
 - **21:07** → `steward` **stop** — Buying back at 0.31: the option has doubled against the 0.10 credit. The week is not ordinary — the rule says leave.
+- **21:40** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 5 read-only tool calls before concluding. Trail: get_news({"symbols": "BA,INTC,GS,XOM", "limit": 20}); get_all_positions({}); get_stock_bars({"symbols": "BA,INTC", "timeframe": "1Day", "days": 10}); get_option_chain({"underlying_symbol": "BA", "type": "put", "strike_price_gte": 190, "strike_price_lte": 205, "expiration_date_gte": "202); get_option_chain({"underlying_symbol": "GS"})
+- **21:40** → `hunter` **buy_put** — BA broke below its week-long 204-212 range on 5.76x avg volume amid a broad hawkish-Fed risk-off tape, closing 201.96 near session lows. Heavy fresh volume + range breakdown signals continuation risk toward 190-195 over the next week. — 9× BA260918P00200000 at ~1.62 ($1,458 premium, the whole downside). Invalidation: Invalidate if BA closes back above 208 (reclaiming prior range support) or Fed rhetoric turns dovish, causing a broad risk-on reversal.
 
 ## 2026-09-15
 
