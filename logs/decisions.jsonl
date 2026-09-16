@@ -928,3 +928,15 @@
 {"ts": "2026-09-16T18:20:20+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
 {"ts": "2026-09-16T18:20:20+00:00", "agent": "steward", "action": "hold", "because": "Already carrying T risk — one position per name."}
 {"ts": "2026-09-16T18:20:21+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-16T18:28:53+00:00", "agent": "steward", "action": "hold", "because": "No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-16T18:28:54+00:00", "agent": "risk", "action": "veto", "because": "Vetoed: steward has $59,950 of $70,000 deployed; $21,000 more would breach the sleeve.", "gate": "sleeve-cap", "symbol": "CVX"}
+{"ts": "2026-09-16T18:28:54+00:00", "agent": "steward", "action": "hold", "because": "Already carrying KO risk — one position per name."}
+{"ts": "2026-09-16T18:28:54+00:00", "agent": "steward", "action": "hold", "because": "Already carrying WMT risk — one position per name."}
+{"ts": "2026-09-16T18:28:54+00:00", "agent": "steward", "action": "hold", "because": "Already carrying BAC risk — one position per name."}
+{"ts": "2026-09-16T18:28:54+00:00", "agent": "steward", "action": "hold", "because": "Already carrying DIS risk — one position per name."}
+{"ts": "2026-09-16T18:28:54+00:00", "agent": "steward", "action": "hold", "because": "Already carrying UBER risk — one position per name."}
+{"ts": "2026-09-16T18:28:54+00:00", "agent": "steward", "action": "hold", "because": "Already carrying PFE risk — one position per name."}
+{"ts": "2026-09-16T18:28:54+00:00", "agent": "steward", "action": "hold", "because": "Already carrying CSCO risk — one position per name."}
+{"ts": "2026-09-16T18:28:54+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
+{"ts": "2026-09-16T18:28:54+00:00", "agent": "steward", "action": "hold", "because": "Already carrying T risk — one position per name."}
+{"ts": "2026-09-16T18:28:54+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
