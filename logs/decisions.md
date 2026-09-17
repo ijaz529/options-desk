@@ -78,6 +78,7 @@
 - **19:00** · `hunter` **hold** — Already carrying INTC risk — one position per name.
 - **19:04** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_news({"symbols": "INTC,AMD,COIN", "limit": 10}); get_stock_bars({"symbols": "INTC,COIN,AMD", "timeframe": "1Day", "days": 10}); get_all_positions({}); get_option_chain({"underlying_symbol": "INTC", "type": "call", "strike_price_gte": 112, "strike_price_lte": 120, "expiration_date_gte": ")
 - **19:04** · `hunter` **hold** — Already carrying INTC risk — one position per name.
+- **21:02** → `hunter` **take_half** — Premium doubled (1.62 → 4.05): banking 2 of 5, the rest rides for free.
 
 ## 2026-09-16
 
