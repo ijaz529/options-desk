@@ -46,6 +46,8 @@
 - **18:11** → `steward` **sell_put** — Sold the INTC 18 Sep 107 put at ~0.47 (0.44% of the $10,700 obligation). Delta -0.20 puts the strike 3.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **18:11** · `steward` **hold** — Already carrying T risk — one position per name.
 - **18:11** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:18** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_bars({"symbols": "INTC,AMD,MU", "timeframe": "1Day", "days": 10}); get_news({"symbols": "INTC", "limit": 5}); get_option_chain({"underlying_symbol": "INTC", "type": "call", "strike_price_gte": 110, "strike_price_lte": 118, "expiration_date_gte": ")
+- **18:18** · `hunter` **hold** — Already carrying INTC risk — one position per name.
 
 ## 2026-09-16
 
