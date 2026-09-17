@@ -26,6 +26,14 @@
 - **17:55** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **17:55** → `steward` **sell_put** — Sold the T 18 Sep 25 put at ~0.07 (0.28% of the $2,500 obligation). Delta -0.22 puts the strike 1.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **17:55** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:58** → `desk` **cancel** — Cancelled the overnight order on COIN260918P00167500: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
+- **17:58** → `hunter` **stop** — Premium 0.32 vs 3.35 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **17:58** → `steward` **take_profit** — Buying back at 0.03: 84% of the 0.19 credit is banked, and the last cents are not worth the tail.
+- **17:58** → `hunter` **stop** — Premium 0.84 vs 2.57 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **17:58** → `steward` **take_profit** — Buying back at 0.03: 96% of the 0.70 credit is banked, and the last cents are not worth the tail.
+- **17:58** → `hunter` **stop** — Premium 0.27 vs 10.80 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **17:58** → `hunter` **take_profit** — Premium doubled (2.55 → 5.45) on a single lot — banked whole.
+- **17:58** → `steward` **stop** — Buying back at 0.70: the option has doubled against the 0.31 credit. The week is not ordinary — the rule says leave.
 
 ## 2026-09-16
 
