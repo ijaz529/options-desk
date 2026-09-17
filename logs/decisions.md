@@ -14,6 +14,18 @@
 - **17:45** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **17:45** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **17:45** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8567.01, availab
+- **17:55** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:55** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:55** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **17:55** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **17:55** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **17:55** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **17:55** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **17:55** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:55** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:55** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **17:55** → `steward` **sell_put** — Sold the T 18 Sep 25 put at ~0.07 (0.28% of the $2,500 obligation). Delta -0.22 puts the strike 1.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:55** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-16
 
