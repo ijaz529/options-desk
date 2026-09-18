@@ -1073,3 +1073,6 @@
 {"ts": "2026-09-18T17:40:15+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
 {"ts": "2026-09-18T17:40:15+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
 {"ts": "2026-09-18T17:40:16+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-18T17:43:57+00:00", "agent": "hunter", "action": "research", "because": "Worked the tape through Alpaca's MCP server: 3 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_snapshot({\"symbols\": \"COIN,GOOGL,QCOM,NFLX\"}); get_stock_bars({\"symbols\": \"COIN,GOOGL\", \"timeframe\": \"1Day\", \"days\": 10})"}
+{"ts": "2026-09-18T17:43:58+00:00", "agent": "hunter", "action": "hold", "because": "COIN thesis approved but no call in the delta band with a believable market — the idea dies at the chain, not at the desk."}
+{"ts": "2026-09-18T17:43:58+00:00", "agent": "hunter", "action": "hold", "because": "GOOGL thesis approved but no put in the delta band with a believable market — the idea dies at the chain, not at the desk."}
