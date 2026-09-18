@@ -1,5 +1,20 @@
 # The desk's decision log
 
+## 2026-09-18
+
+- **17:13** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:13** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:13** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **17:13** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:13** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:13** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **17:13** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **17:13** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:13** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:13** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **17:13** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:13** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+
 ## 2026-09-17
 
 - **17:45** → `steward` **sell_put** — Sold the XOM 18 Sep 160 put at ~0.32 (0.20% of the $16,000 obligation). Delta -0.19 puts the strike 1.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
