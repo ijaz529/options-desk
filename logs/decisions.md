@@ -74,6 +74,9 @@
 - **17:55** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **17:55** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **17:55** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:24** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 6 read-only tool calls before concluding. Trail: get_news({"symbols": "COIN", "limit": 5}); get_news({"symbols": "QCOM", "limit": 5}); get_stock_bars({"symbols": "COIN,QCOM,NFLX", "timeframe": "1Day", "days": 10}); get_all_positions({}); get_option_chain({"underlying_symbol": "COIN", "type": "call", "expiration_date_gte": "2026-09-25", "expiration_date_lte": "2026-10-02", ); get_option_chain({"underlying_symbol": "QCOM", "type": "put", "expiration_date_gte": "2026-09-25", "expiration_date_lte": "2026-10-02", ")
+- **18:24** · `hunter` **hold** — COIN thesis approved but no call in the delta band with a believable market — the idea dies at the chain, not at the desk.
+- **18:24** · `hunter` **hold** — QCOM thesis approved but no put in the delta band with a believable market — the idea dies at the chain, not at the desk.
 
 ## 2026-09-17
 
