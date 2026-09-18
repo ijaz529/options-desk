@@ -32,6 +32,18 @@
 - **17:34** → `steward` **take_profit** — Buying back at 0.02: 90% of the 0.21 credit is banked, and the last cents are not worth the tail.
 - **17:34** → `hunter` **stop** — Premium 0.14 vs 1.62 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **17:34** → `steward` **take_profit** — Buying back at 0.06: 81% of the 0.32 credit is banked, and the last cents are not worth the tail.
+- **17:40** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:40** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:40** · `steward` **hold** — No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:40** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:40** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:40** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:40** · `steward` **hold** — No UBER put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:40** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:40** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:40** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **17:40** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:40** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-17
 
