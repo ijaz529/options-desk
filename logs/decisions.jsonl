@@ -1115,3 +1115,4 @@
 {"ts": "2026-09-18T21:14:50+00:00", "agent": "hunter", "action": "hold", "because": "COIN thesis approved but no call in the delta band with a believable market — the idea dies at the chain, not at the desk."}
 {"ts": "2026-09-18T21:14:51+00:00", "agent": "hunter", "action": "hold", "because": "NFLX thesis approved but no put in the delta band with a believable market — the idea dies at the chain, not at the desk."}
 {"ts": "2026-09-19T13:56:27+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.5%, ETH/USD +0.9%). Cash is a position."}
+{"ts": "2026-09-19T13:57:20+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.5%, ETH/USD +1.0%). Cash is a position."}
