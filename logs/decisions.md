@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-09-19
+
+- **13:56** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.5%, ETH/USD +0.9%). Cash is a position.
+
 ## 2026-09-18
 
 - **17:13** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
