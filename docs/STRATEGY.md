@@ -38,6 +38,18 @@ same strategy, so its behaviour can be watched over weeks rather than one week:
 Everything else — sleeve caps, drawdown gate, concentration, no naked shorts,
 the diary — is unchanged.
 
+## The Hunter's first fortnight, read honestly (20 Sep 2026)
+
+From the broker's fills, 1–18 Sep: **21 Hunter positions, 4 winners, 17
+losers, realised −$11,109** — which is the account's whole drawdown to within
+fees (equity −$11,140 from the $100,000 start). The Steward is flat. Three
+rule changes follow, each above in the Hunter's section: contracts at least
+three days out, the hard exit the spec always promised, and a breakeven stop
+on the runner. None widens what the Hunter may do; all narrow where it loses.
+What they do not fix is the win rate, which is Claude's tape-reading and is
+outside a rule's reach — a 19% hit rate needs the winners to be five times the
+losers, and they have been under two. That is the number to watch next.
+
 ## Capital plan — $100,000 paper
 
 | Sleeve | Allocation | Instruments |
@@ -82,9 +94,20 @@ Alpaca MCP tools plus a headline feed: unusual movers, fresh catalysts.
 machine-checkable shape — the Risk Officer rejects anything else:
 
 ```
-{symbol, direction, thesis (≤280 chars), contract (weekly, ≤10 days out),
+{symbol, direction, thesis (≤280 chars), contract (weekly, 3–10 days out),
  max_premium_usd (≤ $2,000), invalidation (what kills the thesis)}
 ```
+
+**The contract is the nearest Friday at least three days away (amended 20 Sep
+2026; was always the coming Friday).** Monday and Tuesday buy this week's
+expiry; Wednesday, Thursday and Friday buy next week's — 7 to 9 days out, still
+inside the ten-day cap. The evidence is in the fills, not a preference: of 21
+Hunter positions since 1 Sep, the 13 bought inside three days of expiry lost
+$7,134 with three winners; a thesis with a stated invalidation needs room to be
+right or wrong, and a one-day option has only room to decay. This also ends
+Friday-morning entries into that day's expiry, which the three-hour time gate
+alone permitted: on 18 Sep two were opened at the bell and one had lost 95% by
+mid-afternoon.
 
 **One position per name (added 15 Sep 2026).** The Hunter does not re-enter an
 underlying it already carries, and a *working* order claims its name as much as
@@ -94,9 +117,21 @@ delayed sessions ran back to back before the first had committed its rows, so
 the second bought the GS 975 put again. The broker's own book is the truth the
 diary is not: a thesis on a name already held or working is a hold, logged.
 
-**Exit rules:** −50% premium stop; +100% take-half, run the rest with a
-trailing stop; hard exit at expiry minus one session. Weekend crypto sleeve:
-spot only, ≤ $5,000 total, 24/7 monitoring via CLI cron, ±4% stop/target.
+**Exit rules (amended 20 Sep 2026):**
+- −50% premium stop.
+- +100% take-half, once. After it, the remainder's stop rises to **entry**: it
+  rides for free, not for nothing. (Was written as "a trailing stop", which the
+  code never had and a stateless desk cannot keep — the broker's book carries no
+  high-water mark. A breakeven stop is what the words meant and what runs. On
+  18 Sep three ORCL calls that had been banked-half at 4.05 rode to 0.14; a
+  breakeven stop would have let them go at 1.62.)
+- **Hard exit on the session before expiry, at that session's first sweep,
+  whatever the P&L.** This line has been in the specification since the
+  contest and was never implemented — the divergence this page exists to
+  forbid. Without it, Thursday's book rode into Friday's decay: ORCL 4.05 →
+  0.14, BA 3.15 → 0.92, roughly $3,180 given back against Thursday's marks.
+- Weekend crypto sleeve: spot only, ≤ $5,000 total, 24/7 monitoring via CLI
+  cron, ±4% stop/target.
 
 ## The Risk Officer — hard gates (not negotiable, not an LLM)
 

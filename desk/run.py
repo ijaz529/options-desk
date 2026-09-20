@@ -50,8 +50,9 @@ def parse_occ(symbol: str) -> tuple[str, date, str, float] | None:
     return u, datetime.strptime(ymd, "%y%m%d").date(), cp, int(strike) / 1000
 
 
-def desk_state() -> tuple[gates.AccountState, dict]:
-    """AccountState for the Risk Officer, derived live from the broker.
+def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
+    """AccountState for the Risk Officer, derived live from the broker. `expiry` is the
+    Friday the proposal would trade into, for the time gate; the coming one by default.
 
     OPEN ORDERS count exactly like positions: a working short put is an
     obligation the account has already promised. Counting only booked positions
@@ -85,7 +86,7 @@ def desk_state() -> tuple[gates.AccountState, dict]:
             under[u] = under.get(u, 0.0) + notional
         elif p["asset_class"] == "us_equity":     # assigned stock counts against its name
             under[p["symbol"]] = under.get(p["symbol"], 0.0) + abs(p["market_value"])
-    minutes = minutes_to_expiry()
+    minutes = minutes_to_expiry(expiry=expiry)
     return gates.AccountState(
         equity=acct["equity"],
         day_start_equity=acct.get("last_equity", acct["equity"]),
@@ -104,10 +105,11 @@ def next_weekly_friday(today: date | None = None) -> date:
     return d + timedelta(days=(4 - d.weekday()) % 7)
 
 
-def minutes_to_expiry(now: datetime | None = None) -> float:
-    """Minutes until the coming weekly expiry closes — what the time gate reads."""
+def minutes_to_expiry(now: datetime | None = None, expiry: date | None = None) -> float:
+    """Minutes until the given expiry closes (the coming weekly Friday by default) — what
+    the time gate reads."""
     now = now or datetime.now(timezone.utc)
-    friday = next_weekly_friday(now.date())
+    friday = expiry or next_weekly_friday(now.date())
     hh, mm = EXPIRY_CLOSE_UTC
     close = datetime(friday.year, friday.month, friday.day, hh, mm, tzinfo=timezone.utc)
     if close <= now:                         # Friday after the bell — next week's
@@ -197,9 +199,14 @@ def hunter_session() -> None:
     theses, already = hunter.drop_held(theses, held_unders)
     for t in already:
         log.record("hunter", "hold", f"Already carrying {t.symbol} risk — one position per name.")
-    state, _ = desk_state()
+    # The Hunter's Friday is not always the Steward's: inside three days of the coming
+    # expiry it buys the one after (STRATEGY.md, 20 Sep 2026), and the time gate is
+    # measured against the Friday it would actually trade into.
+    today = datetime.now(timezone.utc).date()
+    expiry = hunter.target_expiry(today, next_weekly_friday(today))
+    state, _ = desk_state(expiry=expiry)
     for t in theses:
-        picked = hunter.contract_for(t, next_weekly_friday())
+        picked = hunter.contract_for(t, expiry)
         if picked is None:
             log.record("hunter", "hold",
                        f"{t.symbol} thesis approved but no {t.direction} in the delta band "
@@ -227,7 +234,7 @@ def hunter_session() -> None:
                    f"{t.thesis} — {qty}× {q.symbol} at ~{q.mid:.2f} (${premium:,.0f} premium, "
                    f"the whole downside). Invalidation: {t.invalidation}",
                    symbol=q.symbol, qty=qty, premium=premium, order_id=order_id)
-        state, _ = desk_state()
+        state, _ = desk_state(expiry=expiry)
 
 
 def weekend_session() -> None:
@@ -303,7 +310,17 @@ def sweep() -> None:
             qty = int(p["qty"])
             entry = abs(p["cost_basis"]) / (100 * qty)
             current = abs(p["market_value"]) / (100 * qty)
-            fire = hunter.exit_action(entry=entry, current=current, qty=qty)
+            # The session before expiry is the last one this book is allowed to see.
+            because = hunter.expiry_exit(occ[1], today)
+            if because:
+                order_id = broker.sell_option(p["symbol"], qty, round(current * 0.98, 2))
+                log.record("hunter", "expiry_exit", because, symbol=p["symbol"], qty=qty, order_id=order_id)
+                continue
+            # The diary is the state: a take_half row on this contract means the
+            # remainder is a runner, whose stop sits at entry rather than half.
+            took_half = any(r.get("symbol") == p["symbol"] and r["action"] == "take_half"
+                            for r in log.rows())
+            fire = hunter.exit_action(entry=entry, current=current, qty=qty, took_half=took_half)
             if fire:
                 kind, close_qty, because = fire
                 order_id = broker.sell_option(p["symbol"], close_qty, round(current * 0.98, 2))

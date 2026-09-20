@@ -16,7 +16,7 @@ from __future__ import annotations
 import json
 import os
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, timedelta
 
 from anthropic import Anthropic
 
@@ -174,22 +174,56 @@ def contract_for(t: Thesis, expiry: date) -> tuple[PutQuote, int] | None:
 # ── exits ─────────────────────────────────────────────────────────────────────
 STOP_FRAC = 0.50        # premium halves → out
 TAKE_FRAC = 1.00        # premium doubles → bank half (or all, if only 1 lot)
+MIN_DTE = 3             # never buy inside three days of expiry (STRATEGY.md, 20 Sep 2026)
 
 
-def exit_action(entry: float, current: float, qty: int) -> tuple[str, int, str] | None:
-    """(kind, qty_to_close, because) when a rule fires."""
+def target_expiry(today: date, coming_friday: date) -> date:
+    """The Friday the Hunter writes against: the coming one if it is at least MIN_DTE
+    days away, otherwise the one after. Monday and Tuesday buy this week; Wednesday
+    to Friday buy next week, 7–9 days out — inside the ten-day cap either way.
+
+    Of 21 positions in the first fortnight, the 13 bought inside three days lost $7,134
+    with three winners. Theta is steepest in the final days; a thesis needs room."""
+    if (coming_friday - today).days < MIN_DTE:
+        return coming_friday + timedelta(days=7)
+    return coming_friday
+
+
+def expiry_exit(expiry: date, today: date) -> str | None:
+    """The because-string when a long option must go regardless of P&L: on the session
+    before its expiry, or on expiry itself if it somehow survived. STRATEGY.md has said
+    "hard exit at expiry minus one session" since the contest; this is the first time
+    the code has done it. Thursday's book rode into Friday's decay on 18 Sep — ORCL
+    4.05 → 0.14, BA 3.15 → 0.92."""
+    if today >= expiry - timedelta(days=1):
+        when = "expires today" if today >= expiry else f"expires tomorrow ({expiry:%a %d %b})"
+        return (f"Hard exit: this contract {when}, and the last session's decay is not a bet "
+                "the desk takes. Out at the mark, whatever the P&L.")
+    return None
+
+
+def exit_action(entry: float, current: float, qty: int,
+                took_half: bool = False) -> tuple[str, int, str] | None:
+    """(kind, qty_to_close, because) when a rule fires.
+
+    `took_half`: half has already been banked at double. The remainder then rides with
+    its stop at ENTRY — free, not for nothing — and is not halved a second time."""
     if entry <= 0:
         return None
+    if took_half and current <= entry:
+        return ("breakeven_stop", qty,
+                f"The runner is back at its {entry:.2f} entry after half was banked at double — "
+                "out flat. It rode for free, not for nothing.")
     if current <= entry * (1 - STOP_FRAC):
         return ("stop", qty,
                 f"Premium {current:.2f} vs {entry:.2f} entry: the thesis is half gone — all out. "
                 "Losses are capped by construction; this is the cap doing its job.")
-    if current >= entry * (1 + TAKE_FRAC):
+    if current >= entry * (1 + TAKE_FRAC) and not took_half:
         half = qty // 2
         if half == 0:
             return ("take_profit", qty,
                     f"Premium doubled ({entry:.2f} → {current:.2f}) on a single lot — banked whole.")
         return ("take_half", half,
                 f"Premium doubled ({entry:.2f} → {current:.2f}): banking {half} of {qty}, "
-                "the rest rides for free.")
+                "the rest rides with its stop raised to entry.")
     return None
