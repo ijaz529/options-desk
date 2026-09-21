@@ -14,6 +14,18 @@
 - **18:54** → `steward` **sell_put** — Sold the INTC 25 Sep 114 put at ~1.13 (0.99% of the $11,400 obligation). Delta -0.20 puts the strike 6.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **18:54** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **18:54** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **19:02** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **19:02** 🛑 `risk` **veto** — Vetoed: CVX would be $20,000, past 20% of the account in one name.
+- **19:02** → `steward` **sell_put** — Sold the KO 25 Sep 86 put at ~0.16 (0.19% of the $8,600 obligation). Delta -0.15 puts the strike 2.2% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **19:02** → `desk` **note** — WMT: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 10473.01, availa
+- **19:02** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **19:02** → `desk` **note** — DIS: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 10160.01, availa
+- **19:02** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **19:02** → `steward` **sell_put** — Sold the PFE 25 Sep 27 put at ~0.06 (0.22% of the $2,700 obligation). Delta -0.13 puts the strike 3.2% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **19:02** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **19:02** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **19:02** → `desk` **note** — T: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 2489.01, availab
+- **19:02** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-19
 
