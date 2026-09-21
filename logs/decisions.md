@@ -40,6 +40,8 @@
 - **19:23** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8075.01, availab
 - **19:33** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 5 read-only tool calls before concluding. Trail: get_stock_bars({"symbols": "META,COIN,AMD,INTC,QCOM", "timeframe": "1Day", "days": 10}); get_all_positions({}); get_option_chain({"underlying_symbol": "META", "type": "call"}); get_option_chain({"underlying_symbol": "META", "type": "call", "expiration_date_gte": "2026-10-02", "expiration_date_lte": "2026-10-16", ); get_option_chain({"underlying_symbol": "AMD", "type": "call", "expiration_date_gte": "2026-10-02", "expiration_date_lte": "2026-10-16", ")
 - **19:33** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
+- **19:40** 🛑 `risk` **veto** — Vetoed: account equity $88,841 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.
+- **19:40** 🛑 `risk` **veto** — Vetoed: account equity $88,841 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.
 
 ## 2026-09-19
 
