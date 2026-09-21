@@ -1156,3 +1156,15 @@
 {"ts": "2026-09-21T19:33:05+00:00", "agent": "hunter", "action": "hold", "because": "Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies."}
 {"ts": "2026-09-21T19:40:02+00:00", "agent": "risk", "action": "veto", "because": "Vetoed: account equity $88,841 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.", "gate": "kill-switch", "symbol": "COIN"}
 {"ts": "2026-09-21T19:40:02+00:00", "agent": "risk", "action": "veto", "because": "Vetoed: account equity $88,841 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.", "gate": "kill-switch", "symbol": "SHOP"}
+{"ts": "2026-09-21T19:41:05+00:00", "agent": "steward", "action": "hold", "because": "Already carrying XOM risk — one position per name."}
+{"ts": "2026-09-21T19:41:05+00:00", "agent": "risk", "action": "veto", "because": "Vetoed: CVX would be $19,750, past 20% of the account in one name.", "gate": "concentration", "symbol": "CVX"}
+{"ts": "2026-09-21T19:41:05+00:00", "agent": "steward", "action": "hold", "because": "Already carrying KO risk — one position per name."}
+{"ts": "2026-09-21T19:41:06+00:00", "agent": "desk", "action": "note", "because": "WMT: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 10471.01, availa"}
+{"ts": "2026-09-21T19:41:06+00:00", "agent": "steward", "action": "hold", "because": "Already carrying BAC risk — one position per name."}
+{"ts": "2026-09-21T19:41:06+00:00", "agent": "desk", "action": "note", "because": "DIS: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 10162.01, availa"}
+{"ts": "2026-09-21T19:41:06+00:00", "agent": "steward", "action": "hold", "because": "Already carrying UBER risk — one position per name."}
+{"ts": "2026-09-21T19:41:06+00:00", "agent": "steward", "action": "hold", "because": "Already carrying PFE risk — one position per name."}
+{"ts": "2026-09-21T19:41:06+00:00", "agent": "steward", "action": "hold", "because": "Already carrying CSCO risk — one position per name."}
+{"ts": "2026-09-21T19:41:06+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
+{"ts": "2026-09-21T19:41:06+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-21T19:41:07+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
