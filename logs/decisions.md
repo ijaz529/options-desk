@@ -66,9 +66,8 @@
 - **19:45** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **19:45** → `steward` **sell_put** — Sold the T 25 Sep 25 put at ~0.15 (0.60% of the $2,500 obligation). Delta -0.28 puts the strike 1.8% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **19:45** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
-- **20:00** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 6 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_snapshot({"symbols": "SHOP,META,AMD,INTC,QCOM"}); get_option_contracts({"underlying_symbols": "SHOP,AMD", "type": "call", "expiration_date_gte": "2026-09-25", "expiration_date_lte": "2026-10-); get_option_contracts({"underlying_symbols": "AMD", "type": "call", "expiration_date_gte": "2026-09-25", "expiration_date_lte": "2026-10-03", ); get_option_latest_quote({"symbols": "SHOP261002C00140000,SHOP261002C00138000"}); get_option_latest_quote({"symbols": "AMD260925C00620000,AMD260925C00625000,AMD261002C00620000,AMD261002C00625000"})
-- **20:00** 🛑 `risk` **veto** — Vetoed: account equity $88,784 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.
-- **20:00** 🛑 `risk` **veto** — Vetoed: account equity $88,784 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.
+- **20:03** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_snapshot({"symbols": "COIN,SHOP,AMD,INTC,META,QCOM", "feed": "iex"}); get_option_chain({"underlying_symbol": "SHOP", "type": "call", "expiration_date_gte": "2026-10-09", "expiration_date_lte": "2026-10-23", ); get_option_chain({"underlying_symbol": "COIN", "type": "put", "expiration_date_gte": "2026-10-09", "expiration_date_lte": "2026-10-23", ")
+- **20:03** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
 
 ## 2026-09-19
 
