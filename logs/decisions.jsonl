@@ -1168,3 +1168,15 @@
 {"ts": "2026-09-21T19:41:06+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
 {"ts": "2026-09-21T19:41:06+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
 {"ts": "2026-09-21T19:41:07+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-21T19:45:52+00:00", "agent": "steward", "action": "hold", "because": "Already carrying XOM risk — one position per name."}
+{"ts": "2026-09-21T19:45:52+00:00", "agent": "steward", "action": "hold", "because": "No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-21T19:45:52+00:00", "agent": "steward", "action": "hold", "because": "Already carrying KO risk — one position per name."}
+{"ts": "2026-09-21T19:45:52+00:00", "agent": "desk", "action": "note", "because": "WMT: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 10471.01, availa"}
+{"ts": "2026-09-21T19:45:52+00:00", "agent": "steward", "action": "hold", "because": "Already carrying BAC risk — one position per name."}
+{"ts": "2026-09-21T19:45:52+00:00", "agent": "desk", "action": "note", "because": "DIS: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 10162.01, availa"}
+{"ts": "2026-09-21T19:45:52+00:00", "agent": "steward", "action": "hold", "because": "Already carrying UBER risk — one position per name."}
+{"ts": "2026-09-21T19:45:52+00:00", "agent": "steward", "action": "hold", "because": "Already carrying PFE risk — one position per name."}
+{"ts": "2026-09-21T19:45:52+00:00", "agent": "steward", "action": "hold", "because": "Already carrying CSCO risk — one position per name."}
+{"ts": "2026-09-21T19:45:52+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
+{"ts": "2026-09-21T19:45:53+00:00", "agent": "steward", "action": "sell_put", "because": "Sold the T 25 Sep 25 put at ~0.15 (0.60% of the $2,500 obligation). Delta -0.28 puts the strike 1.8% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.", "symbol": "T260925P00025000", "credit": 0.15, "order_id": "33801261-bcf6-45e5-8882-8a5758547669"}
+{"ts": "2026-09-21T19:45:53+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
