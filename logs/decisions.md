@@ -26,6 +26,18 @@
 - **19:02** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **19:02** → `desk` **note** — T: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 2489.01, availab
 - **19:02** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **19:23** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **19:23** 🛑 `risk` **veto** — Vetoed: CVX would be $20,000, past 20% of the account in one name.
+- **19:23** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **19:23** → `desk` **note** — WMT: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 10471.01, availa
+- **19:23** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **19:23** → `desk` **note** — DIS: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 10075.01, availa
+- **19:23** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **19:23** · `steward` **hold** — Already carrying PFE risk — one position per name.
+- **19:23** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **19:23** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **19:23** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **19:23** → `desk` **note** — GM: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 8075.01, availab
 
 ## 2026-09-19
 
