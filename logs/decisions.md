@@ -1,5 +1,20 @@
 # The desk's decision log
 
+## 2026-09-21
+
+- **18:54** → `steward` **sell_put** — Sold the XOM 25 Sep 155 put at ~0.57 (0.37% of the $15,500 obligation). Delta -0.19 puts the strike 2.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:54** 🛑 `risk` **veto** — Vetoed: CVX would be $20,000, past 20% of the account in one name.
+- **18:54** · `steward` **hold** — No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:54** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:54** → `steward` **sell_put** — Sold the BAC 25 Sep 57 put at ~0.17 (0.30% of the $5,700 obligation). Delta -0.21 puts the strike 2.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:54** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:54** → `steward` **sell_put** — Sold the UBER 25 Sep 68 put at ~0.18 (0.26% of the $6,800 obligation). Delta -0.13 puts the strike 4.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:54** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:54** → `steward` **sell_put** — Sold the CSCO 25 Sep 107 put at ~0.35 (0.33% of the $10,700 obligation). Delta -0.15 puts the strike 3.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:54** → `steward` **sell_put** — Sold the INTC 25 Sep 114 put at ~1.13 (0.99% of the $11,400 obligation). Delta -0.20 puts the strike 6.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:54** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:54** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+
 ## 2026-09-19
 
 - **13:56** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.5%, ETH/USD +0.9%). Cash is a position.
