@@ -14,6 +14,18 @@
 - **17:46** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **17:46** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **17:46** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:54** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:54** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:54** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **17:54** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **17:54** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **17:54** → `desk` **note** — DIS: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 10075.01, availa
+- **17:54** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **17:54** · `steward` **hold** — Already carrying PFE risk — one position per name.
+- **17:54** → `desk` **note** — CSCO: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 10170.01, availa
+- **17:54** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **17:54** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:54** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-21
 
