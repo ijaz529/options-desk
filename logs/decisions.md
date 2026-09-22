@@ -1,5 +1,20 @@
 # The desk's decision log
 
+## 2026-09-22
+
+- **17:46** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:46** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:46** → `steward` **sell_put** — Sold the KO 25 Sep 87 put at ~0.21 (0.24% of the $8,700 obligation). Delta -0.20 puts the strike 1.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:46** → `steward` **sell_put** — Sold the WMT 25 Sep 107 put at ~0.24 (0.22% of the $10,700 obligation). Delta -0.16 puts the strike 2.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:46** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **17:46** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:46** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **17:46** → `steward` **sell_put** — Sold the PFE 25 Sep 27.5 put at ~0.10 (0.36% of the $2,750 obligation). Delta -0.26 puts the strike 1.3% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:46** → `desk` **note** — CSCO: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 10244.01, availa
+- **17:46** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **17:46** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:46** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+
 ## 2026-09-21
 
 - **18:54** → `steward` **sell_put** — Sold the XOM 25 Sep 155 put at ~0.57 (0.37% of the $15,500 obligation). Delta -0.19 puts the strike 2.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
