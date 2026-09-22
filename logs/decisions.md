@@ -68,6 +68,9 @@
 - **18:20** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **18:20** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **18:20** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:51** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 6 read-only tool calls before concluding. Trail: get_news({"symbols": "SHOP,JPM,PYPL,MU", "limit": 20}); get_all_positions({}); get_stock_bars({"symbols": "SHOP,JPM,PYPL,MU", "timeframe": "1Day", "days": 6}); get_option_chain({"underlying_symbol": "JPM", "type": "put", "expiration_date_gte": "2026-09-25", "expiration_date_lte": "2026-10-10", "s); get_option_chain({}); get_option_chain({"underlying_symbol": "PYPL", "type": "put", "expiration_date_gte": "2026-09-25", "expiration_date_lte": "2026-10-10", ")
+- **18:51** 🛑 `risk` **veto** — Vetoed: account equity $88,798 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.
+- **18:51** · `hunter` **hold** — PYPL thesis approved but no put in the delta band with a believable market — the idea dies at the chain, not at the desk.
 
 ## 2026-09-21
 
