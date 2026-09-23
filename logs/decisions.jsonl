@@ -1293,3 +1293,15 @@
 {"ts": "2026-09-23T18:13:12+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
 {"ts": "2026-09-23T18:17:53+00:00", "agent": "steward", "action": "take_profit", "because": "Buying back at 0.08: 67% of the 0.24 credit is banked, and the last cents are not worth the tail.", "symbol": "WMT260925P00107000", "order_id": "1e8a2b44-71e2-4b35-b528-15231c55a5df"}
 {"ts": "2026-09-23T18:17:53+00:00", "agent": "steward", "action": "take_profit", "because": "Buying back at 0.19: 67% of the 0.57 credit is banked, and the last cents are not worth the tail.", "symbol": "XOM260925P00155000", "order_id": "9332770c-88bf-491c-a2c1-a2123fe0769a"}
+{"ts": "2026-09-23T18:23:24+00:00", "agent": "steward", "action": "sell_put", "because": "Sold the XOM 25 Sep 157.5 put at ~0.43 (0.27% of the $15,750 obligation). Delta -0.18 puts the strike 2.3% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.", "symbol": "XOM260925P00157500", "credit": 0.43, "order_id": "33ea3e34-7715-4de4-acb3-b0000c7737f1"}
+{"ts": "2026-09-23T18:23:24+00:00", "agent": "steward", "action": "hold", "because": "No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-23T18:23:24+00:00", "agent": "steward", "action": "hold", "because": "Already carrying KO risk — one position per name."}
+{"ts": "2026-09-23T18:23:24+00:00", "agent": "desk", "action": "note", "because": "WMT: skipped this round — {\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 10780.01, availa"}
+{"ts": "2026-09-23T18:23:24+00:00", "agent": "steward", "action": "hold", "because": "Already carrying BAC risk — one position per name."}
+{"ts": "2026-09-23T18:23:24+00:00", "agent": "steward", "action": "hold", "because": "Already carrying DIS risk — one position per name."}
+{"ts": "2026-09-23T18:23:24+00:00", "agent": "steward", "action": "hold", "because": "Already carrying UBER risk — one position per name."}
+{"ts": "2026-09-23T18:23:24+00:00", "agent": "steward", "action": "hold", "because": "No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-23T18:23:24+00:00", "agent": "steward", "action": "hold", "because": "No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-23T18:23:24+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
+{"ts": "2026-09-23T18:23:25+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-23T18:23:25+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}

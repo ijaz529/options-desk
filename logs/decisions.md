@@ -28,6 +28,18 @@
 - **18:13** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **18:17** → `steward` **take_profit** — Buying back at 0.08: 67% of the 0.24 credit is banked, and the last cents are not worth the tail.
 - **18:17** → `steward` **take_profit** — Buying back at 0.19: 67% of the 0.57 credit is banked, and the last cents are not worth the tail.
+- **18:23** → `steward` **sell_put** — Sold the XOM 25 Sep 157.5 put at ~0.43 (0.27% of the $15,750 obligation). Delta -0.18 puts the strike 2.3% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:23** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:23** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **18:23** → `desk` **note** — WMT: skipped this round — {"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 10780.01, availa
+- **18:23** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **18:23** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **18:23** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **18:23** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:23** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:23** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **18:23** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:23** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-22
 
