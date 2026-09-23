@@ -14,6 +14,18 @@
 - **17:59** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **17:59** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **17:59** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:13** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **18:13** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:13** → `steward` **sell_put** — Sold the KO 25 Sep 87 put at ~0.21 (0.24% of the $8,700 obligation). Delta -0.23 puts the strike 1.3% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:13** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **18:13** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **18:13** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **18:13** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **18:13** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:13** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:13** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **18:13** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:13** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-22
 
