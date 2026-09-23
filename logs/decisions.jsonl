@@ -1291,3 +1291,5 @@
 {"ts": "2026-09-23T18:13:11+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
 {"ts": "2026-09-23T18:13:11+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
 {"ts": "2026-09-23T18:13:12+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-23T18:17:53+00:00", "agent": "steward", "action": "take_profit", "because": "Buying back at 0.08: 67% of the 0.24 credit is banked, and the last cents are not worth the tail.", "symbol": "WMT260925P00107000", "order_id": "1e8a2b44-71e2-4b35-b528-15231c55a5df"}
+{"ts": "2026-09-23T18:17:53+00:00", "agent": "steward", "action": "take_profit", "because": "Buying back at 0.19: 67% of the 0.57 credit is banked, and the last cents are not worth the tail.", "symbol": "XOM260925P00155000", "order_id": "9332770c-88bf-491c-a2c1-a2123fe0769a"}
