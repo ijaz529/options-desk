@@ -75,6 +75,9 @@
 - **19:06** 🛑 `risk` **veto** — Vetoed: account equity $88,858 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.
 - **19:06** 🛑 `risk` **veto** — Vetoed: account equity $88,858 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.
 - **21:36** → `steward` **take_profit** — Buying back at 0.37: 67% of the 1.13 credit is banked, and the last cents are not worth the tail.
+- **21:44** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_bars({"symbols": "GOOGL,PLTR,ORCL,AVGO", "timeframe": "1Day", "days": 10}); get_option_chain({"underlying_symbol": "GOOGL", "type": "put", "strike_price_gte": 320, "strike_price_lte": 340, "expiration_date_gte": "); get_option_chain({"underlying_symbol": "PLTR", "type": "call", "strike_price_gte": 190, "strike_price_lte": 210, "expiration_date_gte": ")
+- **21:44** 🛑 `risk` **veto** — Vetoed: account equity $88,871 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.
+- **21:44** 🛑 `risk` **veto** — Vetoed: account equity $88,871 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.
 
 ## 2026-09-22
 
