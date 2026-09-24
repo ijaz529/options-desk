@@ -1,5 +1,20 @@
 # The desk's decision log
 
+## 2026-09-24
+
+- **17:57** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:58** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:58** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **17:58** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **17:58** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **17:58** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **17:58** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **17:58** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:58** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:58** → `steward` **sell_put** — Sold the INTC 25 Sep 121 put at ~0.52 (0.43% of the $12,100 obligation). Delta -0.19 puts the strike 3.3% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:58** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **17:58** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+
 ## 2026-09-23
 
 - **17:58** · `steward` **hold** — Already carrying XOM risk — one position per name.
