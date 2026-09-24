@@ -70,6 +70,9 @@
 - **18:42** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **18:42** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **18:42** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **19:06** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 5 read-only tool calls before concluding. Trail: get_all_positions({}); get_news({"symbols": "META,ORCL", "limit": 10}); get_stock_bars({"symbols": "META,ORCL", "timeframe": "1Day", "days": 10}); get_option_chain({"underlying_symbol": "META", "type": "call", "strike_price_gte": 780, "strike_price_lte": 820, "expiration_date_gte": "); get_option_chain({"underlying_symbol": "ORCL", "type": "put", "strike_price_gte": 130, "strike_price_lte": 140, "expiration_date_gte": "2)
+- **19:06** 🛑 `risk` **veto** — Vetoed: account equity $88,940 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.
+- **19:06** 🛑 `risk` **veto** — Vetoed: account equity $88,940 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.
 
 ## 2026-09-23
 
