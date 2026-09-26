@@ -1502,3 +1502,4 @@
 {"ts": "2026-09-25T19:17:54+00:00", "agent": "risk", "action": "veto", "because": "Vetoed: account equity $89,001 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.", "gate": "kill-switch", "symbol": "PYPL"}
 {"ts": "2026-09-25T19:17:55+00:00", "agent": "risk", "action": "veto", "because": "Vetoed: account equity $89,001 is below the $89,885 kill switch — the desk is income-only, and a hunter long_option is not income.", "gate": "kill-switch", "symbol": "TSLA"}
 {"ts": "2026-09-26T14:30:20+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD -0.1%, ETH/USD -0.1%). Cash is a position."}
+{"ts": "2026-09-26T14:35:22+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD -0.1%, ETH/USD -0.1%). Cash is a position."}
