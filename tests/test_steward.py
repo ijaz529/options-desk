@@ -28,6 +28,15 @@ def test_rejects_outside_delta_band():
     assert pick([q(248, -0.45, 4.0, 4.2), q(220, -0.05, 0.42, 0.48)]) is None
 
 
+def test_at_or_below_20_delta_only():
+    # The KO 88 put of 24 Sep 2026: -0.26 delta, 0.7% below spot, 0.18% of strike.
+    # Rule 2 says "at (or nearest below) the 20-delta strike"; it was assigned.
+    assert pick([q(88, -0.26, 0.15, 0.17, spot=88.6)]) is None
+    # "at" still counts, and the far edge is unchanged
+    assert pick([q(240, -0.20, 1.0, 1.1)]).strike == 240
+    assert pick([q(232, -0.13, 0.50, 0.56)]).strike == 232
+
+
 def test_no_delta_no_trade():
     assert pick([q(240, None, 1.0, 1.1)]) is None
 

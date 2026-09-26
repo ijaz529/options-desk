@@ -10,7 +10,12 @@ from __future__ import annotations
 from desk.broker import PutQuote
 
 TARGET_DELTA = -0.20          # puts carry negative delta; we want ~20-delta
-DELTA_BAND = (-0.28, -0.12)   # acceptable window around the target
+# STRATEGY.md rule 2: "at (or nearest below) the 20-delta strike" — below meaning further
+# out of the money, so the band's near edge IS the target. The old near edge of -0.28 let
+# the desk sell a KO 88 put at -0.26, 0.7% below spot, for 0.18% of strike; the contract's
+# own wording excludes that trade, and it was the one that got assigned (25 Sep 2026).
+# -0.21 leaves a hundredth for "at"; -0.12 stays as the far edge where nothing pays.
+DELTA_BAND = (-0.21, -0.12)   # at-or-below 20-delta, per the contract (26 Sep 2026)
 MIN_PREMIUM_YIELD = 0.0015    # mid ≥ 0.15% of strike, or the obligation isn't paid for
 MAX_SPREAD_FRAC = 0.20        # bid/ask wider than 20% of mid = market too thin to trust
 TAKE_PROFIT_FRAC = 0.65       # buy back at 65% of max premium

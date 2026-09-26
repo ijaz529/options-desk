@@ -38,6 +38,57 @@ same strategy, so its behaviour can be watched over weeks rather than one week:
 Everything else — sleeve caps, drawdown gate, concentration, no naked shorts,
 the diary — is unchanged.
 
+## Amended 26 Sep 2026 — the Steward, read against its own contract
+
+A read of the account, the diary and the code on 26 Sep 2026, thirteen days
+into the open-ended run. Equity **$89,018**, $867 under the switch and drifting
+up ~$50–80 a session; **$80,237 cash and one position: 100 KO shares**. The
+risk machinery is doing exactly what this document says. The income engine is
+not, and the gap is between these words and the code.
+
+**What the diary showed.** Sell-puts went 8 → 5 → 3 → 2 → 0 a day over 21–25
+Sep while take-profits kept firing: the Steward closes winners and finds no
+replacements. Its stated reason, eight names in ten, is *"nothing in the delta
+band paid the premium floor"* — twelve names chosen for one-contract sizing
+are low-IV names, and at 20-delta they do not pay 0.15% a week in this tape.
+Meanwhile the Hunter ran a full research pass twice a session and was vetoed
+by the switch every time, and the KO 88 put sold on 24 Sep at −0.26 delta,
+0.7% below spot, for 0.18% — a trade rule 2 as written excludes — was assigned.
+
+**Fixed in code the same day, because the contract already said so:**
+
+- *Rule 2.* The delta band's near edge was −0.28; "at or nearest below the
+  20-delta strike" means at most −0.20. Now (−0.21, −0.12). The KO trade would
+  not have been placed.
+- *Assigned stock is visible.* Shares carry no option symbol, so one-position-
+  per-name and the Steward sleeve could not see the 100 KO shares; a second KO
+  put would have cleared concentration by $223. Both now count stock.
+- *The Hunter asks the switch before reading the tape.* Same verdict, none of
+  the research spend, one honest diary row.
+- *The diary keeps the broker's whole refusal.* Fifty-one buying-power skips
+  were logged with the message cut before "available:".
+
+**Decided, dated, and still to build:**
+
+- *Rule 1 (IV rank ≥ 40) is not implemented and never was.* The desk keeps no
+  IV history, so it cannot be as written. It stays as intent, marked
+  unimplemented above; rule 3's floor is the IV screen in practice. Building an
+  IV history is a small table and a decision for later, not a silent gap.
+- *Defined-risk put spreads are permitted under income-only.* The Steward's
+  section has always said "spreads when IV is thin"; the kill-switch clause
+  only allowed cash-secured puts. In exactly the current state — thin IV and
+  income-only — the two rules together left the Steward no tool. A defined-risk
+  spread is income and its loss is capped; the clause now admits it. **The
+  spread leg is specified here and not yet built.** The Risk Officer's
+  `no-naked-shorts` gate already requires every spread to be defined-risk.
+- *The wheel's second half.* "Assigned stock is sold with a covered call the
+  next session" has been in the exit rules since August and has no code. The
+  KO shares are held, logged as such each session, and no put is sold on top;
+  the covered call is the next piece of options code, alongside spreads.
+
+**Not done: re-basing the switch.** The gap is two weeks of ordinary income with
+$80k in cash. The warning in `gates.py` stands.
+
 ## The Hunter's first fortnight, read honestly (20 Sep 2026)
 
 From the broker's fills, 1–18 Sep: **21 Hunter positions, 4 winners, 17
@@ -68,10 +119,13 @@ size: the Risk Officer vetoed nine of ten names on sizing, which is the gates
 working and the universe wrong. Weekly expiries only.
 
 **Entry rule (deterministic):**
-1. Rank universe by 30-day IV rank; take names with IV rank ≥ 40.
+1. Rank universe by 30-day IV rank; take names with IV rank ≥ 40. *(Not
+   implemented — see "Amended 26 Sep 2026". The desk keeps no IV history; in
+   practice rule 3's premium floor is the IV screen.)*
 2. Sell the put at (or nearest below) the 20-delta strike, expiring the **coming
    Friday** (amended 13 Sep 2026; was the fixed contest Friday, 4 Sep) — the
-   whole position is a bet that the week ahead is ordinary.
+   whole position is a bet that the week ahead is ordinary. *(Code matched to
+   this wording on 26 Sep 2026 — the band had reached −0.28; see below.)*
 3. Premium collected must be ≥ 0.15% of strike notional or skip (commission-free,
    but a $6 credit is not worth a $20,000 obligation).
 4. Max 1 position per underlying — where "position" counts WORKING ORDERS too,
@@ -143,6 +197,7 @@ diary is not: a thesis on a name already held or working is a hold, logged.
    **96% of the stated baseline** (see "Post-contest operation")
    → the desk goes **income-only**: the Hunter and the weekend crypto sleeve are
    shut for the remainder, while the Steward may keep selling cash-secured puts
+   — and, from 26 Sep 2026, **defined-risk put spreads** (see "Amended 26 Sep")
    — the defined-outcome income that earns the account back. The first
    implementation blocked EVERY opening trade, which contradicted this clause
    and would have frozen the desk entirely on one bad Tuesday; the code now

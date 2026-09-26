@@ -85,7 +85,10 @@ def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
                 sleeve["hunter"] += notional
             under[u] = under.get(u, 0.0) + notional
         elif p["asset_class"] == "us_equity":     # assigned stock counts against its name
-            under[p["symbol"]] = under.get(p["symbol"], 0.0) + abs(p["market_value"])
+            notional = abs(p["market_value"])
+            under[p["symbol"]] = under.get(p["symbol"], 0.0) + notional
+            # ...and against the Steward's sleeve: the put's obligation, now taken up
+            sleeve["steward"] += notional
     minutes = minutes_to_expiry(expiry=expiry)
     return gates.AccountState(
         equity=acct["equity"],
@@ -119,13 +122,26 @@ def minutes_to_expiry(now: datetime | None = None, expiry: date | None = None) -
 
 def steward_session() -> None:
     state, acct = desk_state()
-    held_unders = {parse_occ(p["symbol"])[0] for p in read_positions() if parse_occ(p["symbol"])}
+    positions = read_positions()
+    held_unders = {parse_occ(p["symbol"])[0] for p in positions if parse_occ(p["symbol"])}
     # a WORKING order claims its name too — "one position per name" must count
     # promises, not just fills (three stacked XOM puts taught us that)
     held_unders |= {parse_occ(o["symbol"])[0] for o in broker.open_orders() if parse_occ(o["symbol"])}
+    # ASSIGNED STOCK claims its name as well. Shares carry no OCC symbol, so the KO 88 put
+    # assigned on 25 Sep 2026 left 100 shares this check could not see — a second KO put
+    # on top would have cleared the concentration gate by $223.
+    assigned = {p["symbol"]: float(p["qty"]) for p in positions
+                if p.get("asset_class") == "us_equity" and float(p["qty"]) > 0}
+    held_unders |= set(assigned)
     expiry = next_weekly_friday()
     for u in UNIVERSE:
       try:
+        if u in assigned:
+            log.record("steward", "hold",
+                       f"Holding {assigned[u]:g} {u} shares from assignment — the wheel's second half "
+                       "(a covered call, STRATEGY.md) is specified and not yet built. No new put on "
+                       "top of the stock.")
+            continue
         if u in held_unders:
             log.record("steward", "hold", f"Already carrying {u} risk — one position per name.")
             continue
@@ -150,7 +166,10 @@ def steward_session() -> None:
       except Exception as e:
         # one name's API hiccup must not kill the session — a transient 403
         # mid-run threw away five placements' diary rows on launch day
-        log.record("desk", "note", f"{u}: skipped this round — {str(e)[:110]}")
+        # 240, not 110: the broker's buying-power refusal reads "required: X, available: Y"
+        # and the old cut fell between them — 51 skips were logged without the one figure
+        # that explained them (13–24 Sep 2026)
+        log.record("desk", "note", f"{u}: skipped this round — {str(e)[:240]}")
         continue
 
 
@@ -165,6 +184,17 @@ def hunter_session() -> None:
     sleeve doubles. A buy inside the cooldown means this is the retry of a slot
     that already ran, so the session stands down. The two genuine sessions
     (14:xx and 18:xx) are hours apart and unaffected."""
+    # The kill switch is deterministic and vetoes every Hunter opening, so ask it BEFORE
+    # reading the tape. From 21 to 25 Sep 2026 the desk ran a full Claude + Alpaca-MCP
+    # research pass twice a session to propose PYPL and TSLA, then vetoed both on equity
+    # every time. Same verdict, none of the spend, and one honest row instead of three.
+    state, _ = desk_state()
+    if state.equity < gates.KILL_SWITCH_EQUITY:
+        log.record("hunter", "hold",
+                   f"Income-only: equity ${state.equity:,.0f} is below the "
+                   f"${gates.KILL_SWITCH_EQUITY:,.0f} kill switch, so the Hunter stands down "
+                   "without reading the tape.")
+        return
     cutoff = datetime.now(timezone.utc) - timedelta(minutes=HUNTER_COOLDOWN_MIN)
     recent = [r for r in log.rows()
               if r["agent"] == "hunter" and r["action"].startswith("buy_")
