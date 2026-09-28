@@ -39,6 +39,7 @@
 - **20:32** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **20:32** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **20:35** · `hunter` **hold** — Income-only: equity $88,967 is below the $89,885 kill switch, so the Hunter stands down without reading the tape.
+- **20:40** · `hunter` **hold** — Income-only: equity $88,961 is below the $89,885 kill switch, so the Hunter stands down without reading the tape.
 
 ## 2026-09-26
 
