@@ -1539,3 +1539,4 @@
 {"ts": "2026-09-28T20:32:40+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
 {"ts": "2026-09-28T20:32:41+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
 {"ts": "2026-09-28T20:32:42+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-28T20:35:35+00:00", "agent": "hunter", "action": "hold", "because": "Income-only: equity $88,967 is below the $89,885 kill switch, so the Hunter stands down without reading the tape."}
