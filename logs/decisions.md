@@ -39,6 +39,7 @@
 - **20:32** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **20:32** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **20:35** · `hunter` **hold** — Income-only: equity $88,967 is below the $89,885 kill switch, so the Hunter stands down without reading the tape.
+- **20:40** · `hunter` **hold** — Income-only: equity $88,961 is below the $89,885 kill switch, so the Hunter stands down without reading the tape.
 - **20:41** · `steward` **hold** — Already carrying XOM risk — one position per name.
 - **20:41** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **20:41** · `steward` **hold** — Holding 100 KO shares from assignment — the wheel's second half (a covered call, STRATEGY.md) is specified and not yet built. No new put on top of the stock.
@@ -51,6 +52,18 @@
 - **20:41** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **20:41** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **20:41** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **20:51** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **20:51** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **20:51** · `steward` **hold** — Holding 100 KO shares from assignment — the wheel's second half (a covered call, STRATEGY.md) is specified and not yet built. No new put on top of the stock.
+- **20:51** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **20:51** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **20:51** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **20:51** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **20:51** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **20:51** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **20:51** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **20:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **20:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-26
 
