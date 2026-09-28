@@ -67,6 +67,7 @@
 - **21:13** · `hunter` **hold** — Income-only: equity $88,965 is below the $89,885 kill switch, so the Hunter stands down without reading the tape.
 - **21:15** · `hunter` **hold** — Income-only: equity $88,965 is below the $89,885 kill switch, so the Hunter stands down without reading the tape.
 - **23:28** · `hunter` **hold** — Income-only: equity $88,964 is below the $89,885 kill switch, so the Hunter stands down without reading the tape.
+- **23:29** · `hunter` **hold** — Income-only: equity $88,964 is below the $89,885 kill switch, so the Hunter stands down without reading the tape.
 
 ## 2026-09-26
 
