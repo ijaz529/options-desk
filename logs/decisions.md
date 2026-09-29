@@ -14,6 +14,7 @@
 - **18:53** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **18:53** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **18:53** → `steward` **sell_put** — Offered to sell the GM 02 Oct 77 put at ~0.17, a day limit at the mid that counts once it fills (0.22% of the $7,700 obligation). Delta -0.12 puts the strike 4.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **19:06** · `steward` **hold** — Only 54 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-09-28
 
