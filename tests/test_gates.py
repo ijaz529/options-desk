@@ -122,3 +122,32 @@ def test_last_hour_blocks_entries():
 def test_open_market_with_time_allows_entries():
     assert session_open_for_entries(True, 360) is None
     assert session_open_for_entries(True, MIN_MINUTES_BEFORE_CLOSE) is None
+
+
+# The Hunter's trial after the 20 Sep fixes (STRATEGY.md "Re-based 30 Sep 2026").
+from desk.gates import BASELINE_EQUITY, HUNTER_TRIAL_BUDGET, KILL_SWITCH_EQUITY
+
+
+def test_rebased_switch_lets_the_hunter_trade_at_todays_equity():
+    assert BASELINE_EQUITY == 88_983.0
+    v = review(Proposal("hunter", "SPY", "long_option", 500.0), state(equity=88_983.0, day_start_equity=88_983.0))
+    assert v.approved, v.because
+
+
+def test_account_floor_still_binds_after_the_rebase():
+    below = KILL_SWITCH_EQUITY - 1
+    v = review(Proposal("hunter", "SPY", "long_option", 500.0), state(equity=below, day_start_equity=below))
+    assert not v.approved and v.gate == "kill-switch"
+
+
+def test_trial_budget_locks_out_the_hunter_alone():
+    s = state(equity=88_983.0, day_start_equity=88_983.0, hunter_trial_pnl=-HUNTER_TRIAL_BUDGET)
+    hunter = review(Proposal("hunter", "SPY", "long_option", 500.0), s)
+    steward = review(Proposal("steward", "XOM", "csp", 10_000.0), s)
+    assert not hunter.approved and hunter.gate == "hunter-trial"
+    assert steward.approved, steward.because
+
+
+def test_trial_budget_not_yet_spent():
+    s = state(equity=88_983.0, day_start_equity=88_983.0, hunter_trial_pnl=-HUNTER_TRIAL_BUDGET + 1)
+    assert review(Proposal("hunter", "SPY", "long_option", 500.0), s).approved

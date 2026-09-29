@@ -95,7 +95,17 @@ def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
         day_start_equity=acct.get("last_equity", acct["equity"]),
         sleeve_used=sleeve, underlying_notional=under,
         minutes_to_expiry=minutes,
+        hunter_trial_pnl=hunter_trial_pnl(),
     ), acct
+
+
+def hunter_trial_pnl() -> float:
+    """The Hunter's P&L since his trial began (STRATEGY.md "Re-based 30 Sep 2026"): every
+    symbol he bought since then, from the log, priced from the broker's fills and marks."""
+    syms = {r["symbol"] for r in log.rows()
+            if r["agent"] == "hunter" and r["action"].startswith("buy_")
+            and r["ts"] >= gates.HUNTER_TRIAL_START and r.get("symbol")}
+    return broker.pnl_since(syms, gates.HUNTER_TRIAL_START + "T00:00:00Z")
 
 
 def next_weekly_friday(today: date | None = None) -> date:
@@ -204,6 +214,12 @@ def hunter_session() -> None:
     if _entries_blocked("hunter"):
         return
     state, _ = desk_state()
+    if state.hunter_trial_pnl <= -gates.HUNTER_TRIAL_BUDGET:
+        log.record("hunter", "hold",
+                   f"Trial budget spent: the Hunter is ${-state.hunter_trial_pnl:,.0f} down since "
+                   f"{gates.HUNTER_TRIAL_START}, past his ${gates.HUNTER_TRIAL_BUDGET:,.0f} budget, "
+                   "so he stands down without reading the tape.")
+        return
     if state.equity < gates.KILL_SWITCH_EQUITY:
         log.record("hunter", "hold",
                    f"Income-only: equity ${state.equity:,.0f} is below the "

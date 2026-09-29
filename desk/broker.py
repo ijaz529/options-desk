@@ -181,3 +181,25 @@ def market_clock() -> tuple[bool, float]:
     """(is_open, minutes_to_next_close) from the broker's own clock — rule 9's input."""
     c = trading().get_clock()
     return bool(c.is_open), (c.next_close - c.timestamp).total_seconds() / 60.0
+
+
+def pnl_since(symbols: set[str], since_iso: str) -> float:
+    """Realised + marked P&L on `symbols` from `since_iso`: sale proceeds minus purchase cost
+    from the broker's own fills, plus the market value of anything still held. An option that
+    expires worthless has no fill and no value, so its full premium counts as lost."""
+    from alpaca.trading.requests import GetOrdersRequest
+    from alpaca.trading.enums import QueryOrderStatus
+    if not symbols:
+        return 0.0
+    norm = lambda s: s.replace("/", "")
+    want = {norm(s) for s in symbols}
+    cash = 0.0
+    for o in trading().get_orders(GetOrdersRequest(status=QueryOrderStatus.CLOSED,
+                                                   after=since_iso, limit=500)):
+        if norm(o.symbol) not in want or not o.filled_qty or not o.filled_avg_price:
+            continue
+        mult = 100.0 if len(o.symbol) > 15 else 1.0      # OCC option symbols carry the ×100
+        amount = float(o.filled_qty) * float(o.filled_avg_price) * mult
+        cash += amount if o.side.value == "sell" else -amount
+    held = sum(float(p.market_value) for p in trading().get_all_positions() if norm(p.symbol) in want)
+    return cash + held

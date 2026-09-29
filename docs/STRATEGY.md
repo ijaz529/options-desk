@@ -35,6 +35,31 @@ same strategy, so its behaviour can be watched over weeks rather than one week:
 3. **De-risk is manual only.** It was scheduled for the contest's final session;
    with no final session it runs only on `workflow_dispatch`.
 
+## Re-based 30 Sep 2026 — the Hunter's trial after the 20 Sep fixes
+
+**Why.** The kill switch tripped around 16 Sep, and the Hunter's three fixes (min 3
+DTE, hard exit before expiry, breakeven stop — "The Hunter's first fortnight") went
+in on 20 Sep. He has not traded since, so the fixes are untested and the switch
+now blocks the one question he still has to answer. The desk is paper; the price
+of the answer is paper. A plain reset would be moving the goalposts after a loss,
+so the reset comes with a budget of its own.
+
+1. **Baseline re-based to $88,983** (equity on 29 Sep 2026, the last session before
+   the trial). The account-wide switch stays at 96% of it, **~$85,424**: a hard
+   floor for the whole desk still exists. **The drawdown before this date is not
+   erased** — from $93,630 (13 Sep) to $88,983 is −5.0%, almost all of it the
+   Hunter's, and it stays in the log and the write-up.
+2. **The Hunter's trial budget: $2,000.** From **30 Sep 2026** his profit and loss
+   is tracked on its own — every Hunter buy logged since then (options and the
+   weekend crypto sleeve), priced from the broker's own fills plus the market
+   value of anything still open. If it reaches **−$2,000**, the Hunter is locked
+   out on his own, even while the account is above its floor. The Steward is
+   unaffected.
+3. **The verdict comes after 20 Hunter trades or 4 weeks (28 Oct 2026), whichever
+   is first.** Net positive or close to flat, inside the budget: the fixes work
+   and the budget becomes a permanent Hunter rule. Otherwise the Hunter is retired
+   and the desk runs the Steward alone. The verdict is written here, dated.
+
 Everything else — sleeve caps, drawdown gate, concentration, no naked shorts,
 the diary — is unchanged.
 

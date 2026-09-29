@@ -25,6 +25,7 @@ class AccountState:
     sleeve_used: dict[str, float]         # agent -> notional already deployed
     underlying_notional: dict[str, float] # symbol -> account-wide notional
     minutes_to_expiry: float               # to the expiry a new position would trade into
+    hunter_trial_pnl: float = 0.0          # Hunter P&L since HUNTER_TRIAL_START, fills + marks
 
 
 SLEEVE_CAP = {"steward": 70_000.0, "hunter": 20_000.0}
@@ -36,7 +37,12 @@ DAILY_DRAWDOWN_GATE = 0.025
 # permanently, shutting the Hunter and the weekend sleeve for good. Re-basing is
 # an explicit, DATED decision because it forgives prior losses — never change
 # BASELINE_EQUITY without saying so here and in STRATEGY.md.
-BASELINE_EQUITY = 93_630.0        # equity at 13 Sep 2026, start of the open-ended run
+# Re-based 30 Sep 2026 (STRATEGY.md "Re-based 30 Sep 2026"): was $93,630 on 13 Sep. The
+# −5.0% between the two is not erased — it stays in the log and the write-up.
+BASELINE_EQUITY = 88_983.0        # equity on 29 Sep 2026, the last session before the Hunter's trial
+# The Hunter's own budget for the trial: locked out on his own at −$2,000 from this date.
+HUNTER_TRIAL_START = "2026-09-30"
+HUNTER_TRIAL_BUDGET = 2_000.0
 KILL_SWITCH_FRACTION = 0.96
 KILL_SWITCH_EQUITY = BASELINE_EQUITY * KILL_SWITCH_FRACTION
 CONCENTRATION_CAP = 0.20
@@ -69,6 +75,12 @@ def review(p: Proposal, a: AccountState) -> Verdict:
         return Verdict(False, "kill-switch",
                        f"Vetoed: account equity ${a.equity:,.0f} is below the ${KILL_SWITCH_EQUITY:,.0f} "
                        f"kill switch — the desk is income-only, and a {p.agent} {p.kind} is not income.")
+
+    if p.agent == "hunter" and a.hunter_trial_pnl <= -HUNTER_TRIAL_BUDGET:
+        return Verdict(False, "hunter-trial",
+                       f"Vetoed: the Hunter is ${-a.hunter_trial_pnl:,.0f} down since "
+                       f"{HUNTER_TRIAL_START}, past his ${HUNTER_TRIAL_BUDGET:,.0f} trial budget — "
+                       "locked out on his own; the Steward carries on.")
 
     dd = 1.0 - a.equity / a.day_start_equity if a.day_start_equity else 0.0
     if dd > DAILY_DRAWDOWN_GATE:
