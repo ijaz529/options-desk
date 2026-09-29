@@ -17,6 +17,7 @@
 - **19:06** · `steward` **hold** — Only 54 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:10** → `desk` **cancel** — Cancelled the overnight order on UBER261002P00066000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
 - **19:23** · `steward` **hold** — Only 36 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **19:26** · `hunter` **hold** — Only 33 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-09-28
 
