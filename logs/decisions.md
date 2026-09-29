@@ -1,5 +1,20 @@
 # The desk's decision log
 
+## 2026-09-29
+
+- **18:53** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **18:53** 🛑 `risk` **veto** — Vetoed: CVX would be $19,750, past 20% of the account in one name.
+- **18:53** · `steward` **hold** — Holding 100 KO shares from assignment — the wheel's second half (a covered call, STRATEGY.md) is specified and not yet built. No new put on top of the stock.
+- **18:53** → `steward` **sell_put** — Offered to sell the WMT 02 Oct 104 put at ~0.24, a day limit at the mid that counts once it fills (0.23% of the $10,400 obligation). Delta -0.17 puts the strike 2.3% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:53** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **18:53** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:53** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **18:53** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:53** → `steward` **sell_put** — Offered to sell the CSCO 02 Oct 104 put at ~0.41, a day limit at the mid that counts once it fills (0.39% of the $10,400 obligation). Delta -0.20 puts the strike 2.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:53** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **18:53** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:53** → `steward` **sell_put** — Offered to sell the GM 02 Oct 77 put at ~0.17, a day limit at the mid that counts once it fills (0.22% of the $7,700 obligation). Delta -0.12 puts the strike 4.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+
 ## 2026-09-28
 
 - **20:14** → `steward` **sell_put** — Sold the XOM 02 Oct 157.5 put at ~0.59 (0.37% of the $15,750 obligation). Delta -0.18 puts the strike 3.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
