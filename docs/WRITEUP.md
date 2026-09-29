@@ -1,6 +1,6 @@
 # The Options Desk — one page
 
-*Generated 29 Sep 2026 20:56 UTC from the running system;
+*Generated 29 Sep 2026 22:33 UTC from the running system;
 every number below is imported from the code it describes.*
 
 ## AI logic
@@ -23,7 +23,7 @@ sleeve, ±4% exits) keeps the book earning while options sleep.
 1. No naked short options — every put cash-secured, every spread defined-risk.
 2. Sleeve caps absolute: Steward $70,000, Hunter $20,000.
 3. Daily drawdown gate: > 2.5% down on the day → no new risk today.
-4. Kill switch: equity below $89,885 (96% of the $93,630 baseline) → income-only thereafter.
+4. Kill switch: equity below $85,424 (96% of the $88,983 baseline) → income-only thereafter.
 5. Concentration: ≤ 20% of the account in any one underlying.
 6. Time gate: no new positions in the final 3 hours before the expiry they trade into.
 7. Closing risk is always allowed. Every verdict — approve or veto — is logged
@@ -41,7 +41,7 @@ audit trail builds itself in public.
 
 ## The record so far
 
-1592 logged decisions · 152 trades/exits · 1193 deliberate holds ·
-92 Risk Officer vetoes · by agent: {'risk': 87, 'steward': 1188, 'desk': 70, 'hunter': 247}.
+1593 logged decisions · 152 trades/exits · 1194 deliberate holds ·
+92 Risk Officer vetoes · by agent: {'risk': 87, 'steward': 1188, 'desk': 70, 'hunter': 248}.
 The full plain-English log: [`logs/decisions.md`](../logs/decisions.md).
 New to options? [`HOW-IT-WORKS.md`](HOW-IT-WORKS.md) explains the whole desk without jargon.
