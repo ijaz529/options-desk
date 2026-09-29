@@ -97,3 +97,21 @@ def review(p: Proposal, a: AccountState) -> Verdict:
     return Verdict(True, None,
                    f"Approved: {p.agent} risks ${p.notional:,.0f} on {p.symbol} ({p.kind}) — "
                    "inside every gate.")
+
+
+# Rule 9 (STRATEGY.md, 29 Sep 2026): no opening order without a live session to fill in.
+MIN_MINUTES_BEFORE_CLOSE = 60
+
+
+def session_open_for_entries(is_open: bool, minutes_to_close: float) -> str | None:
+    """None if an opening order may be placed now, else the plain-English reason it may not.
+    Fed from the broker's own market clock, so DST and holidays need no table here."""
+    if not is_open:
+        return ("The market is closed, so no opening order goes in: a limit placed on a shut "
+                "market sits at the last session's prices until the sweep cancels it (rule 9). "
+                "A late slot costs a retry, not a placement.")
+    if minutes_to_close < MIN_MINUTES_BEFORE_CLOSE:
+        return (f"Only {minutes_to_close:.0f} minutes to the close — under the "
+                f"{MIN_MINUTES_BEFORE_CLOSE}-minute floor for a new position to fill (rule 9). "
+                "No opening order this round.")
+    return None

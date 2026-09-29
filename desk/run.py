@@ -120,7 +120,20 @@ def minutes_to_expiry(now: datetime | None = None, expiry: date | None = None) -
     return (close - now).total_seconds() / 60
 
 
+def _entries_blocked(agent: str) -> bool:
+    """Rule 9: log and stand down when the broker's clock leaves no live session to fill in."""
+    is_open, minutes_to_close = broker.market_clock()
+    why = gates.session_open_for_entries(is_open, minutes_to_close)
+    if why:
+        log.record(agent, "hold", why)
+        return True
+    return False
+
+
 def steward_session() -> None:
+    # a slot GitHub delivers hours late must not place puts on a shut market (28 Sep 2026)
+    if _entries_blocked("steward"):
+        return
     state, acct = desk_state()
     positions = read_positions()
     held_unders = {parse_occ(p["symbol"])[0] for p in positions if parse_occ(p["symbol"])}
@@ -188,6 +201,8 @@ def hunter_session() -> None:
     # reading the tape. From 21 to 25 Sep 2026 the desk ran a full Claude + Alpaca-MCP
     # research pass twice a session to propose PYPL and TSLA, then vetoed both on equity
     # every time. Same verdict, none of the spend, and one honest row instead of three.
+    if _entries_blocked("hunter"):
+        return
     state, _ = desk_state()
     if state.equity < gates.KILL_SWITCH_EQUITY:
         log.record("hunter", "hold",

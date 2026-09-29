@@ -38,7 +38,9 @@ def pick(quotes: list[PutQuote]) -> PutQuote | None:
 
 
 def entry_because(q: PutQuote) -> str:
-    return (f"Sold the {q.underlying} {q.expiry:%d %b} {q.strike:g} put at ~{q.mid:.2f} "
+    # an offer, not a sale: a day limit counts once it fills (STRATEGY.md rule 9, 29 Sep 2026)
+    return (f"Offered to sell the {q.underlying} {q.expiry:%d %b} {q.strike:g} put at ~{q.mid:.2f}, "
+            f"a day limit at the mid that counts once it fills "
             f"({q.premium_yield:.2%} of the ${q.strike * 100:,.0f} obligation). "
             f"Delta {q.delta:+.2f} puts the strike {(1 - q.strike / q.spot):.1%} below spot — "
             "a price we would own this name at. The trade is a bet the week stays ordinary.")

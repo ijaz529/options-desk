@@ -175,3 +175,9 @@ def positions() -> list[dict]:
              "cost_basis": float(p.cost_basis or 0), "unrealized_pl": float(p.unrealized_pl or 0),
              "asset_class": str(p.asset_class)}
             for p in trading().get_all_positions()]
+
+
+def market_clock() -> tuple[bool, float]:
+    """(is_open, minutes_to_next_close) from the broker's own clock — rule 9's input."""
+    c = trading().get_clock()
+    return bool(c.is_open), (c.next_close - c.timestamp).total_seconds() / 60.0

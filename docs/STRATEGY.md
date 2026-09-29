@@ -214,6 +214,23 @@ diary is not: a thesis on a name already held or working is a hold, logged.
    each day cancels overnight orders and lets the next session re-price from a
    live chain. (Observed 31 Aug: a late-delivered steward run placed five puts
    at 20:00 UTC — the closing bell — which queued overnight at Monday's mids.)
+9. **No opening order without a live session to fill in (added 29 Sep 2026).**
+   An opening order — a Steward put or a Hunter entry — is placed only while the
+   broker's own market clock says the market is open **and at least 60 minutes
+   remain before the close**. Otherwise the round places nothing and logs why.
+   Closing orders are never blocked. The clock is the broker's, not a table of
+   UTC times, so daylight saving (the close moves to 21:00 UTC on 1 Nov) and
+   market holidays are handled by the same rule. *Why:* rule 8 cleans up a stale
+   order the morning after; it never stopped one being placed. On Mon 28 Sep
+   GitHub delivered all five morning Steward slots about six hours late, the
+   first at 20:13 UTC — after the close — and four puts were offered on a shut
+   market at its last mids. One filled the next morning at a price nobody chose;
+   three sat until the sweep cancelled them. The same thing happened on 31 Aug.
+   A late slot should cost a retry, not a placement.
+
+   *The log, amended the same day:* the Steward's entry row said "Sold the XOM
+   put" at the moment of *placing* a day limit. A placement is an offer; only a
+   fill is a sale. The row now says "Offered to sell … — counts once it fills".
 
 ## The decision log
 

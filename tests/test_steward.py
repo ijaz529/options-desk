@@ -53,3 +53,10 @@ def test_stop_when_doubled():
 
 def test_holds_in_between():
     assert exit_action(entry_credit=2.00, current_mid=1.20) is None
+
+
+def test_entry_row_says_offered_not_sold():
+    # a placement is an offer; only a fill is a sale (rule 9's log amendment)
+    from desk.steward import entry_because
+    text = entry_because(q(238, -0.21, 1.05, 1.15))
+    assert text.startswith("Offered to sell") and "counts once it fills" in text

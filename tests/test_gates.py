@@ -104,3 +104,21 @@ def test_kill_switch_is_a_fraction_of_a_stated_baseline():
     assert gates.KILL_SWITCH_FRACTION == 0.96
     # the live account must sit ABOVE its own switch, or the desk is frozen again
     assert gates.BASELINE_EQUITY > gates.KILL_SWITCH_EQUITY
+
+
+# Rule 9 (29 Sep 2026): no opening order without a live session to fill in.
+from desk.gates import MIN_MINUTES_BEFORE_CLOSE, session_open_for_entries
+
+
+def test_closed_market_blocks_entries():
+    # Mon 28 Sep: the steward slot arrived at 20:13 UTC, 13 minutes after the close
+    assert "closed" in session_open_for_entries(False, 1_000)
+
+
+def test_last_hour_blocks_entries():
+    assert session_open_for_entries(True, MIN_MINUTES_BEFORE_CLOSE - 1) is not None
+
+
+def test_open_market_with_time_allows_entries():
+    assert session_open_for_entries(True, 360) is None
+    assert session_open_for_entries(True, MIN_MINUTES_BEFORE_CLOSE) is None
