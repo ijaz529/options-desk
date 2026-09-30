@@ -1,6 +1,6 @@
 # The Options Desk — one page
 
-*Generated 30 Sep 2026 19:16 UTC from the running system;
+*Generated 30 Sep 2026 19:24 UTC from the running system;
 every number below is imported from the code it describes.*
 
 ## AI logic
@@ -41,7 +41,7 @@ audit trail builds itself in public.
 
 ## The record so far
 
-1645 logged decisions · 158 trades/exits · 1240 deliberate holds ·
-92 Risk Officer vetoes · by agent: {'risk': 87, 'steward': 1239, 'desk': 70, 'hunter': 249}.
+1647 logged decisions · 158 trades/exits · 1242 deliberate holds ·
+92 Risk Officer vetoes · by agent: {'risk': 87, 'steward': 1240, 'desk': 70, 'hunter': 250}.
 The full plain-English log: [`logs/decisions.md`](../logs/decisions.md).
 New to options? [`HOW-IT-WORKS.md`](HOW-IT-WORKS.md) explains the whole desk without jargon.
