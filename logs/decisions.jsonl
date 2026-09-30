@@ -1630,3 +1630,4 @@
 {"ts": "2026-09-30T18:35:07+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
 {"ts": "2026-09-30T18:35:08+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
 {"ts": "2026-09-30T18:35:08+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-09-30T18:36:15+00:00", "agent": "steward", "action": "stop", "because": "Buying back at 0.48: the option has doubled against the 0.18 credit. The week is not ordinary — the rule says leave.", "symbol": "WMT261002P00104000", "order_id": "f1cb301b-4898-4474-9f34-2c8af7d25c9a"}
