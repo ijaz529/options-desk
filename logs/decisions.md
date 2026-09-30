@@ -53,6 +53,7 @@
 - **18:49** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **18:49** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **18:49** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **19:15** · `steward` **hold** — Only 45 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-09-29
 
