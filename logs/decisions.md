@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-09-30
+
+- **13:36** → `steward` **take_profit** — Buying back at 0.23: 77% of the 0.99 credit is banked, and the last cents are not worth the tail.
+
 ## 2026-09-29
 
 - **18:53** · `steward` **hold** — Already carrying XOM risk — one position per name.
