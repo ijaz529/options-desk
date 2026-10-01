@@ -1,6 +1,6 @@
 # The Options Desk — one page
 
-*Generated 01 Oct 2026 16:56 UTC from the running system;
+*Generated 01 Oct 2026 17:16 UTC from the running system;
 every number below is imported from the code it describes.*
 
 ## AI logic
