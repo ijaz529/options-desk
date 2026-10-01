@@ -16,6 +16,18 @@
 - **13:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **13:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **13:56** → `steward` **take_profit** — Buying back at 0.20: 73% of the 0.73 credit is banked, and the last cents are not worth the tail.
+- **14:51** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:51** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:51** · `steward` **hold** — Holding 100 KO shares from assignment — the wheel's second half (a covered call, STRATEGY.md) is specified and not yet built. No new put on top of the stock.
+- **14:51** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:51** → `steward` **sell_put** — Offered to sell the BAC 02 Oct 52 put at ~0.12, a day limit at the mid that counts once it fills (0.23% of the $5,200 obligation). Delta -0.17 puts the strike 2.2% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:51** · `steward` **hold** — No UBER put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:51** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:51** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:51** → `steward` **sell_put** — Offered to sell the INTC 02 Oct 115 put at ~0.52, a day limit at the mid that counts once it fills (0.45% of the $11,500 obligation). Delta -0.18 puts the strike 3.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-09-30
 
