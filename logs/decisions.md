@@ -31,6 +31,7 @@
 - **16:36** → `steward` **take_profit** — Buying back at 0.04: 67% of the 0.12 credit is banked, and the last cents are not worth the tail.
 - **17:55** → `steward` **take_profit** — Buying back at 0.18: 65% of the 0.52 credit is banked, and the last cents are not worth the tail.
 - **19:03** · `steward` **hold** — Only 57 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **19:15** · `steward` **hold** — Only 45 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-09-30
 
