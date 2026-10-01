@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-10-01
+
+- **13:36** → `steward` **stop** — Buying back at 0.34: the option has doubled against the 0.17 credit. The week is not ordinary — the rule says leave.
+
 ## 2026-09-30
 
 - **13:36** → `steward` **take_profit** — Buying back at 0.23: 77% of the 0.99 credit is banked, and the last cents are not worth the tail.
