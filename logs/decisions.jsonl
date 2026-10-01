@@ -1679,3 +1679,4 @@
 {"ts": "2026-10-01T14:51:14+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
 {"ts": "2026-10-01T14:51:15+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust."}
 {"ts": "2026-10-01T16:36:22+00:00", "agent": "steward", "action": "take_profit", "because": "Buying back at 0.04: 67% of the 0.12 credit is banked, and the last cents are not worth the tail.", "symbol": "BAC261002P00052000", "order_id": "94bfd539-c455-411b-8313-d25b517b4bec"}
+{"ts": "2026-10-01T17:55:52+00:00", "agent": "steward", "action": "take_profit", "because": "Buying back at 0.18: 65% of the 0.52 credit is banked, and the last cents are not worth the tail.", "symbol": "INTC261002P00115000", "order_id": "2b00e429-08a6-406a-9b23-3e5ef796c7fd"}
