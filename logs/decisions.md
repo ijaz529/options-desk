@@ -65,6 +65,7 @@
 - **19:56** → `hunter` **take_half** — Premium doubled (2.59 → 5.20): banking 2 of 5, the rest rides with its stop raised to entry.
 - **19:58** · `hunter` **hold** — Only 2 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **22:30** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **22:32** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-10-01
 
