@@ -61,7 +61,7 @@
 - **19:27** · `hunter` **hold** — Only 33 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:28** · `steward` **hold** — Only 32 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:33** · `steward` **hold** — Only 26 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
-- **19:55** · `hunter` **hold** — Only 4 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **19:56** → `hunter` **take_half** — Premium doubled (2.59 → 5.20): banking 2 of 5, the rest rides with its stop raised to entry.
 
 ## 2026-10-01
 
