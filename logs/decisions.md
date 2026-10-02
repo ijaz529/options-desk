@@ -32,6 +32,18 @@
 - **15:06** · `hunter` **hold** — Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **18:06** · `hunter` **hold** — Already carrying TSLA risk — one position per name.
 - **18:06** → `hunter` **buy_put** — COIN gapped +2.9% but reversed to -3.65% on 1.53x volume, closing at session lows (range_pos 0.03) = clear intraday distribution/rejection of the gap. Expect follow-through weakness next session. — 3× COIN261009P00177500 at ~3.35 ($1,005 premium, the whole downside). Invalidation: Invalidated if COIN reclaims and holds above today's gap-up open/high, or closes green next session.
+- **18:42** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:42** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:42** · `steward` **hold** — Holding 100 KO shares from assignment — the wheel's second half (a covered call, STRATEGY.md) is specified and not yet built. No new put on top of the stock.
+- **18:42** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:42** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:42** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:42** · `steward` **hold** — No UBER put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:42** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:42** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:42** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **18:42** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **18:42** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-10-01
 
