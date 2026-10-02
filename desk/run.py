@@ -199,6 +199,22 @@ def steward_session() -> None:
 HUNTER_COOLDOWN_MIN = 90
 
 
+def read_failure_because(e: BaseException) -> str:
+    """The plain-English diary line for a Hunter session that could not read the tape."""
+    text = str(e)
+    subs = getattr(e, "exceptions", None)
+    while subs:                                   # unwrap ExceptionGroups to the real cause
+        e = subs[0]
+        text = str(e)
+        subs = getattr(e, "exceptions", None)
+    if "credit balance is too low" in text:
+        why = "the Anthropic API refused the call — the account's credit balance is too low"
+    else:
+        why = f"the model call failed ({type(e).__name__}: {text[:160]})"
+    return (f"The Hunter could not read the tape: {why}. No research, no proposal, nothing "
+            "placed. The next session tries again.")
+
+
 def hunter_session() -> None:
     """Twice a day: Claude reads the tape (and researches it through Alpaca's
     MCP server when available), the desk trades what survives.
@@ -238,15 +254,23 @@ def hunter_session() -> None:
         return
     rows = hunter.tape()
     import shutil
-    if shutil.which("uvx") and os.environ.get("ANTHROPIC_API_KEY"):
-        from desk import mcp_bridge
-        theses, rejected, trail = mcp_bridge.propose_via_mcp(rows)
-        if trail:
-            log.record("hunter", "research",
-                       f"Worked the tape through Alpaca's MCP server: {len(trail)} read-only "
-                       f"tool calls before concluding. Trail: {'; '.join(trail[:6])}")
-    else:
-        theses, rejected = hunter.propose(rows)
+    # A failed read is a row too (STRATEGY.md, 2 Oct 2026): on 30 Sep–1 Oct an empty API
+    # credit balance crashed every in-session Hunter run and the diary said nothing.
+    try:
+        if shutil.which("uvx") and os.environ.get("ANTHROPIC_API_KEY"):
+            from desk import mcp_bridge
+            theses, rejected, trail = mcp_bridge.propose_via_mcp(rows)
+            if trail:
+                log.record("hunter", "research",
+                           f"Worked the tape through Alpaca's MCP server: {len(trail)} read-only "
+                           f"tool calls before concluding. Trail: {'; '.join(trail[:6])}")
+        else:
+            theses, rejected = hunter.propose(rows)
+    except BaseException as e:            # ExceptionGroup from the MCP task group included
+        if isinstance(e, (KeyboardInterrupt, SystemExit)):
+            raise
+        log.record("hunter", "error", read_failure_because(e))
+        return
     for why in rejected:
         log.record("hunter", "veto", f"Proposal discarded before the gates: {why}")
     if not theses:

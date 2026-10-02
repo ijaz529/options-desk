@@ -264,6 +264,12 @@ timestamp, agent, action (or "no action"), instrument, size, price context,
 and a plain-English `because`. This is the artefact the one-page write-up and
 the judging video are built from.
 
+**A failed read is a row too (added 2 Oct 2026).** If the Hunter cannot read the tape —
+the model call fails, the API refuses (an empty credit balance did, 30 Sep–1 Oct: every
+in-session Hunter run crashed and wrote nothing, so the diary read as if he had quietly
+held) — the session writes `hunter / error` with the reason in plain words and places
+nothing. A silent crash is the one thing the diary must never be.
+
 ## Known constraints (checked 26 Aug 2026)
 
 - Alpaca options = US equities/ETFs only; **no crypto options** — crypto is

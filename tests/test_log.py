@@ -26,3 +26,15 @@ def test_the_cli_door_refuses_to_read_an_unauthenticated_account(monkeypatch):
         monkeypatch.delenv(v, raising=False)
     with pytest.raises(RuntimeError, match="refusing to let the CLI fall back"):
         cli._run("account", "get")
+
+
+def test_hunter_read_failure_is_named_plainly():
+    # 30 Sep–1 Oct 2026: credit exhaustion inside the MCP task group crashed silently
+    from desk.run import read_failure_because
+    inner = Exception("Error code: 400 - {'message': 'Your credit balance is too low to access the Anthropic API.'}")
+    group = BaseExceptionGroup("unhandled errors in a TaskGroup", [inner])
+    text = read_failure_because(group)
+    assert "could not read the tape" in text and "credit balance is too low" in text
+    assert "nothing placed" in text.lower()
+    other = read_failure_because(TimeoutError("read timed out"))
+    assert "TimeoutError" in other
