@@ -3,6 +3,11 @@
 The contract for the week. Code implements this page; if the two diverge, this
 page is amended first, then the code. (A habit imported from Alfred.)
 
+**This page is the contract for Team 1, "The Wheelhouse"** (named 2 Oct 2026): the Steward,
+the Hunter and the Risk Officer, sharing one account and one record. Other teams, each on
+its own account, are researched in `docs/TEAMS.md`; none exists until its rules are written
+here.
+
 ## Post-contest operation (amended 13 Sep 2026)
 
 The hackathon ended Fri 4 Sep 2026 at 15:00 UTC with the account at **$93,630**
