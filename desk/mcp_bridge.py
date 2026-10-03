@@ -63,8 +63,11 @@ def _mcp_params() -> StdioServerParameters:
         # which alpaca-mcp-server still imports — a fresh uvx resolve in CI
         # crashed the server at import on every Monday hunter slot ("Connection
         # closed" at initialize). Local caches held 3.4.7, so pre-flight passed.
-        command="uvx", args=["--with", "fastmcp==3.4.7", "alpaca-mcp-server"],
-        env={**os.environ,
+        # pinned too: a server resolved fresh each session is a server nobody reviewed.
+        # It is handed THIS team's keys and the environment it needs to run — not every
+        # team's keys and the Anthropic key beside them (eureka docs/25, engine M2).
+        command="uvx", args=["--with", "fastmcp==3.4.7", "alpaca-mcp-server==2.3.2"],
+        env={**{k: v for k, v in os.environ.items() if k in ("PATH", "HOME", "TMPDIR", "TMP", "TEMP", "LANG", "LC_ALL", "UV_CACHE_DIR")},
              "ALPACA_API_KEY": os.environ.get("ALPACA_API_KEY_ID", os.environ.get("ALPACA_API_KEY", "")),
              "ALPACA_SECRET_KEY": os.environ.get("ALPACA_API_SECRET_KEY", os.environ.get("ALPACA_SECRET_KEY", "")),
              "ALPACA_PAPER_TRADE": "True"})

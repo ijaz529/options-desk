@@ -457,7 +457,8 @@ def main(cmd: str) -> int:
         actual = broker.account_number()
         problem = team.account_problem(actual)
         if not problem:
-            print(f"{team.config()['name']}: keys open {actual}, this team's own account.")
+            # the log of a public repo is public: the account is named by its tail only
+            print(f"{team.config()['name']}: keys open …{actual[-4:]}, this team's own account.")
     if problem:
         print(problem)
         if cmd != "status":
