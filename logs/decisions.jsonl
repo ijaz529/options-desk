@@ -1757,3 +1757,4 @@
 {"ts": "2026-10-02T22:32:36+00:00", "agent": "hunter", "action": "hold", "because": "The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement."}
 {"ts": "2026-10-03T10:21:03+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.1%, ETH/USD +0.5%). Cash is a position."}
 {"ts": "2026-10-03T14:44:11+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.3%, ETH/USD +0.5%). Cash is a position."}
+{"ts": "2026-10-03T14:46:09+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.3%, ETH/USD +0.5%). Cash is a position."}
