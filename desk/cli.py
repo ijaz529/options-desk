@@ -15,7 +15,10 @@ import subprocess
 
 
 def available() -> bool:
-    return shutil.which("alpaca") is not None
+    # Wheelhouse only: the CLI authenticates from the unsuffixed env names, so for any other
+    # team it would read the Wheelhouse's account. Other teams use the SDK door.
+    from desk import team
+    return team.TEAM == "wheelhouse" and shutil.which("alpaca") is not None
 
 
 def _run(*args: str):

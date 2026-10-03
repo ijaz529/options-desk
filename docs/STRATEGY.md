@@ -284,3 +284,113 @@ nothing. A silent crash is the one thing the diary must never be.
 - *(Historical, contest only)* the account had to be brand-new at exactly
   $100,000, and the account ID shipped with the submission for judges to read
   the blotter directly. The desk still trades that same paper account.
+
+---
+
+# Teams 2 and 3 (specified 2 Oct 2026 — research in `docs/TEAMS.md`)
+
+Everything above this line is Team 1, the Wheelhouse. The two teams below are separate
+desks: **each trades its own paper account, keeps its own diary, and answers to its own
+gates.** Nothing they do touches the Wheelhouse's account or record.
+
+## How teams are kept apart
+
+1. **One account per team, checked before every session.** A team's session reads the
+   account number from the broker and refuses to run unless it is the account written here.
+   A missing or wrong key therefore stops the session; it can never trade another team's
+   account.
+
+   | Team | Paper account | Baseline |
+   |---|---|---|
+   | Wheelhouse | PA3G3BG7TIBD | $88,983 (re-based 30 Sep 2026) |
+   | Collar | PA3SKVNYTFJK | $100,000 (untouched at assignment) |
+   | Condor | *not assigned yet* | set when the account is |
+
+   The third paper account on the login (PA3G4NEQHCUC) is **in use by Alfred**: five of
+   Alfred's stock managers trade it through SnapTrade (36 positions on 2 Oct 2026). An
+   options team there would share its cash and blur both records, so the Condor has no
+   account until that one is freed or another is opened. Its session refuses to run.
+2. **Keys** live in GitHub secrets, one pair per team: `ALPACA_API_KEY_ID_COLLAR` /
+   `ALPACA_API_SECRET_KEY_COLLAR`, and the same with `_CONDOR`. Paper keys only — the
+   broker client is pinned to the paper host.
+3. **Diaries:** `logs/collar/decisions.jsonl`, `logs/condor/decisions.jsonl`. Same rule as
+   the Wheelhouse: one row per decision, refusal or failure, in plain English.
+4. **Shared rules that bind every team:** rule 8 (no order outlives its session) and rule 9
+   (no opening order without a live session — market open, at least 60 minutes to the
+   close). Neither team uses a language model.
+
+## Team 2 — The Collar (hedged equity)
+
+**What it is.** The JPMorgan Hedged Equity structure, on SPY: own the index, buy a put a
+little below the market, pay for it by selling a deeper put and a call above. Reset every
+quarter; never adjusted in between.
+
+**Holdings.** As many 100-share lots of **SPY** as 95% of account equity buys (one lot at
+$100,000 with SPY near $770). The rest stays in cash. Lots are bought once, at inception,
+and re-bought only if they were called away or put at an expiry.
+
+**The collar, per lot, opened as one three-leg order:**
+1. **Buy** the put at the listed strike nearest **5% below** spot.
+2. **Sell** the put at the listed strike nearest **20% below** spot.
+3. **Sell** the call, at a strike **above spot**, whose mid price is nearest the cost of
+   legs 1 and 2 together — so the three legs cost roughly nothing. A tie goes to the higher
+   strike.
+
+All three expire on **the last trading day of the calendar quarter**. At inception the
+collar is opened for whatever remains of the current quarter.
+
+**Reset.** On the expiry day, in a live session: close the three expiring legs in one order
+and open the next quarter's collar from that day's prices. If the close does not fill and a
+leg is exercised or assigned over the weekend, the next session re-buys any missing shares
+and opens the new collar — the diary says which happened.
+
+**Never.** No adjustment, no early close, no rolling a leg because the market moved. The
+structure is the discipline; a manager who "defends" a collar is running a different fund.
+
+**Gates (the Collar's own Risk Officer):** the call count never exceeds the share lots held
+(covered); the short put is always paired with the long put above it, same expiry
+(defined-risk); rule 9. **There is no equity kill switch**, deliberately: a hedged-equity
+fund is expected to fall with the market for the first 5% and the collar *is* the risk
+control. Stopping it at −4% would switch it off exactly when it starts working.
+
+**What could go wrong:** it gives up everything above the call strike in a strong quarter;
+it protects nothing in the first 5% of a fall and nothing beyond 20%; a slow grind that
+resets the collar lower each quarter protects little.
+
+## Team 3 — The Condor (range income, defined risk)
+
+**Universe.** SPY, QQQ, IWM. One condor per underlying at a time.
+
+**Entry.** In any live session where an underlying has no open condor and no working
+order: take the **standard monthly expiry (third Friday) that is 25–45 days away**, and sell
+an iron condor as one four-leg order:
+1. **Sell** the put nearest **20 delta**; **buy** the put at the listed strike nearest
+   **4% of spot below it**.
+2. **Sell** the call nearest **20 delta**; **buy** the call at the listed strike nearest
+   **4% of spot above it**.
+
+*Why 4% wings and not the index's 5-delta wings (amended before the first trade, 2 Oct
+2026):* priced on the live 20 Nov chain, 5-delta wings were 70 points wide on SPY and 77 on
+QQQ — a worst case near $7,000 a condor, past this team's 5% limit on a $100,000 account, so
+only IWM would ever have traded. The gates were right and the structure was wrong for the
+account's size — the same lesson as the Wheelhouse's first session. A 4% wing caps one
+condor's worst case at about 4% of the ETF's price per share, which all three fit.
+
+One contract per leg. Skip — and say why — if any leg has no quote or delta, if the net
+credit at the mids is under **10% of the wider wing**, or if a gate refuses.
+
+**Exits, checked every session, each as one four-leg closing order:**
+- **Take profit** when the condor can be bought back for half the credit or less.
+- **Stop** when buying it back costs twice the credit or more.
+- **Time:** close at **7 days to expiry**, whatever the price — the last week is where a
+  condor's risk concentrates.
+
+**Gates (the Condor's own Risk Officer):** every short leg has its long wing further out,
+same expiry (defined-risk); one condor's worst case (wider wing × 100 − credit) is at most
+**5% of equity**; all open condors' worst cases together at most **15%**; below **92% of the
+baseline** no new condor opens (closing is always allowed); rule 9.
+
+**What could go wrong:** a strong trend either way runs through a short strike; three index
+condors are one bet on calm, not three; wins are small and a full-width loss erases several
+of them.
+

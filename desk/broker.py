@@ -23,8 +23,12 @@ from alpaca.data.requests import OptionSnapshotRequest, StockLatestTradeRequest
 
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 
-_KEY = os.environ.get("ALPACA_API_KEY_ID", "")
-_SECRET = os.environ.get("ALPACA_API_SECRET_KEY", "")
+from desk import team
+
+# One key pair per team (STRATEGY.md "How teams are kept apart"). There is deliberately no
+# fallback to the Wheelhouse's keys: a team without its own keys must fail, not borrow.
+_KEY = os.environ.get("ALPACA_API_KEY_ID" + team.KEY_SUFFIX, "")
+_SECRET = os.environ.get("ALPACA_API_SECRET_KEY" + team.KEY_SUFFIX, "")
 
 
 def trading() -> TradingClient:
@@ -148,8 +152,9 @@ def open_orders() -> list[dict]:
     from alpaca.trading.requests import GetOrdersRequest
     from alpaca.trading.enums import QueryOrderStatus
     out = trading().get_orders(GetOrdersRequest(status=QueryOrderStatus.OPEN, limit=100))
+    # a multi-leg order has no symbol of its own; its contracts are in `legs`
     return [{"id": str(o.id), "symbol": o.symbol, "side": str(o.side), "qty": float(o.qty or 0),
-             "created_at": str(o.created_at)}
+             "created_at": str(o.created_at), "legs": [l.symbol for l in (o.legs or [])]}
             for o in out]
 
 
@@ -203,3 +208,50 @@ def pnl_since(symbols: set[str], since_iso: str) -> float:
         cash += amount if o.side.value == "sell" else -amount
     held = sum(float(p.market_value) for p in trading().get_all_positions() if norm(p.symbol) in want)
     return cash + held
+
+
+def account_number() -> str:
+    return str(trading().get_account().account_number)
+
+
+def mleg(legs: list[tuple[str, str, str]], limit_price: float, qty: int = 1) -> str:
+    """One multi-leg limit order. legs: (occ_symbol, "buy"|"sell", intent) with intent one of
+    buy_to_open / sell_to_open / buy_to_close / sell_to_close. limit_price is the NET price
+    per unit: positive = a debit we pay, negative = a credit we receive (Alpaca's convention)."""
+    from alpaca.trading.enums import OrderClass, PositionIntent
+    from alpaca.trading.requests import OptionLegRequest
+    o = trading().submit_order(LimitOrderRequest(
+        qty=qty, order_class=OrderClass.MLEG, time_in_force=TimeInForce.DAY,
+        limit_price=round(limit_price, 2),
+        legs=[OptionLegRequest(symbol=sym, ratio_qty=1,
+                               side=OrderSide.BUY if side == "buy" else OrderSide.SELL,
+                               position_intent=PositionIntent(intent))
+              for sym, side, intent in legs]))
+    return str(o.id)
+
+
+def buy_shares(symbol: str, qty: int, limit_price: float) -> str:
+    o = trading().submit_order(LimitOrderRequest(
+        symbol=symbol, qty=qty, side=OrderSide.BUY,
+        time_in_force=TimeInForce.DAY, limit_price=round(limit_price, 2)))
+    return str(o.id)
+
+
+def stock_quote(symbol: str) -> tuple[float, float]:
+    """(bid, ask) for a stock or ETF."""
+    from alpaca.data.requests import StockLatestQuoteRequest
+    q = StockHistoricalDataClient(_KEY, _SECRET).get_stock_latest_quote(
+        StockLatestQuoteRequest(symbol_or_symbols=symbol))[symbol]
+    return float(q.bid_price), float(q.ask_price)
+
+
+def expiries(underlying: str, lo: date, hi: date) -> list[date]:
+    """Listed option expiries for `underlying` between two dates, from the broker's own chain."""
+    spot = spot_price(underlying)
+    cs = trading().get_option_contracts(GetOptionContractsRequest(
+        underlying_symbols=[underlying], status=AssetStatus.ACTIVE,
+        expiration_date_gte=lo, expiration_date_lte=hi,
+        strike_price_gte=str(round(spot * 0.99, 2)), strike_price_lte=str(round(spot * 1.01, 2)),
+        limit=1000)).option_contracts or []
+    return sorted({c.expiration_date for c in cs})
+

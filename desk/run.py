@@ -434,6 +434,35 @@ def status() -> None:
               f"pl ${p['unrealized_pl']:>8,.2f}")
 
 
+# Which sessions belong to which team (STRATEGY.md "How teams are kept apart").
+WHEELHOUSE_SESSIONS = {"steward": steward_session, "hunter": hunter_session, "sweep": sweep,
+                       "weekend": weekend_session, "derisk": derisk, "status": status}
+
+
+def main(cmd: str) -> int:
+    from desk import team, teams_run
+    sessions = {"wheelhouse": WHEELHOUSE_SESSIONS,
+                "collar": {"collar": teams_run.collar_session},
+                "condor": {"condor": teams_run.condor_session}}[team.TEAM]
+    if cmd not in sessions:
+        print(f"'{cmd}' is not a {team.TEAM} session (known: {', '.join(sorted(sessions))}).")
+        return 2
+    # The wall between teams: the keys in hand must open THIS team's account, or nothing runs.
+    if team.config()["account"] is None:
+        problem = team.account_problem(None)
+    elif not broker._KEY or not broker._SECRET:
+        problem = (f"No API keys are set for the {team.TEAM.title()} "
+                   f"(ALPACA_API_KEY_ID{team.KEY_SUFFIX}) — nothing is read and nothing is placed.")
+    else:
+        problem = team.account_problem(broker.account_number())
+    if problem:
+        print(problem)
+        if cmd != "status":
+            log.record("desk", "refuse", problem)
+        return 0
+    sessions[cmd]()
+    return 0
+
+
 if __name__ == "__main__":
-    cmd = sys.argv[1] if len(sys.argv) > 1 else "status"
-    {"steward": steward_session, "hunter": hunter_session, "sweep": sweep, "weekend": weekend_session, "derisk": derisk, "status": status}[cmd]()
+    sys.exit(main(sys.argv[1] if len(sys.argv) > 1 else "status"))

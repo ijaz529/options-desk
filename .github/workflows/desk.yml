@@ -43,7 +43,7 @@ on:
   workflow_dispatch:
     inputs:
       session:
-        description: 'steward | hunter | sweep | status'
+        description: 'steward | hunter | sweep | status · collar · condor'
         default: status
 
 # the desk commits its own decision log — the default token is read-only
@@ -78,7 +78,14 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "cmd=${{ inputs.session }}" >> "$GITHUB_OUTPUT"
+            # Teams 2 and 3 run their one session on their OWN account and keys
+            # (STRATEGY.md "How teams are kept apart"); everything else is the Wheelhouse.
+            case "${{ inputs.session }}" in
+              collar|condor) echo "team=${{ inputs.session }}" >> "$GITHUB_OUTPUT" ;;
+              *) echo "team=wheelhouse" >> "$GITHUB_OUTPUT" ;;
+            esac
           else
+            echo "team=wheelhouse" >> "$GITHUB_OUTPUT"
             case "${{ github.event.schedule }}" in
               '47 13 * * 1-5'|'58 13 * * 1-5'|'11 14 * * 1-5'|'31 14 * * 1-5'|'53 14 * * 1-5')
                 echo "cmd=steward" >> "$GITHUB_OUTPUT" ;;
@@ -91,11 +98,18 @@ jobs:
           fi
       - run: python -m desk.run ${{ steps.pick.outputs.cmd }}
         env:
+          DESK_TEAM: ${{ steps.pick.outputs.team }}
           ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+          # one key pair per team; a team with no keys refuses and writes that down
+          ALPACA_API_KEY_ID_COLLAR: ${{ secrets.ALPACA_API_KEY_ID_COLLAR }}
+          ALPACA_API_SECRET_KEY_COLLAR: ${{ secrets.ALPACA_API_SECRET_KEY_COLLAR }}
+          ALPACA_API_KEY_ID_CONDOR: ${{ secrets.ALPACA_API_KEY_ID_CONDOR }}
+          ALPACA_API_SECRET_KEY_CONDOR: ${{ secrets.ALPACA_API_SECRET_KEY_CONDOR }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       # the decision log is the product — persist it on every run
       - run: python -m desk.writeup   # the one-pager regenerates with every session
+        if: steps.pick.outputs.team == 'wheelhouse'   # it is the Wheelhouse's write-up
       - name: commit the decision log
         if: always()   # a crashed session's partial diary is still a diary
         run: |

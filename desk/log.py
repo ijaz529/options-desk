@@ -10,7 +10,10 @@ import json
 import os
 from datetime import datetime, timezone
 
-LOG_DIR = os.path.join(os.path.dirname(__file__), "..", "logs")
+from desk import team
+
+# Each team keeps its own diary (STRATEGY.md): logs/ for the Wheelhouse, logs/<team>/ beside it.
+LOG_DIR = os.path.join(os.path.dirname(__file__), "..", "logs", team.LOG_SUBDIR)
 LOG_PATH = os.path.join(LOG_DIR, "decisions.jsonl")
 
 
