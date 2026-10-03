@@ -43,7 +43,7 @@ on:
   workflow_dispatch:
     inputs:
       session:
-        description: 'steward | hunter | sweep | status · collar · condor'
+        description: 'steward | hunter | sweep | status · collar (The Harbour) · condor (The Tollgate)'
         default: status
 
 # the desk commits its own decision log — the default token is read-only

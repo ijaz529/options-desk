@@ -303,13 +303,14 @@ gates.** Nothing they do touches the Wheelhouse's account or record.
    | Team | Paper account | Baseline |
    |---|---|---|
    | Wheelhouse | PA3G3BG7TIBD | $88,983 (re-based 30 Sep 2026) |
-   | Collar | PA3SKVNYTFJK | $100,000 (untouched at assignment) |
-   | Condor | *not assigned yet* | set when the account is |
+   | The Harbour (`collar`) | PA3SKVNYTFJK | $100,000 (untouched at assignment) |
+   | The Tollgate (`condor`) | *not assigned yet* | set when the account is |
 
    The third paper account on the login (PA3G4NEQHCUC) is **in use by Alfred**: five of
    Alfred's stock managers trade it through SnapTrade (36 positions on 2 Oct 2026). An
-   options team there would share its cash and blur both records, so the Condor has no
-   account until that one is freed or another is opened. Its session refuses to run.
+   options team there would share its cash and blur both records, so the Tollgate has no
+   account until that one is freed (its managers were sold out on 3 Oct 2026; the fills
+   land at Monday's open). Its session refuses to run until then.
 2. **Keys** live in GitHub secrets, one pair per team: `ALPACA_API_KEY_ID_COLLAR` /
    `ALPACA_API_SECRET_KEY_COLLAR`, and the same with `_CONDOR`. Paper keys only — the
    broker client is pinned to the paper host.
@@ -319,7 +320,7 @@ gates.** Nothing they do touches the Wheelhouse's account or record.
    (no opening order without a live session — market open, at least 60 minutes to the
    close). Neither team uses a language model.
 
-## Team 2 — The Collar (hedged equity)
+## Team 2 — The Harbour (hedged equity; code name `collar`)
 
 **What it is.** The JPMorgan Hedged Equity structure, on SPY: own the index, buy a put a
 little below the market, pay for it by selling a deeper put and a call above. Reset every
@@ -347,7 +348,7 @@ and opens the new collar — the diary says which happened.
 **Never.** No adjustment, no early close, no rolling a leg because the market moved. The
 structure is the discipline; a manager who "defends" a collar is running a different fund.
 
-**Gates (the Collar's own Risk Officer):** the call count never exceeds the share lots held
+**Gates (the Harbour's own Risk Officer):** the call count never exceeds the share lots held
 (covered); the short put is always paired with the long put above it, same expiry
 (defined-risk); rule 9. **There is no equity kill switch**, deliberately: a hedged-equity
 fund is expected to fall with the market for the first 5% and the collar *is* the risk
@@ -357,7 +358,7 @@ control. Stopping it at −4% would switch it off exactly when it starts working
 it protects nothing in the first 5% of a fall and nothing beyond 20%; a slow grind that
 resets the collar lower each quarter protects little.
 
-## Team 3 — The Condor (range income, defined risk)
+## Team 3 — The Tollgate (range income, defined risk; code name `condor`)
 
 **Universe.** SPY, QQQ, IWM. One condor per underlying at a time.
 
@@ -385,7 +386,7 @@ credit at the mids is under **10% of the wider wing**, or if a gate refuses.
 - **Time:** close at **7 days to expiry**, whatever the price — the last week is where a
   condor's risk concentrates.
 
-**Gates (the Condor's own Risk Officer):** every short leg has its long wing further out,
+**Gates (the Tollgate's own Risk Officer):** every short leg has its long wing further out,
 same expiry (defined-risk); one condor's worst case (wider wing × 100 − credit) is at most
 **5% of equity**; all open condors' worst cases together at most **15%**; below **92% of the
 baseline** no new condor opens (closing is always allowed); rule 9.

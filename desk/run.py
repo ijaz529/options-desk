@@ -451,10 +451,13 @@ def main(cmd: str) -> int:
     if team.config()["account"] is None:
         problem = team.account_problem(None)
     elif not broker._KEY or not broker._SECRET:
-        problem = (f"No API keys are set for the {team.TEAM.title()} "
+        problem = (f"No API keys are set for {team.config()['name']} "
                    f"(ALPACA_API_KEY_ID{team.KEY_SUFFIX}) — nothing is read and nothing is placed.")
     else:
-        problem = team.account_problem(broker.account_number())
+        actual = broker.account_number()
+        problem = team.account_problem(actual)
+        if not problem:
+            print(f"{team.config()['name']}: keys open {actual}, this team's own account.")
     if problem:
         print(problem)
         if cmd != "status":

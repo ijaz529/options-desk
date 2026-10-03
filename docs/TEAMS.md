@@ -59,25 +59,25 @@ It stays as it is. Everything below is about what could run **beside** it.
 
 Chosen to be as different as possible from the Wheelhouse and from each other.
 
-### Team 2 — "The Collar" (hedged equity, JPMorgan-style)
+### Team 2 — "The Harbour" (hedged equity, JPMorgan-style; code name `collar`)
 
 - **What it does.** Holds an S&P 500 ETF position and, each quarter, buys a put ~5% below
   the market, sells a put ~20% below, and sells a call above the market sized so the three
   legs cost roughly nothing. Holds to expiry; never adjusts mid-quarter.
 - **What the customer gets.** Stock-market returns up to a cap, with the first ~5% of a fall
   taken on the chin and the next ~15% cushioned. "Equity you can sleep with."
-- **Why it's different.** The Wheelhouse sells insurance; the Collar buys it.
+- **Why it's different.** The Wheelhouse sells insurance; the Harbour buys it — a sheltered place to hold the index.
 - **Honest costs.** It lags badly in strong years (the cap), and offers no protection past
   the lower put. In a slow grind down it protects little.
 - **Open at build time:** which ETF and how many shares fit the account (one lot of SPY is
   most of a $100,000 account); how the call strike is solved for zero cost.
 
-### Team 3 — "The Condor" (range-bound income, defined risk)
+### Team 3 — "The Tollgate" (range-bound income, defined risk; code name `condor`)
 
 - **What it does.** Once a month on SPY, QQQ and IWM: sells a put and a call each ~20-delta
   and buys wings further out, so the most it can lose on each is fixed on day one. Takes
   profit early, exits before expiry week.
-- **What the customer gets.** Income when the market goes nowhere, with a known worst case.
+- **What the customer gets.** Income when the market goes nowhere, with a known worst case — a toll collected while the index stays inside the gates.
 - **Why it's different.** Market-neutral; makes money in the quiet months the Hunter hates.
 - **Honest costs.** Small wins, occasional full-width losses; returns are modest by
   construction (the index version's are). A trending market in either direction hurts.
