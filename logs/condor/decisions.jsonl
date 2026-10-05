@@ -2,3 +2,4 @@
 {"ts": "2026-10-05T13:49:22+00:00", "agent": "condor", "action": "hold", "because": "No QQQ condor today: no standard monthly expiry is 25–45 days away."}
 {"ts": "2026-10-05T13:49:22+00:00", "agent": "condor", "action": "hold", "because": "No IWM condor today: no standard monthly expiry is 25–45 days away."}
 {"ts": "2026-10-05T21:37:29+00:00", "agent": "condor", "action": "hold", "because": "The market is closed — nothing is priced, so nothing is opened or closed this round."}
+{"ts": "2026-10-05T22:48:00+00:00", "agent": "condor", "action": "hold", "because": "The market is closed — nothing is priced, so nothing is opened or closed this round."}
