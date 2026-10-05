@@ -1758,3 +1758,4 @@
 {"ts": "2026-10-03T10:21:03+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.1%, ETH/USD +0.5%). Cash is a position."}
 {"ts": "2026-10-03T14:44:11+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.3%, ETH/USD +0.5%). Cash is a position."}
 {"ts": "2026-10-03T14:46:09+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.3%, ETH/USD +0.5%). Cash is a position."}
+{"ts": "2026-10-05T13:36:02+00:00", "agent": "hunter", "action": "stop", "because": "Premium 1.50 vs 3.35 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.", "symbol": "COIN261009P00177500", "qty": 3, "order_id": "53d22eae-e8d6-4cef-afd2-b361c11dcdfb"}

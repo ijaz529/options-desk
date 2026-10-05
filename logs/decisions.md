@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-10-05
+
+- **13:36** → `hunter` **stop** — Premium 1.50 vs 3.35 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+
 ## 2026-10-03
 
 - **10:21** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.1%, ETH/USD +0.5%). Cash is a position.
