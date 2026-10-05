@@ -109,13 +109,16 @@ jobs:
       - run: python -m desk.run ${{ steps.pick.outputs.cmd }}
         env:
           DESK_TEAM: ${{ steps.pick.outputs.team }}
-          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID }}
-          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
+          # Secrets carry the TEAM names (renamed 5 Oct 2026); the old names are read as a
+          # fallback until they are deleted. Inside the process the variable names keep the
+          # code names (collar, condor), as the modules do.
+          ALPACA_API_KEY_ID: ${{ secrets.ALPACA_API_KEY_ID_WHEELHOUSE || secrets.ALPACA_API_KEY_ID }}
+          ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY_WHEELHOUSE || secrets.ALPACA_API_SECRET_KEY }}
           # one key pair per team; a team with no keys refuses and writes that down
-          ALPACA_API_KEY_ID_COLLAR: ${{ secrets.ALPACA_API_KEY_ID_COLLAR }}
-          ALPACA_API_SECRET_KEY_COLLAR: ${{ secrets.ALPACA_API_SECRET_KEY_COLLAR }}
-          ALPACA_API_KEY_ID_CONDOR: ${{ secrets.ALPACA_API_KEY_ID_CONDOR }}
-          ALPACA_API_SECRET_KEY_CONDOR: ${{ secrets.ALPACA_API_SECRET_KEY_CONDOR }}
+          ALPACA_API_KEY_ID_COLLAR: ${{ secrets.ALPACA_API_KEY_ID_HARBOUR || secrets.ALPACA_API_KEY_ID_COLLAR }}
+          ALPACA_API_SECRET_KEY_COLLAR: ${{ secrets.ALPACA_API_SECRET_KEY_HARBOUR || secrets.ALPACA_API_SECRET_KEY_COLLAR }}
+          ALPACA_API_KEY_ID_CONDOR: ${{ secrets.ALPACA_API_KEY_ID_TOLLGATE || secrets.ALPACA_API_KEY_ID_CONDOR }}
+          ALPACA_API_SECRET_KEY_CONDOR: ${{ secrets.ALPACA_API_SECRET_KEY_TOLLGATE || secrets.ALPACA_API_SECRET_KEY_CONDOR }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       # the decision log is the product — persist it on every run
       - run: python -m desk.writeup   # the one-pager regenerates with every session

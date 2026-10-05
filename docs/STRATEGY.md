@@ -311,8 +311,10 @@ gates.** Nothing they do touches the Wheelhouse's account or record.
    options team there would share its cash and blur both records, so the Tollgate has no
    account until that one is freed (its managers were sold out on 3 Oct 2026; the fills
    land at Monday's open). Its session refuses to run until then.
-2. **Keys** live in GitHub secrets, one pair per team: `ALPACA_API_KEY_ID_COLLAR` /
-   `ALPACA_API_SECRET_KEY_COLLAR`, and the same with `_CONDOR`. Paper keys only — the
+2. **Keys** live in GitHub secrets, one pair per team, named for the team:
+   `ALPACA_API_KEY_ID_WHEELHOUSE` / `ALPACA_API_SECRET_KEY_WHEELHOUSE`, and the same with
+   `_HARBOUR` and `_TOLLGATE` (renamed 5 Oct 2026; the earlier unsuffixed, `_COLLAR` and
+   `_CONDOR` names are still read until they are deleted). Paper keys only — the
    broker client is pinned to the paper host.
 3. **Diaries:** `logs/collar/decisions.jsonl`, `logs/condor/decisions.jsonl`. Same rule as
    the Wheelhouse: one row per decision, refusal or failure, in plain English.
