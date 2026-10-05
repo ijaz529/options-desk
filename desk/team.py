@@ -18,7 +18,7 @@ TEAM = os.environ.get("DESK_TEAM", "wheelhouse").strip().lower() or "wheelhouse"
 TEAMS: dict[str, dict] = {
     "wheelhouse": {"name": "The Wheelhouse", "account": "PA3G3BG7TIBD", "baseline": 88_983.0},
     "collar":     {"name": "The Harbour",    "account": "PA3SKVNYTFJK", "baseline": 100_000.0},
-    "condor":     {"name": "The Tollgate",   "account": None,           "baseline": None},
+    "condor":     {"name": "The Tollgate",   "account": "PA3G4NEQHCUC", "baseline": 99_789.0},
 }
 
 if TEAM not in TEAMS:

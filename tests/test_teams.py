@@ -18,7 +18,9 @@ def test_a_team_only_trades_its_own_account():
     assert team.account_problem("PA3G3BG7TIBD", "wheelhouse") is None
 
 
-def test_a_team_without_an_account_refuses():
+def test_a_team_without_an_account_refuses(monkeypatch):
+    assert team.account_problem("PA3G4NEQHCUC", "condor") is None          # assigned 5 Oct 2026
+    monkeypatch.setitem(team.TEAMS, "condor", {"name": "The Tollgate", "account": None, "baseline": None})
     assert "no paper account assigned" in team.account_problem("PA3G4NEQHCUC", "condor")
 
 

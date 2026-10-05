@@ -304,13 +304,11 @@ gates.** Nothing they do touches the Wheelhouse's account or record.
    |---|---|---|
    | Wheelhouse | PA3G3BG7TIBD | $88,983 (re-based 30 Sep 2026) |
    | The Harbour (`collar`) | PA3SKVNYTFJK | $100,000 (untouched at assignment) |
-   | The Tollgate (`condor`) | *not assigned yet* | set when the account is |
+   | The Tollgate (`condor`) | PA3G4NEQHCUC | $99,789 (cash at assignment, 5 Oct 2026) |
 
-   The third paper account on the login (PA3G4NEQHCUC) is **in use by Alfred**: five of
-   Alfred's stock managers trade it through SnapTrade (36 positions on 2 Oct 2026). An
-   options team there would share its cash and blur both records, so the Tollgate has no
-   account until that one is freed (its managers were sold out on 3 Oct 2026; the fills
-   land at Monday's open). Its session refuses to run until then.
+   The Tollgate's account was Alfred's SnapTrade paper account until 5 Oct 2026. Alfred's
+   managers were sold out, the remainders closed, the connection archived on Alfred's side
+   and the key pair regenerated, so nothing but this team can reach it.
 2. **Keys** live in GitHub secrets, one pair per team, named for the team:
    `ALPACA_API_KEY_ID_WHEELHOUSE` / `ALPACA_API_SECRET_KEY_WHEELHOUSE`, and the same with
    `_HARBOUR` and `_TOLLGATE` (renamed 5 Oct 2026; the earlier unsuffixed, `_COLLAR` and
