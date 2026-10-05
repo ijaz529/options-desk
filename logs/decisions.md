@@ -35,6 +35,7 @@
 - **18:06** → `hunter` **buy_put** — QCOM in a clean 6-session downtrend (187.5->181.7), today -1.7% on above-avg volume (1.22x), closing at the day's low (range_pos 0.24) - confirmed distribution, no bounce buyers stepping in. — 7× QCOM261009P00177500 at ~1.70 ($1,190 premium, the whole downside). Invalidation: Invalidate if QCOM reclaims and closes above 185 (prior breakdown level) or if volume dries up (<0.8x) on any further down day, signaling exhaustion rather than continuation.
 - **20:41** → `steward` **take_profit** — Buying back at 0.09: 65% of the 0.26 credit is banked, and the last cents are not worth the tail.
 - **21:24** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **21:28** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-10-03
 
