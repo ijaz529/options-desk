@@ -31,6 +31,8 @@
 - **14:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **14:51** → `steward` **sell_put** — Offered to sell the GM 09 Oct 77 put at ~0.28, a day limit at the mid that counts once it fills (0.36% of the $7,700 obligation). Delta -0.16 puts the strike 3.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **15:05** · `hunter` **hold** — Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
+- **18:06** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 3 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_bars({"symbols": "QCOM,MSFT", "timeframe": "1Day", "days": 10}); get_news({"symbols": "QCOM,MSFT", "start": "2025-05-01", "limit": 10})
+- **18:06** → `hunter` **buy_put** — QCOM in a clean 6-session downtrend (187.5->181.7), today -1.7% on above-avg volume (1.22x), closing at the day's low (range_pos 0.24) - confirmed distribution, no bounce buyers stepping in. — 7× QCOM261009P00177500 at ~1.70 ($1,190 premium, the whole downside). Invalidation: Invalidate if QCOM reclaims and closes above 185 (prior breakdown level) or if volume dries up (<0.8x) on any further down day, signaling exhaustion rather than continuation.
 
 ## 2026-10-03
 
