@@ -40,6 +40,7 @@
 - **18:06** → `hunter` **buy_call** — AMD broke out of a 607-633 weekly base on 1.24x volume, closing at day's high (range_pos 0.90) with a 2.69% gap - a confirmed momentum breakout I have no existing exposure to (unlike AVGO which I already hold). — 2× AMD261009C00667500 at ~6.72 ($1,344 premium, the whole downside). Invalidation: Close back below 633 (prior base top) within the holding period invalidates the breakout thesis; exit if broken.
 - **19:05** · `steward` **hold** — Only 55 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:18** · `steward` **hold** — Only 42 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **19:30** · `steward` **hold** — Only 29 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-10-05
 
