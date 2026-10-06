@@ -45,6 +45,7 @@
 - **19:42** · `hunter` **hold** — Only 18 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:43** · `steward` **hold** — Only 17 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:52** · `steward` **hold** — Only 8 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **20:13** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-10-05
 
