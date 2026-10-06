@@ -23,6 +23,18 @@
 - **14:07** → `hunter` **buy_call** — AVGO gapped+ran +3% on confirmed $60B Broadcom-Anthropic chip deal (FT), closing at 97% of day range after 7 straight up days (349->373). Real catalyst + technical confirmation = continuation toward 390-400 over next 2 weeks. — 5× AVGO261009C00380000 at ~3.17 ($1,585 premium, the whole downside). Invalidation: Close below ~358 (pre-breakout base) or news of deal being denied/downsized invalidates thesis; exit calls if AVGO fails to hold above 365 on a closing basis.
 - **14:15** → `steward` **take_profit** — Buying back at 0.08: 72% of the 0.29 credit is banked, and the last cents are not worth the tail.
 - **14:35** → `steward` **take_profit** — Buying back at 0.19: 69% of the 0.62 credit is banked, and the last cents are not worth the tail.
+- **14:51** → `steward` **sell_put** — Offered to sell the XOM 09 Oct 160 put at ~0.45, a day limit at the mid that counts once it fills (0.28% of the $16,000 obligation). Delta -0.17 puts the strike 2.8% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:51** · `steward` **hold** — Holding 100 KO shares from assignment — the wheel's second half (a covered call, STRATEGY.md) is specified and not yet built. No new put on top of the stock.
+- **14:51** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **14:51** → `steward` **sell_put** — Offered to sell the BAC 09 Oct 53 put at ~0.13, a day limit at the mid that counts once it fills (0.25% of the $5,300 obligation). Delta -0.18 puts the strike 2.2% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:51** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **14:51** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:51** → `steward` **sell_put** — Offered to sell the CSCO 09 Oct 112 put at ~0.34, a day limit at the mid that counts once it fills (0.30% of the $11,200 obligation). Delta -0.19 puts the strike 2.4% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **14:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **14:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-10-05
 
