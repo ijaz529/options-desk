@@ -5,8 +5,9 @@
 #   hunter   14:15, 18:30   — Claude reads the tape twice a session
 #   sweep    every 30 min in-session — mechanical exits, both sleeves
 #   sweep    hourly at weekends — the crypto sleeve never sleeps
-#   collar   14:37 Mon–Fri    — The Harbour's one daily session, on its own account
-#   condor   14:41, 16:27, 18:39 — The Tollgate, on its own account
+#   collar / condor — rung by Alfred's database clock (pg_cron → workflow_dispatch), not by
+#   this schedule: GitHub's cron fired 3–6 hours late on 5 Oct 2026 and the late slots only
+#   wrote 'market closed' holds.
 name: desk
 on:
   schedule:
@@ -41,18 +42,6 @@ on:
     - cron: '13 10 * * 6'
     - cron: '27 10 * * 6'
     - cron: '7 * * * 0,6'
-    # The Harbour (team 2, `collar`) — one session a day is enough: buy the lot, then the
-    # collar, then nothing until quarter-end. Three slots are retries; the session holds
-    # if an order is working or the collar is already on (scheduled 5 Oct 2026).
-    - cron: '37 14 * * 1-5'
-    - cron: '17 16 * * 1-5'
-    - cron: '49 18 * * 1-5'
-    # The Tollgate (team 3, `condor`) — exits first, then at most one condor per underlying,
-    # so extra slots are retries. Morning to enter, afternoon to catch an exit
-    # (scheduled 5 Oct 2026).
-    - cron: '41 14 * * 1-5'
-    - cron: '27 16 * * 1-5'
-    - cron: '39 18 * * 1-5'
     # de-risk — the contest's last session. Three chances: this one cannot be missed.
   workflow_dispatch:
     inputs:
@@ -102,10 +91,6 @@ jobs:
           else
             echo "team=wheelhouse" >> "$GITHUB_OUTPUT"
             case "${{ github.event.schedule }}" in
-              '37 14 * * 1-5'|'17 16 * * 1-5'|'49 18 * * 1-5')
-                echo "cmd=collar" >> "$GITHUB_OUTPUT"; echo "team=collar" >> "$GITHUB_OUTPUT" ;;
-              '41 14 * * 1-5'|'27 16 * * 1-5'|'39 18 * * 1-5')
-                echo "cmd=condor" >> "$GITHUB_OUTPUT"; echo "team=condor" >> "$GITHUB_OUTPUT" ;;
               '47 13 * * 1-5'|'58 13 * * 1-5'|'11 14 * * 1-5'|'31 14 * * 1-5'|'53 14 * * 1-5')
                 echo "cmd=steward" >> "$GITHUB_OUTPUT" ;;
               '19 14 * * 1-5'|'29 14 * * 1-5'|'7 15 * * 1-5'|'21 15 * * 1-5'|'33 18 * * 1-5'|'43 18 * * 1-5')

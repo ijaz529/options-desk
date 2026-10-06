@@ -372,6 +372,7 @@ def sweep() -> None:
     # No order outlives its session (STRATEGY.md rule 8): a limit that survived
     # overnight was priced off a dead session and only fills adversely.
     today = datetime.now(timezone.utc).date()
+    working = set()
     for o in broker.open_orders():
         if datetime.fromisoformat(o["created_at"]).date() < today:
             broker.cancel_order(o["id"])
@@ -380,7 +381,14 @@ def sweep() -> None:
                        "off yesterday's session, and a stale limit only fills when the market "
                        "has moved against it. The next session re-prices from a live chain.",
                        symbol=o["symbol"])
+        else:
+            working.add(o["symbol"]); working.update(o.get("legs") or [])
     for p in read_positions():
+        # A contract with a close already working is spoken for: a second close order is
+        # refused by the broker ("insufficient qty available") and, uncaught, it ended the
+        # whole sweep — every later position went unchecked (5 Oct 2026, four sweeps lost).
+        if p["symbol"] in working:
+            continue
         if p["asset_class"] == "crypto" and p["qty"] > 0:
             fire = weekend.exit_action(entry_cost=abs(p["cost_basis"]), market_value=abs(p["market_value"]))
             if fire:
