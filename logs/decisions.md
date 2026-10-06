@@ -6,6 +6,7 @@
 - **00:18** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 - **13:15** → `desk` **cancel** — Cancelled the overnight order on WMT261009P00101000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
 - **13:15** → `steward` **take_profit** — Buying back at 0.09: 65% of the 0.26 credit is banked, and the last cents are not worth the tail.
+- **13:36** → `hunter` **stop** — Premium 0.99 vs 2.38 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 
 ## 2026-10-05
 
