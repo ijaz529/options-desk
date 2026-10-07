@@ -5,6 +5,18 @@
 - **13:35** → `hunter` **stop** — Premium 3.35 vs 6.70 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **13:35** → `steward` **stop** — Buying back at 0.53: the option has doubled against the 0.14 credit. The week is not ordinary — the rule says leave.
 - **13:35** → `hunter` **take_half** — Premium doubled (2.82 → 7.05): banking 2 of 4, the rest rides with its stop raised to entry.
+- **13:51** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:51** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:51** · `steward` **hold** — Holding 100 KO shares from assignment — the wheel's second half (a covered call, STRATEGY.md) is specified and not yet built. No new put on top of the stock.
+- **13:51** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:51** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:51** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:51** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **13:51** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:51** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **13:51** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **13:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-10-06
 
