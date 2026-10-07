@@ -1,5 +1,11 @@
 # The desk's decision log
 
+## 2026-10-07
+
+- **13:35** → `hunter` **stop** — Premium 3.35 vs 6.70 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **13:35** → `steward` **stop** — Buying back at 0.53: the option has doubled against the 0.14 credit. The week is not ordinary — the rule says leave.
+- **13:35** → `hunter` **take_half** — Premium doubled (2.82 → 7.05): banking 2 of 4, the rest rides with its stop raised to entry.
+
 ## 2026-10-06
 
 - **00:17** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
