@@ -36,6 +36,7 @@
 - **18:07** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 3 read-only tool calls before concluding. Trail: get_stock_bars({"symbols": "GS,MU,CAT,META", "timeframe": "1Day", "days": 10}); get_all_positions({}); get_news({"symbols": "CAT,MU", "start": "2025-05-01", "limit": 10})
 - **18:07** 🛑 `hunter` **veto** — Proposal discarded before the gates: CAT: thesis empty or over 280 chars.
 - **18:07** · `hunter` **hold** — GS thesis approved but no call in the delta band with a believable market — the idea dies at the chain, not at the desk.
+- **19:32** · `steward` **hold** — Only 28 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-10-06
 
