@@ -32,6 +32,7 @@
 - **14:51** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **14:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **14:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **15:56** → `steward` **take_profit** — Buying back at 0.10: 71% of the 0.34 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-10-06
 
