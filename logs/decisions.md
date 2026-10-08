@@ -1,5 +1,11 @@
 # The desk's decision log
 
+## 2026-10-08
+
+- **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 09 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
+- **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 09 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
+- **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 09 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
+
 ## 2026-10-07
 
 - **13:35** → `hunter` **stop** — Premium 3.35 vs 6.70 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
