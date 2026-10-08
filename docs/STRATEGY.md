@@ -386,6 +386,10 @@ credit at the mids is under **10% of the wider wing**, or if a gate refuses.
 - **Time:** close at **7 days to expiry**, whatever the price — the last week is where a
   condor's risk concentrates.
 
+Holding is a decision too (8 Oct 2026): a live session that leaves its open condors alone
+writes one hold row naming each, how much of its credit is banked and the days left. Until
+then a quiet session wrote nothing, and the diary looked as if the team had stopped.
+
 **Gates (the Tollgate's own Risk Officer):** every short leg has its long wing further out,
 same expiry (defined-risk); one condor's worst case (wider wing × 100 − credit) is at most
 **5% of equity**; all open condors' worst cases together at most **15%**; below **92% of the

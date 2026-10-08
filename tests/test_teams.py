@@ -106,6 +106,14 @@ def test_condor_exits():
     assert condor.exit_action(5.0, 4.0, 20) is None
 
 
+def test_condor_hold_row_names_each_condor():
+    s = condor.hold_because([("SPY", date(2026, 11, 20), 5.20, 4.54, 43),
+                             ("IWM", date(2026, 11, 20), 2.56, 2.60, 43)])
+    assert "SPY 20 Nov (13% of the 5.20 credit banked, 43 days left)" in s
+    assert "IWM 20 Nov (buying it back costs 2.60 against the 2.56 collected, 43 days left)" in s
+    assert f"with {condor.EXIT_DTE} days left" in s
+
+
 def test_occ_parses_and_tolerates_a_multi_leg_order_with_no_symbol():
     assert occ("SPY261231P00730000") == ("SPY", date(2026, 12, 31), "P", 730.0)
     assert occ(None) is None and occ("SPY") is None

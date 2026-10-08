@@ -165,6 +165,7 @@ def condor_session() -> None:
     positions = broker.positions()
     groups = _groups(positions)
     open_max_loss = 0.0
+    holding = []
 
     # exits first — closing risk is always allowed
     for (u, expiry), legs in groups.items():
@@ -184,6 +185,10 @@ def condor_session() -> None:
             order_id = broker.mleg(order, round(cost * 1.05, 2))
             log.record("condor", kind, f"{u} {expiry:%d %b}: {because}",
                        symbols=[p["symbol"] for p, _ in legs], order_id=order_id)
+        else:
+            holding.append((u, expiry, credit, cost, (expiry - today).days))
+    if holding:
+        log.record("condor", "hold", condor.hold_because(holding))
 
     # entries — rule 9, then one condor per underlying
     blocked = gates.session_open_for_entries(is_open, minutes_to_close)

@@ -137,6 +137,18 @@ def exit_action(credit: float, cost_to_close: float, days_to_expiry: int) -> tup
     return None
 
 
+def hold_because(held: list[tuple[str, date, float, float, int]]) -> str:
+    """The session's one hold row: (underlying, expiry, credit, cost_to_close, days left) for
+    each open condor that no exit rule touched."""
+    parts = []
+    for u, expiry, credit, cost, days in held:
+        state = (f"{1 - cost / credit:.0%} of the {credit:.2f} credit banked" if 0 < credit and cost <= credit
+                 else f"buying it back costs {cost:.2f} against the {credit:.2f} collected")
+        parts.append(f"{u} {expiry:%d %b} ({state}, {days} days left)")
+    return (f"Holding {', '.join(parts)}. None is at an exit: each closes at half its credit, "
+            f"at twice it, or with {EXIT_DTE} days left.")
+
+
 def because(c: Condor, spot: float) -> str:
     u = c.short_put.underlying
     return (f"Offered the {u} {c.short_put.expiry:%d %b} iron condor with {u} at {spot:.2f}: sell the "
