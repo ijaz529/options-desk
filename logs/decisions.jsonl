@@ -1929,3 +1929,4 @@
 {"ts": "2026-10-08T19:27:08+00:00", "agent": "steward", "action": "hold", "because": "Only 33 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
 {"ts": "2026-10-08T19:39:09+00:00", "agent": "steward", "action": "hold", "because": "Only 21 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
 {"ts": "2026-10-08T19:55:12+00:00", "agent": "steward", "action": "hold", "because": "Only 5 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
+{"ts": "2026-10-08T19:59:06+00:00", "agent": "hunter", "action": "hold", "because": "Only 1 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
