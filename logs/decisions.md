@@ -5,6 +5,18 @@
 - **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 09 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
 - **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 09 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
 - **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 09 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
+- **13:50** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:50** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:50** · `steward` **hold** — Holding 100 KO shares from assignment — the wheel's second half (a covered call, STRATEGY.md) is specified and not yet built. No new put on top of the stock.
+- **13:51** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:51** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:51** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:51** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **13:51** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:51** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:51** → `steward` **sell_put** — Offered to sell the INTC 09 Oct 106 put at ~0.33, a day limit at the mid that counts once it fills (0.31% of the $10,600 obligation). Delta -0.16 puts the strike 3.4% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **13:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **13:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 
 ## 2026-10-07
 
