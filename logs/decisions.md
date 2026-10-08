@@ -33,6 +33,8 @@
 - **14:50** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **14:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
 - **14:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust.
+- **15:06** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 3 read-only tool calls before concluding. Trail: get_stock_bars({"symbols": "PLTR,SQ", "timeframe": "1Day", "days": 10}); get_stock_snapshot({"symbols": "PLTR,SQ"}); get_option_chain({"underlying_symbol": "PLTR", "type": "put", "strike_price_gte": 190, "strike_price_lte": 200, "expiration_date_gte": "2)
+- **15:06** → `hunter` **buy_put** — PLTR ran ~7 straight sessions to a fresh high (204.44) intraday on 1.4x normal volume, then reversed to close near session lows (199.5, range_pos 0.34) — classic blow-off/gap-fade exhaustion after an extended rally. Expect mean reversion toward 192-194 support over the next week. — 5× PLTR261016P00195000 at ~3.25 ($1,625 premium, the whole downside). Invalidation: Invalidate if PLTR closes above today's high (~204.5) or holds above 202 on the next session, signaling the uptrend resumed rather than faded.
 
 ## 2026-10-07
 
