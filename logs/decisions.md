@@ -38,6 +38,7 @@
 - **18:07** → `hunter` **buy_call** — AAPL gapped down -2.6% intraday with broad Nasdaq (OpenAI-scare selloff) but closed day near session high (range_pos 0.95) on 1.6x avg volume, signaling aggressive dip-buying absorption as mega-cap tech rebounds. Expect continuation toward prior $340 swing high this week. — 8× AAPL261016C00340000 at ~2.24 ($1,792 premium, the whole downside). Invalidation: Thesis fails if AAPL trades/closes below today's intraday low ~$330.7, which would indicate the reversal failed and sellers remain in control.
 - **19:00** · `steward` **hold** — Only 59 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:14** · `steward` **hold** — Only 45 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **19:32** · `steward` **hold** — Only 28 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-10-08
 
