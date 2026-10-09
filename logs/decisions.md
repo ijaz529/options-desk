@@ -1,5 +1,10 @@
 # The desk's decision log
 
+## 2026-10-09
+
+- **13:15** → `desk` **cancel** — Cancelled the overnight order on TSLA261009C00380000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
+- **13:15** → `hunter` **expiry_exit** — Hard exit: this contract expires today, and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
+
 ## 2026-10-08
 
 - **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 09 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
