@@ -1,5 +1,8 @@
 """Teams 2 and 3 and the wall between teams (STRATEGY.md "Teams 2 and 3", 2 Oct 2026)."""
+from dataclasses import replace
 from datetime import date
+
+import pytest
 
 from desk import collar, condor, team
 from desk.broker import PutQuote
@@ -104,6 +107,31 @@ def test_condor_exits():
     assert condor.exit_action(5.0, 10.0, 20)[0] == "stop"
     assert condor.exit_action(5.0, 4.0, 7)[0] == "time_exit"
     assert condor.exit_action(5.0, 4.0, 20) is None
+
+
+def test_realised_vol_is_annualised_from_twenty_daily_returns():
+    import math
+    assert condor.realised_vol([100.0] * 20) is None                      # 20 closes = 19 returns: too few
+    flat = [100.0 * 1.001 ** i for i in range(21)]                         # the same return every day
+    assert condor.realised_vol(flat) == pytest.approx(0.0, abs=1e-12)
+    zig = [100.0 * (1.01 if i % 2 else 1.0) for i in range(21)]            # +1%, −1%, +1% …
+    r = math.log(1.01)
+    assert condor.realised_vol(zig) == pytest.approx(math.sqrt(r * r * 20 / 19 * 252), rel=1e-9)
+
+
+def test_atm_iv_takes_the_put_and_call_nearest_spot():
+    puts = [replace(q(760, 1, 1), iv=0.15), replace(q(768, 1, 1), iv=0.13), replace(q(740, 1, 1), iv=0.19)]
+    calls = [replace(q(772, 1, 1, kind="C"), iv=0.11), replace(q(790, 1, 1, kind="C"), iv=0.10)]
+    assert condor.atm_iv(puts, calls, 770.0) == pytest.approx((0.13 + 0.11) / 2)
+    assert condor.atm_iv(puts, [q(772, 1, 1, kind="C")], 770.0) is None   # a side with no IV quote
+
+
+def test_vol_gate_opens_only_when_implied_beats_realised():
+    assert condor.vol_gate(0.14, 0.10) is None
+    assert "no more than the 14%" in condor.vol_gate(0.12, 0.14)
+    assert condor.vol_gate(0.12, 0.12) is not None                         # equal is not above
+    assert "never passes" in condor.vol_gate(None, 0.10)
+    assert "never passes" in condor.vol_gate(0.12, None)
 
 
 def test_condor_hold_row_names_each_condor():

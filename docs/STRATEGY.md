@@ -380,6 +380,32 @@ condor's worst case at about 4% of the ETF's price per share, which all three fi
 One contract per leg. Skip — and say why — if any leg has no quote or delta, if the net
 credit at the mids is under **10% of the wider wing**, or if a gate refuses.
 
+**Volatility gate (added 9 Oct 2026, before any condor reached it).** A new condor opens only
+when the options are pricing more movement than the fund has actually shown: the
+**at-the-money implied volatility** of that expiry (the mean of the put and the call struck
+nearest spot, from the broker's snapshot) must be **above the fund's realised volatility over
+its last 20 daily closes** (annualised). Otherwise the session holds and says both numbers.
+Selling a condor is selling insurance on calm; when recent moves are already as large as the
+price of that insurance, the premium does not pay for the risk. A missing quote is a skip,
+never a pass. Exits are never gated.
+
+*Evidence (eureka docs/34 and `docs/research/tollgate_vol_gates.py` there).* No free option
+history exists before 2024, so 2008–2026 was replayed with modelled prices, checked first
+against two real CBOE indices built from real S&P 500 options (put-write: 6.9% a year
+modelled vs 7.6% real; iron condor: 1.5% vs 1.2%). On that replay these rules as written
+lost about $1,550 a year per $7,500 at risk, with a worst run of −$43,600. With this gate:
++$890 a year, worst −$17,700, keeping 81% of the trades. It was the only one of four
+pre-set gates to pass in every window (whole period, both halves) and at every skew tried. A
+VIX-term-structure gate, an IV-rank gate, and a machine-learned trade filter all failed.
+
+**Yardstick and checkpoint (9 Oct 2026).** CBOE's own iron-condor index (CNDR: 20-delta
+shorts, 5-delta wings, monthly) earned **0.8% a year from 2008 to 2026, below Treasury bills
+(1.3%)**; put-writing earned 7.2% and collars 6.9–7.5%. This family has the weakest real
+record of the desk's three. **On 31 March 2027** — about five monthly cycles — the Tollgate's
+return on the capital its condors put at risk is compared with CNDR over the same months and
+with T-bills. Trailing both: retire it, or rebuild it in a shape the indices reward
+(put-spread or put-write). Ahead of both: it stays. The verdict is written here, dated.
+
 **Exits, checked every session, each as one four-leg closing order:**
 - **Take profit** when the condor can be bought back for half the credit or less.
 - **Stop** when buying it back costs twice the credit or more.

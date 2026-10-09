@@ -19,7 +19,8 @@ from alpaca.trading.requests import (GetOptionContractsRequest, LimitOrderReques
                                      MarketOrderRequest)
 from alpaca.data.historical.option import OptionHistoricalDataClient
 from alpaca.data.historical.stock import StockHistoricalDataClient
-from alpaca.data.requests import OptionSnapshotRequest, StockLatestTradeRequest
+from alpaca.data.requests import OptionSnapshotRequest, StockBarsRequest, StockLatestTradeRequest
+from alpaca.data.timeframe import TimeFrame
 
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 
@@ -47,6 +48,7 @@ class PutQuote:
     ask: float
     delta: float | None
     spot: float
+    iv: float | None = None    # the snapshot's implied volatility (Tollgate's volatility gate)
 
     @property
     def mid(self) -> float:
@@ -98,8 +100,20 @@ def option_chain(underlying: str, expiry: date, kind: str,
             bid=float(q.bid_price), ask=float(q.ask_price),
             delta=float(greeks.delta) if greeks and greeks.delta is not None else None,
             spot=spot,
+            iv=float(s.implied_volatility) if getattr(s, "implied_volatility", None) is not None else None,
         ))
     return out
+
+
+def daily_closes(symbol: str, days: int = 45) -> list[float]:
+    """Completed daily closes, oldest first — bars end at today's UTC midnight, so a session
+    in progress never counts as a close."""
+    from datetime import datetime, timedelta, timezone
+    today = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    bars = StockHistoricalDataClient(_KEY, _SECRET).get_stock_bars(StockBarsRequest(
+        symbol_or_symbols=symbol, timeframe=TimeFrame.Day,
+        start=today - timedelta(days=days), end=today)).data.get(symbol, [])
+    return [float(b.close) for b in bars]
 
 
 def weekly_puts(underlying: str, expiry: date) -> list[PutQuote]:

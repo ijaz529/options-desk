@@ -207,8 +207,17 @@ def condor_session() -> None:
             log.record("condor", "hold", f"No {u} condor today: no standard monthly expiry is "
                        f"{condor.DTE_MIN}–{condor.DTE_MAX} days away.")
             continue
-        c, why = condor.pick(broker.option_chain(u, expiry, "put", 0.75, 1.0),
-                             broker.option_chain(u, expiry, "call", 1.0, 1.25))
+        puts = broker.option_chain(u, expiry, "put", 0.75, 1.0)
+        calls = broker.option_chain(u, expiry, "call", 1.0, 1.25)
+        spot = (puts or calls)[0].spot if (puts or calls) else None
+        iv = condor.atm_iv(puts, calls, spot) if spot else None
+        rv = condor.realised_vol(broker.daily_closes(u))
+        vols = {"iv": round(iv, 4) if iv is not None else None, "rv20": round(rv, 4) if rv is not None else None}
+        no_vol = condor.vol_gate(iv, rv)
+        if no_vol:
+            log.record("condor", "hold", f"No {u} condor today: {no_vol}.", symbol=u, **vols)
+            continue
+        c, why = condor.pick(puts, calls)
         if c is None:
             log.record("condor", "hold", f"No {u} condor today: {why}.")
             continue
@@ -220,7 +229,9 @@ def condor_session() -> None:
                                 (c.short_put.symbol, "sell", "sell_to_open"),
                                 (c.short_call.symbol, "sell", "sell_to_open"),
                                 (c.long_call.symbol, "buy", "buy_to_open")], -c.credit)
-        log.record("condor", "open_condor", condor.because(c, c.short_put.spot),
+        log.record("condor", "open_condor", condor.because(c, c.short_put.spot)
+                   + f" Volatility gate open: its options price {iv:.0%} a year of movement against "
+                   f"{rv:.0%} actually moved over the last {condor.RV_DAYS} days.",
                    symbols=[q.symbol for q in c.legs], credit=c.credit, max_loss=c.max_loss,
-                   expiry=expiry.isoformat(), order_id=order_id)
+                   expiry=expiry.isoformat(), order_id=order_id, **vols)
         open_max_loss += c.max_loss

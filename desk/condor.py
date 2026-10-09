@@ -6,6 +6,7 @@ seven days to expiry. Pure rules here; the session that meets the broker is in t
 """
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass
 from datetime import date, timedelta
 
@@ -23,6 +24,7 @@ EXIT_DTE = 7
 MAX_LOSS_ONE = 0.05           # one condor's worst case, of equity
 MAX_LOSS_ALL = 0.15           # all open condors' worst cases together
 KILL_SWITCH_FRACTION = 0.92   # of the team's baseline: below it, no new condor
+RV_DAYS = 20                  # volatility gate: realised vol over this many daily returns
 
 
 @dataclass(frozen=True)
@@ -147,6 +149,37 @@ def hold_because(held: list[tuple[str, date, float, float, int]]) -> str:
         parts.append(f"{u} {expiry:%d %b} ({state}, {days} days left)")
     return (f"Holding {', '.join(parts)}. None is at an exit: each closes at half its credit, "
             f"at twice it, or with {EXIT_DTE} days left.")
+
+
+def realised_vol(closes: list[float]) -> float | None:
+    """Annualised volatility of the last RV_DAYS daily log returns (needs RV_DAYS + 1 closes)."""
+    if len(closes) < RV_DAYS + 1:
+        return None
+    c = closes[-(RV_DAYS + 1):]
+    r = [math.log(b / a) for a, b in zip(c, c[1:])]
+    mean = sum(r) / len(r)
+    return math.sqrt(sum((x - mean) ** 2 for x in r) / (len(r) - 1) * 252)
+
+
+def atm_iv(puts: list[PutQuote], calls: list[PutQuote], spot: float) -> float | None:
+    """Mean implied vol of the put and the call struck nearest spot; None if either is missing."""
+    ivs = []
+    for side in (puts, calls):
+        quoted = [q for q in side if q.iv]
+        if not quoted:
+            return None
+        ivs.append(min(quoted, key=lambda q: abs(q.strike - spot)).iv)
+    return sum(ivs) / 2
+
+
+def vol_gate(iv: float | None, rv: float | None) -> str | None:
+    """STRATEGY.md "Volatility gate": None when a condor may open, else the plain reason it may not."""
+    if iv is None or rv is None:
+        return "there is no implied- or realised-volatility reading, and a missing reading never passes the gate"
+    if iv <= rv:
+        return (f"its options price {iv:.0%} a year of movement, no more than the {rv:.0%} it has actually "
+                f"moved over the last {RV_DAYS} days — the premium does not pay for the risk")
+    return None
 
 
 def because(c: Condor, spot: float) -> str:
