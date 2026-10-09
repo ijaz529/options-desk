@@ -36,6 +36,7 @@
 - **15:15** → `hunter` **stop** — Premium 1.62 vs 3.25 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **18:06** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_bars({"symbols": "AAPL,UNH", "timeframe": "1Day", "days": 10}); get_news({"symbols": "AAPL,UNH", "start": "2025-01-01", "limit": 10}); get_option_chain({"underlying_symbol": "AAPL", "type": "call", "strike_price_gte": 335, "strike_price_lte": 345, "expiration_date_gte": ")
 - **18:07** → `hunter` **buy_call** — AAPL gapped down -2.6% intraday with broad Nasdaq (OpenAI-scare selloff) but closed day near session high (range_pos 0.95) on 1.6x avg volume, signaling aggressive dip-buying absorption as mega-cap tech rebounds. Expect continuation toward prior $340 swing high this week. — 8× AAPL261016C00340000 at ~2.24 ($1,792 premium, the whole downside). Invalidation: Thesis fails if AAPL trades/closes below today's intraday low ~$330.7, which would indicate the reversal failed and sellers remain in control.
+- **19:00** · `steward` **hold** — Only 59 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-10-08
 
