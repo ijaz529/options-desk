@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-10-10
+
+- **10:21** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.3%, ETH/USD +0.2%). Cash is a position.
+
 ## 2026-10-09
 
 - **13:15** → `desk` **cancel** — Cancelled the overnight order on TSLA261009C00380000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
