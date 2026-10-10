@@ -71,7 +71,7 @@ for the next Friday, $0.01 a share taken on every fill.
 **Decision.** No change. The Steward stays flat at weekends: it gives up nothing measurable, and it
 keeps out the gap risk that the sample's worst Mondays (5 Aug 2024, 7 Apr 2025) carried. The
 Hunter's rules stay as written; his verdict is still due 28 Oct. Test again when another year of
-data exists.
+data exists: the scripts and how to run them are in `research/weekend/`.
 
 **Found on the way.** Alpaca's option bars carry Saturday test-session prints (INTC and GM puts at
 $9–10 on Saturday 1 Jun 2024): anything that reads bars must keep to trading days. And the replay
