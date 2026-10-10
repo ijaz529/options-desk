@@ -78,7 +78,9 @@ def review(p: Proposal, a: AccountState) -> Verdict:
                        f"Approved: {p.agent} writes a covered call on {p.symbol} against shares held — "
                        "income on stock the account already carries, no new risk.")
 
-    if a.equity < KILL_SWITCH_EQUITY and not (p.agent == "steward" and p.kind == "csp"):
+    # defined-risk put spreads count as income here since 26 Sep 2026 (STRATEGY.md); the code
+    # caught up on 10 Oct 2026, when the spread was built
+    if a.equity < KILL_SWITCH_EQUITY and not (p.agent == "steward" and p.kind in ("csp", "spread")):
         # income-only means exactly that: the Hunter and the weekend sleeve are
         # shut, but the Steward may keep selling cash-secured puts — the
         # defined-outcome income that earns the account back. The first version

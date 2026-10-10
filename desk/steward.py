@@ -7,6 +7,8 @@ a market. The Risk Officer still reviews everything this module proposes.
 """
 from __future__ import annotations
 
+from dataclasses import dataclass
+
 from desk.broker import PutQuote
 
 TARGET_DELTA = -0.20          # puts carry negative delta; we want ~20-delta
@@ -44,6 +46,58 @@ def entry_because(q: PutQuote) -> str:
             f"({q.premium_yield:.2%} of the ${q.strike * 100:,.0f} obligation). "
             f"Delta {q.delta:+.2f} puts the strike {(1 - q.strike / q.spot):.1%} below spot — "
             "a price we would own this name at. The trade is a bet the week stays ordinary.")
+
+
+# The put spread (STRATEGY.md "Built 10 Oct 2026"): when no cash-secured put qualifies, sell
+# the same 20-delta put and buy the 10-delta below it, for at least a tenth of the width.
+WING_DELTA = -0.10
+MIN_SPREAD_CREDIT_OF_WIDTH = 0.10
+
+
+@dataclass(frozen=True)
+class PutSpread:
+    short: PutQuote
+    long: PutQuote
+
+    @property
+    def width(self) -> float:
+        return round(self.short.strike - self.long.strike, 2)
+
+    @property
+    def credit(self) -> float:
+        """Net credit per share at the mids."""
+        return round(self.short.mid - self.long.mid, 2)
+
+    @property
+    def max_loss(self) -> float:
+        """Dollars, one spread: the width less the credit."""
+        return round((self.width - self.credit) * 100, 2)
+
+
+def pick_spread(quotes: list[PutQuote]) -> PutSpread | None:
+    """The spread a name earns when its cash-secured put does not, or None."""
+    shorts = [q for q in quotes
+              if q.delta is not None and DELTA_BAND[0] <= q.delta <= DELTA_BAND[1]
+              and q.mid > 0 and (q.ask - q.bid) <= MAX_SPREAD_FRAC * q.mid]
+    if not shorts:
+        return None
+    short = min(shorts, key=lambda q: abs(q.delta - TARGET_DELTA))
+    wings = [q for q in quotes if q.strike < short.strike and q.delta is not None and q.ask > 0]
+    if not wings:
+        return None
+    s = PutSpread(short, min(wings, key=lambda q: abs(q.delta - WING_DELTA)))
+    if s.credit <= 0 or s.credit < MIN_SPREAD_CREDIT_OF_WIDTH * s.width:
+        return None
+    return s
+
+
+def spread_because(s: PutSpread) -> str:
+    return (f"No cash-secured {s.short.underlying} put paid its floor, so offered the {s.short.expiry:%d %b} "
+            f"{s.short.strike:g}/{s.long.strike:g} put spread for a credit of {s.credit:.2f} "
+            f"(${s.credit * 100:,.0f}, {s.credit / s.width:.0%} of the {s.width:g} width): sell the "
+            f"{s.short.strike:g} put (delta {s.short.delta:+.2f}), buy the {s.long.strike:g} "
+            f"(delta {s.long.delta:+.2f}). The most it can lose is ${s.max_loss:,.0f}. One order, a day "
+            "limit, counts once it fills.")
 
 
 # The wheel's second half (STRATEGY.md "Built 10 Oct 2026"): a call on shares the puts were

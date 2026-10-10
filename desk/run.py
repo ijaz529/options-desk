@@ -42,12 +42,37 @@ def read_positions() -> list[dict]:
     return broker.positions()
 
 
-def parse_occ(symbol: str) -> tuple[str, date, str, float] | None:
-    m = OCC.match(symbol)
+def parse_occ(symbol: str | None) -> tuple[str, date, str, float] | None:
+    m = OCC.match(symbol or "")          # a multi-leg order has no symbol of its own
     if not m:
         return None
     u, ymd, cp, strike = m.groups()
     return u, datetime.strptime(ymd, "%y%m%d").date(), cp, int(strike) / 1000
+
+
+def order_symbols(o: dict) -> list[str]:
+    """The contracts a working order names: its own symbol, or a multi-leg order's legs."""
+    return [s for s in [o.get("symbol"), *(o.get("legs") or [])] if s]
+
+
+def steward_spreads(positions: list[dict]) -> dict[tuple[str, date], tuple[dict, dict]]:
+    """The Steward's put spreads in the book, (underlying, expiry) -> (short leg, long leg): a short
+    put with one long put below it, same name, expiry and size. Both agents keep one position per
+    name across the whole book, so a long put beside a short put is the spread's wing, never the
+    Hunter's (STRATEGY.md "Built 10 Oct 2026")."""
+    shorts: dict = {}
+    longs: dict = {}
+    for p in positions:
+        o = parse_occ(p["symbol"])
+        if o and o[2] == "P":
+            (shorts if p["qty"] < 0 else longs).setdefault((o[0], o[1]), []).append((p, o[3]))
+    out = {}
+    for key, ss in shorts.items():
+        ls = longs.get(key, [])
+        if (len(ss) == 1 and len(ls) == 1 and ls[0][1] < ss[0][1]
+                and abs(ls[0][0]["qty"]) == abs(ss[0][0]["qty"])):
+            out[key] = (ss[0][0], ls[0][0])
+    return out
 
 
 def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
@@ -60,7 +85,17 @@ def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
     deployed because nothing had filled yet (bug #4, 28 Aug)."""
     acct = broker.account_state()
     pos = read_positions()
+    booked = {p["symbol"] for p in pos}
+    spread_risk: list[tuple[str, float]] = []
     for o in broker.open_orders():
+        legs = o.get("legs") or []
+        if len(legs) == 2:
+            # a working two-leg order is a Steward spread: an opening one risks its width; a closing
+            # one names contracts already booked, and those are counted below
+            a, b = parse_occ(legs[0]), parse_occ(legs[1])
+            if a and b and not set(legs) & booked:
+                spread_risk.append((a[0], abs(a[3] - b[3]) * 100 * o["qty"]))
+            continue
         occ = parse_occ(o["symbol"])
         if not occ:
             continue
@@ -73,7 +108,17 @@ def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
                         "cost_basis": 0.0, "unrealized_pl": 0.0, "asset_class": "us_option"})
     sleeve = {"steward": 0.0, "hunter": 0.0}
     under: dict[str, float] = {}
+    # a put spread risks its width, not the short put's whole strike; its wing is not a Hunter long
+    spreads = steward_spreads(pos)
+    in_spread = {p["symbol"] for pair in spreads.values() for p in pair}
+    for (u, _e), (sp, lp) in spreads.items():
+        spread_risk.append((u, (parse_occ(sp["symbol"])[3] - parse_occ(lp["symbol"])[3]) * 100 * abs(sp["qty"])))
+    for u, notional in spread_risk:
+        sleeve["steward"] += notional
+        under[u] = under.get(u, 0.0) + notional
     for p in pos:
+        if p["symbol"] in in_spread:
+            continue
         occ = parse_occ(p["symbol"])
         if occ:
             u, _, cp, strike = occ
@@ -152,7 +197,7 @@ def steward_session() -> None:
     # a WORKING order claims its name too — "one position per name" must count
     # promises, not just fills (three stacked XOM puts taught us that)
     orders = broker.open_orders()
-    held_unders |= {parse_occ(o["symbol"])[0] for o in orders if parse_occ(o["symbol"])}
+    held_unders |= {parse_occ(s)[0] for o in orders for s in order_symbols(o) if parse_occ(s)}
     # ASSIGNED STOCK claims its name as well. Shares carry no OCC symbol, so the KO 88 put
     # assigned on 25 Sep 2026 left 100 shares this check could not see — a second KO put
     # on top would have cleared the concentration gate by $223.
@@ -172,9 +217,9 @@ def steward_session() -> None:
         quotes = broker.weekly_puts(u, expiry)
         p = steward.pick(quotes)
         if p is None:
-            log.record("steward", "hold",
-                       f"No {u} put earns its keep today: nothing in the delta band paid "
-                       "the premium floor with a market tight enough to trust.")
+            # no cash-secured put qualifies: the defined-risk put spread is the fallback
+            if put_spread_round(u, quotes, state):
+                state, acct = desk_state()
             continue
         proposal = gates.Proposal(agent="steward", symbol=u, kind="csp",
                                   notional=p.strike * 100)
@@ -195,6 +240,29 @@ def steward_session() -> None:
         # that explained them (13–24 Sep 2026)
         log.record("desk", "note", f"{u}: skipped this round — {str(e)[:240]}")
         continue
+
+
+def put_spread_round(u: str, quotes: list[broker.PutQuote], state: gates.AccountState) -> bool:
+    """The fallback when no cash-secured put qualifies (STRATEGY.md "Built 10 Oct 2026"): the
+    20/10 put spread, if it pays a tenth of its width. True when an order went in."""
+    s = steward.pick_spread(quotes)
+    if s is None:
+        log.record("steward", "hold",
+                   f"No {u} put earns its keep today: nothing in the delta band paid the premium "
+                   "floor with a market tight enough to trust, and no 20/10 put spread paid a tenth "
+                   "of its width.")
+        return False
+    verdict = gates.review(gates.Proposal(agent="steward", symbol=u, kind="spread",
+                                          notional=s.width * 100), state)
+    if not verdict.approved:
+        log.record("risk", "veto", verdict.because, gate=verdict.gate, symbol=u)
+        return False
+    order_id = broker.mleg([(s.long.symbol, "buy", "buy_to_open"),
+                            (s.short.symbol, "sell", "sell_to_open")], -s.credit)
+    log.record("steward", "sell_spread", steward.spread_because(s), symbol=s.short.symbol,
+               symbols=[s.short.symbol, s.long.symbol], credit=s.credit, max_loss=s.max_loss,
+               order_id=order_id)
+    return True
 
 
 def covered_call_round(u: str, stock: dict, positions: list[dict], orders: list[dict],
@@ -316,7 +384,7 @@ def hunter_session() -> None:
     # one position per name — the broker's book, fills and working orders alike,
     # is the truth the diary-based cooldown is not (GS 975 put, bought twice 14 Sep)
     held_unders = {parse_occ(p["symbol"])[0] for p in read_positions() if parse_occ(p["symbol"])}
-    held_unders |= {parse_occ(o["symbol"])[0] for o in broker.open_orders() if parse_occ(o["symbol"])}
+    held_unders |= {parse_occ(s)[0] for o in broker.open_orders() for s in order_symbols(o) if parse_occ(s)}
     theses, already = hunter.drop_held(theses, held_unders)
     for t in already:
         log.record("hunter", "hold", f"Already carrying {t.symbol} risk — one position per name.")
@@ -413,17 +481,36 @@ def sweep() -> None:
         if datetime.fromisoformat(o["created_at"]).date() < today:
             broker.cancel_order(o["id"])
             log.record("desk", "cancel",
-                       f"Cancelled the overnight order on {o['symbol']}: its limit was priced "
-                       "off yesterday's session, and a stale limit only fills when the market "
+                       f"Cancelled the overnight order on {', '.join(order_symbols(o))}: its limit was "
+                       "priced off yesterday's session, and a stale limit only fills when the market "
                        "has moved against it. The next session re-prices from a live chain.",
                        symbol=o["symbol"])
         else:
-            working.add(o["symbol"]); working.update(o.get("legs") or [])
-    for p in read_positions():
+            working.update(order_symbols(o))
+    positions = read_positions()
+    # The Steward's put spreads close as one two-leg order, on the put's own exits
+    # (STRATEGY.md "Built 10 Oct 2026"); their legs are never swept one by one below.
+    spreads = steward_spreads(positions)
+    in_spread = {p["symbol"] for pair in spreads.values() for p in pair}
+    for (u, exp), (sp, lp) in spreads.items():
+        if sp["symbol"] in working or lp["symbol"] in working:
+            continue
+        qty = int(abs(sp["qty"]))
+        credit = (abs(sp["cost_basis"]) - abs(lp["cost_basis"])) / (100 * qty)
+        cost = (abs(sp["market_value"]) - abs(lp["market_value"])) / (100 * qty)
+        fire = steward.exit_action(entry_credit=credit, current_mid=cost)
+        if fire:
+            kind, because = fire
+            order_id = broker.mleg([(sp["symbol"], "buy", "buy_to_close"),
+                                    (lp["symbol"], "sell", "sell_to_close")],
+                                   round(max(cost, 0.01) * 1.05, 2), qty=qty)
+            log.record("steward", kind, f"{u} {exp:%d %b} put spread: {because}",
+                       symbols=[sp["symbol"], lp["symbol"]], order_id=order_id)
+    for p in positions:
         # A contract with a close already working is spoken for: a second close order is
         # refused by the broker ("insufficient qty available") and, uncaught, it ended the
         # whole sweep — every later position went unchecked (5 Oct 2026, four sweeps lost).
-        if p["symbol"] in working:
+        if p["symbol"] in working or p["symbol"] in in_spread:
             continue
         if p["asset_class"] == "crypto" and p["qty"] > 0:
             fire = weekend.exit_action(entry_cost=abs(p["cost_basis"]), market_value=abs(p["market_value"]))

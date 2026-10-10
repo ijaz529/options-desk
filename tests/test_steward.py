@@ -102,3 +102,25 @@ def test_call_row_names_the_shares_and_what_they_cost():
     text = call_because(c(90, 0.19, 0.18, 0.20), cost_basis=87.80, shares=100)
     assert text.startswith("Offered to sell") and "counts once it fills" in text
     assert "100 shares" in text and "87.80" in text and "covered call" in text
+
+
+# ---- the put spread, when no cash-secured put pays (STRATEGY.md "Built 10 Oct 2026")
+from desk.steward import pick_spread
+
+
+def test_spread_sells_the_20_delta_and_buys_the_10_delta_below():
+    chain = [q(88, -0.20, 0.38, 0.42), q(87, -0.14, 0.18, 0.22), q(85, -0.09, 0.07, 0.09), q(84, -0.05, 0.02, 0.04)]
+    s = pick_spread(chain)
+    assert (s.short.strike, s.long.strike) == (88, 85)
+    assert s.width == 3 and s.credit == 0.32 and s.max_loss == 268.0      # 0.40 - 0.08; (3 - 0.32) x 100
+
+
+def test_spread_needs_a_tenth_of_its_width():
+    # 0.40 - 0.35 = 0.05 on a 1-wide spread is 5%: not paid for
+    assert pick_spread([q(88, -0.20, 0.38, 0.42), q(87, -0.10, 0.34, 0.36)]) is None
+
+
+def test_spread_needs_a_short_leg_worth_trusting_and_a_wing():
+    assert pick_spread([q(88, -0.20, 0.10, 0.50), q(85, -0.09, 0.07, 0.09)]) is None   # short market too wide
+    assert pick_spread([q(88, -0.20, 0.38, 0.42)]) is None                              # nothing below it
+    assert pick_spread([q(92, -0.45, 2.0, 2.1), q(85, -0.09, 0.07, 0.09)]) is None     # no short in the band

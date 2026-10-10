@@ -176,3 +176,11 @@ def test_uncovered_call_is_a_naked_short():
 def test_covered_call_still_minds_the_time_gate():
     v = review(covered(), state(minutes_to_expiry=60.0))
     assert not v.approved and v.gate == "time-gate"
+
+
+def test_spreads_are_income_under_the_switch_too():
+    """STRATEGY.md has admitted defined-risk put spreads under income-only since 26 Sep."""
+    under = gates.KILL_SWITCH_EQUITY - 500
+    poor = state(equity=under, day_start_equity=under)
+    assert review(Proposal(agent="steward", symbol="KO", kind="spread", notional=300.0), poor).approved
+    assert not review(Proposal(agent="hunter", symbol="KO", kind="spread", notional=300.0), poor).approved

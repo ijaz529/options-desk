@@ -40,6 +40,31 @@ same strategy, so its behaviour can be watched over weeks rather than one week:
 3. **De-risk is manual only.** It was scheduled for the contest's final session;
    with no final session it runs only on `workflow_dispatch`.
 
+## Built 10 Oct 2026 — the put spread, for when a cash-secured put does not pay
+
+"Defined-risk put spreads when IV is thin" has been in the capital plan since August, and the
+26 Sep note admitted them under income-only, with no code. These are their terms, taken from the
+Steward's put and the Tollgate's credit rule wherever one exists:
+
+1. **When.** A name on which no cash-secured put qualifies this session — in thin volatility,
+   nearly always because none pays the 0.15% floor. The spread is the fallback, never a
+   replacement for a put that qualifies. Allowed under income-only.
+2. **Short leg.** The put the cash-secured rule looks for — delta −0.21 to −0.12, nearest
+   −0.20, a market no wider than 20% of its mid — expiring the coming Friday.
+3. **Long leg.** The put nearest −0.10 delta below the short strike, same expiry (a 20/10
+   spread), so the width follows each name's own strikes and volatility.
+4. **Floor.** The net credit must be at least **10% of the width** — the Tollgate's standard
+   for a credit structure.
+5. **Size.** One spread per name, one position per name as ever. The risk the gates count is
+   the width × 100.
+6. **Exits.** The put's own, each as one two-leg closing order: take profit when it can be
+   bought back for 35% of the credit, stop at twice the credit. Otherwise it is held to expiry.
+   A short leg that finishes in the money is assigned like any put (and the shares are wheeled
+   with covered calls); if both legs finish in the money the loss is the width less the credit.
+7. **Telling it apart.** A long put beside a short put on the same name and expiry is the
+   spread's wing, not a Hunter position: both agents keep one position per name across the
+   whole book, so the two never share a name.
+
 ## Built 10 Oct 2026 — the wheel's second half: the covered call
 
 "Assigned stock is sold with a covered call the next session" has been in the exit rules since
