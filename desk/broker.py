@@ -121,6 +121,11 @@ def weekly_puts(underlying: str, expiry: date) -> list[PutQuote]:
     return option_chain(underlying, expiry, "put", 0.85, 1.0)
 
 
+def weekly_calls(underlying: str, expiry: date) -> list[PutQuote]:
+    """The covered call's slice: calls from the money up to 115% of spot."""
+    return option_chain(underlying, expiry, "call", 1.0, 1.15)
+
+
 def sell_put(occ_symbol: str, limit_price: float) -> str:
     """Cash-secured put: sell 1 contract at a limit. Returns the order id."""
     o = trading().submit_order(LimitOrderRequest(
@@ -129,9 +134,17 @@ def sell_put(occ_symbol: str, limit_price: float) -> str:
     return str(o.id)
 
 
-def buy_to_close(occ_symbol: str, limit_price: float) -> str:
+def sell_call(occ_symbol: str, qty: int, limit_price: float) -> str:
+    """Covered call: sell `qty` contracts against shares held, at a limit. Returns the order id."""
     o = trading().submit_order(LimitOrderRequest(
-        symbol=occ_symbol, qty=1, side=OrderSide.BUY,
+        symbol=occ_symbol, qty=qty, side=OrderSide.SELL,
+        time_in_force=TimeInForce.DAY, limit_price=limit_price))
+    return str(o.id)
+
+
+def buy_to_close(occ_symbol: str, limit_price: float, qty: int = 1) -> str:
+    o = trading().submit_order(LimitOrderRequest(
+        symbol=occ_symbol, qty=qty, side=OrderSide.BUY,
         time_in_force=TimeInForce.DAY, limit_price=limit_price))
     return str(o.id)
 

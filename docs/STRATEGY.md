@@ -40,6 +40,33 @@ same strategy, so its behaviour can be watched over weeks rather than one week:
 3. **De-risk is manual only.** It was scheduled for the contest's final session;
    with no final session it runs only on `workflow_dispatch`.
 
+## Built 10 Oct 2026 — the wheel's second half: the covered call
+
+"Assigned stock is sold with a covered call the next session" has been in the exit rules since
+August with no code, and the KO shares assigned on 25 Sep sat uncovered for two weeks. The rule
+had no strike, expiry or exits; these are its terms, the put's mirrored wherever they apply:
+
+1. **When.** Every Steward session in which shares are held and not yet covered: the next one
+   after an assignment, and again after a covered call expires or is bought back.
+2. **What.** One call per 100 shares held (in practice one — one put is 100 shares), expiring
+   the **coming Friday**, the same weekly cycle as the puts.
+3. **Strike.** At or nearest *above* the 20-delta strike — delta 0.12 to 0.21, nearest 0.20 —
+   and **never below what the shares cost** (the broker's cost basis per share). A called-away
+   share is then always sold at or above its price, and the name goes back to puts at a profit.
+   If nothing qualifies, the shares stay uncovered that session and the diary says why.
+4. **Premium.** At least 0.15% of the strike (rule 3), in a market no wider than 20% of its mid.
+5. **Exits.** Take profit at 65% of the premium (buy back; the shares are covered again next
+   session). **No stop:** the call can only lose what the shares gain above the strike, so
+   buying it back at double would sell the same upside twice. Otherwise it expires, or the
+   shares are called away at the strike — the wheel turning.
+6. **The Risk Officer.** A covered call opens no new risk, so it uses no sleeve and adds nothing
+   to the name's concentration, and it is allowed under income-only (it is income on stock the
+   account already holds). The no-naked-shorts gate refuses any call the shares do not fully
+   cover; the time gate still applies.
+
+Assigned stock is the one exception to "flat or defined-risk by each Friday's close": it is held,
+and wheeled, until it is called away — the risk the put accepted when it was sold.
+
 ## Tested 10 Oct 2026 — the weekend, and not adopted
 
 **Why.** A paper from the Omen exchange (9 Oct 2026) and two studies (Jones & Shemesh, *Journal
@@ -205,8 +232,10 @@ working and the universe wrong. Weekly expiries only.
 - Take profit at 65% of max premium (buy back).
 - Stop: buy back if the option doubles against entry.
 - Assignment is acceptable — the strikes are prices we'd own at. Assigned stock
-  is sold with a covered call the next session (the wheel's second half).
-- Everything is flat or defined-risk by each Friday's close.
+  is sold with a covered call the next session (the wheel's second half; its terms
+  are in "Built 10 Oct 2026").
+- Everything is flat or defined-risk by each Friday's close — except assigned stock,
+  which is held and wheeled until it is called away.
 
 ## The Hunter — convexity
 
@@ -259,14 +288,16 @@ diary is not: a thesis on a name already held or working is a hold, logged.
 ## The Risk Officer — hard gates (not negotiable, not an LLM)
 
 1. **No naked short options.** Every short put fully cash-secured; every spread
-   defined-risk. (Also keeps us within paper option level semantics.)
+   defined-risk; every short call covered by 100 shares held per contract (from
+   10 Oct 2026). (Also keeps us within paper option level semantics.)
 2. **Sleeve caps are absolute** — an agent at its cap proposes nothing.
 3. **Daily drawdown gate:** account down >2.5% on the day → no new risk that day.
 4. **Weekly kill switch (clarified 29 Aug; re-based 13 Sep 2026):** account below
    **96% of the stated baseline** (see "Post-contest operation")
    → the desk goes **income-only**: the Hunter and the weekend crypto sleeve are
    shut for the remainder, while the Steward may keep selling cash-secured puts
-   — and, from 26 Sep 2026, **defined-risk put spreads** (see "Amended 26 Sep")
+   — and, from 26 Sep 2026, **defined-risk put spreads** (see "Amended 26 Sep"),
+   and from 10 Oct 2026 **covered calls on shares held** (see "Built 10 Oct 2026")
    — the defined-outcome income that earns the account back. The first
    implementation blocked EVERY opening trade, which contradicted this clause
    and would have frozen the desk entirely on one bad Tuesday; the code now

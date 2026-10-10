@@ -151,3 +151,28 @@ def test_trial_budget_locks_out_the_hunter_alone():
 def test_trial_budget_not_yet_spent():
     s = state(equity=88_983.0, day_start_equity=88_983.0, hunter_trial_pnl=-HUNTER_TRIAL_BUDGET + 1)
     assert review(Proposal("hunter", "SPY", "long_option", 500.0), s).approved
+
+
+# ---- the covered call (STRATEGY.md "Built 10 Oct 2026")
+def covered(**over) -> Proposal:
+    base = dict(agent="steward", symbol="KO", kind="covered_call", notional=0.0)
+    base.update(over)
+    return Proposal(**base)
+
+
+def test_covered_call_adds_no_risk_so_full_sleeves_and_the_switch_do_not_block_it():
+    under = gates.KILL_SWITCH_EQUITY - 500
+    v = review(covered(), state(equity=under, day_start_equity=under,
+                                sleeve_used={"steward": 80_000.0, "hunter": 0.0},
+                                underlying_notional={"KO": 30_000.0}))
+    assert v.approved, v.because
+
+
+def test_uncovered_call_is_a_naked_short():
+    v = review(covered(short_uncovered=True), state())
+    assert not v.approved and v.gate == "no-naked-shorts"
+
+
+def test_covered_call_still_minds_the_time_gate():
+    v = review(covered(), state(minutes_to_expiry=60.0))
+    assert not v.approved and v.gate == "time-gate"

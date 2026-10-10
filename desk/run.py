@@ -80,6 +80,8 @@ def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
             if p["qty"] < 0 and cp == "P":       # short put: the obligation is the risk
                 notional = strike * 100 * abs(p["qty"])
                 sleeve["steward"] += notional
+            elif p["qty"] < 0 and cp == "C":     # covered call: the shares already carry the risk
+                continue
             else:                                 # long options: premium is the risk
                 notional = abs(p["market_value"])
                 sleeve["hunter"] += notional
@@ -149,21 +151,20 @@ def steward_session() -> None:
     held_unders = {parse_occ(p["symbol"])[0] for p in positions if parse_occ(p["symbol"])}
     # a WORKING order claims its name too — "one position per name" must count
     # promises, not just fills (three stacked XOM puts taught us that)
-    held_unders |= {parse_occ(o["symbol"])[0] for o in broker.open_orders() if parse_occ(o["symbol"])}
+    orders = broker.open_orders()
+    held_unders |= {parse_occ(o["symbol"])[0] for o in orders if parse_occ(o["symbol"])}
     # ASSIGNED STOCK claims its name as well. Shares carry no OCC symbol, so the KO 88 put
     # assigned on 25 Sep 2026 left 100 shares this check could not see — a second KO put
     # on top would have cleared the concentration gate by $223.
-    assigned = {p["symbol"]: float(p["qty"]) for p in positions
+    assigned = {p["symbol"]: p for p in positions
                 if p.get("asset_class") == "us_equity" and float(p["qty"]) > 0}
     held_unders |= set(assigned)
     expiry = next_weekly_friday()
     for u in UNIVERSE:
       try:
         if u in assigned:
-            log.record("steward", "hold",
-                       f"Holding {assigned[u]:g} {u} shares from assignment — the wheel's second half "
-                       "(a covered call, STRATEGY.md) is specified and not yet built. No new put on "
-                       "top of the stock.")
+            # the wheel's second half: the shares are covered with a call, never added to
+            covered_call_round(u, assigned[u], positions, orders, expiry, state)
             continue
         if u in held_unders:
             log.record("steward", "hold", f"Already carrying {u} risk — one position per name.")
@@ -194,6 +195,41 @@ def steward_session() -> None:
         # that explained them (13–24 Sep 2026)
         log.record("desk", "note", f"{u}: skipped this round — {str(e)[:240]}")
         continue
+
+
+def covered_call_round(u: str, stock: dict, positions: list[dict], orders: list[dict],
+                       expiry: date, state: gates.AccountState) -> None:
+    """The wheel's second half (STRATEGY.md "Built 10 Oct 2026"): one call per 100 shares held,
+    the coming Friday's, never struck below what the shares cost. A call already written —
+    booked or still working — covers its 100 shares."""
+    shares = float(stock["qty"])
+    written = sum(abs(float(p["qty"])) for p in positions
+                  if (o := parse_occ(p["symbol"])) and o[0] == u and o[2] == "C" and float(p["qty"]) < 0)
+    written += sum(float(o["qty"]) for o in orders
+                   if (x := parse_occ(o["symbol"])) and x[0] == u and x[2] == "C" and "sell" in o["side"])
+    free = int(shares // 100) - int(written)
+    if free < 1:
+        log.record("steward", "hold",
+                   f"Holding {shares:g} {u} shares, covered by the call already written — the "
+                   "wheel's second half is in place.")
+        return
+    cost = abs(float(stock["cost_basis"])) / shares
+    c = steward.pick_call(broker.weekly_calls(u, expiry), cost)
+    if c is None:
+        log.record("steward", "hold",
+                   f"Holding {shares:g} {u} shares uncovered this round: no call in the delta band, "
+                   f"struck at or above the ${cost:.2f} they cost, paid the premium floor with a "
+                   "market tight enough to trust.")
+        return
+    proposal = gates.Proposal(agent="steward", symbol=u, kind="covered_call", notional=0.0,
+                              short_uncovered=(written + free) * 100 > shares)
+    verdict = gates.review(proposal, state)
+    if not verdict.approved:
+        log.record("risk", "veto", verdict.because, gate=verdict.gate, symbol=u)
+        return
+    order_id = broker.sell_call(c.symbol, free, c.mid)
+    log.record("steward", "sell_call", steward.call_because(c, cost, shares),
+               symbol=c.symbol, credit=c.mid, qty=free, order_id=order_id)
 
 
 HUNTER_COOLDOWN_MIN = 90
@@ -420,14 +456,15 @@ def sweep() -> None:
                 log.record("hunter", kind, because, symbol=p["symbol"], qty=close_qty, order_id=order_id)
             continue
         u, _, cp, strike = occ
-        if cp != "P":
-            continue
         credit = abs(p["cost_basis"]) / (100 * abs(p["qty"]))
         current = abs(p["market_value"]) / (100 * abs(p["qty"]))
-        fire = steward.exit_action(entry_credit=credit, current_mid=current)
+        # a short call is the Steward's covered call: it takes profit and has no stop
+        # (STRATEGY.md "Built 10 Oct 2026"); a short put keeps both exits
+        fire = (steward.call_exit_action if cp == "C" else steward.exit_action)(
+            entry_credit=credit, current_mid=current)
         if fire:
             kind, because = fire
-            order_id = broker.buy_to_close(p["symbol"], round(current * 1.02, 2))
+            order_id = broker.buy_to_close(p["symbol"], round(current * 1.02, 2), qty=int(abs(p["qty"])))
             log.record("steward", kind, because, symbol=p["symbol"], order_id=order_id)
 
 

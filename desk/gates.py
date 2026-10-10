@@ -13,7 +13,7 @@ from dataclasses import dataclass
 class Proposal:
     agent: str                  # "steward" | "hunter"
     symbol: str                 # underlying (or crypto pair for the weekend sleeve)
-    kind: str                   # "csp" | "spread" | "long_option" | "crypto_spot" | "close"
+    kind: str                   # "csp" | "spread" | "covered_call" | "long_option" | "crypto_spot" | "close"
     notional: float             # cash at risk: strike*100 for a CSP, premium for longs
     short_uncovered: bool = False
 
@@ -65,6 +65,18 @@ def review(p: Proposal, a: AccountState) -> Verdict:
         return Verdict(False, "no-naked-shorts",
                        f"Vetoed: the {p.symbol} short option is not fully covered. "
                        "Every short put is cash-secured, every spread defined-risk — no exceptions.")
+
+    if p.kind == "covered_call":
+        # A call written against shares already held opens no new risk: it trades their upside
+        # above the strike for the premium. No sleeve, no concentration, allowed under
+        # income-only; only the time gate still binds (STRATEGY.md "Built 10 Oct 2026").
+        if a.minutes_to_expiry <= FINAL_QUIET_MINUTES:
+            return Verdict(False, "time-gate",
+                           f"Vetoed: only {a.minutes_to_expiry / 60:.1f} hours to the expiry this would "
+                           "trade into — a weekly opened this late is a coin toss, not a thesis.")
+        return Verdict(True, None,
+                       f"Approved: {p.agent} writes a covered call on {p.symbol} against shares held — "
+                       "income on stock the account already carries, no new risk.")
 
     if a.equity < KILL_SWITCH_EQUITY and not (p.agent == "steward" and p.kind == "csp"):
         # income-only means exactly that: the Hunter and the weekend sleeve are

@@ -60,3 +60,45 @@ def test_entry_row_says_offered_not_sold():
     from desk.steward import entry_because
     text = entry_because(q(238, -0.21, 1.05, 1.15))
     assert text.startswith("Offered to sell") and "counts once it fills" in text
+
+
+# ---- the covered call: the wheel's second half (STRATEGY.md "Built 10 Oct 2026")
+from desk.steward import call_because, call_exit_action, pick_call
+
+
+def c(strike, delta, bid, ask, spot=88.0):
+    return PutQuote(symbol=f"KO261016C{int(strike * 1000):08d}", underlying="KO", strike=strike,
+                    expiry=date(2026, 10, 16), bid=bid, ask=ask, delta=delta, spot=spot)
+
+
+def test_call_picks_nearest_to_20_delta():
+    chain = [c(89, 0.30, 0.40, 0.44), c(90, 0.19, 0.18, 0.20), c(91, 0.13, 0.14, 0.16)]
+    assert pick_call(chain, cost_basis=87.80).strike == 90
+
+
+def test_call_never_below_what_the_shares_cost():
+    # the one 20-delta call sits under the $90 the shares cost: holding uncovered beats
+    # selling the shares at a loss if they are called away
+    assert pick_call([c(89, 0.20, 0.30, 0.32)], cost_basis=90.0) is None
+    assert pick_call([c(90, 0.20, 0.30, 0.32)], cost_basis=90.0).strike == 90
+
+
+def test_call_keeps_the_puts_floor_market_and_band():
+    assert pick_call([c(90, 0.20, 0.05, 0.07)], cost_basis=87.80) is None    # 0.07% of strike
+    assert pick_call([c(90, 0.20, 0.10, 0.40)], cost_basis=87.80) is None    # spread wider than 20% of mid
+    assert pick_call([c(89, 0.35, 0.50, 0.54), c(95, 0.05, 0.14, 0.16)], cost_basis=87.80) is None
+    assert pick_call([c(90, None, 0.18, 0.20)], cost_basis=87.80) is None
+
+
+def test_covered_call_takes_profit_but_has_no_stop():
+    kind, because = call_exit_action(entry_credit=0.20, current_mid=0.06)
+    assert kind == "take_profit" and "banked" in because
+    # doubled against us: the shares gained more than the call lost — no stop
+    assert call_exit_action(entry_credit=0.20, current_mid=0.45) is None
+    assert call_exit_action(entry_credit=0.20, current_mid=0.15) is None
+
+
+def test_call_row_names_the_shares_and_what_they_cost():
+    text = call_because(c(90, 0.19, 0.18, 0.20), cost_basis=87.80, shares=100)
+    assert text.startswith("Offered to sell") and "counts once it fills" in text
+    assert "100 shares" in text and "87.80" in text and "covered call" in text

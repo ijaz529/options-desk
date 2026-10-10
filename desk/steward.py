@@ -46,6 +46,46 @@ def entry_because(q: PutQuote) -> str:
             "a price we would own this name at. The trade is a bet the week stays ordinary.")
 
 
+# The wheel's second half (STRATEGY.md "Built 10 Oct 2026"): a call on shares the puts were
+# assigned, at or nearest ABOVE the 20-delta strike — the put band mirrored.
+CALL_DELTA_BAND = (0.12, 0.21)
+TARGET_CALL_DELTA = 0.20
+
+
+def pick_call(quotes: list[PutQuote], cost_basis: float) -> PutQuote | None:
+    """The covered call these shares earn, or None. The put's band, floor and market test,
+    plus one rule of its own: never a strike below what the shares cost, so a call-away
+    always sells them at or above their price."""
+    ok = [q for q in quotes
+          if q.delta is not None and CALL_DELTA_BAND[0] <= q.delta <= CALL_DELTA_BAND[1]
+          and q.strike >= cost_basis
+          and q.premium_yield >= MIN_PREMIUM_YIELD
+          and q.mid > 0 and (q.ask - q.bid) <= MAX_SPREAD_FRAC * q.mid]
+    if not ok:
+        return None
+    return min(ok, key=lambda q: abs(q.delta - TARGET_CALL_DELTA))
+
+
+def call_because(q: PutQuote, cost_basis: float, shares: float) -> str:
+    return (f"Offered to sell the {q.underlying} {q.expiry:%d %b} {q.strike:g} call at ~{q.mid:.2f} "
+            f"against the {shares:g} shares held — a covered call, a day limit at the mid that counts "
+            f"once it fills ({q.premium_yield:.2%} of the strike). Delta {q.delta:+.2f} puts the strike "
+            f"{(q.strike / q.spot - 1):.1%} above spot and ${q.strike - cost_basis:.2f} over the "
+            f"${cost_basis:.2f} the shares cost: if they are called away, the wheel turns back to puts.")
+
+
+def call_exit_action(entry_credit: float, current_mid: float) -> tuple[str, str] | None:
+    """('take_profit', because) at 65% banked, else None. No stop: the call can only lose
+    what the shares gain above the strike."""
+    if entry_credit <= 0:
+        return None
+    if current_mid <= entry_credit * (1 - TAKE_PROFIT_FRAC):
+        return ("take_profit",
+                f"Buying back the covered call at {current_mid:.2f}: {1 - current_mid / entry_credit:.0%} "
+                f"of the {entry_credit:.2f} credit is banked, and the shares can be covered again.")
+    return None
+
+
 def exit_action(entry_credit: float, current_mid: float) -> tuple[str, str] | None:
     """('take_profit'|'stop', because) when an exit rule fires, else None."""
     if entry_credit <= 0:
