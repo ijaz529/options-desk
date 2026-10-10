@@ -40,6 +40,45 @@ same strategy, so its behaviour can be watched over weeks rather than one week:
 3. **De-risk is manual only.** It was scheduled for the contest's final session;
    with no final session it runs only on `workflow_dispatch`.
 
+## Tested 10 Oct 2026 — the weekend, and not adopted
+
+**Why.** A paper from the Omen exchange (9 Oct 2026) and two studies (Jones & Shemesh, *Journal
+of Finance* 2018; Papagelis, *Journal of Futures Markets* 2025) say listed options lose more over
+a weekend than over a weeknight, so a seller should hold through it and a buyer should not. The
+Steward sells on Monday for that Friday and is flat every weekend; the Hunter can carry a bought
+option over one. Measured before anything changes, as this page requires.
+
+**How.** Alpaca's hourly option bars, February 2024 (March for single names) to 9 Oct 2026: SPY
+and the Steward's twelve names, every weekly expiry, the two weeks before each. (1) Returns with
+the stock move hedged out, weekend (Friday close → Monday close) against weeknights at similar
+days to expiry. (2) The Steward's own rules replayed — the 20-delta band, the 0.15% floor, take
+profit at 65%, stop at 2× — sold Monday ~10:00 for that Friday (today) against Friday's close
+for the next Friday, $0.01 a share taken on every fill.
+
+**What it found.**
+- **Weekend against weeknight, hedged.** SPY options lose 2–4% more of their premium over a
+  weekend, in all four groups, none significant on its own (t −1.0 to −1.5). On the twelve names
+  the gap in puts disappears once days the stock moved more than 4% are left out (earnings fall on
+  weeknights): −8.6% against −8.6%. Only out-of-the-money calls keep a weekend gap (−4.2 points,
+  t −2.1), and the desk does not sell those.
+- **The Steward's cycle.** SPY: +0.055% of cash a week today against +0.049% Friday-to-Friday
+  (worst week −0.73% against −1.29%). The twelve names as one book: −0.004% against +0.006%
+  (worst week −0.96% against −1.04%). Matched week by week the difference is noise (t 0.17 for
+  both). The weekend itself added +0.02% a week on SPY and −0.01% on the names.
+- **The Hunter.** Bought options near the money show no weekend gap on the twelve names; on SPY
+  about 2–3% of premium (t −1.3 to −1.5).
+
+**Decision.** No change. The Steward stays flat at weekends: it gives up nothing measurable, and it
+keeps out the gap risk that the sample's worst Mondays (5 Aug 2024, 7 Apr 2025) carried. The
+Hunter's rules stay as written; his verdict is still due 28 Oct. Test again when another year of
+data exists.
+
+**Found on the way.** Alpaca's option bars carry Saturday test-session prints (INTC and GM puts at
+$9–10 on Saturday 1 Jun 2024): anything that reads bars must keep to trading days. And the replay
+of the Steward's own rules on his twelve names earned about nothing over the period (−0.5% of cash
+in total across 136 weeks), where the same rules on SPY earned +6.7% — a replay from trade prints,
+not his record, read alongside the 26 Sep note on the low-premium universe; not acted on here.
+
 ## Re-based 30 Sep 2026 — the Hunter's trial after the 20 Sep fixes
 
 **Why.** The kill switch tripped around 16 Sep, and the Hunter's three fixes (min 3
