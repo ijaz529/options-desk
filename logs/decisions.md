@@ -1,5 +1,20 @@
 # The desk's decision log
 
+## 2026-10-12
+
+- **13:51** → `steward` **sell_put** — Offered to sell the XOM 16 Oct 167.5 put at ~0.59, a day limit at the mid that counts once it fills (0.35% of the $16,750 obligation). Delta -0.19 puts the strike 2.8% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **13:51** 🛑 `risk` **veto** — Vetoed: CVX would be $21,000, past 20% of the account in one name.
+- **13:51** · `steward` **hold** — Holding 100 KO shares uncovered this round: no call in the delta band, struck at or above the $87.80 they cost, paid the premium floor with a market tight enough to trust.
+- **13:51** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** → `steward` **sell_put** — Offered to sell the UBER 16 Oct 68 put at ~0.28, a day limit at the mid that counts once it fills (0.41% of the $6,800 obligation). Delta -0.18 puts the strike 3.3% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **13:51** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **13:51** → `steward` **sell_put** — Offered to sell the T 16 Oct 21.5 put at ~0.10, a day limit at the mid that counts once it fills (0.47% of the $2,150 obligation). Delta -0.17 puts the strike 4.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **13:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+
 ## 2026-10-10
 
 - **10:21** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.3%, ETH/USD +0.2%). Cash is a position.
