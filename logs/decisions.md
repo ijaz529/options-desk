@@ -35,6 +35,7 @@
 - **18:07** → `hunter` **buy_call** — META broke to a new 6-day high today (+4.1%, closing in top 19% of day's range) on above-avg volume, backed by Zuckerberg 'AI frontier' remarks and new model launch amid broad cyclical market strength. Momentum continuation into next week. — 1× META261016C00760000 at ~8.29 ($829 premium, the whole downside). Invalidation: Exit/avoid if META closes back below today's low (~727.6) or gives back the breakout, signaling the move was a one-day news pop rather than trend continuation.
 - **18:07** → `hunter` **buy_call** — SHOP is up 4 straight sessions into a new high (+3.7% today) with volume 1.8x prior day, the strongest relative volume of any gainer on the tape — a clean, conviction-backed breakout vs. META's single large-cap pop. — 3× SHOP261016C00180000 at ~2.57 ($771 premium, the whole downside). Invalidation: Exit/avoid if SHOP closes back below ~172 (today's low), which would signal the breakout failed and trend buyers stepped away.
 - **21:52** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **21:58** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-10-10
 
