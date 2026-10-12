@@ -36,6 +36,7 @@
 - **18:07** → `hunter` **buy_call** — SHOP is up 4 straight sessions into a new high (+3.7% today) with volume 1.8x prior day, the strongest relative volume of any gainer on the tape — a clean, conviction-backed breakout vs. META's single large-cap pop. — 3× SHOP261016C00180000 at ~2.57 ($771 premium, the whole downside). Invalidation: Exit/avoid if SHOP closes back below ~172 (today's low), which would signal the breakout failed and trend buyers stepped away.
 - **21:52** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 - **21:58** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **22:07** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-10-10
 
