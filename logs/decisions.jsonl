@@ -2014,3 +2014,4 @@
 {"ts": "2026-10-12T14:51:15+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
 {"ts": "2026-10-12T14:51:15+00:00", "agent": "steward", "action": "hold", "because": "Already carrying T risk — one position per name."}
 {"ts": "2026-10-12T14:51:16+00:00", "agent": "steward", "action": "sell_put", "because": "Offered to sell the GM 16 Oct 80 put at ~0.36, a day limit at the mid that counts once it fills (0.45% of the $8,000 obligation). Delta -0.21 puts the strike 2.9% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.", "symbol": "GM261016P00080000", "credit": 0.36, "order_id": "3e29a759-730f-43fb-b9f4-bce86066c9f4"}
+{"ts": "2026-10-12T15:06:01+00:00", "agent": "hunter", "action": "hold", "because": "Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position."}

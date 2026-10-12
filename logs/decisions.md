@@ -30,6 +30,7 @@
 - **14:51** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **14:51** · `steward` **hold** — Already carrying T risk — one position per name.
 - **14:51** → `steward` **sell_put** — Offered to sell the GM 16 Oct 80 put at ~0.36, a day limit at the mid that counts once it fills (0.45% of the $8,000 obligation). Delta -0.21 puts the strike 2.9% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **15:06** · `hunter` **hold** — Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 
 ## 2026-10-10
 
