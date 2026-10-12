@@ -18,6 +18,18 @@
 - **14:07** → `hunter` **buy_put** — CRM gapped up 3.3% to a 240.76 high but faded all day to close at 235 (range_position 0.10), reversing a 3-day bounce from 229. Classic failed-breakout/exhaustion after a rally into resistance; expect follow-through selling toward 225-228. — 6× CRM261016P00232500 at ~2.96 ($1,776 premium, the whole downside). Invalidation: Invalidate/exit if CRM reclaims and closes above today's high of 240.75, or trades back above 238 with rising volume, signaling the breakout is real not a fade.
 - **14:07** → `hunter` **buy_put** — ORCL closed at the session low (range_position 0.01) on a straight-down day with no intraday bounce, extending a 5-day downtrend from 146 to 138. Weak closes at lows signal distribution; expect a break of 136 support this week. — 10× ORCL261016P00135000 at ~1.70 ($1,700 premium, the whole downside). Invalidation: Invalidate/exit if ORCL reclaims prior close of 141.46 intraday or closes back above today's open of 141.11, signaling the downtrend has stalled.
 - **14:16** → `hunter` **take_half** — Premium doubled (2.23 → 4.80): banking 4 of 8, the rest rides with its stop raised to entry.
+- **14:51** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **14:51** 🛑 `risk` **veto** — Vetoed: CVX would be $20,750, past 20% of the account in one name.
+- **14:51** · `steward` **hold** — Holding 100 KO shares uncovered this round: no call in the delta band, struck at or above the $87.80 they cost, paid the premium floor with a market tight enough to trust.
+- **14:51** → `steward` **sell_put** — Offered to sell the WMT 16 Oct 110 put at ~0.34, a day limit at the mid that counts once it fills (0.31% of the $11,000 obligation). Delta -0.20 puts the strike 2.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** → `steward` **sell_put** — Offered to sell the BAC 16 Oct 52.5 put at ~0.30, a day limit at the mid that counts once it fills (0.57% of the $5,250 obligation). Delta -0.20 puts the strike 3.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:51** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **14:51** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:51** → `steward` **sell_put** — Offered to sell the CSCO 16 Oct 111 put at ~0.47, a day limit at the mid that counts once it fills (0.42% of the $11,100 obligation). Delta -0.20 puts the strike 3.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **14:51** · `steward` **hold** — Already carrying T risk — one position per name.
+- **14:51** → `steward` **sell_put** — Offered to sell the GM 16 Oct 80 put at ~0.36, a day limit at the mid that counts once it fills (0.45% of the $8,000 obligation). Delta -0.21 puts the strike 2.9% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 
 ## 2026-10-10
 
