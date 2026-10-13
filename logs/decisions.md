@@ -38,6 +38,7 @@
 - **14:51** · `steward` **hold** — Already carrying GM risk — one position per name.
 - **14:55** → `steward` **take_profit** — Buying back at 0.20: 66% of the 0.59 credit is banked, and the last cents are not worth the tail.
 - **15:06** · `hunter` **hold** — Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
+- **15:16** → `steward` **take_profit** — Buying back at 0.11: 69% of the 0.36 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-10-12
 
