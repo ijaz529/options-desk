@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-10-13
+
+- **00:56** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+
 ## 2026-10-12
 
 - **13:51** → `steward` **sell_put** — Offered to sell the XOM 16 Oct 167.5 put at ~0.59, a day limit at the mid that counts once it fills (0.35% of the $16,750 obligation). Delta -0.19 puts the strike 2.8% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
