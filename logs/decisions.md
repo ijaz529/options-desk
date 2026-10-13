@@ -46,6 +46,7 @@
 - **18:07** → `hunter` **buy_call** — ORCL gapped down -1.25% but rallied to close +4.22% at session highs (range_pos 0.93) on a day chip/tech names broadly sold off — strong relative-strength reversal corroborated by options whale-activity headlines. — 6× ORCL261016C00147000 at ~1.98 ($1,188 premium, the whole downside). Invalidation: Daily close back below $140 (today's open/support) within 2 sessions negates the relative-strength breakout.
 - **19:15** → `steward` **take_profit** — Buying back at 0.09: 68% of the 0.28 credit is banked, and the last cents are not worth the tail.
 - **19:57** · `steward` **hold** — Only 2 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **20:03** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-10-12
 
