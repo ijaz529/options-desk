@@ -45,6 +45,7 @@
 - **18:07** → `hunter` **buy_put** — CAT broke down -4.66% on 3x avg volume amid broad risk-off (KOSPI -5%, chip selloff) and closed near session lows (range_pos 0.19) after failing at 800-812 resistance — distribution, not a one-off dip, likely continues. — 1× CAT261016P00760000 at ~10.63 ($1,063 premium, the whole downside). Invalidation: Daily close back above $785 (reclaiming breakdown zone) or VIX-style risk-off reverses — exit/no add.
 - **18:07** → `hunter` **buy_call** — ORCL gapped down -1.25% but rallied to close +4.22% at session highs (range_pos 0.93) on a day chip/tech names broadly sold off — strong relative-strength reversal corroborated by options whale-activity headlines. — 6× ORCL261016C00147000 at ~1.98 ($1,188 premium, the whole downside). Invalidation: Daily close back below $140 (today's open/support) within 2 sessions negates the relative-strength breakout.
 - **19:15** → `steward` **take_profit** — Buying back at 0.09: 68% of the 0.28 credit is banked, and the last cents are not worth the tail.
+- **19:57** · `steward` **hold** — Only 2 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-10-12
 
