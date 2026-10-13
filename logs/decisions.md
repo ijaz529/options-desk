@@ -24,6 +24,18 @@
 - **14:07** → `hunter` **buy_put** — UNH gapped +5.1% on good news (open 397.6) then fully round-tripped intraday to close at the session low (375.74), below yesterday's close. Classic failed-gap/distribution top: late gap-buyers now trapped. Expect follow-through selling next sessions. — 4× UNH261016P00370000 at ~4.45 ($1,780 premium, the whole downside). Invalidation: Exit/invalid if UNH reclaims and closes back above prior-day close ~378.5, or holds a bid above 383 (gap-fill confirming absorption, not rejection).
 - **14:07** → `hunter` **buy_put** — GS gapped +3.2% on a blowout Q3 beat (equities rev +72%) yet reversed intraday to close near the day's low, essentially flat - a textbook sell-the-news failed gap despite strong fundamentals. Expect momentum sellers to press further. — 2× GS261016P00880000 at ~8.27 ($1,654 premium, the whole downside). Invalidation: Exit/invalid if GS closes back above prior-day close ~895 or reclaims today's open ~901, signaling the gap is being bought rather than faded.
 - **14:36** → `hunter` **stop** — Premium 3.15 vs 7.70 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **14:51** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **14:51** 🛑 `risk` **veto** — Vetoed: steward has $56,907 of $70,000 deployed; $21,250 more would breach the sleeve.
+- **14:51** · `steward` **hold** — Holding 100 KO shares uncovered this round: no call in the delta band, struck at or above the $87.80 they cost, paid the premium floor with a market tight enough to trust.
+- **14:51** → `steward` **sell_put** — Offered to sell the WMT 16 Oct 111 put at ~0.29, a day limit at the mid that counts once it fills (0.26% of the $11,100 obligation). Delta -0.18 puts the strike 2.2% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **14:51** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:51** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **14:51** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:51** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **14:51** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **14:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:51** · `steward` **hold** — Already carrying GM risk — one position per name.
 
 ## 2026-10-12
 
