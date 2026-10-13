@@ -40,6 +40,7 @@
 - **15:06** · `hunter` **hold** — Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **15:16** → `steward` **take_profit** — Buying back at 0.11: 69% of the 0.36 credit is banked, and the last cents are not worth the tail.
 - **16:35** → `hunter` **stop** — Premium 0.70 vs 1.70 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **16:56** → `hunter` **stop** — Premium 2.06 vs 4.35 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 
 ## 2026-10-12
 
