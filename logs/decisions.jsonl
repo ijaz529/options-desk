@@ -2062,3 +2062,4 @@
 {"ts": "2026-10-13T14:51:05+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
 {"ts": "2026-10-13T14:51:05+00:00", "agent": "steward", "action": "hold", "because": "Already carrying GM risk — one position per name."}
 {"ts": "2026-10-13T14:55:57+00:00", "agent": "steward", "action": "take_profit", "because": "Buying back at 0.20: 66% of the 0.59 credit is banked, and the last cents are not worth the tail.", "symbol": "XOM261016P00167500", "order_id": "5d5b031b-2d12-48bb-ab4b-cf2418e64af3"}
+{"ts": "2026-10-13T15:06:41+00:00", "agent": "hunter", "action": "hold", "because": "Stood down: this sleeve already traded 2 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position."}
