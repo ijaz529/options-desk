@@ -2044,3 +2044,4 @@
 {"ts": "2026-10-13T13:51:04+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
 {"ts": "2026-10-13T13:51:04+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
 {"ts": "2026-10-13T13:51:04+00:00", "agent": "steward", "action": "hold", "because": "Already carrying GM risk — one position per name."}
+{"ts": "2026-10-13T13:55:54+00:00", "agent": "hunter", "action": "take_profit", "because": "Premium doubled (8.25 → 17.70) on a single lot — banked whole.", "symbol": "META261016C00760000", "qty": 1, "order_id": "3e5907ae-b468-43cc-8045-83a04c9bbfa5"}

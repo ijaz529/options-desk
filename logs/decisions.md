@@ -19,6 +19,7 @@
 - **13:51** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **13:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **13:51** · `steward` **hold** — Already carrying GM risk — one position per name.
+- **13:55** → `hunter` **take_profit** — Premium doubled (8.25 → 17.70) on a single lot — banked whole.
 
 ## 2026-10-12
 
