@@ -4,6 +4,9 @@
 
 - **00:56** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 - **00:58** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **13:36** → `hunter` **stop** — Premium 1.38 vs 2.96 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **13:36** → `hunter` **take_half** — Premium doubled (2.35 → 5.20): banking 4 of 8, the rest rides with its stop raised to entry.
+- **13:36** → `steward` **take_profit** — Buying back at 0.10: 71% of the 0.34 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-10-12
 
