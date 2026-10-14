@@ -49,6 +49,18 @@
 - **18:12** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **18:12** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **18:12** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **18:17** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **18:17** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **18:17** · `steward` **hold** — Holding 100 KO shares uncovered this round: no call in the delta band, struck at or above the $87.80 they cost, paid the premium floor with a market tight enough to trust.
+- **18:17** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **18:17** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **18:17** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **18:17** · `steward` **hold** — No UBER put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **18:17** → `steward` **sell_put** — Offered to sell the PFE 16 Oct 28.5 put at ~0.07, a day limit at the mid that counts once it fills (0.25% of the $2,850 obligation). Delta -0.15 puts the strike 3.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:17** → `steward` **sell_put** — Offered to sell the CSCO 16 Oct 111 put at ~0.35, a day limit at the mid that counts once it fills (0.32% of the $11,100 obligation). Delta -0.18 puts the strike 2.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:17** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **18:17** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **18:17** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 
 ## 2026-10-13
 
