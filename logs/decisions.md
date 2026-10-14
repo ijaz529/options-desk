@@ -35,6 +35,8 @@
 - **15:06** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **15:16** → `steward` **stop** — Buying back at 0.37: the option has doubled against the 0.18 credit. The week is not ordinary — the rule says leave.
 - **15:16** → `steward` **take_profit** — Buying back at 0.09: 69% of the 0.29 credit is banked, and the last cents are not worth the tail.
+- **18:07** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 6 read-only tool calls before concluding. Trail: get_news({"symbols": "ORCL", "limit": 10}); get_stock_bars({"symbols": "ORCL,AMD", "timeframe": "1Day", "days": 10}); get_all_positions({}); get_option_chain({"underlying_symbol": "ORCL", "type": "put", "expiration_date_gte": "2026-10-16", "expiration_date_lte": "2026-10-24", "); get_stock_bars({"symbols": "LLY", "timeframe": "1Day", "days": 10}); get_option_chain({"underlying_symbol": "LLY", "type": "call", "expiration_date_gte": "2026-10-16", "expiration_date_lte": "2026-10-24", ")
+- **18:07** → `hunter` **buy_call** — Defensive rotation during risk-off tape (hot CPI, SOXX down 7 straight sessions): LLY gapped up and closed at day's high (range_pos 0.95), breaking above its 10-day 1143-1193 chop range on in-line volume. Fresh breakout, not extended. — 1× LLY261023C01240000 at ~15.05 ($1,505 premium, the whole downside). Invalidation: Close back below breakout level ~1177 (today's open) or below today's low 1174.24 invalidates the breakout/rotation thesis.
 
 ## 2026-10-13
 
