@@ -87,6 +87,18 @@
 - **18:49** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **18:49** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **18:49** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **18:58** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **18:58** 🛑 `risk` **veto** — Vetoed: CVX would be $21,750, past 20% of the account in one name.
+- **18:58** → `steward` **sell_call** — Offered to sell the KO 16 Oct 93 call at ~0.17 against the 100 shares held — a covered call, a day limit at the mid that counts once it fills (0.18% of the strike). Delta +0.20 puts the strike 1.4% above spot and $5.20 over the $87.80 the shares cost: if they are called away, the wheel turns back to puts.
+- **18:58** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **18:58** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **18:58** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **18:58** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **18:58** · `steward` **hold** — Already carrying PFE risk — one position per name.
+- **18:58** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **18:58** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **18:58** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **18:58** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 
 ## 2026-10-13
 

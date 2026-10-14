@@ -2166,3 +2166,15 @@
 {"ts": "2026-10-14T18:49:17+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
 {"ts": "2026-10-14T18:49:18+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
 {"ts": "2026-10-14T18:49:18+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
+{"ts": "2026-10-14T18:58:13+00:00", "agent": "steward", "action": "hold", "because": "Already carrying XOM risk — one position per name."}
+{"ts": "2026-10-14T18:58:13+00:00", "agent": "risk", "action": "veto", "because": "Vetoed: CVX would be $21,750, past 20% of the account in one name.", "gate": "concentration", "symbol": "CVX"}
+{"ts": "2026-10-14T18:58:14+00:00", "agent": "steward", "action": "sell_call", "because": "Offered to sell the KO 16 Oct 93 call at ~0.17 against the 100 shares held — a covered call, a day limit at the mid that counts once it fills (0.18% of the strike). Delta +0.20 puts the strike 1.4% above spot and $5.20 over the $87.80 the shares cost: if they are called away, the wheel turns back to puts.", "symbol": "KO261016C00093000", "credit": 0.17, "qty": 1, "order_id": "1c2845c0-3d61-4699-9101-61a2ac722673"}
+{"ts": "2026-10-14T18:58:14+00:00", "agent": "steward", "action": "hold", "because": "Already carrying WMT risk — one position per name."}
+{"ts": "2026-10-14T18:58:14+00:00", "agent": "steward", "action": "hold", "because": "Already carrying BAC risk — one position per name."}
+{"ts": "2026-10-14T18:58:14+00:00", "agent": "steward", "action": "hold", "because": "Already carrying DIS risk — one position per name."}
+{"ts": "2026-10-14T18:58:14+00:00", "agent": "steward", "action": "hold", "because": "Already carrying UBER risk — one position per name."}
+{"ts": "2026-10-14T18:58:14+00:00", "agent": "steward", "action": "hold", "because": "Already carrying PFE risk — one position per name."}
+{"ts": "2026-10-14T18:58:14+00:00", "agent": "steward", "action": "hold", "because": "Already carrying CSCO risk — one position per name."}
+{"ts": "2026-10-14T18:58:14+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
+{"ts": "2026-10-14T18:58:14+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
+{"ts": "2026-10-14T18:58:15+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
