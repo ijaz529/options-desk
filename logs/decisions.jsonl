@@ -2154,3 +2154,15 @@
 {"ts": "2026-10-14T18:34:42+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
 {"ts": "2026-10-14T18:40:52+00:00", "agent": "hunter", "action": "hold", "because": "Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position."}
 {"ts": "2026-10-14T18:48:13+00:00", "agent": "hunter", "action": "hold", "because": "Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position."}
+{"ts": "2026-10-14T18:49:16+00:00", "agent": "steward", "action": "hold", "because": "Already carrying XOM risk — one position per name."}
+{"ts": "2026-10-14T18:49:17+00:00", "agent": "risk", "action": "veto", "because": "Vetoed: CVX would be $21,750, past 20% of the account in one name.", "gate": "concentration", "symbol": "CVX"}
+{"ts": "2026-10-14T18:49:17+00:00", "agent": "steward", "action": "hold", "because": "Holding 100 KO shares uncovered this round: no call in the delta band, struck at or above the $87.80 they cost, paid the premium floor with a market tight enough to trust."}
+{"ts": "2026-10-14T18:49:17+00:00", "agent": "steward", "action": "hold", "because": "Already carrying WMT risk — one position per name."}
+{"ts": "2026-10-14T18:49:17+00:00", "agent": "steward", "action": "hold", "because": "Already carrying BAC risk — one position per name."}
+{"ts": "2026-10-14T18:49:17+00:00", "agent": "steward", "action": "hold", "because": "Already carrying DIS risk — one position per name."}
+{"ts": "2026-10-14T18:49:17+00:00", "agent": "steward", "action": "hold", "because": "Already carrying UBER risk — one position per name."}
+{"ts": "2026-10-14T18:49:17+00:00", "agent": "steward", "action": "hold", "because": "Already carrying PFE risk — one position per name."}
+{"ts": "2026-10-14T18:49:17+00:00", "agent": "steward", "action": "hold", "because": "Already carrying CSCO risk — one position per name."}
+{"ts": "2026-10-14T18:49:17+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
+{"ts": "2026-10-14T18:49:18+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
+{"ts": "2026-10-14T18:49:18+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
