@@ -74,6 +74,7 @@
 - **18:34** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **18:34** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **18:40** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
+- **18:48** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **18:49** · `steward` **hold** — Already carrying XOM risk — one position per name.
 - **18:49** 🛑 `risk` **veto** — Vetoed: CVX would be $21,750, past 20% of the account in one name.
 - **18:49** · `steward` **hold** — Holding 100 KO shares uncovered this round: no call in the delta band, struck at or above the $87.80 they cost, paid the premium floor with a market tight enough to trust.
