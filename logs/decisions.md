@@ -18,6 +18,7 @@
 - **13:51** → `steward` **sell_put** — Offered to sell the INTC 16 Oct 87.5 put at ~0.53, a day limit at the mid that counts once it fills (0.61% of the $8,750 obligation). Delta -0.19 puts the strike 4.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **13:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **13:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:55** → `hunter` **take_profit** — Premium doubled (14.60 → 30.10) on a single lot — banked whole.
 
 ## 2026-10-14
 
