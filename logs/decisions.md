@@ -51,6 +51,18 @@
 - **17:54** → `steward` **sell_put** — Offered to sell the INTC 16 Oct 90 put at ~0.34, a day limit at the mid that counts once it fills (0.38% of the $9,000 obligation). Delta -0.16 puts the strike 4.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **17:54** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **17:54** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:59** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:59** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:59** · `steward` **hold** — Holding 100 KO shares, covered by the call already written — the wheel's second half is in place.
+- **17:59** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:59** → `steward` **sell_put** — Offered to sell the BAC 16 Oct 51 put at ~0.10, a day limit at the mid that counts once it fills (0.20% of the $5,100 obligation). Delta -0.18 puts the strike 1.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:59** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:59** · `steward` **hold** — No UBER put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:59** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:59** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **17:59** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **17:59** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:59** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 
 ## 2026-10-14
 
