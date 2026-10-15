@@ -63,6 +63,7 @@
 - **17:59** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **17:59** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **17:59** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **18:06** · `hunter` **hold** — MU thesis approved but no call in the delta band with a believable market — the idea dies at the chain, not at the desk.
 
 ## 2026-10-14
 
