@@ -78,6 +78,7 @@
 - **18:15** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **18:21** · `hunter` **hold** — Already carrying AMD risk — one position per name.
 - **18:21** → `hunter` **buy_call** — SHOP gapped down -4.7% (likely news/earnings overhang) but fully reversed intraday to close +1.38%, range_position 0.96 (near day's high). Full gap-fill + green close signals capitulation sellers were overrun by buyers; expect follow-through bounce next 1-3 sessions. — 2× SHOP261023C00180000 at ~3.23 ($646 premium, the whole downside). Invalidation: Invalidate if SHOP trades back below today's gap-down low (~167) on a closing basis, showing the reversal failed and sellers regained control.
+- **18:30** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 
 ## 2026-10-14
 
