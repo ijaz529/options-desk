@@ -34,6 +34,7 @@
 - **14:50** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **14:50** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **14:50** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:56** → `steward` **stop** — Buying back at 0.53: the option has doubled against the 0.23 credit. The week is not ordinary — the rule says leave.
 
 ## 2026-10-14
 
