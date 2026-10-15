@@ -39,6 +39,18 @@
 - **15:07** · `hunter` **hold** — MU thesis approved but no call in the delta band with a believable market — the idea dies at the chain, not at the desk.
 - **15:07** → `hunter` **buy_put** — AMD in confirmed 4-session downtrend (605->547), today's -4.2% drop came on the highest relative volume (1.0x) of the run with no reversal catalyst, fitting the broader 'AI bubble deflating' chip selloff (SOXX down 7 straight days). Bet on trend continuation. — 1× AMD261023P00530000 at ~11.88 ($1,188 premium, the whole downside). Invalidation: Reclaim above today's high (~551) or prior close (570.8) invalidates breakdown continuation.
 - **15:15** → `steward` **take_profit** — Buying back at 0.16: 70% of the 0.53 credit is banked, and the last cents are not worth the tail.
+- **17:54** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **17:54** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:54** · `steward` **hold** — Holding 100 KO shares, covered by the call already written — the wheel's second half is in place.
+- **17:54** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:54** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:54** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:54** · `steward` **hold** — No UBER put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:54** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:54** → `steward` **sell_put** — Offered to sell the CSCO 16 Oct 106 put at ~0.16, a day limit at the mid that counts once it fills (0.15% of the $10,600 obligation). Delta -0.13 puts the strike 2.5% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:54** → `steward` **sell_put** — Offered to sell the INTC 16 Oct 90 put at ~0.34, a day limit at the mid that counts once it fills (0.38% of the $9,000 obligation). Delta -0.16 puts the strike 4.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **17:54** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **17:54** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 
 ## 2026-10-14
 
