@@ -6,6 +6,18 @@
 - **13:15** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 16 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
 - **13:15** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 16 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
 - **13:36** → `steward` **stop** — Buying back at 1.29: the option has doubled against the 0.36 credit. The week is not ordinary — the rule says leave.
+- **13:51** → `steward` **sell_put** — Offered to sell the XOM 16 Oct 172.5 put at ~0.36, a day limit at the mid that counts once it fills (0.21% of the $17,250 obligation). Delta -0.17 puts the strike 2.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **13:51** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — Holding 100 KO shares, covered by the call already written — the wheel's second half is in place.
+- **13:51** → `steward` **sell_put** — Offered to sell the WMT 16 Oct 118 put at ~0.23, a day limit at the mid that counts once it fills (0.19% of the $11,800 obligation). Delta -0.16 puts the strike 2.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **13:51** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No UBER put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** → `steward` **sell_put** — Offered to sell the INTC 16 Oct 87.5 put at ~0.53, a day limit at the mid that counts once it fills (0.61% of the $8,750 obligation). Delta -0.19 puts the strike 4.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **13:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 
 ## 2026-10-14
 
