@@ -5,6 +5,7 @@
 - **13:15** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 16 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
 - **13:15** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 16 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
 - **13:15** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 16 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
+- **13:36** → `steward` **stop** — Buying back at 1.29: the option has doubled against the 0.36 credit. The week is not ordinary — the rule says leave.
 
 ## 2026-10-14
 
