@@ -42,6 +42,11 @@ on:
     - cron: '13 10 * * 6'
     - cron: '27 10 * * 6'
     - cron: '7 * * * 0,6'
+    # status — Friday after the close, one slot per team: equity, positions and the move
+    # on the baseline, printed and written to the diary (16 Oct 2026). Read-only.
+    - cron: '5 21 * * 5'
+    - cron: '9 21 * * 5'
+    - cron: '13 21 * * 5'
     # de-risk — the contest's last session. Three chances: this one cannot be missed.
   workflow_dispatch:
     inputs:
@@ -49,7 +54,7 @@ on:
         description: 'which session to run (collar = The Harbour, condor = The Tollgate)'
         type: choice
         default: status
-        options: [status, steward, hunter, sweep, weekend, derisk, collar, condor]
+        options: [status, steward, hunter, sweep, weekend, derisk, collar, condor, status-collar, status-condor]
 
 # the desk commits its own decision log — the default token is read-only
 permissions:
@@ -81,16 +86,25 @@ jobs:
         id: pick
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "cmd=${{ inputs.session }}" >> "$GITHUB_OUTPUT"
             # Teams 2 and 3 run their one session on their OWN account and keys
             # (STRATEGY.md "How teams are kept apart"); everything else is the Wheelhouse.
+            # status-collar / status-condor are the teams' read-only status (16 Oct 2026).
             case "${{ inputs.session }}" in
-              collar|condor) echo "team=${{ inputs.session }}" >> "$GITHUB_OUTPUT" ;;
-              *) echo "team=wheelhouse" >> "$GITHUB_OUTPUT" ;;
+              collar|condor) echo "team=${{ inputs.session }}" >> "$GITHUB_OUTPUT"; echo "cmd=${{ inputs.session }}" >> "$GITHUB_OUTPUT" ;;
+              status-collar) echo "team=collar" >> "$GITHUB_OUTPUT"; echo "cmd=status" >> "$GITHUB_OUTPUT" ;;
+              status-condor) echo "team=condor" >> "$GITHUB_OUTPUT"; echo "cmd=status" >> "$GITHUB_OUTPUT" ;;
+              *) echo "team=wheelhouse" >> "$GITHUB_OUTPUT"; echo "cmd=${{ inputs.session }}" >> "$GITHUB_OUTPUT" ;;
             esac
           else
-            echo "team=wheelhouse" >> "$GITHUB_OUTPUT"
             case "${{ github.event.schedule }}" in
+              '5 21 * * 5')  echo "team=wheelhouse" >> "$GITHUB_OUTPUT" ;;
+              '9 21 * * 5')  echo "team=collar" >> "$GITHUB_OUTPUT" ;;
+              '13 21 * * 5') echo "team=condor" >> "$GITHUB_OUTPUT" ;;
+              *) echo "team=wheelhouse" >> "$GITHUB_OUTPUT" ;;
+            esac
+            case "${{ github.event.schedule }}" in
+              '5 21 * * 5'|'9 21 * * 5'|'13 21 * * 5')
+                echo "cmd=status" >> "$GITHUB_OUTPUT" ;;
               '47 13 * * 1-5'|'58 13 * * 1-5'|'11 14 * * 1-5'|'31 14 * * 1-5'|'53 14 * * 1-5')
                 echo "cmd=steward" >> "$GITHUB_OUTPUT" ;;
               '19 14 * * 1-5'|'29 14 * * 1-5'|'7 15 * * 1-5'|'21 15 * * 1-5'|'33 18 * * 1-5'|'43 18 * * 1-5')

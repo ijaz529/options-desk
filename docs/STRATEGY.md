@@ -382,6 +382,26 @@ nothing. A silent crash is the one thing the diary must never be.
 
 ---
 
+## Review goals (set 16 Oct 2026) — when each team is judged, on what, and what follows
+
+The owner's instruction: a goal in time or in trades for every team, then keep watching and
+improve under the house rules. "Improve" here means a pre-registered test and an amendment
+written into this file first; never a rule changed mid-record because a week went badly.
+Every Friday after the close a `status` slot per team prints equity, positions and the move
+on the team's baseline and writes one diary row, so the record is in `logs/` and not only in
+a job log. The Wheelhouse's status also prints the Hunter's trial P&L from the broker.
+
+| Team | Judged when | On what (all from the diary and the broker, nothing by hand) | Bar | What follows |
+|---|---|---|---|---|
+| **The Hunter** (Wheelhouse) | 20 trades or 28 Oct 2026, whichever first — **the diary holds 23 buys since 30 Sep, so the verdict is due at the next status** | trial P&L (`hunter_trial_pnl`): fills + marks since 30 Sep | net positive or near flat, inside the $2,000 budget | keep, with the budget as a permanent rule; else retired and the Steward runs alone (the rule above, unchanged) |
+| **The Steward** (Wheelhouse) | 60 trading sessions from 30 Sep 2026 (about 24 Dec) | premium kept net of stops and assignments; equity against the $88,983 baseline; stops and assignments counted | equity above baseline after costs; no kill-switch trip; stops under a third of puts sold | continue; otherwise the strike and premium-floor rules go to a pre-registered test (not changed by hand) |
+| **The Harbour** (collar) | the first reset, the 31 Dec 2026 expiry: one full cycle | the quarter's return against 100 SPY held bare and against SPY's total return; the cushion that was actually used | the structure did what it says: upside kept to the cap, the first 5% of any fall taken, the next 15% cushioned; cost of the collar within $0.50 a share a quarter | a second quarter; no change inside a cycle is ever made (the rule) |
+| **The Tollgate** (condor) | nine condors closed or 22 Jan 2027 (three monthly cycles: 20 Nov, 18 Dec, 15 Jan), whichever first | credit kept per condor; wins and losses counted; the largest loss against the fixed worst case; the vol gate's stand-downs | net credit positive after losses; no loss past its stated worst case; the 5%-of-account limit never breached | continue; otherwise the delta or the exit rules go to a pre-registered test on the index's own history |
+
+Read honestly: three months is enough to catch a broken rule, not to prove an edge (eureka
+docs/37 makes the same point: a five-point edge needs years). These dates decide whether a
+team *keeps running*, not whether it is good.
+
 # Teams 2 and 3 (specified 2 Oct 2026 — research in `docs/TEAMS.md`)
 
 Everything above this line is Team 1, the Wheelhouse. The two teams below are separate

@@ -235,3 +235,31 @@ def condor_session() -> None:
                    symbols=[q.symbol for q in c.legs], credit=c.credit, max_loss=c.max_loss,
                    expiry=expiry.isoformat(), order_id=order_id, **vols)
         open_max_loss += c.max_loss
+
+
+# ---------------------------------------------------------------- status, any team
+
+def status_line(name: str, equity: float, baseline: float, cash: float | None = None) -> str:
+    """One line a human reads at a glance: equity, the move on the team's own baseline,
+    and the cash. The baseline is the one the team's gates measure against (team.TEAMS)."""
+    pct = equity / baseline - 1 if baseline else 0.0
+    s = f"{name}: equity ${equity:,.2f} · {pct:+.2%} on the ${baseline:,.0f} baseline"
+    return s if cash is None else s + f" · cash ${cash:,.0f}"
+
+
+def team_status() -> None:
+    """Read-only: the account, its move on the baseline, and every position with its
+    unrealised profit — then ONE diary row with the figures, so the weekly status slots
+    (desk.yml, Friday after the close) leave a record that outlives the job log. A report,
+    not a decision: nothing is placed (16 Oct 2026)."""
+    cfg = team.config()
+    acct = broker.account_state()
+    pos = broker.positions()
+    line = status_line(cfg["name"], acct["equity"], cfg["baseline"], acct["cash"])
+    print(line)
+    for p in pos:
+        print(f"  {p['symbol']:>22} qty {p['qty']:>10} mv ${p['market_value']:>10,.2f} "
+              f"pl ${p['unrealized_pl']:>8,.2f}")
+    log.record(team.TEAM, "status", line + f" · {len(pos)} position(s)",
+               equity=round(acct["equity"], 2), baseline=cfg["baseline"],
+               unrealized=round(sum(p["unrealized_pl"] for p in pos), 2))

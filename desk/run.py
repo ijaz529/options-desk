@@ -564,6 +564,20 @@ def status() -> None:
     for p in read_positions():
         print(f"  {p['symbol']:>22} qty {p['qty']:>10} mv ${p['market_value']:>10,.2f} "
               f"pl ${p['unrealized_pl']:>8,.2f}")
+    # The Hunter's trial (STRATEGY.md "Re-based 30 Sep 2026"): his P&L from the broker's own
+    # fills and marks, and how many buys the diary holds — the verdict comes at 20 or 28 Oct.
+    buys = sum(1 for r in log.rows() if r["agent"] == "hunter" and r["action"].startswith("buy_")
+               and r["ts"] >= gates.HUNTER_TRIAL_START)
+    print(f"  hunter trial since {gates.HUNTER_TRIAL_START}: ${state.hunter_trial_pnl:+,.0f} "
+          f"of the ${gates.HUNTER_TRIAL_BUDGET:,.0f} budget · {buys} buy(s) logged")
+    # one diary row per status, so the weekly slots leave a record (16 Oct 2026)
+    from desk import team
+    log.record("desk", "status",
+               f"{team.config()['name']}: equity ${state.equity:,.2f} · "
+               f"{state.equity / gates.BASELINE_EQUITY - 1:+.2%} on the ${gates.BASELINE_EQUITY:,.0f} "
+               f"baseline · hunter trial ${state.hunter_trial_pnl:+,.0f} after {buys} buy(s)",
+               equity=round(state.equity, 2), baseline=gates.BASELINE_EQUITY,
+               hunter_trial_pnl=round(state.hunter_trial_pnl, 2), hunter_buys=buys)
 
 
 # Which sessions belong to which team (STRATEGY.md "How teams are kept apart").
@@ -574,8 +588,8 @@ WHEELHOUSE_SESSIONS = {"steward": steward_session, "hunter": hunter_session, "sw
 def main(cmd: str) -> int:
     from desk import team, teams_run
     sessions = {"wheelhouse": WHEELHOUSE_SESSIONS,
-                "collar": {"collar": teams_run.collar_session},
-                "condor": {"condor": teams_run.condor_session}}[team.TEAM]
+                "collar": {"collar": teams_run.collar_session, "status": teams_run.team_status},
+                "condor": {"condor": teams_run.condor_session, "status": teams_run.team_status}}[team.TEAM]
     if cmd not in sessions:
         print(f"'{cmd}' is not a {team.TEAM} session (known: {', '.join(sorted(sessions))}).")
         return 2

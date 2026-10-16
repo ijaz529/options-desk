@@ -145,3 +145,11 @@ def test_condor_hold_row_names_each_condor():
 def test_occ_parses_and_tolerates_a_multi_leg_order_with_no_symbol():
     assert occ("SPY261231P00730000") == ("SPY", date(2026, 12, 31), "P", 730.0)
     assert occ(None) is None and occ("SPY") is None
+
+
+def test_status_line_reads_the_move_on_the_baseline():
+    from desk.teams_run import status_line
+    assert status_line("The Harbour", 100_250.0, 100_000.0) == \
+        "The Harbour: equity $100,250.00 · +0.25% on the $100,000 baseline"
+    assert status_line("The Tollgate", 99_000.0, 99_789.0, cash=1_234.5).endswith("· cash $1,234")
+    assert "+0.00%" in status_line("x", 10.0, 0.0)          # no baseline: no division, no crash
