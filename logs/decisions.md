@@ -91,6 +91,7 @@
 - **18:46** · `hunter` **hold** — Stood down: this sleeve already traded 3 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **18:49** · `hunter` **hold** — Stood down: this sleeve already traded 3 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **21:38** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **21:41** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-10-15
 
