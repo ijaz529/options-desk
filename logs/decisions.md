@@ -5,6 +5,7 @@
 - **13:36** → `steward` **take_profit** — Buying back at 0.02: 80% of the 0.10 credit is banked, and the last cents are not worth the tail.
 - **13:36** → `steward` **stop** — Buying back at 0.52: the option has doubled against the 0.20 credit. The week is not ordinary — the rule says leave.
 - **13:36** → `steward` **take_profit** — Buying back at 0.07: 81% of the 0.36 credit is banked, and the last cents are not worth the tail.
+- **13:41** → `desk` **status** — The Wheelhouse: equity $94,327.26 · +6.01% on the $88,983 baseline · hunter trial $+4,905 after 23 buy(s)
 
 ## 2026-10-15
 
