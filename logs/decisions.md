@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-10-17
+
+- **10:20** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.0%, ETH/USD +0.5%). Cash is a position.
+
 ## 2026-10-16
 
 - **13:36** → `steward` **take_profit** — Buying back at 0.02: 80% of the 0.10 credit is banked, and the last cents are not worth the tail.
