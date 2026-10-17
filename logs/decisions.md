@@ -3,6 +3,7 @@
 ## 2026-10-17
 
 - **10:20** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.0%, ETH/USD +0.5%). Cash is a position.
+- **13:43** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD -0.2%, ETH/USD -0.0%). Cash is a position.
 
 ## 2026-10-16
 
