@@ -293,6 +293,12 @@ guards against a retried cron slot; it reads the diary, and on 14 Sep two
 delayed sessions ran back to back before the first had committed its rows, so
 the second bought the GS 975 put again. The broker's own book is the truth the
 diary is not: a thesis on a name already held or working is a hold, logged.
+*(17 Oct 2026, a fix, not a rule change.)* The same race let a third buy into the
+16 Oct pre-close review. A GitHub slot delayed almost three hours queued behind the
+18:05 ring, and both runs checked out the commit they were triggered on, so the
+second's cooldown read a diary without the first's PLTR buy and bought AMD and CVX.
+Each run now checks out `main` as it stands when the job starts; the desk's
+one-run-at-a-time concurrency group means that always holds the previous run's rows.
 
 **Exit rules (amended 20 Sep 2026):**
 - −50% premium stop.
