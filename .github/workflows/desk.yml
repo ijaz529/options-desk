@@ -44,6 +44,8 @@ on:
     - cron: '7 * * * 0,6'
     # status — Friday after the close, one slot per team: equity, positions and the move
     # on the baseline, printed and written to the diary (16 Oct 2026). Read-only.
+    # Also rung by Alfred's pg_cron at 21:05/21:12/21:19 (eureka migration 200): on 16 Oct
+    # these slots ran 2 h 22 min late. Kept as the fallback; a second run only adds a row.
     - cron: '5 21 * * 5'
     - cron: '9 21 * * 5'
     - cron: '13 21 * * 5'
