@@ -16,6 +16,8 @@
 - **13:51** → `steward` **sell_put** — Offered to sell the INTC 23 Oct 89 put at ~0.77, a day limit at the mid that counts once it fills (0.87% of the $8,900 obligation). Delta -0.19 puts the strike 6.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **13:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **13:51** → `steward` **sell_put** — Offered to sell the GM 23 Oct 78 put at ~0.64, a day limit at the mid that counts once it fills (0.82% of the $7,800 obligation). Delta -0.18 puts the strike 6.5% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:07** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 2 read-only tool calls before concluding. Trail: get_stock_bars({"symbols": "AMD,INTC,MU,AVGO", "timeframe": "1Day", "days": 6}); get_all_positions({})
+- **14:07** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
 
 ## 2026-10-17
 
