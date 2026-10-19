@@ -30,6 +30,7 @@
 - **14:50** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **14:50** → `steward` **sell_put** — Offered to sell the T 23 Oct 22 put at ~0.14, a day limit at the mid that counts once it fills (0.64% of the $2,200 obligation). Delta -0.18 puts the strike 5.1% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **14:50** · `steward` **hold** — Already carrying GM risk — one position per name.
+- **14:56** → `hunter` **stop** — Premium 7.50 vs 16.75 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 
 ## 2026-10-17
 
