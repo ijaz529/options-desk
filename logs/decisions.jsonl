@@ -2383,3 +2383,5 @@
 {"ts": "2026-10-17T10:20:54+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.0%, ETH/USD +0.5%). Cash is a position."}
 {"ts": "2026-10-17T13:43:22+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD -0.2%, ETH/USD -0.0%). Cash is a position."}
 {"ts": "2026-10-17T13:48:52+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD -0.1%, ETH/USD +0.1%). Cash is a position."}
+{"ts": "2026-10-19T13:36:02+00:00", "agent": "hunter", "action": "stop", "because": "Premium 4.85 vs 10.25 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.", "symbol": "AMD261023P00520000", "qty": 1, "order_id": "7d1e483c-e0d0-4b28-b125-62f7c2a9a959"}
+{"ts": "2026-10-19T13:36:02+00:00", "agent": "hunter", "action": "stop", "because": "Premium 1.62 vs 3.70 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.", "symbol": "PLTR261023P00182500", "qty": 3, "order_id": "db1f93f5-2323-46bb-acf0-804b5562bdac"}
