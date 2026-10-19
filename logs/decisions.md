@@ -46,6 +46,7 @@
 - **20:34** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 - **20:38** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 - **22:36** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **22:37** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-10-17
 
