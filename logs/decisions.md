@@ -34,6 +34,7 @@
 - **15:06** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 3 read-only tool calls before concluding. Trail: get_news({"symbols": "LLY,UNH,COIN", "limit": 15}); get_stock_bars({"symbols": "LLY,UNH,COIN", "days": 6, "timeframe": "1Day"}); get_all_positions({})
 - **15:06** → `hunter` **buy_call** — UNH broke out of its 3-day 400-414 range on earnings-driven strength (RBC reiterated Outperform, PT raised to $498), closing at session highs (range_pos 0.93) on 2x normal volume. Clean breakout with fresh catalyst room to run toward PT. — 3× UNH261023C00425000 at ~2.67 ($801 premium, the whole downside). Invalidation: Close back below today's open (~410) or below 406 prior-range high would negate breakout; exit if thesis fails within 2-3 sessions.
 - **15:06** → `hunter` **buy_put** — CVX gapped up +0.89% but reversed to close -0.94% at day's low (range_pos 0.10), confirming a bearish failed-rally candle amid sector-wide energy weakness (energy was the lone red sector today per tape/news). Follow-through downside likely. — 3× CVX261023P00220000 at ~1.55 ($465 premium, the whole downside). Invalidation: Invalidated if CVX reclaims today's high (~224.5) or energy sector reverses to lead gainers next session.
+- **15:56** → `steward` **stop** — Buying back at 0.48: the option has doubled against the 0.21 credit. The week is not ordinary — the rule says leave.
 
 ## 2026-10-19
 
