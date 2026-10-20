@@ -1,5 +1,10 @@
 # The desk's decision log
 
+## 2026-10-20
+
+- **13:36** → `steward` **stop** — Buying back at 1.36: the option has doubled against the 0.64 credit. The week is not ordinary — the rule says leave.
+- **13:36** → `steward` **stop** — Buying back at 2.14: the option has doubled against the 0.78 credit. The week is not ordinary — the rule says leave.
+
 ## 2026-10-19
 
 - **13:36** → `hunter` **stop** — Premium 4.85 vs 10.25 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
