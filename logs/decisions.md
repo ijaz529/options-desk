@@ -101,6 +101,7 @@
 - **18:46** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **19:11** · `hunter` **hold** — Only 49 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:18** · `hunter` **hold** — Only 41 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **19:36** → `hunter` **stop** — Premium 0.72 vs 1.54 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 
 ## 2026-10-19
 
