@@ -100,6 +100,7 @@
 - **18:46** · `steward` **hold** — Already carrying T risk — one position per name.
 - **18:46** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **19:11** · `hunter` **hold** — Only 49 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **19:18** · `hunter` **hold** — Only 41 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-10-19
 
