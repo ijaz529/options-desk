@@ -62,6 +62,18 @@
 - **18:18** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **18:18** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **18:18** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **18:27** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **18:27** · `steward` **hold** — Already carrying CVX risk — one position per name.
+- **18:27** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **18:27** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **18:27** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **18:27** → `steward` **sell_put** — Offered to sell the DIS 23 Oct 109 put at ~0.32, a day limit at the mid that counts once it fills (0.29% of the $10,900 obligation). Delta -0.19 puts the strike 2.4% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:27** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **18:27** · `steward` **hold** — Already carrying PFE risk — one position per name.
+- **18:27** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **18:27** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **18:27** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **18:27** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 
 ## 2026-10-19
 
