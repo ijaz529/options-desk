@@ -75,6 +75,18 @@
 - **18:27** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **18:27** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **18:29** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
+- **18:37** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **18:37** · `steward` **hold** — Already carrying CVX risk — one position per name.
+- **18:37** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **18:37** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **18:37** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **18:37** · `steward` **hold** — Already carrying DIS risk — one position per name.
+- **18:37** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **18:37** · `steward` **hold** — Already carrying PFE risk — one position per name.
+- **18:37** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **18:37** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **18:37** → `steward` **sell_put** — Offered to sell the T 23 Oct 22.5 put at ~0.12, a day limit at the mid that counts once it fills (0.53% of the $2,250 obligation). Delta -0.18 puts the strike 4.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **18:37** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 
 ## 2026-10-19
 
