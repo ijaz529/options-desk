@@ -30,6 +30,7 @@
 - **14:51** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **14:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **14:51** → `steward` **sell_put** — Offered to sell the GM 23 Oct 75 put at ~0.21, a day limit at the mid that counts once it fills (0.28% of the $7,500 obligation). Delta -0.12 puts the strike 4.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:55** → `hunter` **stop** — Premium 1.07 vs 2.75 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 
 ## 2026-10-19
 
