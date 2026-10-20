@@ -2500,3 +2500,4 @@
 {"ts": "2026-10-20T18:27:38+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
 {"ts": "2026-10-20T18:27:39+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
 {"ts": "2026-10-20T18:27:40+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
+{"ts": "2026-10-20T18:29:39+00:00", "agent": "hunter", "action": "hold", "because": "Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position."}
