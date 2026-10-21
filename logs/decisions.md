@@ -35,6 +35,9 @@
 - **14:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **15:06** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **16:35** → `steward` **take_profit** — Buying back at 0.04: 69% of the 0.13 credit is banked, and the last cents are not worth the tail.
+- **18:07** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 5 read-only tool calls before concluding. Trail: get_stock_bars({"symbols": "PLTR,COIN,AMD,NFLX,TSLA", "timeframe": "1Day", "days": 10}); get_all_positions({}); get_option_chain({"underlying_symbol": "NFLX", "type": "put", "strike_price_gte": 55, "strike_price_lte": 66, "expiration_date_gte": "202); get_option_chain({"underlying_symbol": "COIN", "type": "call", "strike_price_gte": 178}); get_option_chain({"underlying_symbol": "PLTR", "type": "call", "strike_price_gte": 200, "strike_price_lte": 215, "expiration_date_gte": ")
+- **18:07** → `hunter` **buy_put** — 4-day breakdown with volume accelerating 33M->72M and a -6.6% earnings-type gap; mid-range close shows no real reversal yet. Cheap vol (IV~35%) for a stock still bleeding. Continuation short via Oct-30 65P. — 18× NFLX261030P00064000 at ~0.64 ($1,152 premium, the whole downside). Invalidation: Close back above today's high of $67.12, or two consecutive up days.
+- **18:07** → `hunter` **buy_call** — Gapped down but reversed hard to close +3.6% at day's high (range pos 0.94) on above-average volume (1.1x), snapping a 4-day slide from $209 to $186. Momentum reversal via Oct-30 207.5C. — 4× PLTR261030C00205000 at ~3.67 ($1,468 premium, the whole downside). Invalidation: Close back below today's low of $189.9, negating the reversal.
 
 ## 2026-10-20
 
