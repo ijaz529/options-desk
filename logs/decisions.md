@@ -17,6 +17,7 @@
 - **13:50** → `steward` **sell_put** — Offered to sell the INTC 23 Oct 87 put at ~0.65, a day limit at the mid that counts once it fills (0.75% of the $8,700 obligation). Delta -0.20 puts the strike 4.9% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **13:50** → `steward` **sell_put** — Offered to sell the T 23 Oct 21.5 put at ~0.07, a day limit at the mid that counts once it fills (0.33% of the $2,150 obligation). Delta -0.15 puts the strike 3.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **13:50** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:55** → `hunter` **take_half** — Premium doubled (6.95 → 15.40): banking 1 of 2, the rest rides with its stop raised to entry.
 
 ## 2026-10-20
 
