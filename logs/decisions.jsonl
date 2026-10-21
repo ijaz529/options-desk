@@ -2629,3 +2629,4 @@
 {"ts": "2026-10-21T18:59:05+00:00", "agent": "steward", "action": "hold", "because": "Already carrying T risk — one position per name."}
 {"ts": "2026-10-21T18:59:06+00:00", "agent": "risk", "action": "veto", "because": "Vetoed: steward has $65,900 of $70,000 deployed; $7,400 more would breach the sleeve.", "gate": "sleeve-cap", "symbol": "GM"}
 {"ts": "2026-10-21T19:16:05+00:00", "agent": "steward", "action": "take_profit", "because": "Buying back at 0.18: 69% of the 0.58 credit is banked, and the last cents are not worth the tail.", "symbol": "XOM261023P00172500", "order_id": "1120c68f-7b55-44c5-a87f-f4e3b21c89c2"}
+{"ts": "2026-10-21T19:17:12+00:00", "agent": "hunter", "action": "hold", "because": "Only 43 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
