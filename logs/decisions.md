@@ -100,7 +100,9 @@
 - **18:59** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **18:59** · `steward` **hold** — Already carrying T risk — one position per name.
 - **18:59** 🛑 `risk` **veto** — Vetoed: steward has $65,900 of $70,000 deployed; $7,400 more would breach the sleeve.
+- **19:16** → `steward` **take_profit** — Buying back at 0.18: 69% of the 0.58 credit is banked, and the last cents are not worth the tail.
 - **19:17** · `hunter` **hold** — Only 43 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **19:19** · `hunter` **hold** — Only 41 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-10-20
 
