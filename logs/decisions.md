@@ -5,6 +5,18 @@
 - **13:36** → `steward` **stop** — Buying back at 0.77: the option has doubled against the 0.32 credit. The week is not ordinary — the rule says leave.
 - **13:36** → `hunter` **stop** — Premium 2.98 vs 10.50 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **13:36** → `steward` **stop** — Buying back at 0.41: the option has doubled against the 0.13 credit. The week is not ordinary — the rule says leave.
+- **13:50** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **13:50** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:50** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **13:50** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **13:50** · `steward` **hold** — Already carrying BAC risk — one position per name.
+- **13:50** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:50** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **13:50** → `steward` **sell_put** — Offered to sell the PFE 23 Oct 29 put at ~0.06, a day limit at the mid that counts once it fills (0.21% of the $2,900 obligation). Delta -0.12 puts the strike 3.5% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **13:50** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **13:50** → `steward` **sell_put** — Offered to sell the INTC 23 Oct 87 put at ~0.65, a day limit at the mid that counts once it fills (0.75% of the $8,700 obligation). Delta -0.20 puts the strike 4.9% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **13:50** → `steward` **sell_put** — Offered to sell the T 23 Oct 21.5 put at ~0.07, a day limit at the mid that counts once it fills (0.33% of the $2,150 obligation). Delta -0.15 puts the strike 3.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **13:50** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 
 ## 2026-10-20
 
