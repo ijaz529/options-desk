@@ -3,6 +3,7 @@
 ## 2026-10-22
 
 - **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 23 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
+- **13:35** → `steward` **take_profit** — Buying back at 0.02: 71% of the 0.07 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-10-21
 
