@@ -79,6 +79,9 @@
 - **18:35** 🛑 `hunter` **veto** — Proposal discarded before the gates: AMD: thesis empty or over 280 chars.
 - **18:35** 🛑 `hunter` **veto** — Proposal discarded before the gates: CRM: thesis empty or over 280 chars.
 - **18:35** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
+- **18:43** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 5 read-only tool calls before concluding. Trail: get_all_positions({}); get_news({"symbols": "META,AMD,INTC,MU,NVDA,AVGO", "limit": 20}); get_stock_bars({"symbols": "AMD,INTC,META,NVDA,CRM,MU", "timeframe": "1Day", "days": 10}); get_news({"symbols": "AMD,INTC,CRM", "limit": 15}); get_option_chain({"underlying_symbol": "AMD", "type": "put", "expiration_date_gte": "2026-11-06", "expiration_date_lte": "2026-11-20", "s)
+- **18:43** 🛑 `hunter` **veto** — Proposal discarded before the gates: AMD: thesis empty or over 280 chars.
+- **18:43** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
 
 ## 2026-10-21
 
