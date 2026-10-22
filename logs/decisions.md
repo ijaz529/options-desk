@@ -19,6 +19,9 @@
 - **14:07** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_bars({"symbols": "TSLA,META,AMZN", "timeframe": "1Day", "days": 10}); get_stock_snapshot({"symbols": "META,AMZN"}); get_option_chain({"underlying_symbol": "META", "type": "put", "expiration_date_gte": "2026-10-28", "expiration_date_lte": "2026-11-06", ")
 - **14:07** → `hunter` **buy_put** — META broke decisively below its 2-week 690-740 range on a sector-wide tech selloff (AMZN, GOOGL, NVDA, AVGO all weak too), closing at session lows (range_pos 0.19) with no late-day bounce - trend continuation into week end. — 1× META261030P00645000 at ~10.81 ($1,081 premium, the whole downside). Invalidation: Exit if META reclaims ~690 (prior support) on a closing basis, or if it closes green with range_position>0.5, signaling the breakdown failed.
 - **14:15** → `steward` **take_profit** — Buying back at 0.05: 77% of the 0.22 credit is banked, and the last cents are not worth the tail.
+- **14:35** → `steward` **stop** — Buying back at 0.69: the option has doubled against the 0.33 credit. The week is not ordinary — the rule says leave.
+- **14:35** → `steward` **stop** — Buying back at 1.31: the option has doubled against the 0.65 credit. The week is not ordinary — the rule says leave.
+- **14:35** → `steward` **take_profit** — Buying back at 0.09: 72% of the 0.32 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-10-21
 
