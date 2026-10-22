@@ -4,6 +4,18 @@
 
 - **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 23 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
 - **13:35** → `steward` **take_profit** — Buying back at 0.02: 71% of the 0.07 credit is banked, and the last cents are not worth the tail.
+- **13:51** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — Already carrying KO risk — one position per name.
+- **13:51** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **13:51** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **13:51** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — Already carrying CSCO risk — one position per name.
+- **13:51** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **13:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 
 ## 2026-10-21
 
