@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-10-22
+
+- **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 23 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
+
 ## 2026-10-21
 
 - **13:36** → `steward` **stop** — Buying back at 0.77: the option has doubled against the 0.32 credit. The week is not ordinary — the rule says leave.
