@@ -75,6 +75,10 @@
 - **18:31** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **18:31** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **18:31** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **18:35** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_news({"symbols": "AMD,INTC,MU,NVDA", "limit": 10}); get_news({"symbols": "CRM", "limit": 10}); get_stock_bars({"symbols": "AMD,INTC,MU,CRM", "timeframe": "1Day", "days": 7}); get_all_positions({})
+- **18:35** 🛑 `hunter` **veto** — Proposal discarded before the gates: AMD: thesis empty or over 280 chars.
+- **18:35** 🛑 `hunter` **veto** — Proposal discarded before the gates: CRM: thesis empty or over 280 chars.
+- **18:35** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
 
 ## 2026-10-21
 
