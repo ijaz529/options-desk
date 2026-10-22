@@ -37,6 +37,8 @@
 - **15:06** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 - **15:55** → `hunter` **stop** — Premium 0.30 vs 0.64 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **15:55** → `steward` **take_profit** — Buying back at 0.10: 66% of the 0.29 credit is banked, and the last cents are not worth the tail.
+- **18:07** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 6 read-only tool calls before concluding. Trail: get_all_positions({}); get_news({"symbols": "META,AMD,INTC,MU,COIN", "limit": 20}); get_stock_bars({"symbols": "META,AMD,INTC,MU,COIN,CAT,AMZN,ORCL,NVDA,AVGO,SHOP,GOOGL", "timeframe": "1Day", "days": 6}); get_news({"symbols": "AMD", "limit": 10}); get_option_chain({"underlying_symbol": "MU", "type": "put", "expiration_date_gte": "2026-10-28", "expiration_date_lte": "2026-11-06", "st); get_option_chain({"underlying_symbol": "AMD", "type": "put", "expiration_date_gte": "2026-10-28", "expiration_date_lte": "2026-11-06", "s)
+- **18:07** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
 
 ## 2026-10-21
 
