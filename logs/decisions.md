@@ -111,6 +111,7 @@
 - **20:16** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 23 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
 - **20:16** → `steward` **take_profit** — Buying back at 0.05: 71% of the 0.17 credit is banked, and the last cents are not worth the tail.
 - **21:53** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **21:54** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-10-21
 
