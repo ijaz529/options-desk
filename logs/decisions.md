@@ -34,6 +34,7 @@
 - **14:51** → `steward` **sell_put** — Offered to sell the INTC 23 Oct 83 put at ~0.36, a day limit at the mid that counts once it fills (0.43% of the $8,300 obligation). Delta -0.16 puts the strike 4.5% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **14:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **14:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **15:06** · `hunter` **hold** — Stood down: this sleeve already traded 1 time(s) within 90 minutes. The duplicate cron slots are a retry for dropped runs, not a licence to double the position.
 
 ## 2026-10-21
 
