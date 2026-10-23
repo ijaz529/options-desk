@@ -7,6 +7,8 @@
 - **13:16** → `steward` **stop** — Buying back at 1.44: the option has doubled against the 0.36 credit. The week is not ordinary — the rule says leave.
 - **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires today, and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
 - **13:16** → `steward` **take_profit** — Buying back at 0.05: 71% of the 0.17 credit is banked, and the last cents are not worth the tail.
+- **13:36** → `hunter` **stop** — Premium 1.40 vs 3.65 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **13:36** → `steward` **take_profit** — Buying back at 0.05: 76% of the 0.21 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-10-22
 
