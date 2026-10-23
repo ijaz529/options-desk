@@ -106,6 +106,7 @@
 - **18:45** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **19:08** · `hunter` **hold** — Only 52 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:16** · `hunter` **hold** — Only 43 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **21:06** → `desk` **status** — The Wheelhouse: equity $89,730.86 · +0.84% on the $88,983 baseline · hunter trial $+613 after 37 buy(s)
 
 ## 2026-10-22
 
