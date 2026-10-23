@@ -1,5 +1,13 @@
 # The desk's decision log
 
+## 2026-10-23
+
+- **13:16** → `desk` **cancel** — Cancelled the overnight order on UBER261023P00067000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
+- **13:16** → `desk` **cancel** — Cancelled the overnight order on TSLA261023C00380000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
+- **13:16** → `steward` **stop** — Buying back at 1.44: the option has doubled against the 0.36 credit. The week is not ordinary — the rule says leave.
+- **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires today, and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
+- **13:16** → `steward` **take_profit** — Buying back at 0.05: 71% of the 0.17 credit is banked, and the last cents are not worth the tail.
+
 ## 2026-10-22
 
 - **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 23 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
