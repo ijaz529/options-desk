@@ -329,7 +329,8 @@ one-run-at-a-time concurrency group means that always holds the previous run's r
    20–21 Oct the book reached $73,150 against $70,000. The account read carried no
    previous-close equity, so the daily gate compared equity with itself and could not
    fire. Both now read the broker as it is. A working put counts its strike and a working
-   buy the premium it promises; a working order that closes a booked contract adds
+   buy the premium it promises, each for the part not yet filled; a working order that
+   closes a booked position (a sell against a long, a buy against a short) adds
    nothing. Once the daily gate fires it holds until the next day, as this rule says,
    not only while the fall lasts. The same reading fixes rule 1's count of calls already
    written (a working covered call now covers its shares; a sell closing a booked long call

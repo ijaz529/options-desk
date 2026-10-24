@@ -75,6 +75,24 @@ def steward_spreads(positions: list[dict]) -> dict[tuple[str, date], tuple[dict,
     return out
 
 
+def _booked_qty(positions: list[dict]) -> dict[str, float]:
+    """Signed booked quantity per contract: long > 0, short < 0."""
+    out: dict[str, float] = {}
+    for p in positions:
+        out[p["symbol"]] = out.get(p["symbol"], 0.0) + float(p["qty"])
+    return out
+
+
+def _closes(o: dict, held: dict[str, float]) -> bool:
+    """A working order closes a booked position when it trades against its sign."""
+    q = held.get(o.get("symbol"), 0.0)
+    return (o["side"] == "sell" and q > 0) or (o["side"] == "buy" and q < 0)
+
+
+def _unfilled(o: dict) -> float:
+    return max(float(o["qty"]) - float(o.get("filled_qty", 0.0)), 0.0)
+
+
 def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
     """AccountState for the Risk Officer, derived live from the broker. `expiry` is the
     Friday the proposal would trade into, for the time gate; the coming one by default.
@@ -83,11 +101,13 @@ def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
     account has already promised, a working buy the premium it has promised.
     Counting only booked positions let three XOM puts stack up in the first live
     hour — each run saw $0 deployed because nothing had filled yet (bug #4,
-    28 Aug). A working order on a contract already booked closes it and adds
-    nothing (24 Oct 2026)."""
+    28 Aug). A working order that REDUCES a booked position (a sell against a
+    long, a buy against a short) closes it and adds nothing; any other order
+    counts only its unfilled part (24 Oct 2026)."""
     acct = broker.account_state()
     pos = read_positions()
     booked = {p["symbol"] for p in pos}
+    held = _booked_qty(pos)
     spread_risk: list[tuple[str, float]] = []
     for o in broker.open_orders():
         legs = o.get("legs") or []
@@ -102,18 +122,18 @@ def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
         if not occ:
             continue
         _, _, cp, strike = occ
-        if o["symbol"] in booked:
-            # a working order on a contract already booked CLOSES it (the Hunter selling a long
-            # put, the Steward buying back a short one): the booked position already carries
-            # the risk, and counting the order as well would invent an obligation
+        if _closes(o, held):
+            # the Hunter selling a long put, the Steward buying back a short one: the booked
+            # position already carries the risk, and counting the order too would invent one
             continue
+        left = _unfilled(o)      # a part-filled order's filled part is already in the book
         if o["side"] == "sell" and cp == "P":
-            pos.append({"symbol": o["symbol"], "qty": -o["qty"], "market_value": 0.0,
+            pos.append({"symbol": o["symbol"], "qty": -left, "market_value": 0.0,
                         "cost_basis": 0.0, "unrealized_pl": 0.0, "asset_class": "us_option"})
         elif o["side"] == "buy":
             # the premium promised counts against the Hunter's sleeve and the name, as a fill would
-            promised = o["qty"] * o.get("limit_price", 0.0) * 100
-            pos.append({"symbol": o["symbol"], "qty": o["qty"], "market_value": promised,
+            promised = left * o.get("limit_price", 0.0) * 100
+            pos.append({"symbol": o["symbol"], "qty": left, "market_value": promised,
                         "cost_basis": promised, "unrealized_pl": 0.0, "asset_class": "us_option"})
     sleeve = {"steward": 0.0, "hunter": 0.0}
     under: dict[str, float] = {}
@@ -287,10 +307,10 @@ def covered_call_round(u: str, stock: dict, positions: list[dict], orders: list[
     shares = float(stock["qty"])
     written = sum(abs(float(p["qty"])) for p in positions
                   if (o := parse_occ(p["symbol"])) and o[0] == u and o[2] == "C" and float(p["qty"]) < 0)
-    booked = {p["symbol"] for p in positions}    # a sell on a booked contract closes it: not a call written
-    written += sum(float(o["qty"]) for o in orders
+    held = _booked_qty(positions)      # a sell against a booked LONG call closes it: not a call written
+    written += sum(_unfilled(o) for o in orders
                    if (x := parse_occ(o["symbol"])) and x[0] == u and x[2] == "C" and o["side"] == "sell"
-                   and o["symbol"] not in booked)
+                   and not _closes(o, held))
     free = int(shares // 100) - int(written)
     if free < 1:
         log.record("steward", "hold",

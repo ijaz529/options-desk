@@ -184,7 +184,8 @@ def open_orders() -> list[dict]:
     # (alpaca-py 0.44, Python 3.13), which the desk's `"sell" in side` tests never matched, so a
     # working put was never counted against the Steward's sleeve (21 Oct 2026: $70,850 of $70,000).
     return [{"id": str(o.id), "symbol": o.symbol, "side": getattr(o.side, "value", str(o.side)),
-             "qty": float(o.qty or 0), "limit_price": float(getattr(o, "limit_price", None) or 0),
+             "qty": float(o.qty or 0), "filled_qty": float(getattr(o, "filled_qty", None) or 0),
+             "limit_price": float(getattr(o, "limit_price", None) or 0),
              "created_at": str(o.created_at), "legs": [l.symbol for l in (o.legs or [])]}
             for o in out]
 

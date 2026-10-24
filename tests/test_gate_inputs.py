@@ -16,9 +16,9 @@ from desk import broker, gates, run
 from desk.gates import Proposal, review
 
 
-def _order(symbol, side, qty=1, limit=None):
+def _order(symbol, side, qty=1, limit=None, filled=0):
     return SimpleNamespace(id="o-1", symbol=symbol, side=side, qty=str(qty), limit_price=limit,
-                           created_at="2026-10-21T13:50:53+00:00", legs=None)
+                           filled_qty=str(filled), created_at="2026-10-21T13:50:53+00:00", legs=None)
 
 
 class _Trading:
@@ -118,6 +118,30 @@ def test_a_working_covered_call_covers_its_shares(monkeypatch):
                             underlying_notional={}, minutes_to_expiry=6_000.0)
     from datetime import date
     run.covered_call_round("KO", stock, [stock], broker.open_orders(), date(2026, 10, 30), st)
+    assert any("covered by the call already written" in r[2] for r in rows)
+
+
+def test_a_part_filled_hunter_buy_counts_what_is_still_working(monkeypatch):
+    # 1 of 5 filled: the booked lot is in the book, the other 4 are still promised
+    st = _state(monkeypatch, [_long("AMD261030P00520000", 1, 400.0)],
+                [_order("AMD261030P00520000", OrderSide.BUY, qty=5, limit="4.00", filled=1)])
+    assert st.sleeve_used["hunter"] == 400.0 + 1_600.0
+
+
+def test_a_part_filled_covered_call_still_covers_what_it_promised(monkeypatch):
+    # 200 shares; a call order for 2 has 1 filled. Both are spoken for: no third call.
+    rows, sent = [], []
+    monkeypatch.setattr(run.log, "record", lambda agent, action, because, **kw: rows.append((agent, action, because)))
+    monkeypatch.setattr(broker, "sell_call", lambda *a, **k: sent.append(a) or "c-1")
+    stock = {"symbol": "KO", "qty": 200.0, "market_value": 18_600.0, "cost_basis": 17_560.0,
+             "unrealized_pl": 1_040.0, "asset_class": "us_equity"}
+    short_call = _short("KO261030C00094000", qty=-1)
+    monkeypatch.setattr(broker, "trading", lambda: _Trading([_order("KO261030C00094000", OrderSide.SELL, qty=2, filled=1)]))
+    st = gates.AccountState(equity=90_000.0, day_start_equity=90_000.0, sleeve_used={"steward": 0.0, "hunter": 0.0},
+                            underlying_notional={}, minutes_to_expiry=6_000.0)
+    from datetime import date
+    run.covered_call_round("KO", stock, [stock, short_call], broker.open_orders(), date(2026, 10, 30), st)
+    assert not sent
     assert any("covered by the call already written" in r[2] for r in rows)
 
 
