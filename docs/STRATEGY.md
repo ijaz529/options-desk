@@ -328,8 +328,12 @@ one-run-at-a-time concurrency group means that always holds the previous run's r
    never matched, so a working put was never counted against the Steward's sleeve: on
    20–21 Oct the book reached $73,150 against $70,000. The account read carried no
    previous-close equity, so the daily gate compared equity with itself and could not
-   fire. Both now read the broker as it is; a working order that closes a booked
-   contract adds nothing; `tests/test_gate_inputs.py` builds orders the way the broker does.
+   fire. Both now read the broker as it is. A working put counts its strike and a working
+   buy the premium it promises; a working order that closes a booked contract adds
+   nothing. Once the daily gate fires it holds until the next day, as this rule says,
+   not only while the fall lasts. The same reading fixes rule 1's count of calls already
+   written (a working covered call now covers its shares; a sell closing a booked long call
+   does not). `tests/test_gate_inputs.py` builds orders and accounts the way the broker does.
 4. **Weekly kill switch (clarified 29 Aug; re-based 13 Sep 2026):** account below
    **96% of the stated baseline** (see "Post-contest operation")
    → the desk goes **income-only**: the Hunter and the weekend crypto sleeve are

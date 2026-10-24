@@ -79,10 +79,12 @@ def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
     """AccountState for the Risk Officer, derived live from the broker. `expiry` is the
     Friday the proposal would trade into, for the time gate; the coming one by default.
 
-    OPEN ORDERS count exactly like positions: a working short put is an
-    obligation the account has already promised. Counting only booked positions
-    let three XOM puts stack up in the first live hour — each run saw $0
-    deployed because nothing had filled yet (bug #4, 28 Aug)."""
+    OPEN ORDERS count like positions: a working short put is an obligation the
+    account has already promised, a working buy the premium it has promised.
+    Counting only booked positions let three XOM puts stack up in the first live
+    hour — each run saw $0 deployed because nothing had filled yet (bug #4,
+    28 Aug). A working order on a contract already booked closes it and adds
+    nothing (24 Oct 2026)."""
     acct = broker.account_state()
     pos = read_positions()
     booked = {p["symbol"] for p in pos}
@@ -109,8 +111,10 @@ def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
             pos.append({"symbol": o["symbol"], "qty": -o["qty"], "market_value": 0.0,
                         "cost_basis": 0.0, "unrealized_pl": 0.0, "asset_class": "us_option"})
         elif o["side"] == "buy":
-            pos.append({"symbol": o["symbol"], "qty": o["qty"], "market_value": 0.0,
-                        "cost_basis": 0.0, "unrealized_pl": 0.0, "asset_class": "us_option"})
+            # the premium promised counts against the Hunter's sleeve and the name, as a fill would
+            promised = o["qty"] * o.get("limit_price", 0.0) * 100
+            pos.append({"symbol": o["symbol"], "qty": o["qty"], "market_value": promised,
+                        "cost_basis": promised, "unrealized_pl": 0.0, "asset_class": "us_option"})
     sleeve = {"steward": 0.0, "hunter": 0.0}
     under: dict[str, float] = {}
     # a put spread risks its width, not the short put's whole strike; its wing is not a Hunter long
@@ -142,12 +146,17 @@ def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
             # ...and against the Steward's sleeve: the put's obligation, now taken up
             sleeve["steward"] += notional
     minutes = minutes_to_expiry(expiry=expiry)
+    today = datetime.now(timezone.utc).date().isoformat()
+    tripped = any(r.get("agent") == "risk" and r.get("action") == "veto"
+                  and r.get("gate") == "daily-drawdown" and r.get("ts", "")[:10] == today
+                  for r in log.rows())
     return gates.AccountState(
         equity=acct["equity"],
         day_start_equity=acct.get("last_equity", acct["equity"]),
         sleeve_used=sleeve, underlying_notional=under,
         minutes_to_expiry=minutes,
         hunter_trial_pnl=hunter_trial_pnl(),
+        drawdown_tripped_today=tripped,
     ), acct
 
 
@@ -278,8 +287,10 @@ def covered_call_round(u: str, stock: dict, positions: list[dict], orders: list[
     shares = float(stock["qty"])
     written = sum(abs(float(p["qty"])) for p in positions
                   if (o := parse_occ(p["symbol"])) and o[0] == u and o[2] == "C" and float(p["qty"]) < 0)
+    booked = {p["symbol"] for p in positions}    # a sell on a booked contract closes it: not a call written
     written += sum(float(o["qty"]) for o in orders
-                   if (x := parse_occ(o["symbol"])) and x[0] == u and x[2] == "C" and o["side"] == "sell")
+                   if (x := parse_occ(o["symbol"])) and x[0] == u and x[2] == "C" and o["side"] == "sell"
+                   and o["symbol"] not in booked)
     free = int(shares // 100) - int(written)
     if free < 1:
         log.record("steward", "hold",
