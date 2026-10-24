@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-10-24
+
+- **10:21** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD -0.8%, ETH/USD -1.0%). Cash is a position.
+
 ## 2026-10-23
 
 - **13:16** → `desk` **cancel** — Cancelled the overnight order on UBER261023P00067000: its limit was priced off yesterday's session, and a stale limit only fills when the market has moved against it. The next session re-prices from a live chain.
