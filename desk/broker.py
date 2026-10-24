@@ -179,8 +179,12 @@ def open_orders() -> list[dict]:
     from alpaca.trading.requests import GetOrdersRequest
     from alpaca.trading.enums import QueryOrderStatus
     out = trading().get_orders(GetOrdersRequest(status=QueryOrderStatus.OPEN, limit=100))
-    # a multi-leg order has no symbol of its own; its contracts are in `legs`
-    return [{"id": str(o.id), "symbol": o.symbol, "side": str(o.side), "qty": float(o.qty or 0),
+    # a multi-leg order has no symbol of its own; its contracts are in `legs`.
+    # `side` is the broker's own word, "buy" or "sell": str(OrderSide.SELL) is "OrderSide.SELL"
+    # (alpaca-py 0.44, Python 3.13), which the desk's `"sell" in side` tests never matched, so a
+    # working put was never counted against the Steward's sleeve (21 Oct 2026: $70,850 of $70,000).
+    return [{"id": str(o.id), "symbol": o.symbol, "side": getattr(o.side, "value", str(o.side)),
+             "qty": float(o.qty or 0),
              "created_at": str(o.created_at), "legs": [l.symbol for l in (o.legs or [])]}
             for o in out]
 
@@ -198,7 +202,10 @@ def cancel_order(order_id: str) -> None:
 
 def account_state() -> dict:
     a = trading().get_account()
+    # last_equity is the broker's equity at the previous close: the day-start figure the
+    # daily drawdown gate reads (rule 3). Without it the gate compared equity with itself.
     return {"equity": float(a.equity), "cash": float(a.cash),
+            "last_equity": float(a.last_equity) if a.last_equity else float(a.equity),
             "buying_power": float(a.buying_power), "options_level": a.options_trading_level}
 
 

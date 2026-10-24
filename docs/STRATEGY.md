@@ -323,6 +323,13 @@ one-run-at-a-time concurrency group means that always holds the previous run's r
    10 Oct 2026). (Also keeps us within paper option level semantics.)
 2. **Sleeve caps are absolute** — an agent at its cap proposes nothing.
 3. **Daily drawdown gate:** account down >2.5% on the day → no new risk that day.
+   *(24 Oct 2026, a fix, not a rule change.)* Rules 2 and 3 were not enforced as written.
+   The broker gives an order's side as `OrderSide.SELL`, which the desk's test for "sell"
+   never matched, so a working put was never counted against the Steward's sleeve: on
+   20–21 Oct the book reached $73,150 against $70,000. The account read carried no
+   previous-close equity, so the daily gate compared equity with itself and could not
+   fire. Both now read the broker as it is; a working order that closes a booked
+   contract adds nothing; `tests/test_gate_inputs.py` builds orders the way the broker does.
 4. **Weekly kill switch (clarified 29 Aug; re-based 13 Sep 2026):** account below
    **96% of the stated baseline** (see "Post-contest operation")
    → the desk goes **income-only**: the Hunter and the weekend crypto sleeve are

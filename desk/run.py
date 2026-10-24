@@ -100,10 +100,15 @@ def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
         if not occ:
             continue
         _, _, cp, strike = occ
-        if "sell" in o["side"] and cp == "P":
+        if o["symbol"] in booked:
+            # a working order on a contract already booked CLOSES it (the Hunter selling a long
+            # put, the Steward buying back a short one): the booked position already carries
+            # the risk, and counting the order as well would invent an obligation
+            continue
+        if o["side"] == "sell" and cp == "P":
             pos.append({"symbol": o["symbol"], "qty": -o["qty"], "market_value": 0.0,
                         "cost_basis": 0.0, "unrealized_pl": 0.0, "asset_class": "us_option"})
-        elif "buy" in o["side"]:
+        elif o["side"] == "buy":
             pos.append({"symbol": o["symbol"], "qty": o["qty"], "market_value": 0.0,
                         "cost_basis": 0.0, "unrealized_pl": 0.0, "asset_class": "us_option"})
     sleeve = {"steward": 0.0, "hunter": 0.0}
@@ -274,7 +279,7 @@ def covered_call_round(u: str, stock: dict, positions: list[dict], orders: list[
     written = sum(abs(float(p["qty"])) for p in positions
                   if (o := parse_occ(p["symbol"])) and o[0] == u and o[2] == "C" and float(p["qty"]) < 0)
     written += sum(float(o["qty"]) for o in orders
-                   if (x := parse_occ(o["symbol"])) and x[0] == u and x[2] == "C" and "sell" in o["side"])
+                   if (x := parse_occ(o["symbol"])) and x[0] == u and x[2] == "C" and o["side"] == "sell")
     free = int(shares // 100) - int(written)
     if free < 1:
         log.record("steward", "hold",
