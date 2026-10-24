@@ -2852,3 +2852,4 @@
 {"ts": "2026-10-23T21:39:13+00:00", "agent": "hunter", "action": "hold", "because": "The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement."}
 {"ts": "2026-10-23T23:50:27+00:00", "agent": "desk", "action": "status", "because": "The Wheelhouse: equity $89,730.86 · +0.84% on the $88,983 baseline · hunter trial $+613 after 37 buy(s)", "equity": 89730.86, "baseline": 88983.0, "hunter_trial_pnl": 613.0, "hunter_buys": 37}
 {"ts": "2026-10-24T10:21:02+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD -0.8%, ETH/USD -1.0%). Cash is a position."}
+{"ts": "2026-10-24T14:01:36+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD -0.6%, ETH/USD -0.8%). Cash is a position."}
