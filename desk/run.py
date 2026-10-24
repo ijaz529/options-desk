@@ -603,7 +603,8 @@ def status() -> None:
         print(f"  {p['symbol']:>22} qty {p['qty']:>10} mv ${p['market_value']:>10,.2f} "
               f"pl ${p['unrealized_pl']:>8,.2f}")
     # The Hunter's trial (STRATEGY.md "Re-based 30 Sep 2026"): his P&L from the broker's own
-    # fills and marks, and how many buys the diary holds — the verdict comes at 20 or 28 Oct.
+    # fills and marks, and how many buys the diary holds. The verdict (24 Oct 2026) kept him with
+    # the $2,000 budget permanent, still counted from 30 Sep.
     buys = sum(1 for r in log.rows() if r["agent"] == "hunter" and r["action"].startswith("buy_")
                and r["ts"] >= gates.HUNTER_TRIAL_START)
     print(f"  hunter trial since {gates.HUNTER_TRIAL_START}: ${state.hunter_trial_pnl:+,.0f} "

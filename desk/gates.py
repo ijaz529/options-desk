@@ -41,7 +41,8 @@ DAILY_DRAWDOWN_GATE = 0.025
 # Re-based 30 Sep 2026 (STRATEGY.md "Re-based 30 Sep 2026"): was $93,630 on 13 Sep. The
 # −5.0% between the two is not erased — it stays in the log and the write-up.
 BASELINE_EQUITY = 88_983.0        # equity on 29 Sep 2026, the last session before the Hunter's trial
-# The Hunter's own budget for the trial: locked out on his own at −$2,000 from this date.
+# The Hunter's own budget: locked out on his own at −$2,000 from this date. Set for the trial;
+# a permanent rule from the verdict of 24 Oct 2026 (STRATEGY.md "Re-based 30 Sep 2026").
 HUNTER_TRIAL_START = "2026-09-30"
 HUNTER_TRIAL_BUDGET = 2_000.0
 KILL_SWITCH_FRACTION = 0.96

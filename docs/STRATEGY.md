@@ -156,6 +156,35 @@ so the reset comes with a budget of its own.
    and the budget becomes a permanent Hunter rule. Otherwise the Hunter is retired
    and the desk runs the Steward alone. The verdict is written here, dated.
 
+**Verdict, 24 Oct 2026 — the Hunter stays, and the $2,000 budget is now a permanent
+Hunter rule.** The owner's decision, on the bar above as written.
+
+- *When.* The 20th Hunter buy was logged on 14 Oct (ORCL 23 Oct 129 put, 14:07 UTC);
+  the 20th to fill, on 15 Oct. The verdict was due at the next status, 16 Oct, and is
+  written eight days late, after the 23 Oct status.
+- *The figure.* Trial P&L from the broker's fills and marks since 30 Sep: +$4,905 on
+  16 Oct at 13:41 UTC (23 buys), +$6,828 at the 16 Oct close (27), and **+$613 at the
+  23 Oct close (37 buys logged, 32 of them filled)**. Net positive, $2,613 inside the
+  budget; the lockout never fired.
+- *What the figure is made of.* About −$672 realised, and +$1,285 unrealised on three
+  puts marked at $5,370 (CAT 667.5, GOOGL 325 ×2, META 645, all 30 Oct). If all three
+  hit their stops the trial would be about −$2,700 and the lockout would fire on its
+  own. That is the budget doing its job, and it is why keeping him is a bounded risk.
+- *What this verdict does not claim.* It shows the 20 Sep fixes keep the Hunter's losses
+  inside a fixed budget. It does not show that he picks well: the comparison against
+  random picks under the same exits, pre-registered on 14 Oct (`docs/HUNTER_NULL_PREREG.md`),
+  has not been run, and until it is his record cannot be told apart from luck. A week
+  of +$6,828 followed by a week of −$6,215 is reason enough to say so.
+- *Flaws inside the record, kept in it.* Three buys in one review on 16 Oct, past the
+  two-a-session cap, from a stale checkout (fixed 17 Oct, live 24 Oct). A hard exit
+  placed on time on 22 Oct that did not fill, so a TSLA lot was held into expiry day.
+  Still open, and the owner's to decide: whether "2 trades per session" means per review
+  or per trading day; 20 and 21 Oct each had three buys in the day.
+- *What changes.* Nothing in the code: the lockout already counts from 30 Sep with no end
+  date, and it keeps counting from 30 Sep, unchanged. A total of −$2,000 since then locks
+  the Hunter out on his own; the Steward is unaffected. Any change to his rules from here
+  is a pre-registered test, written here first.
+
 Everything else — sleeve caps, drawdown gate, concentration, no naked shorts,
 the diary — is unchanged.
 
@@ -411,7 +440,7 @@ a job log. The Wheelhouse's status also prints the Hunter's trial P&L from the b
 
 | Team | Judged when | On what (all from the diary and the broker, nothing by hand) | Bar | What follows |
 |---|---|---|---|---|
-| **The Hunter** (Wheelhouse) | 20 trades or 28 Oct 2026, whichever first — **the diary holds 23 buys since 30 Sep, so the verdict is due at the next status** | trial P&L (`hunter_trial_pnl`): fills + marks since 30 Sep | net positive or near flat, inside the $2,000 budget | keep, with the budget as a permanent rule; else retired and the Steward runs alone (the rule above, unchanged) |
+| **The Hunter** (Wheelhouse) | 20 trades or 28 Oct 2026, whichever first — **judged 24 Oct 2026: kept, the budget permanent** (verdict under "Re-based 30 Sep 2026") | trial P&L (`hunter_trial_pnl`): fills + marks since 30 Sep | net positive or near flat, inside the $2,000 budget | keep, with the budget as a permanent rule; else retired and the Steward runs alone (the rule above, unchanged) |
 | **The Steward** (Wheelhouse) | 60 trading sessions from 30 Sep 2026 (about 24 Dec) | premium kept net of stops and assignments; equity against the $88,983 baseline; stops and assignments counted | equity above baseline after costs; no kill-switch trip; stops under a third of puts sold | continue; otherwise the strike and premium-floor rules go to a pre-registered test (not changed by hand) |
 | **The Harbour** (collar) | the first reset, the 31 Dec 2026 expiry: one full cycle | the quarter's return against 100 SPY held bare and against SPY's total return; the cushion that was actually used | the structure did what it says: upside kept to the cap, the first 5% of any fall taken, the next 15% cushioned; cost of the collar within $0.50 a share a quarter | a second quarter; no change inside a cycle is ever made (the rule) |
 | **The Tollgate** (condor) | nine condors closed or 22 Jan 2027 (three monthly cycles: 20 Nov, 18 Dec, 15 Jan), whichever first | credit kept per condor; wins and losses counted; the largest loss against the fixed worst case; the vol gate's stand-downs | net credit positive after losses; no loss past its stated worst case; the 5%-of-account limit never breached | continue; otherwise the delta or the exit rules go to a pre-registered test on the index's own history |
