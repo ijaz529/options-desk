@@ -127,6 +127,8 @@ def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
             # position already carries the risk, and counting the order too would invent one
             continue
         left = _unfilled(o)      # a part-filled order's filled part is already in the book
+        if left <= 0:
+            continue
         if o["side"] == "sell" and cp == "P":
             pos.append({"symbol": o["symbol"], "qty": -left, "market_value": 0.0,
                         "cost_basis": 0.0, "unrealized_pl": 0.0, "asset_class": "us_option"})
