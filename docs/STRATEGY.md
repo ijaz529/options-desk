@@ -293,6 +293,12 @@ guards against a retried cron slot; it reads the diary, and on 14 Sep two
 delayed sessions ran back to back before the first had committed its rows, so
 the second bought the GS 975 put again. The broker's own book is the truth the
 diary is not: a thesis on a name already held or working is a hold, logged.
+*(17 Oct 2026, a fix, not a rule change.)* The same race let a third buy into the
+16 Oct pre-close review. A GitHub slot delayed almost three hours queued behind the
+18:05 ring, and both runs checked out the commit they were triggered on, so the
+second's cooldown read a diary without the first's PLTR buy and bought AMD and CVX.
+Each run now checks out `main` as it stands when the job starts; the desk's
+one-run-at-a-time concurrency group means that always holds the previous run's rows.
 
 **Exit rules (amended 20 Sep 2026):**
 - −50% premium stop.
@@ -317,6 +323,18 @@ diary is not: a thesis on a name already held or working is a hold, logged.
    10 Oct 2026). (Also keeps us within paper option level semantics.)
 2. **Sleeve caps are absolute** — an agent at its cap proposes nothing.
 3. **Daily drawdown gate:** account down >2.5% on the day → no new risk that day.
+   *(24 Oct 2026, a fix, not a rule change.)* Rules 2 and 3 were not enforced as written.
+   The broker gives an order's side as `OrderSide.SELL`, which the desk's test for "sell"
+   never matched, so a working put was never counted against the Steward's sleeve: on
+   20–21 Oct the book reached $73,150 against $70,000. The account read carried no
+   previous-close equity, so the daily gate compared equity with itself and could not
+   fire. Both now read the broker as it is. A working put counts its strike and a working
+   buy the premium it promises, each for the part not yet filled; a working order that
+   closes a booked position (a sell against a long, a buy against a short) adds
+   nothing. Once the daily gate fires it holds until the next day, as this rule says,
+   not only while the fall lasts. The same reading fixes rule 1's count of calls already
+   written (a working covered call now covers its shares; a sell closing a booked long call
+   does not). `tests/test_gate_inputs.py` builds orders and accounts the way the broker does.
 4. **Weekly kill switch (clarified 29 Aug; re-based 13 Sep 2026):** account below
    **96% of the stated baseline** (see "Post-contest operation")
    → the desk goes **income-only**: the Hunter and the weekend crypto sleeve are

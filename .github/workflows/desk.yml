@@ -71,7 +71,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      # main AS IT STANDS when this job starts, not the commit the run was triggered on.
+      # A run waits in the `desk` concurrency group while the one before it finishes and
+      # pushes its diary; the default checkout (github.sha) would still read the diary from
+      # before that push. On 16 Oct 2026 a GitHub hunter slot delayed ~3 hours queued behind
+      # the 18:05 ring, both checked out 5704d2b, and the second's 90-minute cooldown could
+      # not see the first's PLTR buy: three buys in one review (STRATEGY.md, the Hunter).
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: '3.13'

@@ -26,6 +26,7 @@ class AccountState:
     underlying_notional: dict[str, float] # symbol -> account-wide notional
     minutes_to_expiry: float               # to the expiry a new position would trade into
     hunter_trial_pnl: float = 0.0          # Hunter P&L since HUNTER_TRIAL_START, fills + marks
+    drawdown_tripped_today: bool = False   # the daily gate already fired today (rule 3: "that day")
 
 
 SLEEVE_CAP = {"steward": 70_000.0, "hunter": 20_000.0}
@@ -101,6 +102,11 @@ def review(p: Proposal, a: AccountState) -> Verdict:
         return Verdict(False, "daily-drawdown",
                        f"Vetoed: down {dd:.1%} today, past the {DAILY_DRAWDOWN_GATE:.1%} gate. "
                        "No new risk until tomorrow.")
+    if a.drawdown_tripped_today:
+        # rule 3 shuts new risk for the rest of the DAY, not only while the fall lasts
+        return Verdict(False, "daily-drawdown",
+                       f"Vetoed: the account went past the {DAILY_DRAWDOWN_GATE:.1%} daily gate earlier "
+                       f"today (down {max(dd, 0.0):.1%} now). No new risk until tomorrow.")
 
     cap = SLEEVE_CAP.get(p.agent, 0.0)
     used = a.sleeve_used.get(p.agent, 0.0)
