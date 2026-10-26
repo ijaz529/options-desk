@@ -34,6 +34,7 @@
 - **18:07** → `hunter` **buy_put** — PYPL broke down from a tight 56-57.5 five-day range to close 54.73, -4% on elevated volume (1.2x), near day low (range_pos 0.09) = confirmed breakdown, not noise. Playing continuation via Nov20 52.5P. — 12× PYPL261030P00053000 at ~1.41 ($1,692 premium, the whole downside). Invalidation: Close back above 56 (inside prior range) invalidates breakdown thesis.
 - **18:56** → `hunter` **take_half** — Premium doubled (6.85 → 13.90): banking 1 of 2, the rest rides with its stop raised to entry.
 - **19:34** · `steward` **hold** — Only 25 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **19:43** · `steward` **hold** — Only 17 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-10-24
 
