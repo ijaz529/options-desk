@@ -2888,3 +2888,4 @@
 {"ts": "2026-10-26T18:56:02+00:00", "agent": "hunter", "action": "take_half", "because": "Premium doubled (6.85 → 13.90): banking 1 of 2, the rest rides with its stop raised to entry.", "symbol": "GOOGL261030P00325000", "qty": 1, "order_id": "f843e4de-f3f1-41cd-a8d3-d4ba6c0ea406"}
 {"ts": "2026-10-26T19:34:37+00:00", "agent": "steward", "action": "hold", "because": "Only 25 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
 {"ts": "2026-10-26T19:43:12+00:00", "agent": "steward", "action": "hold", "because": "Only 17 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
+{"ts": "2026-10-26T19:54:53+00:00", "agent": "steward", "action": "hold", "because": "Only 5 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
