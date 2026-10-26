@@ -33,6 +33,7 @@
 - **18:07** → `hunter` **buy_call** — TSLA broke above its 6-day range (354-389) to close 395.5, +6.3% on in-line/above-avg volume (1.04x), closing near highs (range_pos 0.87). Confirmed breakout, not an exhaustion spike. Playing continuation via Nov13 405C. — 2× TSLA261030C00402500 at ~4.48 ($896 premium, the whole downside). Invalidation: Close back below 380 (prior breakout ceiling) invalidates continuation thesis.
 - **18:07** → `hunter` **buy_put** — PYPL broke down from a tight 56-57.5 five-day range to close 54.73, -4% on elevated volume (1.2x), near day low (range_pos 0.09) = confirmed breakdown, not noise. Playing continuation via Nov20 52.5P. — 12× PYPL261030P00053000 at ~1.41 ($1,692 premium, the whole downside). Invalidation: Close back above 56 (inside prior range) invalidates breakdown thesis.
 - **18:56** → `hunter` **take_half** — Premium doubled (6.85 → 13.90): banking 1 of 2, the rest rides with its stop raised to entry.
+- **19:34** · `steward` **hold** — Only 25 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-10-24
 
