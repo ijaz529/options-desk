@@ -2889,3 +2889,4 @@
 {"ts": "2026-10-26T19:34:37+00:00", "agent": "steward", "action": "hold", "because": "Only 25 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
 {"ts": "2026-10-26T19:43:12+00:00", "agent": "steward", "action": "hold", "because": "Only 17 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
 {"ts": "2026-10-26T19:54:53+00:00", "agent": "steward", "action": "hold", "because": "Only 5 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
+{"ts": "2026-10-26T19:55:55+00:00", "agent": "hunter", "action": "take_profit", "because": "Premium doubled (10.70 → 22.15) on a single lot — banked whole.", "symbol": "META261030P00645000", "qty": 1, "order_id": "13f1ee95-29d3-4e8b-8281-02dc5a40668b"}

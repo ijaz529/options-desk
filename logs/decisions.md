@@ -36,6 +36,7 @@
 - **19:34** · `steward` **hold** — Only 25 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:43** · `steward` **hold** — Only 17 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:54** · `steward` **hold** — Only 5 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **19:55** → `hunter` **take_profit** — Premium doubled (10.70 → 22.15) on a single lot — banked whole.
 
 ## 2026-10-24
 
