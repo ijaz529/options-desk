@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-10-27
+
+- **13:15** → `steward` **stop** — Buying back at 1.50: the option has doubled against the 0.21 credit. The week is not ordinary — the rule says leave.
+
 ## 2026-10-26
 
 - **13:51** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
