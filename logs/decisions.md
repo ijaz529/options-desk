@@ -557,6 +557,9 @@
 - **15:06** 🛑 `risk` **veto** — Vetoed: the account went past the 2.5% daily gate earlier today (down 2.5% now). No new risk until tomorrow.
 - **15:56** → `steward` **take_profit** — Buying back at 0.41: 68% of the 1.27 credit is banked, and the last cents are not worth the tail.
 - **15:56** → `hunter` **take_half** — Premium doubled (4.45 → 8.90): banking 1 of 2, the rest rides with its stop raised to entry.
+- **18:06** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_news({"symbols": "BA", "limit": 6}); get_stock_bars({"symbols": "BA", "timeframe": "1Day", "days": 10}); get_option_chain({"underlying_symbol": "BA", "type": "put", "expiration_date_gte": "2026-11-06", "expiration_date_lte": "2026-11-20", "st); get_all_positions({})
+- **18:06** 🛑 `hunter` **veto** — Proposal discarded before the gates: BA: thesis empty or over 280 chars.
+- **18:06** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
 
 ## 2026-10-26
 
