@@ -3,6 +3,8 @@
 ## 2026-10-27
 
 - **13:15** → `steward` **stop** — Buying back at 1.50: the option has doubled against the 0.21 credit. The week is not ordinary — the rule says leave.
+- **13:36** → `hunter` **stop** — Premium 6.20 vs 16.45 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **13:36** → `hunter` **stop** — Premium 0.11 vs 1.41 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 
 ## 2026-10-26
 
