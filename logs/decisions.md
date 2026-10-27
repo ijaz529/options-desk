@@ -555,6 +555,8 @@
 - **14:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **15:06** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 4 read-only tool calls before concluding. Trail: get_news({"symbols": "BA", "limit": 5}); get_stock_bars({"symbols": "BA", "days": 10}); get_all_positions({}); get_option_chain({"underlying_symbol": "BA", "type": "put", "expiration_date_gte": "2026-11-06", "expiration_date_lte": "2026-11-13", "st)
 - **15:06** 🛑 `risk` **veto** — Vetoed: the account went past the 2.5% daily gate earlier today (down 2.5% now). No new risk until tomorrow.
+- **15:56** → `steward` **take_profit** — Buying back at 0.41: 68% of the 1.27 credit is banked, and the last cents are not worth the tail.
+- **15:56** → `hunter` **take_half** — Premium doubled (4.45 → 8.90): banking 1 of 2, the rest rides with its stop raised to entry.
 
 ## 2026-10-26
 
