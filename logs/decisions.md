@@ -574,6 +574,7 @@
 - **18:59** 🛑 `risk` **veto** — Vetoed: the account went past the 2.5% daily gate earlier today (down 2.2% now). No new risk until tomorrow.
 - **19:11** · `steward` **hold** — Only 48 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:25** · `steward` **hold** — Only 34 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **19:27** · `hunter` **hold** — Only 32 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-10-26
 
