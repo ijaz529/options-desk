@@ -573,6 +573,7 @@
 - **18:59** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **18:59** 🛑 `risk` **veto** — Vetoed: the account went past the 2.5% daily gate earlier today (down 2.2% now). No new risk until tomorrow.
 - **19:11** · `steward` **hold** — Only 48 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **19:25** · `steward` **hold** — Only 34 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-10-26
 
