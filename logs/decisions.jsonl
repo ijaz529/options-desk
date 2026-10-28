@@ -3518,3 +3518,4 @@
 {"ts": "2026-10-28T19:45:13+00:00", "agent": "hunter", "action": "hold", "because": "Only 15 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
 {"ts": "2026-10-28T19:46:27+00:00", "agent": "steward", "action": "hold", "because": "Only 14 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
 {"ts": "2026-10-28T19:55:14+00:00", "agent": "steward", "action": "hold", "because": "Only 5 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
+{"ts": "2026-10-28T19:56:27+00:00", "agent": "hunter", "action": "stop", "because": "Premium 2.00 vs 4.20 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.", "symbol": "COIN261030P00150000", "qty": 3, "order_id": "345759ce-47b1-4a08-b493-fe155b0da706"}
