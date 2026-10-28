@@ -1,5 +1,20 @@
 # The desk's decision log
 
+## 2026-10-28
+
+- **13:50** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **13:50** 🛑 `risk` **veto** — Vetoed: CVX would be $22,000, past 20% of the account in one name.
+- **13:50** · `steward` **hold** — No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:50** · `steward` **hold** — Already carrying WMT risk — one position per name.
+- **13:51** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **13:51** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** → `steward` **sell_put** — Offered to sell the INTC 30 Oct 86 put at ~1.30, a day limit at the mid that counts once it fills (1.51% of the $8,600 obligation). Delta -0.21 puts the strike 8.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **13:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** → `steward` **sell_put** — Offered to sell the GM 30 Oct 77 put at ~0.20, a day limit at the mid that counts once it fills (0.26% of the $7,700 obligation). Delta -0.14 puts the strike 3.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+
 ## 2026-10-27
 
 - **13:15** → `steward` **stop** — Buying back at 1.50: the option has doubled against the 0.21 credit. The week is not ordinary — the rule says leave.
