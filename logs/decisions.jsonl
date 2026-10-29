@@ -3540,3 +3540,4 @@
 {"ts": "2026-10-29T13:50:53+00:00", "agent": "steward", "action": "hold", "because": "Already carrying INTC risk — one position per name."}
 {"ts": "2026-10-29T13:50:53+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
 {"ts": "2026-10-29T13:50:54+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
+{"ts": "2026-10-29T13:56:06+00:00", "agent": "hunter", "action": "stop", "because": "Premium 9.25 vs 18.85 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.", "symbol": "MU261106C01010000", "qty": 1, "order_id": "c070566f-e801-48ea-95be-d8c3d0d6dcda"}

@@ -19,6 +19,7 @@
 - **13:50** · `steward` **hold** — Already carrying INTC risk — one position per name.
 - **13:50** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **13:50** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:56** → `hunter` **stop** — Premium 9.25 vs 18.85 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 
 ## 2026-10-28
 
