@@ -20,6 +20,577 @@
 - **13:50** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **13:50** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **13:56** → `hunter` **stop** — Premium 9.25 vs 18.85 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **14:08** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 6 read-only tool calls before concluding. Trail: get_news({"symbols": "GOOGL,CAT", "limit": 10}); get_all_positions({}); get_stock_bars({"symbols": "GOOGL,CAT", "timeframe": "1Day", "days": 10}); get_stock_bars({"symbols": "GOOGL", "timeframe": "15Min", "days": 1}); get_option_chain({"underlying_symbol": "CAT", "type": "call", "strike_price_gte": 655, "strike_price_lte": 690, "expiration_date_gte": "2); get_option_chain({"underlying_symbol": "GOOGL", "type": "put", "strike_price_gte": 270, "strike_price_lte": 285, "expiration_date_gte": ")
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): [
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): {
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): y
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): m
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): b
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): :
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): C
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): A
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): T
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): ,
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): c
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): :
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): c
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): ,
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): h
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): :
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): C
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): A
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): T
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): g
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): p
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): p
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): -
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 1
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 1
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): %
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): f
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): f
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): /
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): m
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): g
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): f
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): p
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): Q
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 3
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): b
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): g
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): A
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): I
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): -
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): p
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): w
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): -
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): v
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): b
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): c
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): k
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): g
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): ,
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): h
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): v
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): h
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): y
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): (
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): c
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 6
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 5
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 8
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): v
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): w
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 6
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 3
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 1
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): ,
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): h
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): g
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): h
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): )
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): y
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 0
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): .
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 4
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 8
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): x
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): p
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): v
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): u
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): m
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): —
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): g
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): x
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): h
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): u
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): ,
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): f
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): w
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): -
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): h
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): u
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): g
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): h
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): .
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): B
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): g
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): h
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): -
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): m
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): b
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): u
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): c
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): b
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): c
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): k
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): w
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): w
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): k
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): '
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 6
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 9
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 0
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): -
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 7
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 1
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 3
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): g
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): .
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): ,
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): m
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): x
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): _
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): p
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): m
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): u
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): m
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): _
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): u
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): :
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 1
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 5
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 0
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 0
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): ,
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): v
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): :
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): E
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): x
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): /
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): v
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): f
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): C
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): A
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): T
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): c
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): b
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): w
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): y
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): '
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): w
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): f
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): $
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 6
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 3
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 1
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): ,
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): f
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): c
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): m
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): $
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 6
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 4
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 5
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): w
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): h
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): 3
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): —
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): h
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): w
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): u
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): d
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): c
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): f
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): m
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): h
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): r
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): f
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): f
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): e
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): f
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): f
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): c
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): u
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): g
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): ,
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): o
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object):  
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): s
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): t
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): a
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): b
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): l
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): z
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): i
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): n
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): g
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): .
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): ,
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): "
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): }
+- **14:08** 🛑 `hunter` **veto** — Proposal discarded before the gates: malformed proposal (not an object): ]
+- **14:08** · `hunter` **hold** — Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies.
 
 ## 2026-10-28
 
