@@ -4,6 +4,9 @@
 
 - **13:16** → `hunter` **expiry_exit** — Hard exit: this contract expires tomorrow (Fri 30 Oct), and the last session's decay is not a bet the desk takes. Out at the mark, whatever the P&L.
 - **13:16** → `steward` **stop** — Buying back at 4.90: the option has doubled against the 0.08 credit. The week is not ordinary — the rule says leave.
+- **13:36** → `hunter` **take_profit** — Premium doubled (17.40 → 45.80) on a single lot — banked whole.
+- **13:36** → `steward` **stop** — Buying back at 0.70: the option has doubled against the 0.31 credit. The week is not ordinary — the rule says leave.
+- **13:36** → `steward` **take_profit** — Buying back at 0.07: 76% of the 0.29 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-10-28
 
