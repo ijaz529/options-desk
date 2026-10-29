@@ -611,6 +611,7 @@
 - **18:16** → `hunter` **stop** — Premium 4.10 vs 8.35 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **19:13** · `steward` **hold** — Only 46 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:16** → `steward` **take_profit** — Buying back at 0.09: 65% of the 0.26 credit is banked, and the last cents are not worth the tail.
+- **19:24** · `steward` **hold** — Only 35 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-10-28
 
