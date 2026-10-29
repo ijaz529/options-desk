@@ -7,6 +7,18 @@
 - **13:36** → `hunter` **take_profit** — Premium doubled (17.40 → 45.80) on a single lot — banked whole.
 - **13:36** → `steward` **stop** — Buying back at 0.70: the option has doubled against the 0.31 credit. The week is not ordinary — the rule says leave.
 - **13:36** → `steward` **take_profit** — Buying back at 0.07: 76% of the 0.29 credit is banked, and the last cents are not worth the tail.
+- **13:50** · `steward` **hold** — Already carrying XOM risk — one position per name.
+- **13:50** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:50** · `steward` **hold** — No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:50** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:50** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:50** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:50** · `steward` **hold** — Already carrying UBER risk — one position per name.
+- **13:50** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:50** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:50** · `steward` **hold** — Already carrying INTC risk — one position per name.
+- **13:50** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:50** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 
 ## 2026-10-28
 
