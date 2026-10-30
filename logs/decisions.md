@@ -17,6 +17,8 @@
 - **13:51** · `steward` **hold** — No INTC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **13:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **13:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:06** 🛑 `risk` **veto** — Vetoed: down 2.5% today, past the 2.5% gate. No new risk until tomorrow.
+- **14:06** · `hunter` **hold** — AMD thesis approved but no call in the delta band with a believable market — the idea dies at the chain, not at the desk.
 
 ## 2026-10-29
 
