@@ -4207,3 +4207,4 @@
 {"ts": "2026-10-30T19:44:45+00:00", "agent": "steward", "action": "hold", "because": "Only 15 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
 {"ts": "2026-10-30T19:55:14+00:00", "agent": "hunter", "action": "hold", "because": "Only 5 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
 {"ts": "2026-10-30T19:57:32+00:00", "agent": "hunter", "action": "hold", "because": "Only 2 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
+{"ts": "2026-10-30T21:06:06+00:00", "agent": "desk", "action": "status", "because": "The Wheelhouse: equity $88,639.18 · -0.39% on the $88,983 baseline · hunter trial $+1,644 after 45 buy(s)", "equity": 88639.18, "baseline": 88983.0, "hunter_trial_pnl": 1644.0, "hunter_buys": 45}

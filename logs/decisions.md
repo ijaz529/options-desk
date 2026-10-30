@@ -66,6 +66,7 @@
 - **19:44** · `steward` **hold** — Only 15 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:55** · `hunter` **hold** — Only 5 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:57** · `hunter` **hold** — Only 2 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **21:06** → `desk` **status** — The Wheelhouse: equity $88,639.18 · -0.39% on the $88,983 baseline · hunter trial $+1,644 after 45 buy(s)
 
 ## 2026-10-29
 
