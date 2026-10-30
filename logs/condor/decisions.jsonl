@@ -69,3 +69,6 @@
 {"ts": "2026-10-30T14:21:03+00:00", "agent": "condor", "action": "stop", "because": "QQQ 20 Nov: Buying back at 14.92: twice the 6.79 collected. The market has left the range — the rule says leave.", "symbols": ["QQQ261120C00810000", "QQQ261120C00840000", "QQQ261120P00686000", "QQQ261120P00716000"], "order_id": "2ad58f0b-9f82-465c-9890-ba2099f68eed"}
 {"ts": "2026-10-30T14:21:09+00:00", "agent": "condor", "action": "hold", "because": "No SPY condor today: no standard monthly expiry is 25–45 days away."}
 {"ts": "2026-10-30T14:21:09+00:00", "agent": "condor", "action": "hold", "because": "No IWM condor today: no standard monthly expiry is 25–45 days away."}
+{"ts": "2026-10-30T16:21:03+00:00", "agent": "condor", "action": "hold", "because": "No SPY condor today: no standard monthly expiry is 25–45 days away."}
+{"ts": "2026-10-30T16:21:04+00:00", "agent": "condor", "action": "hold", "because": "No QQQ condor today: no standard monthly expiry is 25–45 days away."}
+{"ts": "2026-10-30T16:21:04+00:00", "agent": "condor", "action": "hold", "because": "No IWM condor today: no standard monthly expiry is 25–45 days away."}
