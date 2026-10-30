@@ -5,6 +5,18 @@
 - **13:16** → `hunter` **stop** — Premium 0.11 vs 3.45 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **13:16** → `steward` **stop** — Buying back at 17.95: the option has doubled against the 1.31 credit. The week is not ordinary — the rule says leave.
 - **13:35** → `hunter` **stop** — Premium 2.66 vs 5.80 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **13:50** · `steward` **hold** — No XOM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:50** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No WMT put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No BAC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No UBER put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No PFE put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No INTC put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **13:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 
 ## 2026-10-29
 
