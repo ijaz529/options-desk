@@ -72,3 +72,6 @@
 {"ts": "2026-10-30T16:21:03+00:00", "agent": "condor", "action": "hold", "because": "No SPY condor today: no standard monthly expiry is 25–45 days away."}
 {"ts": "2026-10-30T16:21:04+00:00", "agent": "condor", "action": "hold", "because": "No QQQ condor today: no standard monthly expiry is 25–45 days away."}
 {"ts": "2026-10-30T16:21:04+00:00", "agent": "condor", "action": "hold", "because": "No IWM condor today: no standard monthly expiry is 25–45 days away."}
+{"ts": "2026-10-30T18:21:01+00:00", "agent": "condor", "action": "hold", "because": "No SPY condor today: no standard monthly expiry is 25–45 days away."}
+{"ts": "2026-10-30T18:21:02+00:00", "agent": "condor", "action": "hold", "because": "No QQQ condor today: no standard monthly expiry is 25–45 days away."}
+{"ts": "2026-10-30T18:21:02+00:00", "agent": "condor", "action": "hold", "because": "No IWM condor today: no standard monthly expiry is 25–45 days away."}
