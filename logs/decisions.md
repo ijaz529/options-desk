@@ -62,6 +62,7 @@
 - **18:58** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **19:18** · `steward` **hold** — Only 42 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **19:26** · `hunter` **hold** — Only 34 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **19:35** · `hunter` **hold** — Only 25 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-10-29
 
