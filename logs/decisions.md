@@ -4,6 +4,7 @@
 
 - **13:16** → `hunter` **stop** — Premium 0.11 vs 3.45 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **13:16** → `steward` **stop** — Buying back at 17.95: the option has doubled against the 1.31 credit. The week is not ordinary — the rule says leave.
+- **13:35** → `hunter` **stop** — Premium 2.66 vs 5.80 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 
 ## 2026-10-29
 
