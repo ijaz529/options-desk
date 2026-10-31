@@ -76,3 +76,4 @@
 {"ts": "2026-10-30T18:21:02+00:00", "agent": "condor", "action": "hold", "because": "No QQQ condor today: no standard monthly expiry is 25–45 days away."}
 {"ts": "2026-10-30T18:21:02+00:00", "agent": "condor", "action": "hold", "because": "No IWM condor today: no standard monthly expiry is 25–45 days away."}
 {"ts": "2026-10-30T21:20:08+00:00", "agent": "condor", "action": "status", "because": "The Tollgate: equity $99,369.13 · -0.42% on the $99,789 baseline · cash $99,369 · 0 position(s)", "equity": 99369.13, "baseline": 99789.0, "unrealized": 0}
+{"ts": "2026-10-31T00:44:38+00:00", "agent": "condor", "action": "status", "because": "The Tollgate: equity $99,369.13 · -0.42% on the $99,789 baseline · cash $99,369 · 0 position(s)", "equity": 99369.13, "baseline": 99789.0, "unrealized": 0}
