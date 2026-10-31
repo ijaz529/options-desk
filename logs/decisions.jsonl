@@ -4213,3 +4213,4 @@
 {"ts": "2026-10-31T00:41:55+00:00", "agent": "desk", "action": "status", "because": "The Wheelhouse: equity $88,639.18 · -0.39% on the $88,983 baseline · hunter trial $+1,644 after 45 buy(s)", "equity": 88639.18, "baseline": 88983.0, "hunter_trial_pnl": 1644.0, "hunter_buys": 45}
 {"ts": "2026-10-31T10:20:54+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.2%, ETH/USD +0.2%). Cash is a position."}
 {"ts": "2026-10-31T15:45:18+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.3%, ETH/USD +0.3%). Cash is a position."}
+{"ts": "2026-10-31T15:48:44+00:00", "agent": "hunter", "action": "hold", "because": "No entry this weekend: nothing moved ≥ 1.5% (BTC/USD +0.3%, ETH/USD +0.3%). Cash is a position."}
