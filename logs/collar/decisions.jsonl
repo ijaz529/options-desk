@@ -85,3 +85,4 @@
 {"ts": "2026-10-30T16:11:07+00:00", "agent": "collar", "action": "hold", "because": "The collar is in place until 31 Dec. It is never adjusted in between — that is the rule, whatever the market does."}
 {"ts": "2026-10-30T18:11:06+00:00", "agent": "collar", "action": "hold", "because": "The collar is in place until 31 Dec. It is never adjusted in between — that is the rule, whatever the market does."}
 {"ts": "2026-10-30T21:13:03+00:00", "agent": "collar", "action": "status", "because": "The Harbour: equity $99,179.60 · -0.82% on the $100,000 baseline · cash $22,858 · 4 position(s)", "equity": 99179.6, "baseline": 100000.0, "unrealized": -820.22}
+{"ts": "2026-10-31T00:43:24+00:00", "agent": "collar", "action": "status", "because": "The Harbour: equity $99,152.60 · -0.85% on the $100,000 baseline · cash $22,858 · 4 position(s)", "equity": 99152.6, "baseline": 100000.0, "unrealized": -847.22}
