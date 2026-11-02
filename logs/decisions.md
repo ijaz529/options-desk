@@ -22,6 +22,7 @@
 - **18:07** · `hunter` **hold** — MU thesis approved but no put in the delta band with a believable market — the idea dies at the chain, not at the desk.
 - **18:35** → `steward` **stop** — Buying back at 1.51: the option has doubled against the 0.72 credit. The week is not ordinary — the rule says leave.
 - **19:36** → `steward` **stop** — Buying back at 1.42: the option has doubled against the 0.65 credit. The week is not ordinary — the rule says leave.
+- **22:28** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-10-31
 
