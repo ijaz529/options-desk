@@ -21,6 +21,7 @@
 - **18:07** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 6 read-only tool calls before concluding. Trail: get_all_positions({}); get_news({"symbols": "ORCL", "limit": 5}); get_news({"symbols": "MU,AMD,INTC", "limit": 8}); get_news({"symbols": "MU", "limit": 5}); get_stock_bars({"symbols": "MU", "timeframe": "1Day", "days": 10}); get_option_chain({"underlying_symbol": "MU", "type": "put", "expiration_date_gte": "2026-11-06", "expiration_date_lte": "2026-11-13", "st)
 - **18:07** · `hunter` **hold** — MU thesis approved but no put in the delta band with a believable market — the idea dies at the chain, not at the desk.
 - **18:35** → `steward` **stop** — Buying back at 1.51: the option has doubled against the 0.72 credit. The week is not ordinary — the rule says leave.
+- **19:36** → `steward` **stop** — Buying back at 1.42: the option has doubled against the 0.65 credit. The week is not ordinary — the rule says leave.
 
 ## 2026-10-31
 
