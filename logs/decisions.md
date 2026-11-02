@@ -4,6 +4,18 @@
 
 - **13:50** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 - **14:06** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **14:51** → `steward` **sell_put** — Offered to sell the XOM 06 Nov 175 put at ~0.64, a day limit at the mid that counts once it fills (0.37% of the $17,500 obligation). Delta -0.16 puts the strike 3.7% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** 🛑 `risk` **veto** — Vetoed: CVX would be $22,250, past 20% of the account in one name.
+- **14:51** → `steward` **sell_put** — Offered to sell the KO 06 Nov 93 put at ~0.30, a day limit at the mid that counts once it fills (0.32% of the $9,300 obligation). Delta -0.21 puts the strike 2.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** → `steward` **sell_put** — Offered to sell the WMT 06 Nov 122 put at ~0.42, a day limit at the mid that counts once it fills (0.34% of the $12,200 obligation). Delta -0.18 puts the strike 3.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** → `steward` **sell_put** — Offered to sell the BAC 06 Nov 48 put at ~0.12, a day limit at the mid that counts once it fills (0.25% of the $4,800 obligation). Delta -0.12 puts the strike 4.2% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:51** → `steward` **sell_put** — Offered to sell the UBER 06 Nov 62 put at ~0.78, a day limit at the mid that counts once it fills (1.26% of the $6,200 obligation). Delta -0.20 puts the strike 7.5% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** → `steward` **sell_put** — Offered to sell the PFE 06 Nov 29 put at ~0.22, a day limit at the mid that counts once it fills (0.76% of the $2,900 obligation). Delta -0.21 puts the strike 4.6% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:51** → `steward` **sell_put** — Offered to sell the INTC 06 Nov 60 put at ~0.72, a day limit at the mid that counts once it fills (1.20% of the $6,000 obligation). Delta -0.20 puts the strike 7.0% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
+- **14:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 
 ## 2026-10-31
 
