@@ -4266,3 +4266,4 @@
 {"ts": "2026-11-03T18:07:10+00:00", "agent": "risk", "action": "veto", "because": "Vetoed: down 2.8% today, past the 2.5% gate. No new risk until tomorrow.", "gate": "daily-drawdown", "symbol": "SHOP"}
 {"ts": "2026-11-03T18:16:38+00:00", "agent": "hunter", "action": "stop", "because": "Premium 1.13 vs 2.34 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.", "symbol": "ORCL261106P00120000", "qty": 8, "order_id": "43bdae15-45f6-4aff-9be3-5aaba8215c10"}
 {"ts": "2026-11-03T20:17:49+00:00", "agent": "steward", "action": "hold", "because": "Only 42 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
+{"ts": "2026-11-03T20:24:45+00:00", "agent": "steward", "action": "hold", "because": "Only 35 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}

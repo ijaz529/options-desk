@@ -25,6 +25,7 @@
 - **18:07** 🛑 `risk` **veto** — Vetoed: down 2.8% today, past the 2.5% gate. No new risk until tomorrow.
 - **18:16** → `hunter` **stop** — Premium 1.13 vs 2.34 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
 - **20:17** · `steward` **hold** — Only 42 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **20:24** · `steward` **hold** — Only 35 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-11-02
 
