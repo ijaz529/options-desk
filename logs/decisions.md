@@ -30,6 +30,7 @@
 - **18:06** → `hunter` **buy_put** — XOM gapped down -2.1% and sold through the day to close/trade right at session lows (167.4 low vs 167.98 last) on 1.4x volume, confirming distribution not dip-buying. Breakdown below 167.4 likely continues into next session. — 3× XOM261113P00165000 at ~2.46 ($738 premium, the whole downside). Invalidation: Invalidate if XOM reclaims and holds above today's VWAP (~170.5) or prior close 177.5 area is irrelevant; a close back above 170.5 kills the breakdown thesis.
 - **18:06** → `hunter` **buy_call** — TSLA gapped down hard (-4.6%) but reversed all session, now trading near the day's high (390 vs 391.7 high) on 1.9x volume - strong intraday buy-the-dip/short-covering confirmation after a gap-fill attempt. — 1× TSLA261113C00402500 at ~6.33 ($633 premium, the whole downside). Invalidation: Invalidate if TSLA breaks back below today's open/low zone (~380-376) - that would erase the reversal and signal the gap-down was the real trend.
 - **20:33** · `steward` **hold** — Only 27 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **20:40** · `steward` **hold** — Only 20 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-11-03
 
