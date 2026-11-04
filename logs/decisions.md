@@ -26,6 +26,9 @@
 - **15:36** → `steward` **take_profit** — Buying back at 0.07: 73% of the 0.26 credit is banked, and the last cents are not worth the tail.
 - **15:55** → `steward` **stop** — Buying back at 1.02: the option has doubled against the 0.40 credit. The week is not ordinary — the rule says leave.
 - **15:55** → `steward` **take_profit** — Buying back at 0.08: 73% of the 0.30 credit is banked, and the last cents are not worth the tail.
+- **18:06** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 2 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_snapshot({"symbols": "TSLA,AMZN,CAT,MU,XOM,ORCL"})
+- **18:06** → `hunter` **buy_put** — XOM gapped down -2.1% and sold through the day to close/trade right at session lows (167.4 low vs 167.98 last) on 1.4x volume, confirming distribution not dip-buying. Breakdown below 167.4 likely continues into next session. — 3× XOM261113P00165000 at ~2.46 ($738 premium, the whole downside). Invalidation: Invalidate if XOM reclaims and holds above today's VWAP (~170.5) or prior close 177.5 area is irrelevant; a close back above 170.5 kills the breakdown thesis.
+- **18:06** → `hunter` **buy_call** — TSLA gapped down hard (-4.6%) but reversed all session, now trading near the day's high (390 vs 391.7 high) on 1.9x volume - strong intraday buy-the-dip/short-covering confirmation after a gap-fill attempt. — 1× TSLA261113C00402500 at ~6.33 ($633 premium, the whole downside). Invalidation: Invalidate if TSLA breaks back below today's open/low zone (~380-376) - that would erase the reversal and signal the gap-down was the real trend.
 
 ## 2026-11-03
 
