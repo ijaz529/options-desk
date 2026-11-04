@@ -32,6 +32,7 @@
 - **20:33** · `steward` **hold** — Only 27 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **20:40** · `steward` **hold** — Only 20 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **20:48** · `steward` **hold** — Only 11 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **20:50** · `hunter` **hold** — Only 9 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-11-03
 
