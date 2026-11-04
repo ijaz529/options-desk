@@ -24,6 +24,8 @@
 - **15:07** → `hunter` **buy_put** — CAT in a clean 6-day breakdown (713->595, -16.5%). Today gapped down again and closed at session lows (range_pos 0.25) with zero intraday bounce attempt, unlike peers. Momentum continuation, not exhaustion. — 1× CAT261113P00575000 at ~9.59 ($959 premium, the whole downside). Invalidation: Close back above prior day's close (~624) or any intraday reclaim of today's opening gap (~609) invalidates continuation thesis.
 - **15:07** → `hunter` **buy_call** — COIN crashed 160->137 (-14%) then printed 3 straight higher closes (137->145->149.5), today gapping down but fully reversing to close +2.8% at session highs (range_pos 0.98). Reversal off oversold lows is confirming. — 4× COIN261113C00157500 at ~3.67 ($1,468 premium, the whole downside). Invalidation: Close back below the 137 swing low, or failure to hold above 145 support on any pullback, invalidates the reversal.
 - **15:36** → `steward` **take_profit** — Buying back at 0.07: 73% of the 0.26 credit is banked, and the last cents are not worth the tail.
+- **15:55** → `steward` **stop** — Buying back at 1.02: the option has doubled against the 0.40 credit. The week is not ordinary — the rule says leave.
+- **15:55** → `steward` **take_profit** — Buying back at 0.08: 73% of the 0.30 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-11-03
 
