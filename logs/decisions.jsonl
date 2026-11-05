@@ -4338,3 +4338,4 @@
 {"ts": "2026-11-05T18:07:27+00:00", "agent": "hunter", "action": "hold", "because": "Claude read the tape and proposed nothing — premium spent on a weak thesis is the only way this sleeve dies."}
 {"ts": "2026-11-05T20:49:49+00:00", "agent": "steward", "action": "hold", "because": "Only 10 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
 {"ts": "2026-11-05T20:56:57+00:00", "agent": "steward", "action": "hold", "because": "Only 3 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
+{"ts": "2026-11-05T21:04:32+00:00", "agent": "steward", "action": "hold", "because": "The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement."}
