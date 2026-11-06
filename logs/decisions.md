@@ -26,6 +26,7 @@
 - **18:07** 🛑 `hunter` **veto** — Proposal discarded before the gates: AVGO: thesis empty or over 280 chars.
 - **18:07** · `hunter` **hold** — Already carrying AMD risk — one position per name.
 - **20:05** · `steward` **hold** — Only 54 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **20:14** · `steward` **hold** — Only 45 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-11-05
 

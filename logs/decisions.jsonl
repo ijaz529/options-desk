@@ -4371,3 +4371,4 @@
 {"ts": "2026-11-06T18:07:09+00:00", "agent": "hunter", "action": "veto", "because": "Proposal discarded before the gates: AVGO: thesis empty or over 280 chars."}
 {"ts": "2026-11-06T18:07:09+00:00", "agent": "hunter", "action": "hold", "because": "Already carrying AMD risk — one position per name."}
 {"ts": "2026-11-06T20:05:46+00:00", "agent": "steward", "action": "hold", "because": "Only 54 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
+{"ts": "2026-11-06T20:14:39+00:00", "agent": "steward", "action": "hold", "because": "Only 45 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
