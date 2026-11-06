@@ -4,6 +4,7 @@
 
 - **13:16** → `steward` **take_profit** — Buying back at 0.12: 70% of the 0.40 credit is banked, and the last cents are not worth the tail.
 - **13:16** → `hunter` **stop** — Premium 0.17 vs 6.30 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+- **13:51** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-11-05
 
