@@ -20,6 +20,8 @@
 - **14:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **14:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **14:56** → `steward` **take_profit** — Buying back at 0.02: 91% of the 0.23 credit is banked, and the last cents are not worth the tail.
+- **15:07** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 3 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_bars({"symbols": "AMD,MU,NVDA,INTC", "timeframe": "1Day", "days": 10}); get_news({"symbols": "AMD,MU,NVDA,INTC", "start": "2025-01-01", "limit": 10})
+- **15:07** → `hunter` **buy_put** — AMD +12% bounce off a ~30% two-day capitulation crash (578->404) came on only 25% of the prior day's volume and closed off the day's high (range_pos 0.71) — thin-conviction dead-cat bounce likely to partially round-trip as shorts stop covering and sellers return. — 1× AMD261113P00432500 at ~14.68 ($1,468 premium, the whole downside). Invalidation: Invalidated if AMD closes above ~470 (new post-crash swing high) on expanding volume, signaling genuine trend reversal rather than relief bounce.
 
 ## 2026-11-05
 
