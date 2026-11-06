@@ -22,6 +22,9 @@
 - **14:56** → `steward` **take_profit** — Buying back at 0.02: 91% of the 0.23 credit is banked, and the last cents are not worth the tail.
 - **15:07** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 3 read-only tool calls before concluding. Trail: get_all_positions({}); get_stock_bars({"symbols": "AMD,MU,NVDA,INTC", "timeframe": "1Day", "days": 10}); get_news({"symbols": "AMD,MU,NVDA,INTC", "start": "2025-01-01", "limit": 10})
 - **15:07** → `hunter` **buy_put** — AMD +12% bounce off a ~30% two-day capitulation crash (578->404) came on only 25% of the prior day's volume and closed off the day's high (range_pos 0.71) — thin-conviction dead-cat bounce likely to partially round-trip as shorts stop covering and sellers return. — 1× AMD261113P00432500 at ~14.68 ($1,468 premium, the whole downside). Invalidation: Invalidated if AMD closes above ~470 (new post-crash swing high) on expanding volume, signaling genuine trend reversal rather than relief bounce.
+- **18:07** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 3 read-only tool calls before concluding. Trail: get_stock_bars({"symbols": "AMD,AVGO,MU,NVDA,INTC", "timeframe": "1Day", "days": 6}); get_all_positions({}); get_news({"symbols": "AMD,AVGO,MU", "limit": 10})
+- **18:07** 🛑 `hunter` **veto** — Proposal discarded before the gates: AVGO: thesis empty or over 280 chars.
+- **18:07** · `hunter` **hold** — Already carrying AMD risk — one position per name.
 
 ## 2026-11-05
 
