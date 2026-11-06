@@ -25,6 +25,7 @@
 - **18:07** → `hunter` **research** — Worked the tape through Alpaca's MCP server: 3 read-only tool calls before concluding. Trail: get_stock_bars({"symbols": "AMD,AVGO,MU,NVDA,INTC", "timeframe": "1Day", "days": 6}); get_all_positions({}); get_news({"symbols": "AMD,AVGO,MU", "limit": 10})
 - **18:07** 🛑 `hunter` **veto** — Proposal discarded before the gates: AVGO: thesis empty or over 280 chars.
 - **18:07** · `hunter` **hold** — Already carrying AMD risk — one position per name.
+- **20:05** · `steward` **hold** — Only 54 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-11-05
 
