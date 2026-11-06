@@ -1,5 +1,10 @@
 # The desk's decision log
 
+## 2026-11-06
+
+- **13:16** → `steward` **take_profit** — Buying back at 0.12: 70% of the 0.40 credit is banked, and the last cents are not worth the tail.
+- **13:16** → `hunter` **stop** — Premium 0.17 vs 6.30 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+
 ## 2026-11-05
 
 - **13:16** → `hunter` **stop** — Premium 2.29 vs 6.30 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
