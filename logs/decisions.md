@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-11-07
+
+- **00:51** → `desk` **status** — The Wheelhouse: equity $86,391.54 · -2.91% on the $88,983 baseline · hunter trial $-406 after 51 buy(s)
+
 ## 2026-11-06
 
 - **13:16** → `steward` **take_profit** — Buying back at 0.12: 70% of the 0.40 credit is banked, and the last cents are not worth the tail.
