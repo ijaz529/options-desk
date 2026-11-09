@@ -22,6 +22,7 @@
 - **18:06** · `hunter` **hold** — Income-only: equity $85,104 is below the $85,424 kill switch, so the Hunter stands down without reading the tape.
 - **23:09** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 - **23:16** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **23:25** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-11-07
 
