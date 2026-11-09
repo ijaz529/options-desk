@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-11-09
+
+- **13:15** → `hunter` **stop** — Premium 4.75 vs 14.65 entry: the thesis is half gone — all out. Losses are capped by construction; this is the cap doing its job.
+
 ## 2026-11-07
 
 - **00:51** → `desk` **status** — The Wheelhouse: equity $86,391.54 · -2.91% on the $88,983 baseline · hunter trial $-406 after 51 buy(s)
