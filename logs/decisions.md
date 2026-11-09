@@ -21,6 +21,7 @@
 - **15:06** → `hunter` **buy_call** — NVDA gapped -7.3% to a new 6-day-downtrend low (170.24) on 1.17x volume (highest relative volume in universe), then reversed intraday to close near session high (range_pos 0.86). Capitulation+reversal on volume = short-term bounce setup, not low-conviction drift. — 6× NVDA261113C00185000 at ~2.79 ($1,674 premium, the whole downside). Invalidation: Close or sustained trade below today's low of 170.24 invalidates the reversal thesis; exit calls.
 - **18:06** · `hunter` **hold** — Income-only: equity $85,104 is below the $85,424 kill switch, so the Hunter stands down without reading the tape.
 - **23:09** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **23:16** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-11-07
 
