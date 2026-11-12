@@ -113,6 +113,14 @@ by-product nobody acted on. Moving him to index funds or to defined-risk spreads
 change of universe and of structure, which the review goals reserve for a pre-registered test.
 That test is written in `docs/STEWARD_INDEX_PREREG.md` before its data is read.
 
+**Tested the same day, and not adopted.** Put spreads on SPY, QQQ and IWM, sized to a worst case
+of $5,000 a fund, over 135 weeks from March 2024: **−$16,579** at a cent a share, against −$195
+for his twelve names. All six lines of the bar failed; held to expiry with no exits the spreads
+lost more. A spread that collects 12% of its width has to win nine times in ten. The names
+themselves earned about nothing, and the weeks holding an earnings date made $351 between them,
+so rule 10 is a guard against a gap and not a source of income. The full tables are in the
+pre-registration. He stays on his twelve names; the question is closed until his review.
+
 ## Built 10 Oct 2026 — the put spread, for when a cash-secured put does not pay
 
 "Defined-risk put spreads when IV is thin" has been in the capital plan since August, and the

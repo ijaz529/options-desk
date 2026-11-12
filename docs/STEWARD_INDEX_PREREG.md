@@ -91,3 +91,66 @@ year needs years to tell from luck.
 X is above zero and ahead of the names, by less than the bar asks, and it does not hold at three
 cents: four fills a spread on credits of a dollar or two leave little. N10 is better than N by
 about the size of two or three earnings gaps. If this is wrong the result says so.
+
+---
+
+## Results (appended 12 Nov 2026, after the three commits above)
+
+Run: `research/weekend/steward_index.py 0.01` and `0.03`, on the history fetched 11:10 to
+12:10 UTC. One code fault was mended before the first full run (a morning with no priced put
+crashed the picker); no rule, arm or threshold was touched.
+
+**Arm X fails all six lines. The Steward stays on his twelve names.**
+
+| Arm | Trades | Trades won | Total | A year | Of the sleeve a year | Worst week | Deepest fall | First half | Second half | 6 Oct to 6 Nov 2026 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| N, his names as he was | 1,223 | 70% | −$195 | −$74 | −0.1% | −$740 | −$1,775 | −$437 | +$242 | −$244 |
+| N10, without earnings weeks | 1,100 | 70% | −$546 | −$208 | −0.3% | −$641 | −$1,723 | −$755 | +$209 | −$253 |
+| X, spreads on SPY, QQQ, IWM | 338 | 66% | −$16,579 | −$6,314 | −9.0% | −$6,065 | −$19,317 | −$4,022 | −$12,557 | −$1,581 |
+
+At three cents a share: N −$5,079, N10 −$4,938, X −$49,163.
+
+| Line | Asked | Found | Met |
+|---|---|---|---|
+| 1 | X above zero, whole window and each half | −$16,579; −$4,022; −$12,557 | no |
+| 2 | X at least $1,050 a year ahead of N10 | $6,106 a year behind | no |
+| 3 | X's deepest fall no deeper | −$19,317 against −$1,723 | no |
+| 4 | Lines 1 and 2 at three cents | −$49,163 | no |
+| 5 | Two funds of three above zero | SPY −$8,789, QQQ −$3,246, IWM −$4,544 | no |
+| 6 | Above zero, or a smaller loss than the names, in the fall | −$1,581 against −$253 | no |
+
+**Why the spread loses.** The average spread took in about 12% of its width (SPY 0.78 on 6.91,
+QQQ 0.95 on 8.09, IWM 0.39 on 3.19). A structure that collects 12 and risks 88 has to win about
+nine times in ten, and a put sold at a fifth of a delta does not. It was stopped out in 116 of
+338 trades.
+
+**A check made after the fact, as description only.** A spread's price here is two prints taken
+at different moments in an hour, which could fire a stop that a quoted market would not. So the
+same spreads were also settled at expiry with no exits, where no option print enters after the
+entry: −$26,752, worse, with a worst week of −$14,705. The loss belongs to the structure, not to
+the prints.
+
+**What the test says about the names, which nobody asked.**
+- His rules on his own twelve names earned about nothing in 2.7 years at a cent a share, and
+  lost $1,900 a year at three cents. The credits are too small to carry any cost. This agrees
+  with the by-product of 10 Oct.
+- **Rule 10 is not supported as an earner.** The 123 name-weeks that held an earnings date made
+  $351 between them: taking them out left the book $351 worse, with a worst week $99 better.
+  The rule was made by hand this morning on one $1,664 loss. On this evidence it buys a little
+  protection against a gap and costs a little income, and the replay cannot see the case that
+  hurt, a put re-sold in mid-week the day before a report. It stays, as the owner's decision
+  stands, and this paragraph is the evidence against it for whoever reviews it.
+
+**The expectation, marked.**
+
+| Stated before the data was read | Result |
+|---|---|
+| X above zero and ahead of the names | wrong: far behind, and below zero |
+| X short of the bar | right, by much more than expected |
+| X does not hold at three cents | right |
+| N10 better than N by two or three earnings gaps | wrong: $351 worse |
+
+**What follows.** As written above for a fail: he stays on his twelve names with rules 10 to 12,
+and the question of index funds is closed until his review, about 24 Dec 2026. That review now
+has a harder question in front of it than the one this test asked: his rules have not earned
+their costs on anything they have been replayed on.

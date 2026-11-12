@@ -54,6 +54,8 @@ def candidates(opt, exp, day, S, q):
 
 
 def pick_short(c, floor):
+    if c.empty or "dl" not in c:      # no priced put that morning
+        return None
     c = c[(c.dl >= BAND[0]) & (c.dl <= BAND[1])]
     if floor:
         c = c[c.O / c.K >= FLOOR]
