@@ -223,6 +223,21 @@ def _entries_blocked(agent: str) -> bool:
     return False
 
 
+def stopped_names(rows: list[dict], expiry: date) -> set[str]:
+    """Names the Steward was stopped out of on a put (or a put spread) of this expiry: he sells
+    nothing more on them until the next one (STRATEGY.md rule 11, 12 Nov 2026). The diary is
+    the state, as it is for the Hunter's take-half."""
+    out = set()
+    for r in rows:
+        if r.get("agent") != "steward" or r.get("action") != "stop":
+            continue
+        for s in [r.get("symbol"), *(r.get("symbols") or [])]:
+            occ = parse_occ(s)
+            if occ and occ[1] == expiry:
+                out.add(occ[0])
+    return out
+
+
 def steward_session() -> None:
     # a slot GitHub delivers hours late must not place puts on a shut market (28 Sep 2026)
     if _entries_blocked("steward"):
@@ -241,6 +256,8 @@ def steward_session() -> None:
                 if p.get("asset_class") == "us_equity" and float(p["qty"]) > 0}
     held_unders |= set(assigned)
     expiry = next_weekly_friday()
+    stopped = stopped_names(log.rows(), expiry)
+    today = datetime.now(timezone.utc).date()
     for u in UNIVERSE:
       try:
         if u in assigned:
@@ -249,6 +266,18 @@ def steward_session() -> None:
             continue
         if u in held_unders:
             log.record("steward", "hold", f"Already carrying {u} risk — one position per name.")
+            continue
+        if u in stopped:
+            log.record("steward", "hold",
+                       f"Stopped out of a {u} {expiry:%d %b} put already: nothing more is sold on it "
+                       "for this expiry (rule 11).", symbol=u)
+            continue
+        try:
+            block = steward.earnings_block(broker.earnings_dates(u), today, expiry)
+        except Exception as e:
+            block = f"its earnings date could not be read ({str(e)[:80]}), and a put is not sold blind (rule 10)"
+        if block:
+            log.record("steward", "hold", f"No {u} put this round: {block}.", symbol=u)
             continue
         quotes = broker.weekly_puts(u, expiry)
         p = steward.pick(quotes)
@@ -589,6 +618,19 @@ def sweep() -> None:
             entry_credit=credit, current_mid=current)
         if fire:
             kind, because = fire
+            if kind == "stop" and cp == "P":
+                # a stop is not placed on a price a put cannot have (rule 12, the PFE 29 put of 29 Oct 2026)
+                try:
+                    spot = broker.spot_price(u)
+                except Exception:
+                    spot = None            # no share price: the stop goes in as it always did
+                if spot is not None and not steward.believable_put_mark(strike, spot, current):
+                    log.record("steward", "hold",
+                               f"{u} {strike:g} put: the broker marks it at {current:.2f} with the shares at "
+                               f"{spot:.2f}, more than a put at that strike can be worth. No stop is placed "
+                               "on a price like that (rule 12); the next sweep reads it again.",
+                               symbol=p["symbol"])
+                    continue
             order_id = broker.buy_to_close(p["symbol"], round(current * 1.02, 2), qty=int(abs(p["qty"])))
             log.record("steward", kind, because, symbol=p["symbol"], order_id=order_id)
 

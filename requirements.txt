@@ -3,3 +3,4 @@ anthropic>=1.0
 python-dotenv>=1.0
 pytest>=8
 mcp>=1.0
+yfinance>=1.0   # earnings dates for the Steward's rule 10 (12 Nov 2026); Alpaca serves none

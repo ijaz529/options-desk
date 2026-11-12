@@ -8,6 +8,7 @@ a market. The Risk Officer still reviews everything this module proposes.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import date
 
 from desk.broker import PutQuote
 
@@ -153,3 +154,33 @@ def exit_action(entry_credit: float, current_mid: float) -> tuple[str, str] | No
                 f"Buying back at {current_mid:.2f}: the option has doubled against the "
                 f"{entry_credit:.2f} credit. The week is not ordinary — the rule says leave.")
     return None
+
+
+# No put through an earnings report (STRATEGY.md "Amended 12 Nov 2026", rule 10). The INTC 86
+# put sold on 28 Oct 2026 met a report the next evening and cost $1,664 of the Steward's $2,808.
+EARNINGS_DUE_DAYS = 80        # a company reports about every 91 days: past this, the next one is due
+
+
+def earnings_block(dates: list[date], today: date, expiry: date) -> str | None:
+    """Why this name gets no new put for this expiry, or None. `dates` are the earnings dates
+    the source holds (none for a fund). A report between today and the expiry blocks; so does a
+    newest date so old that the next report is due and not yet dated."""
+    inside = [d for d in dates if today <= d <= expiry]
+    if inside:
+        return (f"it reports earnings on {min(inside):%d %b}, on or before the {expiry:%d %b} expiry, and a put "
+                "is a bet on an ordinary week (rule 10)")
+    if dates and (expiry - max(dates)).days > EARNINGS_DUE_DAYS:
+        return (f"its last report was {max(dates):%d %b %Y}, so the next is due and not yet dated; "
+                "no put is sold until it is (rule 10)")
+    return None
+
+
+# A stop is not placed on a price a put cannot have (rule 12). On 29 Oct 2026 the PFE 29 put was
+# bought back at 4.90 with the shares above 29.50: the broker's mark was believed, and paid.
+MARK_TIME_VALUE_CAP = 0.06    # of the strike, for a contract with a week or less to run
+
+
+def believable_put_mark(strike: float, spot: float, mark: float) -> bool:
+    """A put is worth at most its intrinsic value plus time value; the time value of a weekly
+    is capped at MARK_TIME_VALUE_CAP of the strike."""
+    return mark <= max(strike - spot, 0.0) + MARK_TIME_VALUE_CAP * strike

@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, timedelta
 
 from dotenv import load_dotenv
 
@@ -226,19 +226,35 @@ def market_clock() -> tuple[bool, float]:
     return bool(c.is_open), (c.next_close - c.timestamp).total_seconds() / 60.0
 
 
+def closed_orders_since(since_iso: str) -> list:
+    """Every closed order from `since_iso`, however many: the broker returns at most 500 a call,
+    newest first, so the read walks back a page at a time. Until 12 Nov 2026 only the first page
+    was read (295 orders since 30 Sep, so nothing was yet lost)."""
+    from alpaca.trading.requests import GetOrdersRequest
+    from alpaca.trading.enums import QueryOrderStatus
+    seen, until = {}, None
+    while True:
+        page = trading().get_orders(GetOrdersRequest(status=QueryOrderStatus.CLOSED, after=since_iso,
+                                                     until=until, limit=500))
+        fresh = [o for o in page if getattr(o, "id", id(o)) not in seen]
+        for o in fresh:
+            seen[getattr(o, "id", id(o))] = o
+        stamps = [o.submitted_at for o in page if getattr(o, "submitted_at", None)]
+        if len(page) < 500 or not fresh or not stamps:
+            return list(seen.values())
+        until = min(stamps) + timedelta(microseconds=1)   # the edge order comes back and is dropped as seen
+
+
 def pnl_since(symbols: set[str], since_iso: str) -> float:
     """Realised + marked P&L on `symbols` from `since_iso`: sale proceeds minus purchase cost
     from the broker's own fills, plus the market value of anything still held. An option that
     expires worthless has no fill and no value, so its full premium counts as lost."""
-    from alpaca.trading.requests import GetOrdersRequest
-    from alpaca.trading.enums import QueryOrderStatus
     if not symbols:
         return 0.0
     norm = lambda s: s.replace("/", "")
     want = {norm(s) for s in symbols}
     cash = 0.0
-    for o in trading().get_orders(GetOrdersRequest(status=QueryOrderStatus.CLOSED,
-                                                   after=since_iso, limit=500)):
+    for o in closed_orders_since(since_iso):
         if not o.symbol:     # a multi-leg order (a Steward spread) has no symbol of its own
             continue
         if norm(o.symbol) not in want or not o.filled_qty or not o.filled_avg_price:
@@ -248,6 +264,15 @@ def pnl_since(symbols: set[str], since_iso: str) -> float:
         cash += amount if o.side.value == "sell" else -amount
     held = sum(float(p.market_value) for p in trading().get_all_positions() if norm(p.symbol) in want)
     return cash + held
+
+
+def earnings_dates(symbol: str) -> list[date]:
+    """The earnings date(s) Yahoo holds for `symbol`: the next report once it is dated, the last
+    one until then, none for a fund. A failed read raises, and the caller sells no put blind
+    (STRATEGY.md rule 10)."""
+    import yfinance as yf
+    cal = yf.Ticker(symbol).calendar or {}
+    return [d for d in (cal.get("Earnings Date") or []) if isinstance(d, date)]
 
 
 def account_number() -> str:
