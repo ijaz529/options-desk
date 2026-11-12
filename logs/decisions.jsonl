@@ -4489,3 +4489,4 @@
 {"ts": "2026-11-12T14:51:02+00:00", "agent": "steward", "action": "hold", "because": "Stopped out of a INTC 13 Nov put already: nothing more is sold on it for this expiry (rule 11).", "symbol": "INTC"}
 {"ts": "2026-11-12T14:51:03+00:00", "agent": "steward", "action": "hold", "because": "No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
 {"ts": "2026-11-12T14:51:04+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
+{"ts": "2026-11-12T15:05:58+00:00", "agent": "hunter", "action": "hold", "because": "Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape."}
