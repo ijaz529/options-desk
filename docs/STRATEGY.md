@@ -40,6 +40,79 @@ same strategy, so its behaviour can be watched over weeks rather than one week:
 3. **De-risk is manual only.** It was scheduled for the contest's final session;
    with no final session it runs only on `workflow_dispatch`.
 
+## Amended 12 Nov 2026 — the Steward after six weeks: earnings, re-entry and a price check
+
+**The reading that led here.** From the broker's own fills, 30 Sep to 11 Nov 2026, with the
+account at **$84,325** (−5.2% on the $88,983 baseline, under the $85,424 switch). QQQ fell from
+760 to 647 between 6 Oct and 5 Nov, and Intel from 112 to 52.
+
+| | Trades | Winners | Result |
+|---|---|---|---|
+| The Steward's short puts | 70 | 38 | −$2,808 |
+| The Hunter's long options | 48 | 12 | −$2,591 |
+
+- **One name is two-thirds of the Steward's loss.** Intel: 17 puts, −$1,823. The 30 Oct 86 put
+  was sold on 28 Oct, the company reported after the close on 29 Oct, the shares opened 29%
+  lower, and the put was bought back at 17.95 against 1.31 collected: −$1,664. He then sold
+  Intel puts at lower strikes again in the same week, and the week after, three times each.
+- **One price was not a price.** On 29 Oct the Pfizer 30 Oct 29 put was bought back at **4.90**
+  against 0.08 collected, −$482. Pfizer did not trade below 29.50 that week: a 29 put could not
+  be worth 4.90. The sweep read the broker's mark, believed it, and paid it.
+- **The stop is not the fault.** Of 31 losing puts that have since expired, 17 finished out of
+  the money and would have kept their credit. Holding all 31 to expiry would still have lost
+  more: $5,327 of intrinsic value against the $3,826 actually lost. The stop stays as written.
+- **The wins are small.** The average winner kept $29 and the average loser cost $122. That is
+  the universe and the one-contract size, and it is the subject of the index test below, not of
+  a rule changed here.
+
+**The owner's decision, 12 Nov 2026.** The review goals say a rule is changed by a
+pre-registered test, never by hand after a bad week. Rules 10 and 11 below are changed by hand,
+inside the Steward's 60-session record, on the owner's instruction, because each answers one
+identified fault and neither moves a strike, a delta or a premium floor. The record carries the
+date: the Steward's sessions from 12 Nov are read with these rules, the sessions before without.
+His judgement day (about 24 Dec) and his bar are unchanged.
+
+10. **No put through an earnings report.** No cash-secured put and no put spread is opened on a
+    name that reports between today and the expiry, both days included. The date is Yahoo's
+    (`broker.earnings_dates`). If the newest date Yahoo holds is more than 80 days before the
+    expiry, the next report is due and not yet dated, and the name is also left alone. A fund
+    has no report and is not affected. If the date cannot be read at all, no put is sold on
+    that name that session: a put is not sold blind. Each case writes a `hold` row. The covered
+    call is not affected: the shares carry the report whether or not a call is written.
+11. **No second put on a name stopped out for the same expiry.** Once the Steward has been
+    stopped out of a put (or a put spread) on a name, he sells nothing more on that name for
+    that expiry. The next expiry starts clean. The state is the diary: a `stop` row whose
+    contract carries the name and the expiry. A stop whose diary row has not yet been committed
+    when the next session starts can be missed; the sweeps run twenty minutes apart and the
+    Steward twice a day, so the window is small, and it is named here rather than hidden.
+12. **A stop is not placed on a price a put cannot have.** Before a short put is bought back on
+    its stop, the mark is checked against the shares: a put is worth at most its intrinsic
+    value (strike less the share price, never below zero) plus time value, and for a contract
+    with a week or less to run the time value is capped at 6% of the strike. A mark above that
+    is not believed: no order goes in, a `hold` row says so, and the next sweep reads it again.
+    If the share price cannot be read, the stop goes in as before. Take-profits are untouched
+    (a mark that low costs nothing to act on). This is a check on an input, not a new exit.
+
+**The Hunter is locked out, by his own rule, since 10 Nov 2026.** His trial figure reached
+−$2,538 at 15:06 UTC that day after 52 buys, past the $2,000 budget made permanent on 24 Oct,
+and −$2,508 at the 11 Nov close with nothing left open. Calls lost $3,212; puts made $621 in a
+market that fell 15%. The 22 positions closed within a day of entry lost $9,835 between them
+(3 winners); the 21 held longer made $7,318 (8 winners). That split is a lead and no more: a
+position closed in a day is usually one that hit its stop. **He stays out.** Nothing reopens him
+short of a dated decision written here, and the comparison against random picks pre-registered
+on 14 Oct (`docs/HUNTER_NULL_PREREG.md`), still not run, comes before any such decision.
+
+**A fault mended in passing: the trial figure read at most 500 orders.** `broker.pnl_since`
+asked the broker for closed orders with a limit of 500 and no second page. 295 had been placed
+since 30 Sep, so nothing was yet lost, and it would have gone wrong about mid-December by
+dropping the oldest fills. It now reads every page.
+
+**Still to be tested, not changed here: the Steward on index funds.** The replay of 10 Oct found
+his rules earned about nothing on his twelve names over 136 weeks against +6.7% on SPY, as a
+by-product nobody acted on. Moving him to index funds or to defined-risk spreads on them is a
+change of universe and of structure, which the review goals reserve for a pre-registered test.
+That test is written in `docs/STEWARD_INDEX_PREREG.md` before its data is read.
+
 ## Built 10 Oct 2026 — the put spread, for when a cash-secured put does not pay
 
 "Defined-risk put spreads when IV is thin" has been in the capital plan since August, and the
@@ -281,10 +354,13 @@ working and the universe wrong. Weekly expiries only.
 4. Max 1 position per underlying — where "position" counts WORKING ORDERS too,
    not just fills. The per-name ceiling is the Risk Officer's 20%-of-account
    concentration cap (~$20k).
+5. No put through an earnings report, and no second put on a name stopped out for the
+   same expiry (rules 10 and 11, "Amended 12 Nov 2026").
 
 **Exit rules:**
 - Take profit at 65% of max premium (buy back).
-- Stop: buy back if the option doubles against entry.
+- Stop: buy back if the option doubles against entry. The mark is checked against the
+  share price first (rule 12, "Amended 12 Nov 2026").
 - Assignment is acceptable — the strikes are prices we'd own at. Assigned stock
   is sold with a covered call the next session (the wheel's second half; its terms
   are in "Built 10 Oct 2026").
