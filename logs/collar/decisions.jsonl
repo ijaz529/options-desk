@@ -121,3 +121,4 @@
 {"ts": "2026-11-11T18:10:54+00:00", "agent": "collar", "action": "hold", "because": "The collar is in place until 31 Dec. It is never adjusted in between — that is the rule, whatever the market does."}
 {"ts": "2026-11-12T11:30:10+00:00", "agent": "collar", "action": "status", "because": "The Harbour: equity $99,055.60 · -0.94% on the $100,000 baseline · cash $22,858 · 4 position(s)", "equity": 99055.6, "baseline": 100000.0, "unrealized": -944.22}
 {"ts": "2026-11-12T14:11:01+00:00", "agent": "collar", "action": "hold", "because": "The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement."}
+{"ts": "2026-11-12T15:11:10+00:00", "agent": "collar", "action": "hold", "because": "The collar is in place until 31 Dec. It is never adjusted in between — that is the rule, whatever the market does."}
