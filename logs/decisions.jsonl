@@ -4518,3 +4518,4 @@
 {"ts": "2026-11-13T14:51:08+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
 {"ts": "2026-11-13T15:05:58+00:00", "agent": "hunter", "action": "hold", "because": "Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape."}
 {"ts": "2026-11-13T18:06:07+00:00", "agent": "hunter", "action": "hold", "because": "Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape."}
+{"ts": "2026-11-13T20:39:49+00:00", "agent": "steward", "action": "hold", "because": "Only 20 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round."}
