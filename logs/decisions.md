@@ -20,6 +20,7 @@
 - **18:06** · `hunter` **hold** — Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape.
 - **20:39** · `steward` **hold** — Only 20 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **20:45** · `steward` **hold** — Only 15 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
+- **20:53** · `steward` **hold** — Only 6 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 
 ## 2026-11-12
 
