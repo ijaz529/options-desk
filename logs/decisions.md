@@ -24,6 +24,7 @@
 - **20:55** · `hunter` **hold** — Only 4 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **20:57** · `steward` **hold** — Only 2 minutes to the close — under the 60-minute floor for a new position to fill (rule 9). No opening order this round.
 - **21:01** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **21:06** → `desk` **status** — The Wheelhouse: equity $84,332.30 · -5.23% on the $88,983 baseline · hunter trial $-2,508 after 52 buy(s)
 
 ## 2026-11-12
 
