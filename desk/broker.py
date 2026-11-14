@@ -9,14 +9,15 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 from dotenv import load_dotenv
 
 from alpaca.trading.client import TradingClient
 from alpaca.trading.enums import AssetStatus, ContractType, OrderSide, TimeInForce
-from alpaca.trading.requests import (GetOptionContractsRequest, LimitOrderRequest,
-                                     MarketOrderRequest)
+from alpaca.trading.requests import (GetCalendarRequest, GetOptionContractsRequest,
+                                     LimitOrderRequest, MarketOrderRequest)
 from alpaca.data.historical.option import OptionHistoricalDataClient
 from alpaca.data.historical.stock import StockHistoricalDataClient
 from alpaca.data.requests import OptionSnapshotRequest, StockBarsRequest, StockLatestTradeRequest
@@ -224,6 +225,16 @@ def market_clock() -> tuple[bool, float]:
     """(is_open, minutes_to_next_close) from the broker's own clock — rule 9's input."""
     c = trading().get_clock()
     return bool(c.is_open), (c.next_close - c.timestamp).total_seconds() / 60.0
+
+
+def trading_days(start: date, end: date) -> list[tuple[date, datetime]]:
+    """Each trading day from `start` to `end`, both included, with the moment it closes (UTC), from
+    the broker's own calendar: holidays are absent, a half-day keeps its early close, and the hour
+    daylight saving moves (16:00 New York is 20:00 UTC in summer, 21:00 in winter) comes out right.
+    The broker gives the close in New York time without a zone."""
+    ny = ZoneInfo("America/New_York")
+    return [(c.date, c.close.replace(tzinfo=ny).astimezone(timezone.utc))
+            for c in trading().get_calendar(GetCalendarRequest(start=start, end=end))]
 
 
 def closed_orders_since(since_iso: str) -> list:
