@@ -6,6 +6,7 @@
 - **06:24** → `desk` **status** — The Wheelhouse: equity $84,332.30 · -5.23% on the $88,983 baseline · hunter trial $-2,508 after 52 buy(s)
 - **10:20** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD -1.4%, ETH/USD -1.0%). Cash is a position.
 - **16:36** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD -4.3%, ETH/USD -5.5%). Cash is a position.
+- **16:39** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD -4.2%, ETH/USD -5.3%). Cash is a position.
 
 ## 2026-11-13
 
