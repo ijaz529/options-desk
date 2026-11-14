@@ -1,8 +1,10 @@
 # The Steward's strike and premium floor: pre-registration
 
-Drafted by Claude on 14 Nov 2026 (on top of commit 4d0d766), for the owner's review; **not yet
-adopted**. No data has been opened for it beyond what is listed below as already read; its
-hold-out has not begun trading. *(Owner)* marks a proposal for the owner to decide.
+Drafted by Claude on 14 Nov 2026 (on top of commit 4d0d766), for the owner's review. **Adopted by
+the owner as drafted on Sat 14 Nov 2026**, before the open on Mon 16 Nov, so the hold-out is the
+five expiries 20 Nov to 18 Dec. No data has been opened for it beyond what is listed below as
+already read; its hold-out has not begun trading. *(Owner)* marks what were proposals for the
+owner; adopting it as drafted accepts them.
 
 ## Why
 
@@ -80,7 +82,7 @@ cannot apply and floors are read off the print. Black–Scholes, r 4.5%, q 0.
 As a check, N10 is also run on the 0.88–1.03 strikes alone, and the difference is reported before
 any candidate is read.
 
-**Code, committed with this file before any fetch, and nothing else:**
+**Code, committed before any fetch, and nothing else** (not yet written when this was adopted):
 1. `research/weekend/fetch.py`: the put window (:55) becomes two optional arguments, defaults
    unchanged; the half-day close at :37.
 2. A new `research/weekend/steward_strike.py`, from the name arm of `steward_index.py`, which stays
@@ -172,6 +174,5 @@ never fetched. A pass says a rule did better here, not that he has an edge (eure
 - N10 is read first, alone, on both windows. If the wider-window N10 is more than $150 from −$546
   at a cent, the gap is traced and written down before any candidate is read. A fault found mid-run
   is mended in the code only, never a rule, arm or threshold, and the results say so.
-- Adopted, as it stands or amended, before the open (9:30 New York) on **Mon 16 Nov 2026**. If
-  later, the hold-out starts at the first expiry entered after adoption: the desk trades those
-  weeks in plain view.
+- Adopted as it stands on Sat 14 Nov 2026, before the open (9:30 New York) on **Mon 16 Nov
+  2026**, the deadline this draft set; the hold-out is therefore the five expiries above.
