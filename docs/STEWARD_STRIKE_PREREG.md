@@ -11,8 +11,8 @@ Wed 23 Dec), for equity above the $88,983 baseline after costs, no kill-switch t
 a third of puts sold. If missed, "the strike and premium-floor rules go to a pre-registered test
 (not changed by hand)". At session 33 (13 Nov) equity is $84,332.30, −5.23%; the switch tripped on
 9 Nov, so that line is lost. Of the 75 puts sold from 30 Sep that the diary shows closed by a stop
-or a take-profit, 34 were stopped (35 counting the BAC 54 put sold on 28 Sep and stopped on
-1 Oct). The test is owed.
+or a take-profit, 34 were stopped (35 of 78 counting the three puts sold on 28 Sep and closed
+from 30 Sep, among them the BAC 54 stopped on 1 Oct). The test is owed.
 
 ## What is already known, and so cannot count as evidence
 
@@ -22,11 +22,13 @@ or a take-profit, 34 were stopped (35 counting the BAC 54 put sold on 28 Sep and
   span; that is the fresh question lines 1 to 5 ask.
 - **The 10 Oct replay** also ran his rules without the 0.15% floor, and printed the result. No
   figure from it is in the repo, but it may have been seen, so no arm lowers the floor.
-- **The live record** was watched: 75 puts, −$3,042 at diary marks. In drafting it was cut at
-  three credits a share, fills at the cut counted on the kept side: at $0.25, the 23 below lost
-  $815 and the 52 at or above $2,227; at $0.30, 34 lost $661 and 41 lost $2,381; at $0.40, 50 lost
-  $1,217 and 25 lost $1,825. At every cut the dearer puts lost more each. C30's $0.30 was chosen
-  after these cuts were read; they argue against it, not for it.
+- **The live record** was watched: 75 puts, −$3,042 at diary marks, each credit the fill its exit
+  row states. In drafting it was cut at three credits a share, fills at the cut counted on the
+  kept side: at $0.25, the 23 below lost $815 and the 52 at or above $2,227; at $0.30, 34 lost
+  $661 and 41 lost $2,381; at $0.40, 50 lost $1,217 and 25 lost $1,825. On the offers' credits,
+  a cent or more lower on 18 of the 75, the figures are −$3,064; 23 −$824 and 52 −$2,240; 34 −$672
+  and 41 −$2,392; 51 −$1,204 and 24 −$1,860. At every cut the dearer puts lost more each. C30's
+  $0.30 was chosen after these cuts were read; they argue against it, not for it.
 - The 13 Nov expiry was traded live and is in neither span.
 
 ## The arms
@@ -52,8 +54,8 @@ credit floor, the market test, the call's band. The market test cannot be replay
 The 20/10 spread and the covered call could be, and are left out by choice, as on 12 Nov.
 
 **What live would do that this test does not.** A name-week an arm refuses scores nought here.
-Live, it goes to the 20/10 put spread (run.py:295-300), whose short leg has the same band and no
-premium floor. N10 on 12 Nov was scored the same way, so the comparison is fair, but a candidate
+Live, it goes to the 20/10 put spread (run.py:295-300), whose short leg keeps today's band
+(−0.21 to −0.12) and has no premium floor. N10 on 12 Nov was scored the same way, so the comparison is fair, but a candidate
 that refuses many more weeks than N10 would, live, sell many more spreads than this test has
 seen. The count is reported per arm, and the result says so.
 
@@ -92,11 +94,12 @@ any candidate is read.
 
 Each arm and span, at a cent and at three, as one book against his $70,000 sleeve: trades; exits by
 kind; stops as a share of trades; total, and a year; worst week; deepest fall; each half; expiries
-9 Oct to 6 Nov 2026; median credit; each name; name-weeks the band or the floor refused; picks at
-the window's edge. Each candidate's weekly difference from N10, a week with no trade as nought:
+9 Oct to 6 Nov 2026; median credit; each name; name-weeks the band or the floor refused; apart
+from those, name-weeks with no fetched strike inside the arm's band (the window, not the rule:
+Intel's 6 Nov expiry, after a fall of a quarter, is one); picks at the window's edge. Each candidate's weekly difference from N10, a week with no trade as nought:
 total and t.
 
-The halves split at the middle expiry of the seen span's calendar, the same date for every arm, N10
+The halves are the expiries before 18 Jul 2025 and from it, 69 each, the same for every arm, N10
 included. "A year" is the span's total divided by its length in years (22 Mar 2024 to 6 Nov 2026),
 the same divisor for every arm.
 
@@ -126,15 +129,14 @@ any that beat N10 but missed lines 1 or 5.
 ## What follows
 
 - **Pass:** rule 2 or 3 is amended in STRATEGY.md, dated. In the same commit, "Built 10 Oct 2026"
-  is rewritten so that the spread (its items 1 and 2) and the covered call (its item 4) state their
-  own band and floor rather than pointing to rule 2 or 3, which they do today; neither was
-  replayed, so both keep today's figures. `desk/steward.py` gets separate constants for them,
+  is rewritten so that the spread's short leg (its item 2) and the covered call's floor (its item
+  4) state today's figures rather than pointing to rule 2 or 3; neither was replayed. The spread's
+  item 1 keeps "no cash-secured put qualifies", under the amended rule, as run.py:295-300 does. `desk/steward.py` gets separate constants for them,
   `desk/writeup.py`'s Steward line names the new rule, and tests are added in
   `tests/test_steward.py` (C30's floor on the mid, as the 0.15% is). His 60 sessions are judged at
-  his review as they stand. *(Owner.)* If he keeps running, a new 60-session record starts on the
-  amendment date under the same bar, against a baseline the owner states that day in a dated entry
-  ($88,983 kept, or a re-base, saying which); "no kill-switch trip" is counted from that date.
-  Earlier sessions are kept and labelled (to 11 Nov; 12 Nov to the amendment).
+  his review as they stand, and kept and labelled (to 11 Nov; 12 Nov to the amendment).
+  *(Owner.)* Whether a new record then starts, and against which baseline, is not this test's to
+  say: it is a dated amendment to his review row, written before this test is run.
 - **Fail:** rules 2 and 3 stay as written, with rules 10 to 12. The row's remedy is spent: he missed
   his bar, and its test found nothing to mend. The row names no next step; whether he keeps running
   is the owner's dated decision at his review *(flagged)*. No other strike or floor is tried on this
@@ -144,7 +146,7 @@ any that beat N10 but missed lines 1 or 5.
 
 Line 3 caps luck across three candidates; it does not undo that the seen span was opened first.
 The hold-out, at most 60 name-weeks an arm, can refute a candidate, not confirm one. The window is
-2.7 mostly rising years, which flatters a put seller, and a print is least like a fill on a −0.10
+2.6 mostly rising years, which flatters a put seller, and a print is least like a fill on a −0.10
 put. One Monday entry stands for a week of offers; assignment is cash, with no covered call; a
 refused week is nought, where live it is a spread; half-dollar strikes above $100 (XOM 157.5) are
 never fetched. A pass says a rule did better here, not that he has an edge (eureka docs/37).
