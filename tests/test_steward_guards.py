@@ -54,7 +54,6 @@ def _session(monkeypatch, earnings, diary_rows=()):
     monkeypatch.setattr(run, "UNIVERSE", ["INTC"])
     monkeypatch.setattr(run, "_entries_blocked", lambda agent: False)
     monkeypatch.setattr(run, "next_weekly_friday", lambda today=None: EXPIRY)
-    monkeypatch.setattr(run, "weekly_expiry", lambda friday: (friday, None))   # no calendar read
     state = gates.AccountState(equity=90_000.0, day_start_equity=90_000.0,
                                sleeve_used={"steward": 0.0, "hunter": 0.0},
                                underlying_notional={}, minutes_to_expiry=3_000.0)
@@ -84,7 +83,9 @@ def test_the_session_holds_through_a_report(monkeypatch):
     monkeypatch.setattr(run, "UNIVERSE", ["INTC"])
     monkeypatch.setattr(run, "_entries_blocked", lambda agent: False)
     monkeypatch.setattr(run, "next_weekly_friday", lambda t=None: expiry)
-    monkeypatch.setattr(run, "weekly_expiry", lambda friday: (friday, None))   # no calendar read
+    # keep today + 2 as given: on a Friday it is a Sunday, which the real one moves back to today,
+    # before the report
+    monkeypatch.setattr(run, "weekly_expiry", lambda friday: (friday, None))
     state = gates.AccountState(equity=90_000.0, day_start_equity=90_000.0,
                                sleeve_used={"steward": 0.0, "hunter": 0.0},
                                underlying_notional={}, minutes_to_expiry=3_000.0)

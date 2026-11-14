@@ -653,7 +653,9 @@ def status() -> None:
     state, acct = desk_state()
     print(f"equity ${state.equity:,.2f} · steward ${state.sleeve_used['steward']:,.0f} deployed "
           f"· hunter ${state.sleeve_used['hunter']:,.0f} · "
-          f"expiry {weekly_expiry(next_weekly_friday())[0]} in {state.minutes_to_expiry / 1440:.1f} days "
+          # the date the countdown runs to: after Friday's bell that is next week's expiry
+          f"expiry {(datetime.now(timezone.utc) + timedelta(minutes=state.minutes_to_expiry)).date()} "
+          f"in {state.minutes_to_expiry / 1440:.1f} days "
           f"· kill switch ${gates.KILL_SWITCH_EQUITY:,.0f}")
     for p in read_positions():
         print(f"  {p['symbol']:>22} qty {p['qty']:>10} mv ${p['market_value']:>10,.2f} "

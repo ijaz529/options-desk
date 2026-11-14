@@ -87,7 +87,8 @@ jobs:
       # the official Alpaca CLI — the heartbeat's read door (structured JSON,
       # env auth, paper by default; hackathon requirement made real)
       # 1.24, not 1.23: the CLI's go.mod asks for go >= 1.24.0, so on 1.23 every run downloaded
-      # the newest Go at install time, and on 10 Nov 2026 that download 404'd and cost a sweep.
+      # a newer Go at install time (go1.26.11 on 10 Nov 2026), and that day the download 404'd
+      # and cost a sweep.
       # GOTOOLCHAIN=local keeps Go from fetching another toolchain behind our back.
       - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
         with:

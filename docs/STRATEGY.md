@@ -467,18 +467,21 @@ one-run-at-a-time concurrency group means that always holds the previous run's r
    *The expiry and its close, from the broker's calendar (fixed 14 Nov 2026).* The code took
    every weekly expiry to be the Friday, closing at 20:00 UTC, and this page did not say so.
    From 1 Nov the close is 21:00 UTC, so the gate shut an hour early, at 17:00 UTC rather
-   than 18:00. On a half-day, when the market closes at 13:00 New York (Fri 27 Nov, Thu 24 Dec
-   2026), it would have stayed open two hours too long. When the Friday is a market holiday
-   (25 Dec 2026, 1 Jan 2027), the week's contracts expire on the Thursday. The Steward would
-   have asked for Friday puts that are never listed, and written "no put earns its keep" on
-   every name in the weeks of 21 and 28 Dec, the first his last sessions before his review.
+   than 18:00. On a half-day, when the market closes at 13:00 New York (Fri 27 Nov 2026), it
+   would have stayed open two hours too long. When the Friday is a market holiday (25 Dec
+   2026, 1 Jan 2027), the week's contracts expire on the Thursday, and 24 Dec is itself a
+   half-day. The Steward would have asked for Friday puts that are never listed, and written
+   "no put earns its keep" on every name in the weeks of 21 and 28 Dec, the first his last
+   sessions before his review.
    The expiry is now the week's last trading day, and its close that day's close, both read
    from the broker's calendar (`run.weekly_expiry`), as rule 9 reads the broker's clock.
    Wherever this page says "the coming Friday", it means that week's expiry. One part is
    named here and not mended: the Hunter's three-day floor is still counted to the Friday,
-   so in a holiday week he could buy a contract with two days to run. He is locked out, and
-   his expiry rule is the one `docs/HUNTER_NULL_PREREG.md` imports, so it changes only with
-   that test.
+   so in a holiday week he could buy a contract with two days to run. A second is not mended
+   either: his hard exit "on the session before expiry" is counted as the calendar day before,
+   so when the Thursday is a holiday (26 Nov 2026) it fires on the Friday expiry day itself, a
+   half-day, not on the Wednesday. He is locked out, and both rules are ones
+   `docs/HUNTER_NULL_PREREG.md` imports, so they change only with that test.
 7. Every rejection is logged: what was proposed, which gate, in plain English.
 8. **No order outlives its session (added 1 Sep).** A working order still open
    from a previous day was priced off a session that no longer exists; a stale
