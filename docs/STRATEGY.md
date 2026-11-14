@@ -463,6 +463,25 @@ one-run-at-a-time concurrency group means that always holds the previous run's r
 6. **Time gate (re-expressed 13 Sep 2026):** no new positions in the final 3
    hours before the expiry they would trade into. De-risking into cash + marked
    P&L is now a manual session rather than a scheduled final one.
+
+   *The expiry and its close, from the broker's calendar (fixed 14 Nov 2026).* The code took
+   every weekly expiry to be the Friday, closing at 20:00 UTC, and this page did not say so.
+   From 1 Nov the close is 21:00 UTC, so the gate shut an hour early, at 17:00 UTC rather
+   than 18:00. On a half-day, when the market closes at 13:00 New York (Fri 27 Nov 2026), it
+   would have stayed open two hours too long. When the Friday is a market holiday (25 Dec
+   2026, 1 Jan 2027), the week's contracts expire on the Thursday, and 24 Dec is itself a
+   half-day. The Steward would have asked for Friday puts that are never listed, and written
+   "no put earns its keep" on every name in the weeks of 21 and 28 Dec, the first his last
+   sessions before his review.
+   The expiry is now the week's last trading day, and its close that day's close, both read
+   from the broker's calendar (`run.weekly_expiry`), as rule 9 reads the broker's clock.
+   Wherever this page says "the coming Friday", it means that week's expiry. One part is
+   named here and not mended: the Hunter's three-day floor is still counted to the Friday,
+   so in a holiday week he could buy a contract with two days to run. A second is not mended
+   either: his hard exit "on the session before expiry" is counted as the calendar day before,
+   so when the Thursday is a holiday (26 Nov 2026) it fires on the Friday expiry day itself, a
+   half-day, not on the Wednesday. He is locked out, and both rules are ones
+   `docs/HUNTER_NULL_PREREG.md` imports, so they change only with that test.
 7. Every rejection is logged: what was proposed, which gate, in plain English.
 8. **No order outlives its session (added 1 Sep).** A working order still open
    from a previous day was priced off a session that no longer exists; a stale
@@ -525,7 +544,7 @@ a job log. The Wheelhouse's status also prints the Hunter's trial P&L from the b
 | Team | Judged when | On what (all from the diary and the broker, nothing by hand) | Bar | What follows |
 |---|---|---|---|---|
 | **The Hunter** (Wheelhouse) | 20 trades or 28 Oct 2026, whichever first — **judged 24 Oct 2026: kept, the budget permanent** (verdict under "Re-based 30 Sep 2026") | trial P&L (`hunter_trial_pnl`): fills + marks since 30 Sep | net positive or near flat, inside the $2,000 budget | keep, with the budget as a permanent rule; else retired and the Steward runs alone (the rule above, unchanged) |
-| **The Steward** (Wheelhouse) | 60 trading sessions from 30 Sep 2026 (about 24 Dec) | premium kept net of stops and assignments; equity against the $88,983 baseline; stops and assignments counted | equity above baseline after costs; no kill-switch trip; stops under a third of puts sold | continue; otherwise the strike and premium-floor rules go to a pre-registered test (not changed by hand) |
+| **The Steward** (Wheelhouse) | 60 trading sessions from 30 Sep 2026 (about 24 Dec) | premium kept net of stops and assignments; equity against the $88,983 baseline; stops and assignments counted | equity above baseline after costs; no kill-switch trip; stops under a third of puts sold | continue; otherwise the strike and premium-floor rules go to a pre-registered test (not changed by hand) — **the test written and adopted 14 Nov 2026** (`docs/STEWARD_STRIKE_PREREG.md`), to be run on or after his 60th session, 23 Dec |
 | **The Harbour** (collar) | the first reset, the 31 Dec 2026 expiry: one full cycle | the quarter's return against 100 SPY held bare and against SPY's total return; the cushion that was actually used | the structure did what it says: upside kept to the cap, the first 5% of any fall taken, the next 15% cushioned; cost of the collar within $0.50 a share a quarter | a second quarter; no change inside a cycle is ever made (the rule) |
 | **The Tollgate** (condor) | nine condors closed or 22 Jan 2027 (three monthly cycles: 20 Nov, 18 Dec, 15 Jan), whichever first | credit kept per condor; wins and losses counted; the largest loss against the fixed worst case; the vol gate's stand-downs | net credit positive after losses; no loss past its stated worst case; the 5%-of-account limit never breached | continue; otherwise the delta or the exit rules go to a pre-registered test on the index's own history |
 

@@ -86,10 +86,16 @@ jobs:
       - run: pip install -r requirements.txt
       # the official Alpaca CLI — the heartbeat's read door (structured JSON,
       # env auth, paper by default; hackathon requirement made real)
+      # 1.24, not 1.23: the CLI's go.mod asks for go >= 1.24.0, so on 1.23 every run downloaded
+      # a newer Go at install time (go1.26.11 on 10 Nov 2026), and that day the download 404'd
+      # and cost a sweep.
+      # GOTOOLCHAIN=local keeps Go from fetching another toolchain behind our back.
       - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
         with:
-          go-version: '1.23'
+          go-version: '1.24'
       - run: go install github.com/alpacahq/cli/cmd/alpaca@v0.0.14 && echo "$HOME/go/bin" >> "$GITHUB_PATH"
+        env:
+          GOTOOLCHAIN: local
       # uv provides uvx, which runs Alpaca's official MCP server for the Hunter
       - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5
       - name: pick the session for this slot

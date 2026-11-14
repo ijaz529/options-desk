@@ -24,8 +24,8 @@ from desk import broker, cli, gates, hunter, log, steward, weekend
 UNIVERSE = ["XOM", "CVX", "KO", "WMT", "BAC", "DIS", "UBER", "PFE", "CSCO", "INTC", "T", "GM"]
 # The contest ended 4 Sep 2026; the desk now runs open-ended on the same paper
 # account (STRATEGY.md "Post-contest operation"). Everything that used to count
-# down to a fixed date now counts down to the COMING weekly expiry.
-EXPIRY_CLOSE_UTC = 20, 0        # US close on expiry Friday
+# down to a fixed date now counts down to the COMING weekly expiry: its day and its close come
+# from the broker's calendar (weekly_expiry), not from a fixed Friday at 20:00 UTC (14 Nov 2026).
 
 OCC = re.compile(r"^([A-Z]+)(\d{6})([CP])(\d{8})$")
 
@@ -95,7 +95,7 @@ def _unfilled(o: dict) -> float:
 
 def desk_state(expiry: date | None = None) -> tuple[gates.AccountState, dict]:
     """AccountState for the Risk Officer, derived live from the broker. `expiry` is the
-    Friday the proposal would trade into, for the time gate; the coming one by default.
+    expiry the proposal would trade into, for the time gate; the coming one by default.
 
     OPEN ORDERS count like positions: a working short put is an obligation the
     account has already promised, a working buy the premium it has promised.
@@ -201,15 +201,27 @@ def next_weekly_friday(today: date | None = None) -> date:
     return d + timedelta(days=(4 - d.weekday()) % 7)
 
 
+def weekly_expiry(friday: date) -> tuple[date, datetime]:
+    """The weekly expiry of the week that ends on `friday`, and the moment it closes (UTC), from the
+    broker's calendar: the week's last trading day, which is the Thursday when the Friday is a
+    market holiday (25 Dec 2026, 1 Jan 2027), with that day's own close, early on a half-day
+    (27 Nov and 24 Dec 2026). Until 14 Nov 2026 every expiry was taken to be the Friday at
+    20:00 UTC: the Steward would have looked for 25 Dec puts that are never listed, and from
+    1 Nov the time gate shut an hour early (STRATEGY.md rule 6)."""
+    days = broker.trading_days(friday - timedelta(days=4), friday)
+    if not days:
+        raise RuntimeError(f"the broker's calendar has no trading day in the week to {friday:%d %b %Y}")
+    return days[-1]
+
+
 def minutes_to_expiry(now: datetime | None = None, expiry: date | None = None) -> float:
-    """Minutes until the given expiry closes (the coming weekly Friday by default) — what
-    the time gate reads."""
+    """Minutes until the given expiry closes (the coming weekly one by default) — what the time
+    gate reads. The close is the calendar's, so a half-day or winter time moves it."""
     now = now or datetime.now(timezone.utc)
-    friday = expiry or next_weekly_friday(now.date())
-    hh, mm = EXPIRY_CLOSE_UTC
-    close = datetime(friday.year, friday.month, friday.day, hh, mm, tzinfo=timezone.utc)
-    if close <= now:                         # Friday after the bell — next week's
-        close += timedelta(days=7)
+    friday = next_weekly_friday(expiry or now.date())
+    _, close = weekly_expiry(friday)
+    if close <= now:                         # after that expiry's bell — next week's
+        _, close = weekly_expiry(friday + timedelta(days=7))
     return (close - now).total_seconds() / 60
 
 
@@ -255,7 +267,7 @@ def steward_session() -> None:
     assigned = {p["symbol"]: p for p in positions
                 if p.get("asset_class") == "us_equity" and float(p["qty"]) > 0}
     held_unders |= set(assigned)
-    expiry = next_weekly_friday()
+    expiry, _ = weekly_expiry(next_weekly_friday())
     stopped = stopped_names(log.rows(), expiry)
     today = datetime.now(timezone.utc).date()
     for u in UNIVERSE:
@@ -459,7 +471,9 @@ def hunter_session() -> None:
     # expiry it buys the one after (STRATEGY.md, 20 Sep 2026), and the time gate is
     # measured against the Friday it would actually trade into.
     today = datetime.now(timezone.utc).date()
-    expiry = hunter.target_expiry(today, next_weekly_friday(today))
+    # In a week whose Friday is a holiday the contracts expire on the Thursday; the three-day
+    # floor is still counted to the Friday, a day long (STRATEGY.md rule 6, 14 Nov 2026).
+    expiry, _ = weekly_expiry(hunter.target_expiry(today, next_weekly_friday(today)))
     state, _ = desk_state(expiry=expiry)
     for t in theses:
         picked = hunter.contract_for(t, expiry)
@@ -639,7 +653,9 @@ def status() -> None:
     state, acct = desk_state()
     print(f"equity ${state.equity:,.2f} · steward ${state.sleeve_used['steward']:,.0f} deployed "
           f"· hunter ${state.sleeve_used['hunter']:,.0f} · "
-          f"expiry {next_weekly_friday()} in {state.minutes_to_expiry / 1440:.1f} days "
+          # the date the countdown runs to: after Friday's bell that is next week's expiry
+          f"expiry {(datetime.now(timezone.utc) + timedelta(minutes=state.minutes_to_expiry)).date()} "
+          f"in {state.minutes_to_expiry / 1440:.1f} days "
           f"· kill switch ${gates.KILL_SWITCH_EQUITY:,.0f}")
     for p in read_positions():
         print(f"  {p['symbol']:>22} qty {p['qty']:>10} mv ${p['market_value']:>10,.2f} "
