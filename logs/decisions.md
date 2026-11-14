@@ -1,5 +1,9 @@
 # The desk's decision log
 
+## 2026-11-14
+
+- **01:24** → `desk` **status** — The Wheelhouse: equity $84,332.30 · -5.23% on the $88,983 baseline · hunter trial $-2,508 after 52 buy(s)
+
 ## 2026-11-13
 
 - **13:51** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
