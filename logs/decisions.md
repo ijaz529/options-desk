@@ -29,6 +29,8 @@
 - **14:51** → `steward` **sell_put** — Offered to sell the GM 20 Nov 82 put at ~0.41, a day limit at the mid that counts once it fills (0.50% of the $8,200 obligation). Delta -0.19 puts the strike 3.5% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **15:05** · `hunter` **hold** — Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape.
 - **18:05** · `hunter` **hold** — Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape.
+- **18:35** → `steward` **stop** — Buying back at 0.44: the option has doubled against the 0.17 credit. The week is not ordinary — the rule says leave.
+- **18:35** → `steward` **stop** — Buying back at 0.88: the option has doubled against the 0.41 credit. The week is not ordinary — the rule says leave.
 
 ## 2026-11-14
 
