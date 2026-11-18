@@ -22,6 +22,7 @@
 - **16:35** → `steward` **stop** — Buying back at 1.27: the option has doubled against the 0.56 credit. The week is not ordinary — the rule says leave.
 - **18:05** · `hunter` **hold** — Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape.
 - **21:36** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **21:42** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-11-17
 
