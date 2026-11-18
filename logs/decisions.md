@@ -20,6 +20,7 @@
 - **14:50** · `steward` **hold** — Stopped out of a GM 20 Nov put already: nothing more is sold on it for this expiry (rule 11).
 - **15:06** · `hunter` **hold** — Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape.
 - **16:35** → `steward` **stop** — Buying back at 1.27: the option has doubled against the 0.56 credit. The week is not ordinary — the rule says leave.
+- **18:05** · `hunter` **hold** — Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape.
 
 ## 2026-11-17
 

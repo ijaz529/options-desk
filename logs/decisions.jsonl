@@ -4619,3 +4619,4 @@
 {"ts": "2026-11-18T14:50:59+00:00", "agent": "steward", "action": "hold", "because": "Stopped out of a GM 20 Nov put already: nothing more is sold on it for this expiry (rule 11).", "symbol": "GM"}
 {"ts": "2026-11-18T15:06:05+00:00", "agent": "hunter", "action": "hold", "because": "Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape."}
 {"ts": "2026-11-18T16:35:58+00:00", "agent": "steward", "action": "stop", "because": "Buying back at 1.27: the option has doubled against the 0.56 credit. The week is not ordinary — the rule says leave.", "symbol": "XOM261120P00160000", "order_id": "6850ad82-c9b5-470f-8a50-451a2eec8ba2"}
+{"ts": "2026-11-18T18:05:57+00:00", "agent": "hunter", "action": "hold", "because": "Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape."}
