@@ -6,6 +6,18 @@
 - **00:43** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 - **13:50** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 - **14:06** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **14:50** · `steward` **hold** — Stopped out of a XOM 20 Nov put already: nothing more is sold on it for this expiry (rule 11).
+- **14:50** · `steward` **hold** — No CVX put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:50** · `steward` **hold** — No KO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:50** · `steward` **hold** — No WMT put this round: it reports earnings on 19 Nov, on or before the 20 Nov expiry, and a put is a bet on an ordinary week (rule 10).
+- **14:50** · `steward` **hold** — Stopped out of a BAC 20 Nov put already: nothing more is sold on it for this expiry (rule 11).
+- **14:50** · `steward` **hold** — No DIS put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:50** · `steward` **hold** — Stopped out of a UBER 20 Nov put already: nothing more is sold on it for this expiry (rule 11).
+- **14:50** · `steward` **hold** — Already carrying PFE risk — one position per name.
+- **14:50** · `steward` **hold** — No CSCO put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:50** · `steward` **hold** — Stopped out of a INTC 20 Nov put already: nothing more is sold on it for this expiry (rule 11).
+- **14:50** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **14:50** · `steward` **hold** — Stopped out of a GM 20 Nov put already: nothing more is sold on it for this expiry (rule 11).
 
 ## 2026-11-18
 
