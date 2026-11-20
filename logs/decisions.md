@@ -21,6 +21,7 @@
 - **15:06** · `hunter` **hold** — Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape.
 - **18:05** · `hunter` **hold** — Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape.
 - **21:05** → `desk` **status** — The Wheelhouse: equity $84,055.66 · -5.54% on the $88,983 baseline · hunter trial $-2,508 after 52 buy(s)
+- **21:31** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 
 ## 2026-11-19
 
