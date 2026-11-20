@@ -19,6 +19,7 @@
 - **14:50** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **14:50** · `steward` **hold** — Stopped out of a GM 20 Nov put already: nothing more is sold on it for this expiry (rule 11).
 - **15:06** · `hunter` **hold** — Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape.
+- **18:05** · `hunter` **hold** — Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape.
 
 ## 2026-11-19
 
