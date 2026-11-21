@@ -8,6 +8,8 @@
 - **10:21** · `hunter` **hold** — No entry this weekend: nothing moved ≥ 1.5% (BTC/USD -1.7%, ETH/USD +0.9%). Cash is a position.
 - **17:31** 🛑 `risk` **veto** — Vetoed: account equity $84,056 is below the $85,424 kill switch — the desk is income-only, and a hunter crypto_spot is not income.
 - **17:31** 🛑 `risk` **veto** — Vetoed: account equity $84,056 is below the $85,424 kill switch — the desk is income-only, and a hunter crypto_spot is not income.
+- **17:39** 🛑 `risk` **veto** — Vetoed: account equity $84,056 is below the $85,424 kill switch — the desk is income-only, and a hunter crypto_spot is not income.
+- **17:39** 🛑 `risk` **veto** — Vetoed: account equity $84,056 is below the $85,424 kill switch — the desk is income-only, and a hunter crypto_spot is not income.
 
 ## 2026-11-20
 
