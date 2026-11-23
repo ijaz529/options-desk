@@ -18,6 +18,7 @@
 - **14:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **15:05** · `hunter` **hold** — Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape.
 - **18:05** · `hunter` **hold** — Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape.
+- **20:35** → `steward` **take_profit** — Buying back at 0.11: 68% of the 0.34 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-11-21
 
