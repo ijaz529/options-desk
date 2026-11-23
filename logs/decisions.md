@@ -16,6 +16,7 @@
 - **14:51** → `steward` **sell_put** — Offered to sell the INTC 27 Nov 53 put at ~0.83, a day limit at the mid that counts once it fills (1.57% of the $5,300 obligation). Delta -0.21 puts the strike 8.5% below spot — a price we would own this name at. The trade is a bet the week stays ordinary.
 - **14:51** · `steward` **hold** — No T put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
 - **14:51** · `steward` **hold** — No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width.
+- **15:05** · `hunter` **hold** — Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape.
 
 ## 2026-11-21
 
