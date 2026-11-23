@@ -155,3 +155,4 @@
 {"ts": "2026-11-23T14:10:54+00:00", "agent": "collar", "action": "hold", "because": "The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement."}
 {"ts": "2026-11-23T15:10:57+00:00", "agent": "collar", "action": "hold", "because": "The collar is in place until 31 Dec. It is never adjusted in between — that is the rule, whatever the market does."}
 {"ts": "2026-11-23T16:10:56+00:00", "agent": "collar", "action": "hold", "because": "The collar is in place until 31 Dec. It is never adjusted in between — that is the rule, whatever the market does."}
+{"ts": "2026-11-23T18:10:57+00:00", "agent": "collar", "action": "hold", "because": "The collar is in place until 31 Dec. It is never adjusted in between — that is the rule, whatever the market does."}
