@@ -4737,3 +4737,4 @@
 {"ts": "2026-11-24T14:51:09+00:00", "agent": "steward", "action": "hold", "because": "No GM put earns its keep today: nothing in the delta band paid the premium floor with a market tight enough to trust, and no 20/10 put spread paid a tenth of its width."}
 {"ts": "2026-11-24T15:06:00+00:00", "agent": "hunter", "action": "hold", "because": "Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape."}
 {"ts": "2026-11-24T17:56:01+00:00", "agent": "steward", "action": "take_profit", "because": "Buying back at 0.12: 70% of the 0.40 credit is banked, and the last cents are not worth the tail.", "symbol": "UBER261127P00062000", "order_id": "81188ef5-2a23-40be-b948-818dd3d6d87b"}
+{"ts": "2026-11-24T18:05:56+00:00", "agent": "hunter", "action": "hold", "because": "Trial budget spent: the Hunter is $2,508 down since 2026-09-30, past his $2,000 budget, so he stands down without reading the tape."}
