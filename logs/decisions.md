@@ -7,6 +7,7 @@
 - **13:16** → `steward` **stop** — Buying back at 2.32: the option has doubled against the 0.83 credit. The week is not ordinary — the rule says leave.
 - **13:51** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 - **14:06** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **14:36** → `steward` **take_profit** — Buying back at 0.11: 66% of the 0.32 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-11-24
 
