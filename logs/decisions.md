@@ -4,6 +4,7 @@
 
 - **02:45** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 - **02:46** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **13:16** → `steward` **stop** — Buying back at 2.32: the option has doubled against the 0.83 credit. The week is not ordinary — the rule says leave.
 
 ## 2026-11-24
 
