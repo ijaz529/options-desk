@@ -41,7 +41,7 @@ audit trail builds itself in public.
 
 ## The record so far
 
-4820 logged decisions · 461 trades/exits · 2868 deliberate holds ·
-1239 Risk Officer vetoes · by agent: {'risk': 132, 'steward': 2714, 'desk': 90, 'hunter': 1884}.
+4821 logged decisions · 461 trades/exits · 2869 deliberate holds ·
+1239 Risk Officer vetoes · by agent: {'risk': 132, 'steward': 2715, 'desk': 90, 'hunter': 1884}.
 The full plain-English log: [`logs/decisions.md`](../logs/decisions.md).
 New to options? [`HOW-IT-WORKS.md`](HOW-IT-WORKS.md) explains the whole desk without jargon.
