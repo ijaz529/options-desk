@@ -6,6 +6,8 @@
 - **01:55** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 - **13:50** · `steward` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
 - **14:05** · `hunter` **hold** — The market is closed, so no opening order goes in: a limit placed on a shut market sits at the last session's prices until the sweep cancels it (rule 9). A late slot costs a retry, not a placement.
+- **14:35** → `steward` **take_profit** — Buying back at 0.02: 90% of the 0.20 credit is banked, and the last cents are not worth the tail.
+- **14:35** → `steward` **take_profit** — Buying back at 0.09: 72% of the 0.32 credit is banked, and the last cents are not worth the tail.
 
 ## 2026-11-26
 
