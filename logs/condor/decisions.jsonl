@@ -162,3 +162,4 @@
 {"ts": "2026-11-27T16:20:54+00:00", "agent": "condor", "action": "hold", "because": "No SPY condor today: no standard monthly expiry is 25–45 days away."}
 {"ts": "2026-11-27T16:20:55+00:00", "agent": "condor", "action": "hold", "because": "No IWM condor today: no standard monthly expiry is 25–45 days away."}
 {"ts": "2026-11-27T18:20:55+00:00", "agent": "condor", "action": "hold", "because": "The market is closed — nothing is priced, so nothing is opened or closed this round."}
+{"ts": "2026-11-27T21:19:46+00:00", "agent": "condor", "action": "status", "because": "The Tollgate: equity $98,589.88 · -1.20% on the $99,789 baseline · cash $99,153 · 4 position(s)", "equity": 98589.88, "baseline": 99789.0, "unrealized": 109.0}
